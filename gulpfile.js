@@ -5,6 +5,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 // const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const tildeImporter = require('node-sass-tilde-importer');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -12,10 +13,11 @@ const reload = browserSync.reload;
 let dev = true;
 
 gulp.task('styles', () => {
-  return gulp.src('app/styles/*.scss')
+  return gulp.src(['app/styles/demo/*.scss'])
     .pipe($.plumber())
     .pipe($.if(dev, $.sourcemaps.init()))
     .pipe($.sass.sync({
+      importer: tildeImporter,
       outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.']
@@ -103,9 +105,10 @@ gulp.task('serve', () => {
       port: 9000,
       server: {
         baseDir: ['.tmp', 'app'],
-        // routes: {
-        //   '/bower_components': 'bower_components'
-        // }
+        routes: {
+          // '/bower_components': 'bower_components'
+          '/node_modules': 'node_modules'
+        }
       }
     });
 
@@ -176,5 +179,25 @@ gulp.task('default', () => {
     dev = false;
     // runSequence(['clean', 'wiredep'], 'build', resolve);
     runSequence(['clean'], 'build', resolve);
+  });
+});
+
+
+gulp.task('styles-lib', () => {
+  return gulp.src([
+    'app/styles/**/*',
+    '!app/styles/variables.sample.scss',
+    '!app/styles/variables_for_component.sample.scss',
+    '!app/styles/demo',
+    '!app/styles/demo/*',
+  ]).pipe($.plumber())
+    .pipe(gulp.dest('dist-lib'))
+    .pipe(reload({ stream: true }));
+});
+
+gulp.task('build-lib', () => {
+  return new Promise(resolve => {
+    dev = false;
+    runSequence(['clean'], 'styles-lib', resolve);
   });
 });

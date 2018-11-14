@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>soft ui</title>
+
+  <link rel="apple-touch-icon"
+        href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <link href="node_modules/prismjs/themes/prism.css"
+        rel="stylesheet" />
+  <link href="node_modules/prismjs/plugins/toolbar/prism-toolbar.css"
+        rel="stylesheet" />
+  <link href="node_modules/prismjs/plugins/unescaped-markup/prism-unescaped-markup.css"
+        rel="stylesheet" />
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet"
+        href="styles/main.css">
+  <link rel="stylesheet"
+        href="styles/layout.css">
+  <!-- endbuild -->
+
+</head>
+
+<body>
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Section</h1>
+
+      <h2 class="title is-5">Basic Usage</h2>
+
+      <div class="block">
+        <section class="section _section">
+          <div class="container">
+            Simple Section
+          </div>
+        </section>
+        <script type="text/plain"
+                class="language-markup">
+  <section class="section">
+    <div class="container">
+        Simple Section
+    </div>
+  </section>
+</script>
+      </div>
+
+      <h2 class="title is-5">Modifier</h2>
+
+      <div class="block">
+        <section class="section _section is-fit">
+          <div class="container">
+            is-fit
+          </div>
+        </section>
+        <script type="text/plain"
+                class="language-markup">
+  <section class="section is-fit">
+    <div class="container">
+        fit
+    </div>
+  </section>
+</script>
+      </div>
+
+      <div class="block">
+        <section class="section _section is-short">
+          <div class="container">
+            is-short
+          </div>
+        </section>
+        <script type="text/plain"
+                class="language-markup">
+        <section class="section is-fit">
+          <div class="container">
+              short
+          </div>
+        </section>
+      </script>
+      </div>
+
+      <div class="block">
+        <section class="section _section has-background">
+          <div class="container">
+            <div class="block">
+              has-background
+            </div>
+            <div class="block">
+              <p>Variable:</p>
+              <p>$section-background-color: $white !default;</p>
+            </div>
+          </div>
+        </section>
+        <script type="text/plain"
+                class="language-markup">
+        <section class="section is-fit">
+          <div class="container">
+              background
+          </div>
+        </section>
+      </script>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- build:js scripts/vendor.js -->
+  <script type="text/javascript"
+          src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/prismjs/prism.js"></script>
+  <script src="node_modules/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="node_modules/prismjs/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+  <script src="node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

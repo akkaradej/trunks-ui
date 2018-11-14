@@ -1,0 +1,16 @@
+@import "../variables.sample";
+@import "../variables_for_component.sample";
+@import "../style";
+// @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.token.tag {
+  display: inline;
+  padding-left: 0;
+  padding-right: 0;
+}
