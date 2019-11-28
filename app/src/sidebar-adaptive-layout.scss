@@ -1,0 +1,17 @@
+#mainContainer {
+  @include container;
+  display: flex;
+
+  .container {
+    width: auto;
+    max-width: none !important;
+  }
+}
+
+#sidebar {
+  width: auto;
+}
+
+#content {
+  flex: 1;
+}

@@ -1,0 +1,25 @@
+$badge-font-size: $size-normal !default;
+
+.badge {
+  display: inline-block;
+  min-width: 1.4em;
+  padding: 0.2em 0.4em;
+  font-weight: $weight-bold;
+  font-size: $badge-font-size;
+  color: $white;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background: $grey;
+  border-radius: 1em;
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    &.is-#{$name} {
+      background: $color;
+      color: $color-invert;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+// === Bulma Variables ===
+
+// = controls
+$control-radius: $radius;
+$control-radius-small: $radius-small;
+$control-border-width: 1px;
+$control-height: 2.5em;
+$control-line-height: 1.5;
+$control-padding-vertical: calc(0.5em - #{$control-border-width});
+$control-padding-horizontal: calc(0.75em - #{$control-border-width});
+
+// = elements
+$box-radius: $radius-large;
+
+$button-focus-border-color: invalid-color;
+$button-focus-box-shadow-color: invalid-color;
+$button-active-border-color: invalid-color;
+
+$input-hover-color: invalid-color;
+$input-hover-border-color: invalid-color;
+$input-focus-border-color: invalid-color;
+$input-focus-box-shadow-color: invalid-color;
+
+// = components
+$navbar-item-hover-color: $primary;
+$navbar-item-hover-background-color: $background;
+$navbar-dropdown-item-hover-color: $black;
+$navbar-dropdown-item-hover-background-color: $background;
+
+$modal-z: 1020;
+$modal-card-head-background-color: $primary;
+$modal-card-head-padding:	2rem;
+$modal-card-head-radius: $radius-large;
+$modal-card-foot-radius: $radius-large;
+$modal-card-title-color: $primary-invert;
+$modal-card-title-size: $size-medium;
+$modal-card-body-padding: 2rem;
+
+
+// === Trunks Variables ===
+
+// = helpers
+// $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)t;
+// $box-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+
+// = components
+// $badge-box-shadow: 0 0 0 .2rem #fff;
+// $badge-font-size: $size-normal;
+// $badge-border-radius: 100%;
+// $button-font-weight: $weight-bold;
+// $modal-card-title-font-weight: $weight-bold;
+// $modal-small-width: 320px;
+// $modal-normal-width: 640px;
+// $modal-medium-width: 780px;
+// $modal-large-width: 960px;
+// $modal-full-width: 100%;
+// $modal-full-height: 100%;
+// $navbar-dropdown-item-color: $text;
+// $page-title-color: $text;
+// $tab-highlight-color: $primary;
+
+// = container
+// $box-hightlight-color: $primary;
+// $section-background-color: $white;
+
+// = forms
+// $checkbox-checked-color: $primary;
+// $checkbox-checked-border-color: $primary;
+// $checkbox-checked-filled-background-color: $primary;
+// $checkbox-group-border-color: $border;
+// $checkbox-group-divide-color: $border;
+// $checkbox-title-filled-background-color: $dark;
+// $checkbox-title-filled-color: $light;
+// $radio-border-color: $primary;
+// $radio-background-color: $primary;
+
+// = lib
+// $completer-selected-row-background-color: $primary;
+// $completer-selected-row-color: $primary-invert;
+// $ngx-datatable-row-detail-background-color: $background;
+
+// ------------------------------------------------------//
+
+
+

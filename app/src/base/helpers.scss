@@ -1,0 +1,275 @@
+$box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
+$box-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
+
+// Block Spacing
+@for $i from 2 through 5 {
+  .block-#{$i} {
+    @include block($block-spacing * $i);
+  }
+}
+
+// Block Push
+.push-right {
+  margin-right: $block-spacing;
+}
+
+.push-left {
+  margin-left: $block-spacing;
+}
+
+.push-left-auto {
+  margin-left: auto;
+}
+
+.push-right-auto {
+  margin-right: auto;
+}
+
+@for $i from 2 through 5 {
+  .push-right-#{$i} {
+    margin-right: $block-spacing * $i;
+  }
+
+  .push-left-#{$i} {
+    margin-left: $block-spacing * $i;
+  }
+}
+
+// Level Item Push
+.level {
+  &.is-mobile {
+    .level-item {
+      @for $i from 2 through 5 {
+        &.push-#{$i} {
+          &:not(:last-child) {
+            margin-right: $level-item-spacing * $i;
+          }
+        }
+      }
+    }
+  }
+}
+.level-left,
+.level-right {
+  .level-item {
+    @include tablet {
+      @for $i from 2 through 5 {
+        &.push-#{$i} {
+          &:not(:last-child) {
+            margin-right: $level-item-spacing * $i;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Flexbox
+.is-flex-row {
+  flex-direction: row;
+}
+
+.is-flex-column {
+  flex-direction: column;
+}
+
+.is-justify-start, .is-flex.is-justify-start {
+  justify-content: flex-start;
+}
+
+.is-justify-end, .is-flex.is-justify-end {
+  justify-content: flex-end;
+}
+
+.is-justify-center, .is-flex.is-justify-center {
+  justify-content: center;
+}
+
+.is-justify-between, .is-flex.is-justify-between {
+  justify-content: space-between;
+}
+
+.is-justify-around, .is-flex.is-justify-around {
+  justify-content: space-around;
+}
+
+.is-justify-evenly, .is-flex.is-justify-evenly {
+  justify-content: space-evenly;
+}
+
+.is-align-start, .is-flex.is-align-start {
+  align-items: flex-start;
+}
+
+.is-align-end, .is-flex.is-align-end {
+  align-items: flex-end;
+}
+
+.is-align-center, .is-flex.is-align-center {
+  align-items: center;
+}
+
+.is-flex-1 {
+  // Beware: IE not support when use with flex-direction: column
+  flex: 1; 
+}
+
+.is-flex-auto {
+  flex: auto;
+}
+
+.is-flex-none {
+  flex: none;
+}
+
+// Vertical Align: only affects inline, inline-block, inline-table, and table cell
+.is-vertical-top {
+  vertical-align: top;
+}
+
+.is-vertical-middle {
+  vertical-align: middle;
+}
+
+.is-vertical-bottom {
+  vertical-align: bottom;
+}
+
+.is-vertical-baseline {
+  vertical-align: baseline;
+}
+
+.is-vertical-text-top {
+  vertical-align: text-top;
+}
+
+// Typography
+.has-text-weight-bold, .has-text-weight-semibold, .has-text-weight-medium {
+  color: $text-strong;
+}
+
+.has-text-weight-normal {
+  color: $text;
+}
+
+.has-text-weight-light {
+  color: $text-light;
+}
+
+@each $name, $size in $font-sizes {
+  .has-text-#{$name} {
+    font-size: $size !important;
+  }
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.is-single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.is-double-line {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+
+// Other
+.is-overflow-auto {
+  overflow: auto;
+}
+
+.is-disabled {
+  cursor: auto;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.is-pre-line {
+  white-space: pre-line;
+}
+
+.is-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.is-fullheight {
+  height: 100%;
+}
+
+.is-height-as-control {
+  height: $control-height;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-disabled {
+  cursor: auto;
+  pointer-events: none;
+  touch-action: none;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.has-shadow {
+  box-shadow: $box-shadow;
+}
+
+.has-shadow-hovered {
+  transition: .2s ease;
+
+  &:hover {
+    box-shadow: $box-shadow-hovered;
+  }
+}
+
+.has-arrow-up::after {
+  @include has-arrow;
+  border-left: 0;
+  border-bottom: 0;
+  display: block; // fix IE
+}
+
+.has-arrow-down::after {
+  @include has-arrow;
+  border-right: 0;
+  border-top: 0;
+  display: block; // fix IE
+}
+
+.has-arrow-right::after {
+  @include has-arrow;
+  border-left: 0;
+  border-top: 0;
+  display: block; // fix IE
+}
+
+.has-arrow-left::after {
+  @include has-arrow;
+  border-right: 0;
+  border-bottom: 0;
+  display: block; // fix IE
+}

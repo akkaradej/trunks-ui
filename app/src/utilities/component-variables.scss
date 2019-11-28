@@ -1,0 +1,87 @@
+// === Bulma Variables ===
+
+// = controls
+// $control-radius: $radius !default;
+// $control-radius-small: $radius-small !default;
+// $control-border-width: 1px !default;
+// $control-height: 2.5em !default;
+// $control-line-height: 1.5 !default;
+// $control-padding-vertical: calc(0.5em - #{$control-border-width}) !default;
+// $control-padding-horizontal: calc(0.75em - #{$control-border-width}) !default;
+
+// = elements
+$box-radius: $radius-large !default;
+
+$button-focus-border-color: invalid-color !default;
+$button-focus-box-shadow-color: invalid-color !default;
+$button-active-border-color: invalid-color !default;
+
+$input-hover-color: invalid-color !default;
+$input-hover-border-color: invalid-color !default;
+$input-focus-border-color: invalid-color !default;
+$input-focus-box-shadow-color: invalid-color !default;
+$input-disabled-color: $text-disabled !default;
+
+// = components
+$navbar-item-hover-color: $primary !default;
+$navbar-item-hover-background-color: $background !default;
+$navbar-dropdown-item-hover-color: $black !default;
+$navbar-dropdown-item-hover-background-color: $background !default;
+
+$modal-z: 1020 !default;
+$modal-card-head-background-color: $primary !default;
+$modal-card-head-padding:	2rem !default;
+$modal-card-head-radius: $radius-large !default;
+$modal-card-foot-radius: $radius-large !default;
+$modal-card-title-color: $primary-invert !default;
+$modal-card-title-size: $size-medium !default;
+$modal-card-body-padding: 2rem !default;
+
+$pagination-disabled-color: $text-disabled !default;
+
+// === Trunks Variables ===
+
+// = helpers
+// $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1)t;
+// $box-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+
+// = components
+// $badge-box-shadow: 0 0 0 .2rem #fff;
+// $badge-font-size: $size-normal;
+// $badge-border-radius: 100%;
+// $button-font-weight: $weight-bold;
+// $modal-card-title-font-weight: $weight-bold;
+// $modal-small-width: 320px;
+// $modal-normal-width: 640px;
+// $modal-medium-width: 780px;
+// $modal-large-width: 960px;
+// $modal-full-width: 100%;
+// $modal-full-height: 100%;
+// $navbar-dropdown-item-color: $text;
+// $page-title-color: $text;
+// $tab-highlight-color: $primary;
+
+// = container
+// $box-hightlight-color: $primary;
+// $section-background-color: $white;
+
+// = forms
+// $checkbox-checked-color: $primary;
+// $checkbox-checked-border-color: $primary;
+// $checkbox-checked-filled-background-color: $primary;
+// $checkbox-group-border-color: $border;
+// $checkbox-group-divide-color: $border;
+// $checkbox-title-filled-background-color: $dark;
+// $checkbox-title-filled-color: $light;
+// $radio-border-color: $primary;
+// $radio-background-color: $primary;
+
+// = lib
+// $completer-selected-row-background-color: $primary;
+// $completer-selected-row-color: $primary-invert;
+// $ngx-datatable-row-detail-background-color: $background;
+
+// ------------------------------------------------------//
+
+
+

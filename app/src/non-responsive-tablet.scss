@@ -1,0 +1,20 @@
+@include tablet {
+  html {
+    overflow-x: auto;
+    min-width: $desktop - $vertical-scrollbar-width;
+  }
+
+  .tabs {
+    overflow: visible;
+    white-space: normal;
+    display: block;
+
+    ul {
+      display: block;
+    }
+
+    li {
+      display: inline-block;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import './utilities/functions';
+// @import '~trunks-ui/utilities/functions';
+
+// Font size
+$size-small: 1.2rem;
+$size-normal: 1.6rem;
+$size-medium: 2rem;
+$size-large: 2.4rem;
+$size-xlarge: 2.8rem;
+$size-xxlarge: 3.2rem;
+
+$font-sizes: (
+  "size-small": $size-normal,
+  "size-normal": $size-normal,
+  "size-medium": $size-medium,
+  "size-large": $size-large,
+  "size-xlarge": $size-xlarge,
+  "size-xxlarge": $size-xxlarge
+);
+
+// Weight
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// Miscellaneous
+$easing: ease-out;
+$radius-small: 2px;
+$radius: 4px;
+$radius-large: 6px;
+$radius-rounded: 290486px;
+$speed: 86ms;
+
+// Black and White
+$black:        #0a0a0a;
+$black-bis:    #121212;
+$black-ter:    #242424;
+$grey-darker:  #363636;
+$grey-dark:    #4a4a4a;
+$grey:         #7a7a7a;
+$grey-light:   #b5b5b5;
+$grey-lighter: #dbdbdb;
+$white-ter:    #f5f5f5;
+$white-bis:    #fafafa;
+$white:        #ffffff;
+
+// Colors
+$orange:       #ff470f;
+$yellow:       #ffdd57;
+$green:        #23d160;
+$turquoise:    #00d1b2;
+$cyan:         #209cee;
+$blue:         #3273dc;
+$purple:       #b86bff;
+$red:          #ff3860;
+
+// Meaning Colors
+
+// General colors
+$scheme-main: $white;
+$scheme-main-bis: $white-bis;
+$scheme-main-ter: $white-ter;
+$scheme-invert: $black;
+$scheme-invert-bis: $black-bis;
+$scheme-invert-ter: $black-ter;
+
+$body-background-color: $scheme-main;
+$background: $white-ter;
+$border: $grey-lighter;
+$border-hover: $grey-lighter;
+
+// Text colors
+$text: $grey-dark;
+$text-invert: $white;
+$text-light: $grey;
+$text-strong: $grey-darker;
+$text-disabled: $grey-light;
+
+// Default colors
+$primary: $turquoise;
+$secondary: $blue;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$light: $white-ter;
+$dark: $grey-darker;
+
+// Link colors
+$link: $primary;
+$link-invert: findColorInvert($link);
+
+// Custom color
+$header-background: $blue;
+
+// Custom color with class
+$edit: $orange;
+$delete: $red;
+
+// Custom color class
+$custom-colors: (
+  "edit": ($edit),
+  "delete": ($delete),
+);
+$custom-shades: null;
+
+// Others
+$sidebar-width: 0;
+$navbar-height: 0;
+
+// @import "~trunks-ui/utilities/variables";
+// @import "~trunks-ui/utilities/mixins";
+@import "./utilities/variables";
+@import "./utilities/mixins";

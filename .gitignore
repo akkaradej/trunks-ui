@@ -4,3 +4,4 @@ dist-lib
 .tmp
 bower_components
 test/bower_components
+trunks-ui-*.tgz

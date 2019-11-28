@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>trunks ui</title>
+
+  <link rel="apple-touch-icon"
+        href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css ../../assets/styles/vendor.css -->
+  <link href="../../node_modules/font-awesome/css/font-awesome.min.css"
+        rel="stylesheet">
+  <link href="../../node_modules/prismjs/themes/prism.css"
+        rel="stylesheet" />
+  <link href="../../node_modules/prismjs/plugins/toolbar/prism-toolbar.css"
+        rel="stylesheet" />
+  <link href="../../node_modules/prismjs/plugins/unescaped-markup/prism-unescaped-markup.css"
+        rel="stylesheet" />
+  <!-- endbuild -->
+
+  <link rel="stylesheet"
+        href="../../assets/styles/vendor.css">
+  <link rel="stylesheet"
+        href="../../assets/styles/main.css">
+
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+
+
+  <section class="section">
+    <div class="container is-fluid">
+
+      <h1 class="title is-4">Helper</h1>
+
+
+      <h2 class="title is-6">Flex</h2>
+
+      <div class="block">
+        <pre>
+          <code class="language-css">
+.is-flex-1, .is-flex.is-flex-1 {
+  flex: 1;
+}
+
+.is-space-between, .is-flex.is-space-between {
+  justify-content: space-between;
+}
+
+.is-space-around, .is-flex.is-space-around {
+  justify-content: space-around;
+}
+
+.is-justify-center, .is-flex.is-justify-center {
+  justify-content: center;
+}
+
+.is-align-center, .is-flex.is-align-center {
+  align-items: center;
+}
+          </code>
+        </pre>
+      </div>
+
+      <h2 class="title is-6">Vertical Align</h2>
+
+      <div class="block">
+        <pre>
+          <code class="language-css">
+.is-vertical-middle {
+  vertical-align: middle;
+}
+
+.is-vertical-top {
+  vertical-align: top;
+}
+          </code>
+        </pre>
+      </div>
+      <h2 class="title is-6">Margin</h2>
+
+      <div class="block">
+        <pre>
+          <code class="language-css">
+.is-margin-right {
+  margin-right: 1.5rem;
+}
+
+.is-margin-left {
+  margin-left: 1.5rem;
+}
+
+.is-margin-top {
+  margin-top: 1.5rem;
+}
+
+.is-margin-bottom {
+  margin-bottom: 1.5rem;
+}
+
+.is-margin-left-auto {
+  margin-left: auto;
+}
+
+.is-margin-right-auto {
+  margin-right: auto;
+}
+          </code>
+        </pre>
+      </div>
+      <h2 class="title is-6">Typography</h2>
+
+      <div class="block">
+        <pre>
+          <code class="language-css">
+.has-text-size-small {
+  font-size: $size-small;
+}
+
+.has-text-size-normal {
+  font-size: $size-normal;
+}
+
+.has-text-size-medium {
+  font-size: $size-medium;
+}
+
+.has-text-size-large {
+  font-size: $size-large;
+}
+
+.has-text-size-xlarge {
+  font-size: $size-xlarge;
+}
+
+.has-text-size-xxlarge {
+  font-size: $size-xxlarge;
+}
+
+.has-text-light { // has-text-light color is different to is-light
+  color: $text-light !important;
+}
+
+.has-text-strong {
+  color: $text-strong !important;
+}
+
+.is-single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.is-double-line {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+          </code>
+        </pre>
+      </div>
+      <h2 class="title is-6">Other</h2>
+
+      <div class="block">
+        <pre>
+          <code class="language-css">
+.overflow-wrapper {
+  overflow: auto;
+}
+
+.is-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.control-height {
+  height: 2.25;
+}
+
+.has-shadow {
+  box-shadow: $box-shadow;
+}
+
+.has-shadow-hovered {
+  transition: .2s ease;
+
+  &:hover {
+    box-shadow: $box-shadow-hovered;
+  }
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-disabled {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  position:relative;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.has-arrow-up::after {
+  @include has-arrow;
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.has-arrow-down::after {
+  @include has-arrow;
+  border-right: 0;
+  border-top: 0;
+}
+
+
+.has-arrow-right::after {
+  @include has-arrow;
+  border-left: 0;
+  border-top: 0;
+}
+
+.has-arrow-left::after {
+  @include has-arrow;
+  border-right: 0;
+  border-bottom: 0;
+}
+          </code>
+        </pre>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- build:js ../../assets/scripts/vendor.js -->
+  <script src="../../node_modules/prismjs/prism.js"></script>
+  <script src="../../node_modules/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="../../node_modules/prismjs/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+  <script src="../../node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <!-- endbuild -->
+
+  <script src="../../assets/scripts/main.js"></script>
+
+  <script>
+    function openMenu() {
+      document.getElementById('burger').classList.toggle('is-active');
+      document.getElementById('navbarBasicExample').classList.toggle('is-active');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+// Font size
+$size-small: 1.2rem !default;
+$size-normal: 1.6rem !default;
+$size-medium: 2rem !default;
+$size-large: 2.4rem !default;
+$size-xlarge: 2.8rem !default;
+$size-xxlarge: 3.2rem !default;
+
+$font-sizes: (
+  "size-small": $size-normal,
+  "size-normal": $size-normal,
+  "size-medium": $size-medium,
+  "size-large": $size-large,
+  "size-xlarge": $size-xlarge,
+  "size-xxlarge": $size-xxlarge
+) !default;
+
+// Weight
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;
+
+// Miscellaneous
+$easing: ease-out !default;
+$radius-small: 2px !default;
+$radius: 4px !default;
+$radius-large: 6px !default;
+$radius-rounded: 290486px !default;
+$speed: 86ms !default;
+
+// Black and White
+$black:        #0a0a0a !default;
+$black-bis:    #121212 !default;
+$black-ter:    #242424 !default;
+$grey-darker:  #363636 !default;
+$grey-dark:    #4a4a4a !default;
+$grey:         #7a7a7a !default;
+$grey-light:   #b5b5b5 !default;
+$grey-lighter: #dbdbdb !default;
+$white-ter:    #f5f5f5 !default;
+$white-bis:    #fafafa !default;
+$white:        #ffffff !default;
+
+// Color
+$orange:       #ff470f !default;
+$yellow:       #ffdd57 !default;
+$green:        #23d160 !default;
+$turquoise:    #00d1b2 !default;
+$cyan:         #209cee !default;
+$blue:         #3273dc !default;
+$purple:       #b86bff !default;
+$red:          #ff3860 !default;
+
+// Meaning Colors
+
+// General colors
+$scheme-main: $white !default;
+$scheme-main-bis: $white-bis !default;
+$scheme-main-ter: $white-ter !default;
+$scheme-invert: $black !default;
+$scheme-invert-bis: $black-bis !default;
+$scheme-invert-ter: $black-ter !default;
+
+$body-background-color: $scheme-main !default;
+$background: $white-ter !default;
+$border: $grey-lighter !default;
+$border-hover: $grey-lighter !default;
+
+// Text colors
+$text: $grey-dark !default;
+$text-invert: $white !default;
+$text-light: $grey !default;
+$text-strong: $grey-darker !default;
+$text-disabled: $grey-light !default;
+
+// Text color result for findColorInvert()
+$color-invert-to-dark: $text !default;
+$color-invert-to-light: $text-invert !default;
+
+// Default colors
+$primary: $turquoise !default;
+$secondary: $blue !default;
+$info: $cyan !default;
+$success: $green !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $white-ter !default;
+$dark: $grey-darker !default;
+
+// Default Invert colors
+$primary-invert: findColorInvert($primary) !default;
+$secondary-invert: findColorInvert($secondary) !default;
+$info-invert: findColorInvert($info) !default;
+$success-invert: findColorInvert($success) !default;
+$warning-invert: findColorInvert($warning) !default;
+$danger-invert: findColorInvert($danger) !default;
+$light-invert: findColorInvert($light) !default;
+$dark-invert: findColorInvert($dark) !default;
+
+// Link colors
+$link: $primary !default;
+$link-invert: findColorInvert($link) !default;
+$link-visited: $link !default;
+
+$link-hover: invalid-color !default;
+$link-hover-border: invalid-color !default;
+
+$link-focus: invalid-color !default;
+$link-focus-border: invalid-color !default;
+
+$link-active: invalid-color !default;
+$link-active-border: invalid-color !default;
+
+// Colors & Shades
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+$colors: mergeColorMaps((
+  "white": ($white, $color-invert-to-dark), 
+  "black": ($black, $color-invert-to-light), 
+  "light": ($light, $light-invert), 
+  "dark": ($dark, $dark-invert), 
+  "primary": ($primary, $primary-invert), 
+  "secondary": ($secondary, $secondary-invert), 
+  "link": ($link, $link-invert), 
+  "info": ($info, $info-invert), 
+  "success": ($success, $success-invert), 
+  "warning": ($warning, $warning-invert), 
+  "danger": ($danger, $danger-invert)
+), $custom-colors);
+
+$shades: mergeColorMaps((
+  "black-bis": $black-bis, 
+  "black-ter": $black-ter, 
+  "grey-darker": $grey-darker, 
+  "grey-dark": $grey-dark, 
+  "grey": $grey, 
+  "grey-light": $grey-light, 
+  "grey-lighter": $grey-lighter, 
+  "white-ter": $white-ter, 
+  "white-bis": $white-bis
+), $custom-shades);
+
+// Others
+$sidebar-width: 0 !default;
+$navbar-height: 0 !default;

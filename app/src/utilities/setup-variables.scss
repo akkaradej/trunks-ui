@@ -1,0 +1,56 @@
+// Font Family
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+ "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+// $variable-columns
+$variable-columns: false !default;
+
+// Root element size to calculate rem (in pixel) 
+$body-size: 10px !default;
+$body-size-mobile: $body-size !default;
+
+// Block Spacing (Adobe XD Square Size)
+$block-spacing: 2rem !default;
+$block-spacing-mobile: $block-spacing !default;
+
+$column-gap: $block-spacing / 2 !default;
+$column-gap-mobile: $block-spacing-mobile / 2 !default;
+
+$tile-spacing: $block-spacing / 2 !default;
+$tile-spacing-mobile: $block-spacing / 2 !default;
+
+$field-spacing: $block-spacing / 2 !default;
+$field-spacing-mobile: $block-spacing-mobile / 2 !default;
+
+// The section horizontal gap for desktop (in pixel)
+$section-gap: 24px !default;
+
+// The section horizontal gap for mobile (in pixel)
+$section-gap-mobile: $section-gap !default;
+
+// Override Bulma's section-padding
+$section-padding-fit: 0 $section-gap !default;
+$section-padding-small: $block-spacing $section-gap !default;
+$section-padding: ($block-spacing * 2) $section-gap !default;
+$section-padding-medium: ($block-spacing * 3) $section-gap !default; // desktop only
+$section-padding-large: ($block-spacing * 6) $section-gap !default; // desktop only
+
+// The container horizontal gap for desktop, which acts as the offset for breakpoints
+// In another word, this is minimum overall gap for desktop. It will be increase when window width > container's width + $gap
+// Should be >= section gap (in pixel)
+$gap: $section-gap !default;
+// Remark: The container has no horizontal gap for mobile by design
+
+// Scrollbar width
+$vertical-scrollbar-width: 17px;
+
+// Responsive Breakpoint
+// mobile up to 767px;  
+$mobile-use-desktop-layout: false !default;
+$tablet: 768px !default; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
+$tablet-use-desktop-layout: false !default;
+$desktop: 1024px !default; // desktop size by chrome's device toolbar, 768 + 256 = 1024 // for 1024 (ipad landscape) (ipad pro portrait)
+$widescreen: 1280px !default;  // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
+$widescreen-enabled: true !default;
+$fullhd: 1536px !default; // fullhd size by 1280 + 256 = 1536                           // for 1600, 1920, 2560
+$fullhd-enabled: true !default;

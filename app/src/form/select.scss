@@ -1,0 +1,9 @@
+.select {
+  &.is-borderless {
+    select {
+      background: transparent;
+      border: 0;
+      padding-left: 0;
+    }
+  }
+}
