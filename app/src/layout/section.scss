@@ -1,10 +1,4 @@
-$section-background-color: $white !default;
-
 .section {
-  &.has-background {
-    background-color: $section-background-color;
-  }
-  
   &.is-fit {
     padding: $section-padding-fit;
   }

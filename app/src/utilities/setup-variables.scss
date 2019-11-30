@@ -19,8 +19,10 @@ $column-gap-mobile: $block-spacing-mobile / 2 !default;
 $tile-spacing: $block-spacing / 2 !default;
 $tile-spacing-mobile: $block-spacing / 2 !default;
 
-$field-spacing: $block-spacing / 2 !default;
-$field-spacing-mobile: $block-spacing-mobile / 2 !default;
+$field-spacing: $block-spacing !default;
+$field-spacing-mobile: $block-spacing-mobile !default;
+
+$level-item-spacing: $block-spacing !default;
 
 // The section horizontal gap for desktop (in pixel)
 $section-gap: 24px !default;

@@ -11,7 +11,7 @@ $tab-highlight-color: $primary !default;
     li {
       a {
         color: $text;
-        background: $light;
+        background: $scheme-main-ter;
         border-right: 1px solid $border;
         border-top: 1px solid $border;
         border-bottom: 1px solid $border;
@@ -28,7 +28,7 @@ $tab-highlight-color: $primary !default;
 
       &.is-active a {
         border-bottom-color: transparent;
-        background: $white;
+        background: $scheme-main;
       }
 
       // @each $name, $pair in $colors {

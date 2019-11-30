@@ -1,5 +1,5 @@
-$box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
-$box-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
+$box-shadow-for-has-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
+$box-shadow-for-has-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
 
 // Block Spacing
 @for $i from 2 through 5 {
@@ -235,14 +235,14 @@ $box-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1px rgba($black, 
 }
 
 .has-shadow {
-  box-shadow: $box-shadow;
+  box-shadow: $box-shadow-for-has-shadow;
 }
 
 .has-shadow-hovered {
   transition: .2s ease;
 
   &:hover {
-    box-shadow: $box-shadow-hovered;
+    box-shadow: $box-shadow-for-has-shadow-hovered;
   }
 }
 
