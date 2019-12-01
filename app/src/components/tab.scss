@@ -1,62 +1,78 @@
-$tab-highlight-color: $primary !default;
+$tabs-has-box-shadow-box: -2px 0px 0px -1px rgba(10, 10, 10, 0.1) !default;
+
+$tabs-sheet-link-background-color: $scheme-main-bis !default;
+$tabs-sheet-link-border-color: $border !default;
+$tabs-sheet-link-border-style: solid !default;
+$tabs-sheet-link-border-width: 1px !default;
+$tabs-sheet-link-hover-background-color: $background !default;
+$tabs-sheet-link-hover-border-color: $border-hover !default;
+$tabs-sheet-link-active-color: $primary !default;
+$tabs-sheet-link-active-background-color: $scheme-main !default;
+$tabs-sheet-link-active-border-color: $border !default;
+$tabs-sheet-link-active-border-bottom-color: transparent !default;
+
+$tab-highlight-border-color: $primary !default;
+$tab-highlight-border-style: solid !default;
+$tab-highlight-border-width: 3px !default;
 
 .tabs {
-  &.is-sheet {
-    margin-bottom: 0;
+  a {
+    background-color: $tabs-link-background-color;
+  }
 
-    ul {
-      border-bottom: 1px solid $border;
+  &.is-sheet {
+    margin-bottom: 0; // override %block
+
+    a {
+      border-color: $tabs-sheet-link-border-color;
+      border-style: $tabs-sheet-link-border-style;
+      border-width: $tabs-sheet-link-border-width;
+      border-radius: $tabs-toggle-link-radius $tabs-toggle-link-radius 0 0;
+
+      &:hover {
+        background-color: $tabs-sheet-link-hover-background-color;
+        border-color: $tabs-sheet-link-hover-border-color;
+      }
     }
 
     li {
-      a {
-        color: $text;
-        background: $scheme-main-ter;
-        border-right: 1px solid $border;
-        border-top: 1px solid $border;
-        border-bottom: 1px solid $border;
-        margin-bottom: -1px; // to remove ul border
-        
-        &:hover {
-          border-bottom-color: $border;
+      & + li {
+        margin-left: -#{$tabs-sheet-link-border-width};
+      }
+
+      &.is-active {
+        a {
+          color: $tabs-sheet-link-active-color;
+          border-color: $tabs-sheet-link-active-border-color;
+          border-bottom-color: $tabs-sheet-link-active-border-bottom-color;
+          background: $tabs-sheet-link-active-background-color;
         }
       }
-
-      &:first-child a {
-        border-left: 1px solid $border;
-      }
-
-      &.is-active a {
-        border-bottom-color: transparent;
-        background: $scheme-main;
-      }
-
-      // @each $name, $pair in $colors {
-      //   $color: nth($pair, 1);
-      //   $color-invert: nth($pair, 2);
-      //   &.is-#{$name} {
-      //     a {
-      //       color: $color;
-      //     }
-      //   }
-      // }
     }
 
     &.is-below {
       ul {
-        border-bottom: 0; // reverse back
-        border-top: 1px solid $border;
+        // reverse
+        border-bottom: 0;
+        border-top-color: $tabs-border-bottom-color;
+        border-top-style: $tabs-border-bottom-style;
+        border-top-width: $tabs-border-bottom-width;
+      }
+
+      a {
+        // reverse
+        margin-bottom: 0;
+        margin-top: -#{$tabs-border-bottom-width}; // to overlap ul border
+        border-radius: 0 0 $tabs-toggle-link-radius $tabs-toggle-link-radius;
       }
 
       li {
-        a {
-          margin-bottom: 0; // reverse back
-          margin-top: -1px; // to remove ul border
-        }
-
-        &.is-active a {
-          border-bottom: 1px solid $border; // reverse back
-          border-top-color: transparent;
+        &.is-active {
+          a {
+            // reverse
+            border-bottom-color: $tabs-sheet-link-border-color;
+            border-top-color: $tabs-sheet-link-active-border-bottom-color;
+          }
         }
       }
     }
@@ -64,7 +80,9 @@ $tab-highlight-color: $primary !default;
     &.is-highlighted {
       li {
         a {
-          border-top: 3px solid $tab-highlight-color;
+          border-top-color: $tab-highlight-border-color;
+          border-top-style: $tab-highlight-border-style;
+          border-top-width: $tab-highlight-border-width;
         }
 
         @each $name, $pair in $colors {
@@ -72,7 +90,7 @@ $tab-highlight-color: $primary !default;
           $color-invert: nth($pair, 2);
           &.is-#{$name} {
             a {
-              border-top: 3px solid $color;
+              border-top-color: $color;
             }
           }
         }
@@ -81,8 +99,14 @@ $tab-highlight-color: $primary !default;
       &.is-below {
         li {
           a {
-            border-top: 1px solid $border; // reverse back
-            border-bottom: 3px solid $tab-highlight-color;
+            // reverse
+            border-top-color: $tabs-sheet-link-border-color;
+            border-top-style: $tabs-sheet-link-border-style;
+            border-top-width: $tabs-sheet-link-border-width;
+
+            border-bottom-color: $tab-highlight-border-color;
+            border-bottom-style: $tab-highlight-border-style;
+            border-bottom-width: $tab-highlight-border-width;
           }
 
           @each $name, $pair in $colors {
@@ -90,27 +114,34 @@ $tab-highlight-color: $primary !default;
             $color-invert: nth($pair, 2);
             &.is-#{$name} {
               a {
-                border-bottom: 3px solid $color;
+                border-bottom-color: $color;
               }
             }
           }
 
           &.is-active a {
-            border-top-color: transparent;
+            border-top-color: $tabs-sheet-link-active-border-bottom-color;
           }
         }
       }
     }
 
     &.has-box {
-      box-shadow: -2px 0px 0px -1px rgba(10, 10, 10, 0.1);
+      box-shadow: $tabs-has-box-shadow-box;
 
       &.is-sheet {
         li {
-          &:first-child a {
-            border-left: 0;
+          &:first-child {
+            a {
+              border-left: 0;
+            }
           }
         }
+      }
+
+      + .box {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
       }
     }
   }
