@@ -16,10 +16,6 @@ $tab-highlight-border-style: solid !default;
 $tab-highlight-border-width: 3px !default;
 
 .tabs {
-  a {
-    background-color: $tabs-link-background-color;
-  }
-
   &.is-sheet {
     margin-bottom: 0; // override %block
 
@@ -28,6 +24,7 @@ $tab-highlight-border-width: 3px !default;
       border-style: $tabs-sheet-link-border-style;
       border-width: $tabs-sheet-link-border-width;
       border-radius: $tabs-toggle-link-radius $tabs-toggle-link-radius 0 0;
+      background-color: $tabs-sheet-link-background-color;
 
       &:hover {
         background-color: $tabs-sheet-link-hover-background-color;
