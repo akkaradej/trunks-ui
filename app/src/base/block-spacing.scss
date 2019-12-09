@@ -57,7 +57,7 @@
 .tile {
   &.is-ancestor {
     &:not(:last-child) {
-      margin-bottom: $block-spacing;
+      margin-bottom: $tile-spacing;
     }
   }
   &.is-vertical {

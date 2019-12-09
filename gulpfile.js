@@ -190,8 +190,6 @@ function stylesLib() {
   return gulp.src([
     'package.json',
     'app/src/**/*',
-    '!app/src/sample-setup-variables.scss',
-    '!app/src/sample-variables.scss'
   ]).pipe($.plumber())
     .pipe(gulp.dest('dist-lib'))
     .pipe(reload({ stream: true }));
