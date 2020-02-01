@@ -9,10 +9,6 @@ $variable-columns: false !default;
 $body-size: 10px !default;
 $body-size-mobile: $body-size !default;
 
-// Block Spacing (Adobe XD Square Size)
-$block-spacing: 2rem !default;
-$block-spacing-mobile: $block-spacing !default;
-
 $column-gap: $block-spacing / 2 !default;
 $column-gap-mobile: $block-spacing-mobile / 2 !default;
 

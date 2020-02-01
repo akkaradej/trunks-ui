@@ -54,6 +54,18 @@ $modal-content-width: $modal-normal-width;
     > .modal-content,
     > .modal-card {
 
+      @if $mobile-use-desktop-layout {
+        @include mobile {
+          width: auto;
+        }
+      }
+
+      @if $tablet-use-desktop-layout {
+        @include tablet {
+          width: auto;
+        }
+      }
+
       @include desktop {
         width: auto;
       }
@@ -63,6 +75,18 @@ $modal-content-width: $modal-normal-width;
   &.modal-small {
     > .modal-content,
     > .modal-card {
+
+      @if $mobile-use-desktop-layout {
+        @include mobile {
+          width: $modal-small-width;
+        }
+      }
+
+      @if $tablet-use-desktop-layout {
+        @include tablet {
+          width: $modal-small-width;
+        }
+      }
 
       @include desktop {
         width: $modal-small-width;
@@ -74,6 +98,18 @@ $modal-content-width: $modal-normal-width;
     > .modal-content,
     > .modal-card {
 
+      @if $mobile-use-desktop-layout {
+        @include mobile {
+          width: $modal-medium-width;
+        }
+      }
+
+      @if $tablet-use-desktop-layout {
+        @include tablet {
+          width: $modal-medium-width;
+        }
+      }
+
       @include desktop {
         width: $modal-medium-width;
       }
@@ -84,6 +120,18 @@ $modal-content-width: $modal-normal-width;
     > .modal-content,
     > .modal-card {
 
+      @if $mobile-use-desktop-layout {
+        @include mobile {
+          width: $modal-large-width;
+        }
+      }
+
+      @if $tablet-use-desktop-layout {
+        @include tablet {
+          width: $modal-large-width;
+        }
+      }
+
       @include desktop {
         width: $modal-large-width;
       }
@@ -93,6 +141,20 @@ $modal-content-width: $modal-normal-width;
   &.modal-full {
     > .modal-content,
     > .modal-card {
+
+      @if $mobile-use-desktop-layout {
+        @include mobile {
+          width: $modal-full-width;
+          height: $modal-full-height;
+        }
+      }
+
+      @if $tablet-use-desktop-layout {
+        @include tablet {
+          width: $modal-full-width;
+          height: $modal-full-height;
+        }
+      }
 
       @include desktop {
         width: $modal-full-width;
