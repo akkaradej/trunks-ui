@@ -1,0 +1,270 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>trunks ui</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="../../assets/styles/vendor.css"><link rel="stylesheet" href="../../assets/styles/main.css"><style></style></head><body><section class="section"><div class="container is-fluid"><h1 class="title is-4">Helper</h1><h2 class="title is-6">Flex</h2><div class="block"><pre>
+          <code class="language-css">
+
+.is-flex-row {
+  flex-direction: row;
+}
+
+.is-flex-column {
+  flex-direction: column;
+}
+
+.is-justify-start, .is-flex.is-justify-start {
+  justify-content: flex-start;
+}
+
+.is-justify-end, .is-flex.is-justify-end {
+  justify-content: flex-end;
+}
+
+.is-justify-center, .is-flex.is-justify-center {
+  justify-content: center;
+}
+
+.is-justify-between, .is-flex.is-justify-between {
+  justify-content: space-between;
+}
+
+.is-justify-around, .is-flex.is-justify-around {
+  justify-content: space-around;
+}
+
+.is-justify-evenly, .is-flex.is-justify-evenly {
+  justify-content: space-around; // fix ie
+  justify-content: space-evenly;
+}
+
+.is-align-start, .is-flex.is-align-start {
+  align-items: flex-start;
+}
+
+.is-align-end, .is-flex.is-align-end {
+  align-items: flex-end;
+}
+
+.is-align-center, .is-flex.is-align-center {
+  align-items: center;
+}
+
+.is-flex-1 {
+  // Beware: IE not support when use with flex-direction: column
+  flex: 1; 
+}
+
+.is-flex-auto {
+  flex: auto;
+}
+
+.is-flex-none {
+  flex: none;
+}
+          </code>
+        </pre></div><h2 class="title is-6">Vertical Align</h2><div class="block"><pre>
+          <code class="language-css">
+.is-vertical-middle {
+  vertical-align: middle;
+}
+
+.is-vertical-top {
+  vertical-align: top;
+}
+          </code>
+        </pre></div><h2 class="title is-6">Margin</h2><div class="block"><pre>
+          <code class="language-css">
+.push-right {
+  margin-right: $block-spacing;
+}
+
+.push-left {
+  margin-left: $block-spacing;
+}
+
+.push-left-auto {
+  margin-left: auto;
+}
+
+.push-right-auto {
+  margin-right: auto;
+}
+
+.push-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+          </code>
+        </pre></div><h2 class="title is-6">Typography</h2><div class="block"><pre>
+          <code class="language-css">
+// color
+.text {
+  color: $text;
+}
+
+.text-invert {
+  color: $text-invert;
+}
+
+.text-strong {
+  color: $text-strong;
+}
+
+.text-light {
+  color: $text-light;
+}
+
+.text-lighter {
+  color: $text-lighter;
+}
+
+.text-disabled {
+  color: $text-disabled;
+}
+
+.text-link {
+  cursor: pointer;
+  text-decoration: $link-decoration;
+  strong {
+    color: currentColor;
+  }
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+.text-xxx
+
+.bg-xxx
+
+// weight
+.text-weight-light {
+  font-weight: $weight-light !important;
+}
+
+.text-weight-normal {
+  font-weight: $weight-normal !important;
+}
+
+.text-weight-medium {
+  font-weight: $weight-medium !important;
+}
+
+.text-weight-semibold {
+  font-weight: $weight-semibold !important;
+}
+
+.text-weight-bold {
+  font-weight: $weight-bold !important;
+}
+
+.text-align-xxx
+
+.is-single-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.is-double-line {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+          </code>
+        </pre></div><h2 class="title is-6">Other</h2><div class="block"><pre>
+          <code class="language-css">
+.is-overflow-auto {
+  overflow: auto;
+}
+
+.is-disabled {
+  cursor: auto;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.is-pre-line {
+  white-space: pre-line;
+}
+
+.is-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.is-fullheight {
+  height: 100%;
+}
+
+.is-height-as-control {
+  height: $control-height;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-disabled {
+  cursor: auto;
+  pointer-events: none;
+  touch-action: none;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.has-shadow {
+  box-shadow: $box-shadow-for-has-shadow;
+}
+
+.has-shadow-hovered {
+  transition: .2s ease;
+
+  &:hover {
+    box-shadow: $box-shadow-for-has-shadow-hovered;
+  }
+}
+
+.has-arrow-up::after {
+  @include has-arrow;
+  border-left: 0;
+  border-bottom: 0;
+  display: block; // fix IE
+}
+
+.has-arrow-down::after {
+  @include has-arrow;
+  border-right: 0;
+  border-top: 0;
+  display: block; // fix IE
+}
+
+.has-arrow-right::after {
+  @include has-arrow;
+  border-left: 0;
+  border-top: 0;
+  display: block; // fix IE
+}
+
+.has-arrow-left::after {
+  @include has-arrow;
+  border-right: 0;
+  border-bottom: 0;
+  display: block; // fix IE
+}
+
+          </code>
+        </pre></div></div></section><script src="../../assets/scripts/vendor.js"></script><script src="../../assets/scripts/main.js"></script><script>function openMenu(){document.getElementById("burger").classList.toggle("is-active"),document.getElementById("navbarBasicExample").classList.toggle("is-active")}</script></body></html>

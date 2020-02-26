@@ -1,0 +1,64 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><title>trunks ui</title><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="../../assets/styles/vendor.css"><link rel="stylesheet" href="../../assets/styles/main.css"><style></style></head><body><section class="section"><div class="container is-fluid"><h1 class="title is-4">Modal</h1><div class="block">See More: <a href="https://bulma.io/documentation/components/modal" target="_blank">https://bulma.io/documentation/components/modal</a></div><h2 class="title is-6">Modifier</h2><div class="block">has-no-footer</div><div id="modal1" class="modal has-no-footer"><div class="modal-background" onclick='toggleModal("modal1")'></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Modal title</p><button class="delete" onclick='toggleModal("modal1")' aria-label="close"></button></header><section class="modal-card-body"><div>Content</div><div>.......</div><div>.......</div><div class="buttons is-justify-center"><button class="button is-primary">Save</button> <button class="button">Cancel</button></div></section></div></div><div class="block"><button class="button" onclick='toggleModal("modal1")'>Open Modal</button><script type="text/plain" class="language-markup"><div id="modal1"
+      class="modal has-no-footer">
+  <div class="modal-background"
+        onclick="toggleModal('modal1')"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete"
+              onclick="toggleModal('modal1')"
+              aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div>Content</div>
+      <div>.......</div>
+      <div>.......</div>
+      <div class="buttons is-justify-center">
+        <button class="button is-primary">Save</button>
+        <button class="button">Cancel</button>
+      </div>
+    </section>
+  </div>
+</div></script><code class="language-javascript">document.getElementById('modal1').classList.toggle('is-active');</code></div><div class="block">modal-large</div><div id="modal2" class="modal has-no-footer modal-large"><div class="modal-background" onclick='toggleModal("modal2")'></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Modal title</p><button class="delete" onclick='toggleModal("modal2")' aria-label="close"></button></header><section class="modal-card-body"><div>Content</div><div>.......</div><div>.......</div><div class="buttons is-justify-center"><button class="button is-primary">Save</button> <button class="button">Cancel</button></div></section></div></div><div class="block"><button class="button" onclick='toggleModal("modal2")'>Open Large Modal</button><script type="text/plain" class="language-markup"><div id="modal2"
+      class="modal has-no-footer modal-large">
+  <div class="modal-background"
+        onclick="toggleModal('modal2')"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete"
+              onclick="toggleModal('modal2')"
+              aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div>Content</div>
+      <div>.......</div>
+      <div>.......</div>
+      <div class="buttons is-justify-center">
+        <button class="button is-primary">Save</button>
+        <button class="button">Cancel</button>
+      </div>
+    </section>
+  </div>
+</div></script><code class="language-javascript">document.getElementById('modal2').classList.toggle('is-active');</code></div><div class="block">Color: is-[color]</div><div id="modal3" class="modal has-no-footer is-danger"><div class="modal-background" onclick='toggleModal("modal3")'></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Modal title</p><button class="delete" onclick='toggleModal("modal3")' aria-label="close"></button></header><section class="modal-card-body"><div>Content</div><div>.......</div><div>.......</div><div class="buttons is-justify-center"><button class="button is-primary">Save</button> <button class="button">Cancel</button></div></section></div></div><div class="block"><button class="button" onclick='toggleModal("modal3")'>Open Modal</button><script type="text/plain" class="language-markup"><div id="modal3"
+      class="modal has-no-footer is-danger">
+  <div class="modal-background"
+        onclick="toggleModal('modal3')"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete"
+              onclick="toggleModal('modal3')"
+              aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div>Content</div>
+      <div>.......</div>
+      <div>.......</div>
+      <div class="buttons is-justify-center">
+        <button class="button is-primary">Save</button>
+        <button class="button">Cancel</button>
+      </div>
+    </section>
+  </div>
+</div></script><code class="language-javascript">document.getElementById('modal3').classList.toggle('is-active');</code></div><h2 class="title is-6">Variable</h2><div class="block"><p>$modal-card-title-font-weight: $weight-bold;</p></div></div></section><script src="../../assets/scripts/vendor.js"></script><script src="../../assets/scripts/main.js"></script><script>function toggleModal(t){document.getElementById(t).classList.toggle("is-active")}</script></body></html>
