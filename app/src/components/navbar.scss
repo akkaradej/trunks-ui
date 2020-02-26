@@ -124,8 +124,15 @@ $navbar-dropdown-item-color: $text !default;
     }
   }
 }
+.navbar-dropdown {
+  font-size: $size-normal;
+}
 
 @include from($navbar-breakpoint) {
+  .navbar-dropdown {
+    font-size: $size-normal;
+  }
+
   .navbar > .container.is-fullhd,
   .navbar > .container.is-widescreen,
   .container.is-fullhd > .navbar,

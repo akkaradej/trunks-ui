@@ -49,24 +49,63 @@
       <div class="block">
         <pre>
           <code class="language-css">
-.is-flex-1, .is-flex.is-flex-1 {
-  flex: 1;
+
+.is-flex-row {
+  flex-direction: row;
 }
 
-.is-space-between, .is-flex.is-space-between {
-  justify-content: space-between;
+.is-flex-column {
+  flex-direction: column;
 }
 
-.is-space-around, .is-flex.is-space-around {
-  justify-content: space-around;
+.is-justify-start, .is-flex.is-justify-start {
+  justify-content: flex-start;
+}
+
+.is-justify-end, .is-flex.is-justify-end {
+  justify-content: flex-end;
 }
 
 .is-justify-center, .is-flex.is-justify-center {
   justify-content: center;
 }
 
+.is-justify-between, .is-flex.is-justify-between {
+  justify-content: space-between;
+}
+
+.is-justify-around, .is-flex.is-justify-around {
+  justify-content: space-around;
+}
+
+.is-justify-evenly, .is-flex.is-justify-evenly {
+  justify-content: space-around; // fix ie
+  justify-content: space-evenly;
+}
+
+.is-align-start, .is-flex.is-align-start {
+  align-items: flex-start;
+}
+
+.is-align-end, .is-flex.is-align-end {
+  align-items: flex-end;
+}
+
 .is-align-center, .is-flex.is-align-center {
   align-items: center;
+}
+
+.is-flex-1 {
+  // Beware: IE not support when use with flex-direction: column
+  flex: 1; 
+}
+
+.is-flex-auto {
+  flex: auto;
+}
+
+.is-flex-none {
+  flex: none;
 }
           </code>
         </pre>
@@ -92,27 +131,24 @@
       <div class="block">
         <pre>
           <code class="language-css">
-.is-margin-right {
-  margin-right: 1.5rem;
+.push-right {
+  margin-right: $block-spacing;
 }
 
-.is-margin-left {
-  margin-left: 1.5rem;
+.push-left {
+  margin-left: $block-spacing;
 }
 
-.is-margin-top {
-  margin-top: 1.5rem;
-}
-
-.is-margin-bottom {
-  margin-bottom: 1.5rem;
-}
-
-.is-margin-left-auto {
+.push-left-auto {
   margin-left: auto;
 }
 
-.is-margin-right-auto {
+.push-right-auto {
+  margin-right: auto;
+}
+
+.push-auto {
+  margin-left: auto;
   margin-right: auto;
 }
           </code>
@@ -123,29 +159,68 @@
       <div class="block">
         <pre>
           <code class="language-css">
-.has-text-size-small {
-  font-size: $size-small;
+// color
+.text {
+  color: $text;
 }
 
-.has-text-size-normal {
-  font-size: $size-normal;
+.text-invert {
+  color: $text-invert;
 }
 
-.has-text-size-medium {
-  font-size: $size-medium;
+.text-strong {
+  color: $text-strong;
 }
 
-.has-text-size-large {
-  font-size: $size-large;
+.text-light {
+  color: $text-light;
 }
 
-.has-text-size-xlarge {
-  font-size: $size-xlarge;
+.text-lighter {
+  color: $text-lighter;
 }
 
-.has-text-size-xxlarge {
-  font-size: $size-xxlarge;
+.text-disabled {
+  color: $text-disabled;
 }
+
+.text-link {
+  cursor: pointer;
+  text-decoration: $link-decoration;
+  strong {
+    color: currentColor;
+  }
+  &:hover {
+    color: $link-hover;
+  }
+}
+
+.text-xxx
+
+.bg-xxx
+
+// weight
+.text-weight-light {
+  font-weight: $weight-light !important;
+}
+
+.text-weight-normal {
+  font-weight: $weight-normal !important;
+}
+
+.text-weight-medium {
+  font-weight: $weight-medium !important;
+}
+
+.text-weight-semibold {
+  font-weight: $weight-semibold !important;
+}
+
+.text-weight-bold {
+  font-weight: $weight-bold !important;
+}
+
+.text-align-xxx
 
 .is-single-line {
   overflow: hidden;
@@ -169,8 +244,18 @@
       <div class="block">
         <pre>
           <code class="language-css">
-.overflow-wrapper {
+.is-overflow-auto {
   overflow: auto;
+}
+
+.is-disabled {
+  cursor: auto;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.is-pre-line {
+  white-space: pre-line;
 }
 
 .is-pre-wrap {
@@ -181,8 +266,34 @@
   width: 100%;
 }
 
-.control-height {
-  height: 2.25;
+.is-fullheight {
+  height: 100%;
+}
+
+.is-height-as-control {
+  height: $control-height;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-disabled {
+  cursor: auto;
+  pointer-events: none;
+  touch-action: none;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .has-shadow {
@@ -197,49 +308,34 @@
   }
 }
 
-.is-clickable {
-  cursor: pointer;
-}
-
-.is-disabled {
-  filter: grayscale(100%);
-  opacity: 0.5;
-  position:relative;
-
-  &:after {
-    content: ' ';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-}
-
 .has-arrow-up::after {
   @include has-arrow;
   border-left: 0;
   border-bottom: 0;
+  display: block; // fix IE
 }
 
 .has-arrow-down::after {
   @include has-arrow;
   border-right: 0;
   border-top: 0;
+  display: block; // fix IE
 }
-
 
 .has-arrow-right::after {
   @include has-arrow;
   border-left: 0;
   border-top: 0;
+  display: block; // fix IE
 }
 
 .has-arrow-left::after {
   @include has-arrow;
   border-right: 0;
   border-bottom: 0;
+  display: block; // fix IE
 }
+
           </code>
         </pre>
       </div>

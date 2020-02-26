@@ -1,6 +1,19 @@
 $ngx-datatable-row-detail-background-color: $background !default;
 
 .ngx-datatable.material {
+  &.striped {
+    .datatable-row-odd {
+      background-color: $table-striped-row-even-background-color;
+    }
+  }
+
+  // selectable cursor
+  .selectable:not(.checkbox-selection) {
+    .datatable-body-row {
+      cursor: pointer;
+    }
+  }
+
   // better ngx-datatable's sort arrow
   .sortable {
     .sort-btn {
@@ -46,6 +59,14 @@ $ngx-datatable-row-detail-background-color: $background !default;
 
       .datatable-header-cell-wrapper {
         cursor: auto;
+      }
+      
+      .datatable-header-cell-template-wrap {
+        line-height: 1.5;
+      }
+
+      .sort-btn {
+        line-height: 1.5;
       }
     }
   }

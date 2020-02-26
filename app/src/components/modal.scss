@@ -163,3 +163,12 @@ $modal-content-width: $modal-normal-width;
     }
   }
 }
+
+.modal-card-head {
+  .delete {
+    width: $modal-close-dimensions;
+    height: $modal-close-dimensions;
+    max-height: $modal-close-dimensions;
+    max-width: $modal-close-dimensions;
+  }
+}

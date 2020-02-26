@@ -76,12 +76,18 @@ $border-hover: $grey-lighter !default;
 $text: $grey-dark !default;
 $text-invert: $white !default;
 $text-light: $grey !default;
+$text-lighter: $grey-light !default;
 $text-strong: $grey-darker !default;
 $text-disabled: $grey-light !default;
 
-// Text color result for findColorInvert()
-$color-invert-to-dark: $text !default;
-$color-invert-to-light: $text-invert !default;
+@function findColorInvert($color) {
+  @if (colorLuminance($color) > 0.55) {
+    @return $text;
+  }
+  @else {
+    @return $text-invert;
+  }
+}
 
 // Default colors
 $primary: $turquoise !default;
@@ -122,8 +128,8 @@ $custom-colors: null !default;
 $custom-shades: null !default;
 
 $colors: mergeColorMaps((
-  "white": ($white, $color-invert-to-dark), 
-  "black": ($black, $color-invert-to-light), 
+  "white": ($white, findColorInvert($white)), 
+  "black": ($black, findColorInvert($black)), 
   "light": ($light, $light-invert), 
   "dark": ($dark, $dark-invert), 
   "primary": ($primary, $primary-invert), 
@@ -146,6 +152,17 @@ $shades: mergeColorMaps((
   "white-ter": $white-ter, 
   "white-bis": $white-bis
 ), $custom-shades);
+
+// Responsive Breakpoint
+// mobile up to 767px;  
+$mobile-use-desktop-layout: false !default;
+$tablet: 768px !default; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
+$tablet-use-desktop-layout: false !default;
+$desktop: 1024px !default; // desktop size by chrome's device toolbar, 768 + 256 = 1024 // for 1024 (ipad landscape) (ipad pro portrait)
+$widescreen: 1280px !default;  // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
+$widescreen-enabled: true !default;
+$fullhd: 1536px !default; // fullhd size by 1280 + 256 = 1536                           // for 1600, 1920, 2560
+$fullhd-enabled: true !default;
 
 // Others
 $sidebar-width: 0 !default;

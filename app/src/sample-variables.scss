@@ -81,9 +81,19 @@ $border-light-hover: $grey-light;
 $text: $grey-dark;
 $text-invert: $white;
 $text-light: $grey;
+$text-lighter: $grey-light;
 $text-strong: $grey-darker;
 $text-disabled: $white-bis;
 $text-placeholder: $grey-light;
+
+@function findColorInvert($color) {
+  @if (colorLuminance($color) > 0.55) {
+    @return $text;
+  }
+  @else {
+    @return $text-invert;
+  }
+}
 
 // Default colors
 $primary: $turquoise;
@@ -112,6 +122,38 @@ $custom-colors: (
   "delete": ($delete),
 );
 $custom-shades: null;
+
+// Responsive Breakpoint
+// mobile up to 767px;
+// $tablet: 768px; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
+// $tablet-use-desktop-layout: false;
+// $desktop: 1024px; // desktop size by chrome's device toolbar, 768 + 256 = 1024 // for 1024 (ipad landscape) (ipad pro portrait)
+// $widescreen: 1280px;  // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
+// $widescreen-enabled: true;
+// $fullhd: 1536px; // fullhd size by 1280 + 256 = 1536                           // for 1600, 1920, 2560
+// $fullhd-enabled: true;
+$widescreen: 1366px;
+
+// For 2 screen sizes; mobile & desktop, Uncomment these vars.
+// $tablet: 768px;
+// $tablet-use-desktop-layout: true;
+// $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+// 
+// And then @import "~trunks-ui/non-responsive-tablet"; next to "~trunks-ui/trunks";
+
+// For Non-Responsive, Uncomment these vars.
+// $mobile-use-desktop-layout: true;
+// $tablet: 768px;
+// $tablet-use-desktop-layout: true;
+// $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+// $body-overflow-x: auto;
+// $body-min-width: $desktop - $vertical-scrollbar-width;
+//
+// And then @import "~trunks-ui/non-responsive"; next to "~trunks-ui/trunks";
 
 // Others
 $sidebar-width: 0;
