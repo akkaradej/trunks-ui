@@ -47,9 +47,12 @@
   .icon,
   .icon.icon-em {
     &:first-child:not(:last-child) {
-      margin-left: auto;
+      margin-left: 0;
       margin-right: 0.5em;
+    }
+    &:last-child:not(:first-child) {
+      margin-left: 0.5em;
+      margin-right: 0;
     }
   }
 }
-

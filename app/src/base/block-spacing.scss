@@ -152,7 +152,7 @@
   .button {
     margin-bottom: $block-spacing / 2;
     &:not(:last-child):not(.is-fullwidth) {
-      margin-right: $block-spacing / 2;
+      margin-right: $block-spacing;
     }
   }
   &:last-child {
@@ -164,16 +164,16 @@
   &.is-centered {
     &:not(.has-addons) {
       .button:not(.is-fullwidth) {
-        margin-left: $block-spacing / 4;
-        margin-right: $block-spacing / 4;
+        margin-left: $block-spacing / 2;
+        margin-right: $block-spacing / 2;
       }
     }
   }
   &.is-right {
     &:not(.has-addons) {
-      .button:not(.is-fullwidth) {
-        margin-left: $block-spacing / 4;
-        margin-right: $block-spacing / 4;
+      .button:not(:last-child):not(.is-fullwidth) {
+        margin-left: 0;
+        margin-right: $block-spacing;
       }
     }
   }

@@ -1,13 +1,10 @@
 $modal-card-title-font-weight: $weight-bold !default;
+// $modal-content-width: 640px !default;
 $modal-small-width: 320px !default;
-$modal-normal-width: 640px !default;
 $modal-medium-width: 780px !default;
 $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
-
-// override
-$modal-content-width: $modal-normal-width;
 
 .modal {
   &.has-no-footer {
@@ -165,10 +162,15 @@ $modal-content-width: $modal-normal-width;
 }
 
 .modal-card-head {
+  .modal-card-title {
+    margin: 0 $modal-close-dimensions * 1.25;
+  }
   .delete {
     width: $modal-close-dimensions;
     height: $modal-close-dimensions;
     max-height: $modal-close-dimensions;
     max-width: $modal-close-dimensions;
+    position: absolute;
+    right: $modal-card-head-padding;
   }
 }

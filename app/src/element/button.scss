@@ -3,12 +3,6 @@ $button-font-size: $size-normal !default;
 $button-large-height: 7.2rem !default;
 $button-large-padding-horizontal: 4.8rem !default;
 
-.buttons {
-  .button:not(:last-child):not(.is-fullwidth) {
-    margin-right: $block-spacing * 2;
-  }
-}
-
 .button {
   font-size: $button-font-size;
   font-weight: $button-font-weight;
