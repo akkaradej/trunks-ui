@@ -163,14 +163,13 @@ $modal-full-height: 100% !default;
 
 .modal-card-head {
   .modal-card-title {
-    margin: 0 $modal-close-dimensions * 1.25;
+    margin-left: ($modal-close-dimensions * 1.25);
+    margin-right: ($modal-close-dimensions * 0.25);
   }
   .delete {
     width: $modal-close-dimensions;
     height: $modal-close-dimensions;
     max-height: $modal-close-dimensions;
     max-width: $modal-close-dimensions;
-    position: absolute;
-    right: $modal-card-head-padding;
   }
 }

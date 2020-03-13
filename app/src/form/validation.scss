@@ -1,14 +1,60 @@
-form.submitted input.ng-invalid,
-form.submitted select.ng-invalid,
-form.submitted textarea.ng-invalid,
-form.submitted .file-label.ng-invalid,
-input.ng-touched.ng-invalid,
-select.ng-touched.ng-invalid,
-textarea.ng-touched.ng-invalid {
-  border: 1px solid $danger;
-}
+$required-color: $danger !default;
+$validation-error-border: 1px solid $danger !default;
+$error-message-color: $text-invert !default;
+$error-message-background-color: $danger !default;
+
 .is-required .label:after {
-  color: $danger;
+  color: $required-color;
   content: ' *';
-  display:inline;
+  display: inline;
+}
+
+form.submitted .select select.ng-invalid,
+form .select select.ng-touched.ng-invalid {
+  border: $validation-error-border;
+}
+
+form.submitted .ng-invalid,
+form .ng-touched.ng-invalid {
+  &:hover ~ .error-message {
+    display: block;
+  }
+
+  &.input,
+  &.textarea {
+    border: $validation-error-border;
+  }
+
+  &input[type="radio"] {
+    + span::before {
+      border: $validation-error-border;
+    }
+  }
+
+  &.base-control {
+    .input,
+    .select select,
+    .textarea {
+      border: $validation-error-border;
+    }
+    input[type="radio"] {
+      + span::before {
+        border: $validation-error-border;
+      }
+    }
+  }
+}
+
+.error-message {
+  display: none;
+  position: absolute;
+  top: -$input-height;
+  left: 0;
+  padding: 0.5rem 1rem;
+  border-radius: $radius;
+  background-color:$error-message-background-color;
+  color: $error-message-color;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 9999;
 }

@@ -1,3 +1,17 @@
 .bs-datepicker {
   z-index: $modal-z;
 }
+
+.bs-datepicker-body {
+  .today-class {
+    color: $primary;
+  }
+  table {
+    td {
+      text-align: center;
+    }
+  }
+}
+.theme-default .bs-datepicker-head {
+  background-color: $primary;
+}

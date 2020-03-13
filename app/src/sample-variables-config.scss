@@ -241,7 +241,6 @@ $modal-z: 1020;
 
 // $modal-background-background-color: rgba($scheme-invert, 0.86);
 
-// $modal-content-width: 640px;
 // $modal-content-margin-mobile: 20px;
 // $modal-content-spacing-mobile: 160px;
 // $modal-content-spacing-tablet: 40px;
@@ -404,6 +403,7 @@ $pagination-disabled-color: $text-disabled;
 
 $link-decoration: underline;
 
+$label-size: $size-normal;
 $input-arrow-size: 0.625em;;
 $input-arrow-right: 0.625em;;
 $input-arrow-border-width: 1px;
@@ -417,8 +417,8 @@ $button-large-padding-horizontal: 4.8rem;
 
 // = components
 // $modal-card-title-font-weight: $weight-bold;
-// // $modal-content-width: 640px;
 // $modal-small-width: 320px;
+// $modal-content-width: 640px; // normal-width (bulma var)
 // $modal-medium-width: 780px;
 // $modal-large-width: 960px;
 // $modal-full-width: 100%;
@@ -458,8 +458,48 @@ $navbar-dropdown-item-color: $text;
 // $radio-background-color: $primary;
 // --
 
+// = validations
+// $required-color: $danger;
+// $validation-error-border: 1px solid $danger;
+// $error-message-color: $text-invert;
+// $error-message-background-color: $danger;
+// --
+
 // = lib
 // $completer-selected-row-background-color: $primary;
 // $completer-selected-row-color: $primary-invert;
+
+// $ngx-datatable-table-shadow: none;
+// $ngx-datatable-table-border: 1px solid $border;
+// $ngx-datatable-table-row-border: none;
+// $ngx-datatable-table-cell-border: 1px solid $border;
+
+$ngx-datatable-color: $text;
+$ngx-datatable-font-size: $size-normal;
+
+// $ngx-datatable-row-background-color: $scheme-main;
+// $ngx-datatable-row-hover-background-color: $scheme-main-ter;
+// $ngx-datatable-striped-row-even-background-color: $scheme-main-bis;
+// $ngx-datatable-striped-row-even-hover-background-color: $scheme-main-ter;
 // $ngx-datatable-row-detail-background-color: $background;
+
+$ngx-datatable-table-head-cell-align: center;
+$ngx-datatable-table-head-cell-color: $text-invert;
+$ngx-datatable-table-head-cell-background-color: $grey;
+$ngx-datatable-table-head-cell-font-size: $size-normal;
+$ngx-datatable-table-head-cell-font-weight: $weight-bold;
+
+$ngx-datatable-header-filter-wrapper-height: $control-height * 1.5;
+// $ngx-datatable-header-filter-wrapper-background-color: $scheme-main-bis;
+$ngx-datatable-header-filter-height: $control-height;
+$ngx-datatable-header-filter-radius: 0;
+// $ngx-datatable-header-filter-border-color: $scheme-main-ter;
+
+// $ngx-datatable-foot-background-color: $scheme-main-bis;
+// $ngx-datatable-pager-color: $primary-invert;
+// $ngx-datatable-pager-background-color: $primary;
+
+// $ngx-datatable-selection-background-color: $grey;
+// $ngx-datatable-selection-color: $text-invert;
+
 // --
