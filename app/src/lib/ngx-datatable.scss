@@ -54,8 +54,6 @@ $ngx-datatable-selection-color: $text-invert !default;
     }
   }
 
-  
-
   // selectable cursor
   .selectable:not(.checkbox-selection) {
     .datatable-body-row {
@@ -78,20 +76,48 @@ $ngx-datatable-selection-color: $text-invert !default;
       }
     }
   }
-  // hide ngx-datatable's sort-btn when use grid component
-  .grid-sort-btn + .sort-btn {
-    display: none !important;
+
+  // hide ngx-datatable's sort arrow
+  .datatable-header-cell-template-wrap {
+    > .sort-btn {
+      display: none !important;
+    }
+  }
+
+  // make sortable header clickable full area
+  .datatable-header-cell {
+    &.sortable {
+      .datatable-header-cell-template-wrap-custom-head {
+        cursor: pointer;
+      }
+
+      .group-header-cell-template {
+        .datatable-header-cell-template-wrap-custom-head {
+          cursor: auto;
+        }
+      }
+    }
+    .datatable-header-cell-wrapper {
+      cursor: auto;
+    }
+  }
+
+  // fix line-height
+  .datatable-body-cell,
+  .datatable-header-cell,
+  .datatable-header .datatable-header-cell .sort-btn {
+    line-height: 1.5;
   }
 
   .datatable-header {
     .datatable-header-cell {
-      background-color: $ngx-datatable-table-head-cell-background-color;
+      
       @include bg-color;
       font-weight: bold !important;
-      padding: .5em 1em !important;
       height: 100%;
       border-right: $ngx-datatable-table-cell-border;
-      overflow: hidden;
+      padding: 0;
+      overflow-x: visible;
 
       &:last-child {
         border-right: 0;
@@ -101,13 +127,7 @@ $ngx-datatable-selection-color: $text-invert !default;
         text-align: $ngx-datatable-table-head-cell-align;
       }
 
-      &.sortable .datatable-header-cell-wrapper {
-        cursor: pointer;
-      }
-
       .datatable-header-cell-wrapper {
-        cursor: auto;
-
         .datatable-header-cell-label {
           display: block;
           color: $ngx-datatable-table-head-cell-color;
@@ -115,10 +135,46 @@ $ngx-datatable-selection-color: $text-invert !default;
           font-weight: $ngx-datatable-table-head-cell-font-weight;
         }
       }
-      
-      .datatable-header-cell-template-wrap,
-      .sort-btn {
-        line-height: 1.5;
+    }
+
+    .datatable-header-cell-template-wrap-custom {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      // header filter
+      > .control {
+        height: $ngx-datatable-header-filter-wrapper-height;
+        padding: $block-spacing / 2;
+        background-color: $ngx-datatable-header-filter-wrapper-background-color;
+
+        .input,
+        .select select {
+          height: $ngx-datatable-header-filter-height;
+          border-radius: $ngx-datatable-header-filter-radius;
+          border-color: $ngx-datatable-header-filter-border-color;
+        }
+
+        .icon {
+          height: $ngx-datatable-header-filter-height;
+        }
+      }
+    }
+
+    .datatable-header-cell-template-wrap-custom-head {
+      background-color: $ngx-datatable-table-head-cell-background-color;
+      display: flex;
+      flex: auto;
+      padding: 0.5em 1em;
+
+      &.group-header-cell-template {
+        flex-grow: 0;
+        padding: 0.5em 0;
+        border-bottom: $ngx-datatable-table-cell-border;
+      }
+
+      .datatable-header-cell-wrapper {
+        flex: 1;
       }
     }
   }
@@ -165,54 +221,6 @@ $ngx-datatable-selection-color: $text-invert !default;
     .datatable-pager li.active a {
       color: $ngx-datatable-pager-color;
       background-color: $ngx-datatable-pager-background-color;
-    }
-  }
-}
-
-// filterable
-.ngx-datatable.material:not(.filterable) {
-  .datatable-header-cell-template-wrap {
-    display: flex;
-    .datatable-header-cell-wrapper {
-      flex: 1;
-    }
-  }
-}
-.ngx-datatable.material.filterable {
-  .datatable-header {
-    .datatable-header-cell {
-      padding: 0 !important;
-    }
-    .datatable-header-cell-template-wrap-custom {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-
-      > .control {
-        height: $ngx-datatable-header-filter-wrapper-height;
-        padding: $block-spacing / 2;
-        background-color: $ngx-datatable-header-filter-wrapper-background-color;
-
-        .input,
-        .select select {
-          height: $ngx-datatable-header-filter-height;
-          border-radius: $ngx-datatable-header-filter-radius;
-          border-color: $ngx-datatable-header-filter-border-color;
-        }
-
-        .icon {
-          height: $ngx-datatable-header-filter-height;
-        }
-      }
-    }
-
-    .datatable-header-cell-template-wrap-custom-head {
-      display: flex;
-      flex: auto;
-      padding: 0.5em 1em !important;
-      .datatable-header-cell-wrapper {
-        flex: 1;
-      }
     }
   }
 }
