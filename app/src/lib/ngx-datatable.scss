@@ -113,7 +113,7 @@ $ngx-datatable-selection-color: $text-invert !default;
     .datatable-header-cell {
       
       @include bg-color;
-      font-weight: bold !important;
+      font-weight: bold;
       height: 100%;
       border-right: $ngx-datatable-table-cell-border;
       padding: 0;
@@ -186,7 +186,7 @@ $ngx-datatable-selection-color: $text-invert !default;
       .datatable-body-cell {
         color: $ngx-datatable-color;
         font-size: $ngx-datatable-font-size;
-        padding: .25em 1em !important;
+        padding: .25em 1em;
         border-right: $ngx-datatable-table-cell-border;
 
         &:last-child {
@@ -250,4 +250,9 @@ $ngx-datatable-selection-color: $text-invert !default;
   .datatable-body-cell-label, .ic {
     color: $ngx-datatable-selection-color;
   }
+}
+
+// fix loading position
+.ngx-datatable.material .datatable-body .progress-linear {
+  position: relative;
 }

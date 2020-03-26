@@ -36,7 +36,21 @@ a {
 
 // Reorder Handle
 .reorder-handle { 
+  display: block;
+  width: 20px;
   cursor: ns-resize; 
+
+  span {
+    background-color: currentColor;
+    display: block;
+    height: 1px;
+  }
+  span:nth-child(2) {
+    margin-top: 5px;
+  }
+  span:nth-child(3) {
+    margin-top: 5px;
+  }
 }
 
 // Remove link img border in IE10
