@@ -130,6 +130,7 @@ $ngx-datatable-selection-color: $text-invert !default;
       .datatable-header-cell-wrapper {
         .datatable-header-cell-label {
           display: block;
+          white-space: pre-wrap;
           color: $ngx-datatable-table-head-cell-color;
           font-size: $ngx-datatable-table-head-cell-font-size;
           font-weight: $ngx-datatable-table-head-cell-font-weight;
