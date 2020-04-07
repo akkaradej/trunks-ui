@@ -1,7 +1,7 @@
 $required-color: $danger !default;
 $validation-error-border: 1px solid $danger !default;
-$error-message-color: $text-invert !default;
-$error-message-background-color: $danger !default;
+$error-message-tooltip-color: $text-invert !default;
+$error-message-tooltip-background-color: $danger !default;
 
 .is-required .label:after {
   color: $required-color;
@@ -16,7 +16,11 @@ form .select select.ng-touched.ng-invalid {
 
 form.submitted .ng-invalid,
 form .ng-touched.ng-invalid {
-  &:hover ~ .error-message {
+  &:hover ~ .error-message-tooltip {
+    display: block;
+  }
+
+  & ~ .error-message-control {
     display: block;
   }
 
@@ -45,15 +49,19 @@ form .ng-touched.ng-invalid {
   }
 }
 
-.error-message {
+.error-message-control {
+  display: none;
+}
+
+.error-message-tooltip {
   display: none;
   position: absolute;
   top: -$input-height;
   left: 0;
   padding: 0.5rem 1rem;
   border-radius: $radius;
-  background-color:$error-message-background-color;
-  color: $error-message-color;
+  background-color:$error-message-tooltip-background-color;
+  color: $error-message-tooltip-color;
   text-align: left;
   white-space: nowrap;
   z-index: 9999;

@@ -123,6 +123,14 @@
   margin-bottom: $field-spacing;
 }
 
+.field.is-grouped {
+  & > .control {
+    &:not(:last-child) {
+      margin-right: $block-spacing;
+    }
+  }
+}
+
 @include mobile {
   .field:not(:last-child) {
     margin-bottom: $field-spacing-mobile;
@@ -135,7 +143,7 @@
 
 @include tablet {
   .field-label {
-    margin-right: $field-spacing;
+    margin-right: $block-spacing;
   }
 
   .field-body {

@@ -339,8 +339,14 @@ $alignments: ('center': 'center', 'justify': 'justify', 'left': 'left', 'right':
   height: 100%;
 }
 
-.is-height-as-control {
+.is-control-height {
   height: $control-height;
+}
+
+.is-control-height-centered {
+  height: $control-height;
+  display: flex;
+  align-items: center;
 }
 
 .is-clickable {

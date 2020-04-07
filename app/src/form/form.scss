@@ -3,3 +3,9 @@ $label-size: $size-normal !default;
 .label { 
   font-size: $label-size;
 }
+
+.field.is-horizontal {
+  .field-label {
+    margin-top: ($control-height - $label-size * 1.5) / 2;
+  }
+}

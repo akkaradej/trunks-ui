@@ -11,8 +11,6 @@
 // Fix: 1:5 width of label:input in horizontal form is too bad
 // define its width in case by case should be better
 .field.is-horizontal {
-  align-items: center; // align center horizontal
-
   .field-label {
     flex-grow: 0;
     flex-basis: 100px; // default 100px, define this value in case by case

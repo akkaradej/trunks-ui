@@ -187,6 +187,7 @@ $ngx-datatable-selection-color: $text-invert !default;
       .datatable-body-cell {
         color: $ngx-datatable-color;
         font-size: $ngx-datatable-font-size;
+        font-weight: inherit;
         padding: .25em 1em;
         border-right: $ngx-datatable-table-cell-border;
 
