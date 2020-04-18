@@ -31,6 +31,9 @@ $ngx-datatable-pager-background-color: $primary !default;
 $ngx-datatable-selection-background-color: $grey !default;
 $ngx-datatable-selection-color: $text-invert !default;
 
+$ngx-datatable-summary-row-color: $grey !default;
+$ngx-datatable-summary-row-background-color: $text-invert !default;
+
 .ngx-datatable.material {
   box-shadow: $ngx-datatable-table-shadow;
   border: $ngx-datatable-table-border;
@@ -109,10 +112,15 @@ $ngx-datatable-selection-color: $text-invert !default;
     line-height: 1.5;
   }
 
+  // summary row
+  .datatable-summary-row .datatable-body-row {
+    color: $ngx-datatable-summary-row-color;
+    background-color: $ngx-datatable-summary-row-background-color;
+  }
+
+  // new style header
   .datatable-header {
     .datatable-header-cell {
-      
-      @include bg-color;
       font-weight: bold;
       height: 100%;
       border-right: $ngx-datatable-table-cell-border;
@@ -134,6 +142,17 @@ $ngx-datatable-selection-color: $text-invert !default;
           color: $ngx-datatable-table-head-cell-color;
           font-size: $ngx-datatable-table-head-cell-font-size;
           font-weight: $ngx-datatable-table-head-cell-font-weight;
+        }
+      }
+
+      @each $name, $pair in $colors {
+        $color: nth($pair, 1);
+        $color-invert: nth($pair, 2);
+        &.is-#{$name} {
+          .datatable-header-cell-template-wrap-custom-head {
+            background-color: $color;
+            color: $color-invert;
+          }
         }
       }
     }
@@ -180,6 +199,7 @@ $ngx-datatable-selection-color: $text-invert !default;
     }
   }
 
+  // new style body
   .datatable-body {
     .datatable-body-row {
       border-top: $ngx-datatable-table-row-border;
@@ -212,6 +232,7 @@ $ngx-datatable-selection-color: $text-invert !default;
     }
   }
 
+  // new style footer
   .datatable-footer {
     background-color: $ngx-datatable-foot-background-color !important;
     .page-count {

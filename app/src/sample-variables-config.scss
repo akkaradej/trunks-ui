@@ -411,6 +411,8 @@ $input-arrow-border-width: 1px;
 $button-font-size: $size-normal;
 $button-font-weight: $weight-normal;
 
+$button-small-height: 3.2rem;
+$button-small-padding-horizontal: 1.5rem;
 $button-large-height: 7.2rem;
 $button-large-padding-horizontal: 4.8rem; 
 // --
@@ -446,6 +448,8 @@ $navbar-dropdown-item-color: $text;
 // --
 
 // = forms
+// $checkbox-size: 1em;
+// $checkbox-inner-size: $checkbox-size * 0.8;
 // $checkbox-checked-color: $primary;
 // $checkbox-checked-border-color: $primary;
 // $checkbox-checked-filled-background-color: $primary;
@@ -456,6 +460,9 @@ $navbar-dropdown-item-color: $text;
 
 // $radio-border-color: $primary;
 // $radio-background-color: $primary;
+// $radio-size: 1em;
+// $radio-inner-size: $radio-size - 0.5em;
+// $radio-bg-size: $radio-size + 0.5;
 // --
 
 // = validations
@@ -501,6 +508,9 @@ $ngx-datatable-header-filter-radius: 0;
 
 // $ngx-datatable-selection-background-color: $grey;
 // $ngx-datatable-selection-color: $text-invert;
+
+// $ngx-datatable-summary-row-color: $grey;
+// $ngx-datatable-summary-row-background-color: $text-invert;
 
 // $tooltip-font-size: $size-normal;
 // $tooltip-font-weight: $weight-normal;

@@ -1,5 +1,10 @@
 $radio-border-color: $primary !default;
 $radio-background-color: $primary !default;
+$radio-size: 1em !default;
+$radio-inner-size: $radio-size - 0.5em !default;
+$radio-bg-size: $radio-size + 0.5 !default;
+
+$radio-line-height: 1.25;
 
 .radio {
   position: relative;
@@ -10,24 +15,25 @@ $radio-background-color: $primary !default;
 
     input[type=radio] {
       &+span {
-        padding: 0.25em;
-        padding-left: 2em;
+        padding-left: $radio-bg-size + 0.5em;
+        padding-right: 0.5em;
+        line-height: $radio-bg-size + 0.5em;
         border: 1px solid $border;
 
         &::before {
           // old circle line will be behind radio-bg when has-bg
         }
         &::after {
-          top: 0.5em;
-          left: 0.5em;
+          top: calc( #{($radio-size / 2) - ($radio-inner-size / 2) + ($radio-bg-size / 2) - ($radio-size / 2)} + 1px);
+          left: calc( #{($radio-size / 2) - ($radio-inner-size / 2) + ($radio-bg-size / 2) - ($radio-size / 2)} + 1px);
         }
       }
     }
 
     .radio-bg {
       background: $white;
-      height: 1.75em;
-      width: 1.75em;
+      height: $radio-bg-size;
+      width: $radio-bg-size;
       position: absolute;
       left: 1px;
       top: 1px;
@@ -38,18 +44,16 @@ $radio-background-color: $primary !default;
         content: '';
         border: 1px solid $border;
         border-radius: 100%;
-        height: 1.25em;
-        width: 1.25em;
-        transition: border .25s linear;
-        -webkit-transition: border .25s linear;
-        top: 0.175em;
-        left: 0.175em;
+        height: $radio-size; 
+        width: $radio-size;
+        top: ($radio-bg-size / 2) - ($radio-size / 2);
+        left: ($radio-bg-size / 2) - ($radio-size / 2);
       }
     }
   }
 
   &.has-no-text input[type=radio] + span {
-    padding-left: 1.25em;
+    padding-left: $radio-size;
   }
 
   & + .radio {
@@ -61,7 +65,7 @@ $radio-background-color: $primary !default;
     visibility: hidden;
 
     &+span {
-      padding-left: 1.75em;
+      padding-left: $radio-size + 0.5em;
       display: inline-block;
   
       &::before {
@@ -69,24 +73,20 @@ $radio-background-color: $primary !default;
         content: '';
         border: 1px solid $border;
         border-radius: 100%;
-        height: 1.25em;
-        width: 1.25em;
-        top: 0;
+        height: $radio-size;
+        width: $radio-size;
+        top: ($radio-line-height - $radio-size) / 2;
         left: 0;
-        transition: border .25s linear;
-        -webkit-transition: border .25s linear;
       }
   
       &::after {
         position: absolute;
         content: '';
         border-radius: 100%;
-        height: 0.75em;
-        width: 0.75em;
-        top: 0.25em;
-        left: 0.25em;
-        transition: background 0.25s linear;
-        -webkit-transition: background 0.25s linear;
+        height: $radio-inner-size;
+        width: $radio-inner-size;
+        top: ($radio-size / 2) - ($radio-inner-size / 2) + ($radio-line-height - $radio-size) / 2;
+        left: ($radio-size / 2) - ($radio-inner-size / 2);
       }
     }
 

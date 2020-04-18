@@ -25,6 +25,11 @@
   border-radius: $radius;
 }
 
+// Fix: file input add-on button is shrinked
+.file-cta {
+  flex-shrink: 0; 
+}
+
 // Fix: long title
 .modal-card-title {
   flex: 1;

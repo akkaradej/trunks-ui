@@ -2,6 +2,8 @@ $input-arrow-size: 0.625em !default;
 $input-arrow-right: 0.5em !default;
 $input-arrow-border-width: 1px !default;
 
+$loader-size: 1em;
+
 .select {
   &.is-borderless {
     select {
@@ -23,10 +25,18 @@ $input-arrow-border-width: 1px !default;
 .select:not(.is-multiple) select {
   padding-right: $input-arrow-size + ($input-arrow-right * 2)
 }
+
+.select.is-loading::after {
+  top: 50%;
+  margin-top: $loader-size * -0.5;
+}
+
 .select:not(.is-multiple):not(.is-loading)::after {
   width: $input-arrow-size;
   height: $input-arrow-size;
+  top: 50%;
   right: $input-arrow-right;
   border-width: $input-arrow-border-width;
+  margin-top: $input-arrow-size * -0.75;
 }
 

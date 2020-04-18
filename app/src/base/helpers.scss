@@ -129,6 +129,17 @@ $link-decoration: underline !default;
   flex: none;
 }
 
+@include tablet {
+  .tile, .column {
+    @for $i from 1 through 100 {
+      &.is-percent-#{$i} {
+        flex: none;
+        width: round(percentage($i/100));
+      }
+    }
+  }
+}
+
 // Vertical Align: only affects inline, inline-block, inline-table, and table cell
 .is-vertical-top {
   vertical-align: top;
@@ -166,45 +177,45 @@ $link-decoration: underline !default;
 // Typography
 
 // color
-.text {
-  color: $text;
-}
-
-.text-invert {
-  color: $text-invert;
-}
-
-.text-strong {
-  color: $text-strong;
-}
-
-.text-light {
-  color: $text-light;
-}
-
-.text-lighter {
-  color: $text-lighter;
-}
-
-.text-disabled {
-  color: $text-disabled;
-}
-
-.text-link {
-  cursor: pointer;
-  text-decoration: $link-decoration;
-  strong {
-    color: currentColor;
-  }
-  &:hover {
-    color: $link-hover;
-  }
-}
-
 @each $name, $pair in $colors {
   $color: nth($pair, 1);
   .text-#{$name} {
     color: $color !important;
+  }
+}
+
+.text {
+  color: $text !important;
+}
+
+.text-invert {
+  color: $text-invert !important;
+}
+
+.text-strong {
+  color: $text-strong !important;
+}
+
+.text-light {
+  color: $text-light !important;
+}
+
+.text-lighter {
+  color: $text-lighter !important;
+}
+
+.text-disabled {
+  color: $text-disabled !important;
+}
+
+.text-link {
+  cursor: pointer;
+  text-decoration: $link-decoration !important;
+  strong {
+    color: currentColor !important;
+  }
+  &:hover {
+    color: $link-hover !important;
   }
 }
 
