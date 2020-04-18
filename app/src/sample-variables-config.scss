@@ -448,8 +448,8 @@ $navbar-dropdown-item-color: $text;
 // --
 
 // = forms
-// $checkbox-size: 1em;
-// $checkbox-inner-size: $checkbox-size * 0.8;
+$checkbox-size: 1em;
+$checkbox-inner-size: $checkbox-size * 0.8;
 // $checkbox-checked-color: $primary;
 // $checkbox-checked-border-color: $primary;
 // $checkbox-checked-filled-background-color: $primary;
@@ -460,7 +460,7 @@ $navbar-dropdown-item-color: $text;
 
 // $radio-border-color: $primary;
 // $radio-background-color: $primary;
-// $radio-size: 1em;
+$radio-size: 1em;
 // $radio-inner-size: $radio-size - 0.5em;
 // $radio-bg-size: $radio-size + 0.5;
 // --

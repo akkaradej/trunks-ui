@@ -4,9 +4,8 @@ $radio-size: 1em !default;
 $radio-inner-size: $radio-size - 0.5em !default;
 $radio-bg-size: $radio-size + 0.5 !default;
 
-$radio-line-height: 1.25;
-
 .radio {
+  line-height: $radio-size;
   position: relative;
 
   &.has-bg {
@@ -75,7 +74,7 @@ $radio-line-height: 1.25;
         border-radius: 100%;
         height: $radio-size;
         width: $radio-size;
-        top: ($radio-line-height - $radio-size) / 2;
+        top: 0;
         left: 0;
       }
   
@@ -85,7 +84,7 @@ $radio-line-height: 1.25;
         border-radius: 100%;
         height: $radio-inner-size;
         width: $radio-inner-size;
-        top: ($radio-size / 2) - ($radio-inner-size / 2) + ($radio-line-height - $radio-size) / 2;
+        top: ($radio-size / 2) - ($radio-inner-size / 2);
         left: ($radio-size / 2) - ($radio-inner-size / 2);
       }
     }

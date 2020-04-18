@@ -9,6 +9,8 @@ $checkbox-title-filled-background-color: $dark !default;
 $checkbox-title-filled-color: $light !default;
 
 .checkbox {
+  line-height: $checkbox-size;
+
   input[type=checkbox] {
     position: absolute;
     visibility: hidden;
