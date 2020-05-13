@@ -37,8 +37,6 @@ $section-padding-large: ($block-spacing * 6) $section-gap; // desktop only
 $gap: $section-gap;
 // Remark: The container has no horizontal gap for mobile by design
 
-// Scrollbar width
-$vertical-scrollbar-width: 17px;
 
 
 
@@ -404,17 +402,17 @@ $pagination-disabled-color: $text-disabled;
 $link-decoration: underline;
 
 $label-size: $size-normal;
-$input-arrow-size: 0.625em;;
-$input-arrow-right: 0.625em;;
+$input-arrow-size: 0.625em;
+$input-arrow-right: 0.625em;
 $input-arrow-border-width: 1px;
 
 $button-font-size: $size-normal;
 $button-font-weight: $weight-normal;
 
 $button-small-height: 3.2rem;
-$button-small-padding-horizontal: 1.5rem;
-$button-large-height: 7.2rem;
-$button-large-padding-horizontal: 4.8rem; 
+$button-small-padding-horizontal: $button-padding-horizontal;
+$button-large-height: 4.8rem;
+$button-large-padding-horizontal: $button-padding-horizontal;
 // --
 
 // = components

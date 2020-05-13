@@ -92,6 +92,11 @@ $tooltip-arrow-size: 16px !default;
   }
 }
 
+.tippy-box[data-theme~='is-paddingless'] {
+  .tippy-content {
+    padding: 0;
+  }
+}
 
 @each $name, $pair in $colors {
   $color: nth($pair, 1);
