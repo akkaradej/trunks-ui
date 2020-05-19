@@ -215,7 +215,7 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
           border-right: 0;
         }
 
-        .ic {
+        .icon {
           color: $ngx-datatable-color;
         }
 
@@ -270,7 +270,7 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
 .ngx-datatable.material.cell-selection .datatable-body-cell.active:hover .datatable-row-group,
 .ngx-datatable.material.cell-selection .datatable-body-cell.active:focus .datatable-row-group {
   background-color: $ngx-datatable-selection-background-color;
-  .datatable-body-cell-label, .ic {
+  .datatable-body-cell-label, .icon {
     color: $ngx-datatable-selection-color;
   }
 }

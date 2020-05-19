@@ -49,6 +49,21 @@
   z-index: 0;
 }
 
+// Fix: select arrow color
+.select {
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    &.is-#{$name} {
+      &:not(:hover).is-loading::after {
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: $color;
+        border-bottom-color: $color;
+      }
+    }
+  }
+}
+
 // Fix: checkbox disabled="false" style
 .checkbox[disabled="false"], .radio[disabled="false"] {
   cursor: pointer;
