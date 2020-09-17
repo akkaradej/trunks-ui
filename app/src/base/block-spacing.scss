@@ -147,6 +147,7 @@
   }
 
   .field-body {
+    flex-basis: auto;
     & > .field {
       &:not(:last-child) {
         margin-right: $field-spacing / 2;

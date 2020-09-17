@@ -23,6 +23,7 @@ $ngx-datatable-header-filter-wrapper-background-color: $scheme-main-bis !default
 $ngx-datatable-header-filter-height: $control-height !default;
 $ngx-datatable-header-filter-radius: 0 !default;
 $ngx-datatable-header-filter-border-color: $scheme-main-ter !default;
+$ngx-datatable-header-filter-wrapper-padding: $block-spacing !default;;
 
 $ngx-datatable-foot-background-color: $scheme-main-bis !default;
 $ngx-datatable-pager-color: $primary-invert !default;
@@ -30,6 +31,7 @@ $ngx-datatable-pager-background-color: $primary !default;
 
 $ngx-datatable-selection-background-color: $grey !default;
 $ngx-datatable-selection-color: $text-invert !default;
+$ngx-datatable-selection-checkbox-checked-filled-style: false !default;
 
 $ngx-datatable-summary-row-color: $grey !default;
 $ngx-datatable-summary-row-background-color: $text-invert !default;
@@ -215,6 +217,12 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
           border-right: 0;
         }
 
+        &.is-flex {
+          .datatable-body-cell-label {
+            flex-grow: 1;
+          }
+        }
+
         .icon {
           color: $ngx-datatable-color;
         }
@@ -248,6 +256,11 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
   }
 }
 
+// fix loading position
+.ngx-datatable.material .datatable-body .progress-linear {
+  position: relative;
+}
+
 // allow selection
 .ngx-datatable .datatable-body-cell, 
 .ngx-datatable .datatable-header-cell {
@@ -256,6 +269,11 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
   -ms-user-select: initial !important;
   -o-user-select: initial !important;
   user-select:initial !important; 
+}
+
+// datatable-selection
+datatable-selection {
+  display: block;
 }
 
 // row/cell selection
@@ -275,7 +293,77 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
   }
 }
 
-// fix loading position
-.ngx-datatable.material .datatable-body .progress-linear {
-  position: relative;
+// checkbox selection
+.datatable-header-cell-template-wrap {
+  .datatable-checkbox {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.5em;
+  }  
+}
+.datatable-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5em;
+
+  input[type="checkbox"] {
+    margin: 0;
+
+    &::before {
+      position: absolute;
+      content: '';
+      border: 1px solid $border !important;
+      background-color: #fff;
+      height: $checkbox-size !important;
+      width: $checkbox-size !important;
+      top: 0;
+      left: 0;
+      z-index: initial;
+    }
+
+    &::after {
+      content: none;
+      background: none;
+    }
+
+    &:checked::before {
+      border: 1px solid $checkbox-checked-border-color !important;
+      transform: none !important;;
+      height: inherit !important;;
+    }
+    &:checked::after {
+      position: absolute;
+      content: '✓';
+      text-align: center;
+      font-weight: bold;
+      color: $checkbox-checked-color;
+      font-size: $checkbox-inner-size;
+      line-height: $checkbox-size / $checkbox-inner-size;
+      height: ($checkbox-size / $checkbox-inner-size) * 1em;
+      width: ($checkbox-size / $checkbox-inner-size) * 1em;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  @if $ngx-datatable-selection-checkbox-checked-filled-style {
+    input[type="checkbox"] {
+      &:checked::before {
+        background-color: $checkbox-checked-filled-background-color;
+      }
+
+      &:checked::after {
+        color: findColorInvert($checkbox-checked-filled-background-color);
+      }
+    }
+  }
+}
+
+.ngx-datatable.material .datatable-header .datatable-header-cell-template-wrap-custom {
+  // header filter
+  > .control {
+    padding: $ngx-datatable-header-filter-wrapper-padding;
+  }
 }

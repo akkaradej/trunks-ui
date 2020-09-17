@@ -7,6 +7,10 @@ $label-size: $size-normal !default;
 .field.is-horizontal {
   .field-label {
     margin-top: ($control-height - $label-size * $control-line-height) / 2;
+
+    &.is-align-top {
+      margin-top: 0;
+    }
     
     @each $name, $size in $font-sizes {
       &.is-small {

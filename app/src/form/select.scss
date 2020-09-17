@@ -40,3 +40,9 @@ $loader-size: 1em;
   margin-top: $input-arrow-size * -0.75;
 }
 
+// Fix: select arrow color
+.select:not(:hover).is-loading::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+

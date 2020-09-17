@@ -71,6 +71,10 @@ $link-decoration: underline !default;
 }
 
 // Flexbox
+.is-flex-wrap {
+  flex-wrap: wrap;
+}
+
 .is-flex-row {
   flex-direction: row;
 }

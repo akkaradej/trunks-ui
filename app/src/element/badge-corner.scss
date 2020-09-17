@@ -17,7 +17,7 @@ $badge-corner-border-radius: 1rem !default;
       }
     }
   }
-  
+
   &[data-badge]::after, &:not([data-badge])::after {
     background: $badge-corner-background-color;
     background-clip: padding-box;
@@ -44,6 +44,9 @@ $badge-corner-border-radius: 1rem !default;
     min-width: .6rem;
     padding: 0;
     width: .6rem;
+  }
+  &[data-badge="0"]::after {
+    display: none;
   }
   &.button::after {
     position: absolute;

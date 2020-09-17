@@ -495,6 +495,7 @@ $ngx-datatable-header-filter-wrapper-height: $control-height * 1.5;
 $ngx-datatable-header-filter-height: $control-height;
 $ngx-datatable-header-filter-radius: 0;
 // $ngx-datatable-header-filter-border-color: $scheme-main-ter;
+$ngx-datatable-header-filter-wrapper-padding: $block-spacing;
 
 // $ngx-datatable-foot-background-color: $scheme-main-bis;
 // $ngx-datatable-pager-color: $primary-invert;
@@ -502,6 +503,7 @@ $ngx-datatable-header-filter-radius: 0;
 
 // $ngx-datatable-selection-background-color: $grey;
 // $ngx-datatable-selection-color: $text-invert;
+$ngx-datatable-selection-checkbox-checked-filled-style: false;
 
 // $ngx-datatable-summary-row-color: $grey;
 // $ngx-datatable-summary-row-background-color: $text-invert;

@@ -21,7 +21,7 @@
 }
 
 // Fix: Search input type has different style from text input type
-.input[type="search"], .textarea[type="search"] {
+.input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
   border-radius: $radius;
 }
 
