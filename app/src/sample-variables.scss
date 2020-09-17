@@ -2,8 +2,12 @@
 // @import '~trunks-ui/utilities/functions';
 
 // Block Spacing (Adobe XD Square Size)
-$block-spacing: 2rem;
+$block-spacing: 0.8rem;
 $block-spacing-mobile: $block-spacing;
+
+// Control height
+$control-height: 4rem; // unit must same as Font size
+$control-line-height: 1.5;
 
 // Font size
 $size-small: 1.2rem;
