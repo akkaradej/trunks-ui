@@ -123,6 +123,9 @@ $custom-colors: (
 );
 $custom-shades: null;
 
+// navbar
+$navbar-breakpoint: $desktop;
+
 // Scrollbar width
 $vertical-scrollbar-width: 17px;
 
@@ -144,7 +147,35 @@ $widescreen: 1366px;
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
 // 
-// And then @import "~trunks-ui/non-responsive-tablet"; next to "~trunks-ui/trunks";
+// $navbar-breakpoint: $tablet;
+// 
+// add script to index.html
+// <script type="text/javascript">
+//   (function setViewPort() {
+//     if (window.matchMedia('screen and (min-width: 768px) and (max-width: 1365px)').matches) {
+//       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1366');
+//     }
+//   })();
+// </script>
+
+// For 2 screen sizes; tablet & desktop, Uncomment these vars.
+// $mobile-use-tablet-layout: true;
+// $tablet: 768px;
+// $tablet-use-desktop-layout: false;
+// $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+// 
+// $navbar-breakpoint: $tablet; or $desktop;
+//
+// add script to index.html
+// <script type="text/javascript">
+//   (function setViewPort() {
+//     if (window.matchMedia('screen and (max-width: 767px)').matches) {
+//       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=768');
+//     }
+//   })();
+// </script>
 
 // For Non-Responsive, Uncomment these vars.
 // $mobile-use-desktop-layout: true;
@@ -155,8 +186,6 @@ $widescreen: 1366px;
 // $fullhd-enabled: false;
 // $body-overflow-x: auto;
 // $body-min-width: $desktop - $vertical-scrollbar-width;
-//
-// And then @import "~trunks-ui/non-responsive"; next to "~trunks-ui/trunks";
 
 // Others
 $sidebar-width: 0;

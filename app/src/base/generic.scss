@@ -3,6 +3,46 @@ html {
   height: 100%;
 }
 
+@if $mobile-use-tablet-layout {
+  @include mobile {
+    html {
+      overflow-x: auto;
+      min-width: $tablet - $vertical-scrollbar-width;
+    }
+  }
+}
+
+@if $mobile-use-desktop-layout {
+  .tabs {
+    overflow: visible;
+    white-space: normal;
+    display: block;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+@if $tablet-use-desktop-layout {
+  @include tablet {
+    html {
+      overflow-x: auto;
+      min-width: $desktop - $vertical-scrollbar-width;
+    }
+
+    .tabs {
+      overflow: visible;
+      white-space: normal;
+      display: block;
+
+      li {
+        display: inline-block;
+      }
+    }
+  }
+}
+
 @include mobile {
   // mobile root element size (rem)
   html {

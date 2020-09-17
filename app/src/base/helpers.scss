@@ -103,6 +103,11 @@ $link-decoration: underline !default;
   justify-content: space-around; // fix ie
   justify-content: space-evenly;
 }
+@include edge {
+  .is-justify-evenly, .is-flex.is-justify-evenly {
+    justify-content: space-around; // fix edge    
+  }
+}
 
 .is-align-start, .is-flex.is-align-start {
   align-items: flex-start;

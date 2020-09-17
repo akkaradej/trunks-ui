@@ -4,6 +4,10 @@
   margin: 0 auto;
   width: auto;
 
+  @if $mobile-use-tablet-layout {
+    max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+  }
+
   @if $mobile-use-desktop-layout {
     max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
   }

@@ -29,3 +29,10 @@
     @content;
   }  
 }
+
+/* Edge 12+ or 18+ (Before Chromium Version) */
+@mixin edge {
+  @supports (-ms-accelerator: true) or (-ms-ime-align: auto) {
+    @content;
+  }
+}

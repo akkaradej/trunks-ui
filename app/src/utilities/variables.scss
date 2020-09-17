@@ -155,6 +155,7 @@ $shades: mergeColorMaps((
 
 // Responsive Breakpoint
 // mobile up to 767px;  
+$mobile-use-tablet-layout: false !default;
 $mobile-use-desktop-layout: false !default;
 $tablet: 768px !default; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
 $tablet-use-desktop-layout: false !default;
