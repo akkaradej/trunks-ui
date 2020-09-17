@@ -2,6 +2,10 @@
 $block-spacing: 2rem !default;
 $block-spacing-mobile: $block-spacing !default;
 
+// Control height
+$control-height: 4rem; // unit must same as Font size
+$control-line-height: 1.5;
+
 // Font size
 $size-small: 1.2rem !default;
 $size-normal: 1.6rem !default;
