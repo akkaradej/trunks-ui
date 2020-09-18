@@ -95,48 +95,6 @@
   align-items: center !important;
 }
 
-// shorten align center + justify xxx
-.is-flex {
-  &.is-centered {
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  &.is-start {
-    align-items: center !important;
-    justify-content: flex-start !important;
-  }
-  
-  &.is-end {
-    align-items: center !important;
-    justify-content: flex-end !important;
-  }
-
-  &.is-between {
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-
-  &.is-between {
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-
-  .is-around {
-  justify-content: space-around !important;
-}
-
-  .is-evenly {
-    justify-content: space-around !important; // fix ie
-    justify-content: space-evenly !important;
-  }
-  @include edge {
-    .is-evenly {
-      justify-content: space-around !important; // fix edge    
-    }
-  }
-}
-
 // align self
 .is-align-self-start {
   align-self: flex-start !important;

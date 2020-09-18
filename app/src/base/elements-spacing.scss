@@ -1,38 +1,3 @@
-// brick
-.brick {
-  @extend %brick;
-}
-
-.is-horizontal {
-  @extend %is-horizontal;
-}
-
-@include mobile {
-  .is-horizontal-mobile {
-    @include is-horizontal;
-  }
-}
-
-@include tablet {
-  .is-horizontal-tablet {
-    @include is-horizontal;
-  }
-}
-
-@include touch {
-  .is-horizontal-touch {
-    @include is-horizontal;
-  }
-}
-
-@include desktop {
-  .is-horizontal-desktop {
-    @include is-horizontal;
-  }
-}
-
-//// apply brick & block spacing to other elements 
-
 // section
 @include mobile {
   .section {
@@ -48,7 +13,6 @@
     }
   }
 }
-
 
 // column
 .columns {

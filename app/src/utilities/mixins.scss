@@ -1,5 +1,19 @@
 @import '~bulma/sass/utilities/mixins';
 
+/* IE10+ CSS styles go here */
+@mixin ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }  
+}
+
+/* Edge 12+ or 18+ (Before Chromium Version) */
+@mixin edge {
+  @supports (-ms-accelerator: true) or (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
 @mixin bg-color {
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
@@ -24,14 +38,14 @@
 }
 
 @mixin space-bottom {
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &.space-#{$i} {
       margin-bottom: $square-size * $i;
     }
   }
 
   @include mobile {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-mobile {
         margin-bottom: $square-size * $i;
       }
@@ -39,7 +53,7 @@
   }
 
   @include tablet {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-tablet {
         margin-bottom: $square-size * $i;
       }
@@ -47,7 +61,7 @@
   }
 
   @include touch {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-touch {
         margin-bottom: $square-size * $i;
       }
@@ -55,7 +69,7 @@
   }
 
   @include desktop {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-desktop {
         margin-bottom: $square-size * $i;
       }
@@ -64,7 +78,7 @@
 }
 
 @mixin space-right {
-  @for $i from 1 through 6 {
+  @for $i from 0 through 6 {
     &.space-#{$i} {
       margin-right: $square-size * $i;
       margin-bottom: 0;
@@ -72,7 +86,7 @@
   }
 
   @include mobile {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-mobile {
         margin-right: $square-size * $i;
         margin-bottom: 0;
@@ -81,7 +95,7 @@
   }
 
   @include tablet {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-tablet {
         margin-right: $square-size * $i;
         margin-bottom: 0;
@@ -90,7 +104,7 @@
   }
 
   @include touch {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-touch {
         margin-right: $square-size * $i;
         margin-bottom: 0;
@@ -99,7 +113,7 @@
   }
 
   @include desktop {
-    @for $i from 1 through 6 {
+    @for $i from 0 through 6 {
       &.space-#{$i}-desktop {
         margin-right: $square-size * $i;
         margin-bottom: 0;
@@ -111,9 +125,10 @@
 @mixin block($spacing: $block-spacing) {
   &:not(:last-child) {
     margin-bottom: $spacing;
-  }
 
-  @include space-bottom;
+    @include space-bottom;
+  }
+  
 }
 
 %block {
@@ -123,17 +138,36 @@
 @mixin brick($spacing: $brick-spacing) {
   &:not(:last-child) {
     margin-bottom: $spacing;
-  }
 
-  @include space-bottom;
+    @include space-bottom;
+  }
 }
 
 %brick {
  @include brick;
 }
 
+@mixin is-spacing($spacing: $brick-spacing) {
+  > * {
+    @include brick($spacing);
+  }
+}
+
+%is-spacing {
+ @include is-spacing;
+}
+
+%is-spacing-2 {
+ @include is-spacing($brick-spacing * 2);
+}
+
+%is-spacing-3 {
+ @include is-spacing($brick-spacing * 3);
+}
+
 @mixin is-horizontal {
   display: flex !important;
+  align-items: center !important;
   > :not(:last-child) {
     &.block, &.breadcrumb, &.level, &.message, &.pagination, &.tabs, &.box, &.content, &.notification, &.progress, &.table {
       margin-right: $block-spacing;
@@ -149,22 +183,65 @@
 
     @include space-right;
   }
+
+  &.is-spacing {
+    > *:not(:last-child) {
+      margin-right: $brick-spacing;
+      margin-bottom: 0;
+
+      @include space-right;
+    }
+  }
+
+  &.is-spacing-2 {
+    > *:not(:last-child) {
+      margin-right: $brick-spacing * 2;
+      margin-bottom: 0;
+
+      @include space-right;
+    }
+  }
+
+  &.is-spacing-3 {
+    > *:not(:last-child) {
+      margin-right: $brick-spacing * 3;
+      margin-bottom: 0;
+
+      @include space-right;
+    }
+  }
+
+  &.is-centered {
+    justify-content: center !important;
+  }
+
+  &.is-left {
+    justify-content: flex-start !important;
+  }
+  
+  &.is-right {
+    justify-content: flex-end !important;
+  }
+
+  &.is-between {
+    justify-content: space-between !important;
+  }
+
+  &.is-around {
+    justify-content: space-around !important;
+  }
+
+  &.is-evenly {
+    justify-content: space-around !important; // fix ie
+    justify-content: space-evenly !important;
+  }
+  @include edge {
+    &.is-evenly {
+      justify-content: space-around !important; // fix edge    
+    }
+  }
 }
 
 %is-horizontal {
   @include is-horizontal;
-}
-
-/* IE10+ CSS styles go here */
-@mixin ie {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @content;
-  }  
-}
-
-/* Edge 12+ or 18+ (Before Chromium Version) */
-@mixin edge {
-  @supports (-ms-accelerator: true) or (-ms-ime-align: auto) {
-    @content;
-  }
 }

@@ -40,7 +40,13 @@
   <section class="section">
     <div class="container is-fluid">
 
-      <h1 class="title is-4">Brick & Block</h1>
+      <h1 class="title is-4">
+        <a class="text-link"
+           href="../general/brick-and-block.html"
+           target="_blank">
+          Brick & Block (Self-Spacing)
+        </a>
+      </h1>
 
       <div class="block">
         See More: <a href="https://bulma.io/documentation/elements/block"
@@ -51,7 +57,7 @@
 
       <h2 class="title is-6">Basic Usage</h2>
 
-      brick (smallest element with auto spacing)
+      brick (smallest element with self-spacing)
       <div class="box">
         <div class="brick">.brick</div>
         <div class="brick">.brick</div>
@@ -65,7 +71,7 @@
         <div class="brick">.brick</div>
       </div>
 
-      block (group of bricks or blocks)
+      block (bigger element or container with self-spacing, a.k.a a group of bricks)
       <div class="box">
         <div class="block">.block</div>
         <div class="block">.block</div>
@@ -97,6 +103,100 @@
         </div>
         <div class="box">
           .box
+        </div>
+      </div>
+
+      force space
+      <div class="box">
+        <div class="box space-0">
+          .space-0
+        </div>
+        <div class="box space-1">
+          .space-1
+        </div>
+        <div class="box space-2">
+          .space-2
+        </div>
+        <div class="box space-3">
+          .space-3
+        </div>
+        <div class="box space-4">
+          .space-4
+        </div>
+        <div class="box space-5">
+          .space-5
+        </div>
+        <div class="box space-6">
+          .space-6
+        </div>
+        <div class="box space-6">
+          .space-6 last-child
+        </div>
+      </div>
+
+      force space inside is-horizontal
+      <div class="box is-horizontal">
+        <div class="box space-0">
+          .space-0
+        </div>
+        <div class="box space-1">
+          .space-1
+        </div>
+        <div class="box space-2">
+          .space-2
+        </div>
+        <div class="box space-3">
+          .space-3
+        </div>
+        <div class="box space-4">
+          .space-4
+        </div>
+        <div class="box space-5">
+          .space-5
+        </div>
+        <div class="box space-6">
+          .space-6
+        </div>
+        <div class="box space-6">
+          .space-6 last-child
+        </div>
+      </div>
+
+      responsive force space
+      <div class="box">
+        <div class="box space-0-mobile">
+          .space-0-mobile
+        </div>
+        <div class="box space-0-touch">
+          .space-0-touch
+        </div>
+        <div class="box space-0-tablet">
+          .space-0-tablet
+        </div>
+        <div class="box space-0-desktop">
+          .space-0-desktop
+        </div>
+        <div class="box space-0">
+          .space-0
+        </div>
+      </div>
+
+      responsive force space inside is-horizontal
+      <div class="box is-horizontal">
+        <div class="box space-0-mobile">
+          .space-0-mobile
+        </div>
+        <div class="box space-0-touch">
+          .space-0-touch
+        </div>
+        <div class="box space-0-tablet">
+          .space-0-tablet
+        </div>
+        <div class="box space-0-desktop">
+          .space-0-desktop
+        </div>
+        <div class="box space-0">
+          .space-0
         </div>
       </div>
 

@@ -24,8 +24,8 @@ $label-spacing: $brick-spacing !default;
 // Spacing
 $spacing-shortcuts: ("margin": "push", "padding": "pad");
 $spacing-directions: ("top": "-top", "right": "-right", "bottom": "-bottom", "left": "-left");
-$spacing-horizontal: "x";
-$spacing-vertical: "y";
+$spacing-horizontal: "-x";
+$spacing-vertical: "-y";
 $spacing-values: ("0": 0, "1": $square-size, "2": $square-size * 2, "3": $square-size * 3, "4": $square-size * 4, "5": $square-size * 5, "6": $square-size * 6);
 
 // The section horizontal gap for desktop (in pixel)
