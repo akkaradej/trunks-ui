@@ -1,10 +1,12 @@
-// Block Spacing (Adobe XD Square Size)
-$block-spacing: 2rem !default;
+// Square Size, Brick & Block Spacing
+$square-size: 1rem !default;
+$brick-spacing: $square-size !default;
+$block-spacing: $square-size * 2 !default;
 $block-spacing-mobile: $block-spacing !default;
 
 // Control height
-$control-height: 4rem; // unit must same as Font size
-$control-line-height: 1.5;
+$control-height: 4rem !default; // unit must same as Font size
+$control-line-height: 1.5 !default;
 
 // Font size
 $size-small: 1.2rem !default;
@@ -15,7 +17,7 @@ $size-xlarge: 2.8rem !default;
 $size-xxlarge: 3.2rem !default;
 
 $font-sizes: (
-  "size-small": $size-normal,
+  "size-small": $size-small,
   "size-normal": $size-normal,
   "size-medium": $size-medium,
   "size-large": $size-large,
@@ -29,6 +31,14 @@ $weight-normal: 400 !default;
 $weight-medium: 500 !default;
 $weight-semibold: 600 !default;
 $weight-bold: 700 !default;
+
+$font-weights: (
+  "weight-light": $weight-light,
+  "weight-normal": $weight-normal,
+  "weight-medium": $weight-medium,
+  "weight-semibold": $weight-semibold,
+  "weight-bold": $weight-bold
+) !default;
 
 // Miscellaneous
 $easing: ease-out !default;

@@ -20,10 +20,10 @@
     font-size: 1.5em;
   }
   &:not(:last-child) {
-    margin-right: 0.5em;
+    margin-right: $brick-spacing;
   }
   &:not(:first-child) {
-    margin-left: 0.5em;
+    margin-left: $brick-spacing;
   }
 }
 
@@ -48,10 +48,10 @@
   .icon.icon-em {
     &:first-child:not(:last-child) {
       margin-left: 0;
-      margin-right: 0.5em;
+      margin-right: $brick-spacing;
     }
     &:last-child:not(:first-child) {
-      margin-left: 0.5em;
+      margin-left: $brick-spacing;
       margin-right: 0;
     }
   }

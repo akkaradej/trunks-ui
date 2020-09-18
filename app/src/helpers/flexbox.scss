@@ -1,0 +1,239 @@
+// direction
+.is-flex-row {
+  flex-direction: row !important;
+}
+
+.is-flex-column {
+  flex-direction: column !important;
+}
+
+// wrap
+.is-flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.is-flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+// wrap content
+.is-flex-wrap-stretch {
+  flex-wrap: wrap !important;
+  align-content: stretch !important;
+}
+
+.is-flex-wrap-start {
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+}
+
+.is-flex-wrap-end {
+  flex-wrap: wrap !important;
+  align-content: flex-end !important;
+}
+
+.is-flex-wrap-center {
+  flex-wrap: wrap !important;
+  align-content: center !important;
+}
+
+.is-flex-wrap-between {
+  flex-wrap: wrap !important;
+  align-content: space-between !important;
+}
+
+.is-flex-wrap-around {
+  flex-wrap: wrap !important;
+  align-content: space-around !important;
+}
+
+// justify
+.is-justify-start {
+  justify-content: flex-start !important;
+}
+
+.is-justify-end {
+  justify-content: flex-end !important;
+}
+
+.is-justify-center {
+  justify-content: center !important;
+}
+
+.is-justify-between {
+  justify-content: space-between !important;
+}
+
+.is-justify-around {
+  justify-content: space-around !important;
+}
+
+.is-justify-evenly {
+  justify-content: space-around !important; // fix ie
+  justify-content: space-evenly !important;
+}
+@include edge {
+  .is-justify-evenly {
+    justify-content: space-around !important; // fix edge    
+  }
+}
+
+// align
+.is-align-stretch {
+  align-items: stretch !important;
+}
+
+.is-align-start {
+  align-items: flex-start !important;
+}
+
+.is-align-end {
+  align-items: flex-end !important;
+}
+
+.is-align-center {
+  align-items: center !important;
+}
+
+// shorten align center + justify xxx
+.is-flex {
+  &.is-centered {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  &.is-start {
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  
+  &.is-end {
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  &.is-between {
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  &.is-between {
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .is-around {
+  justify-content: space-around !important;
+}
+
+  .is-evenly {
+    justify-content: space-around !important; // fix ie
+    justify-content: space-evenly !important;
+  }
+  @include edge {
+    .is-evenly {
+      justify-content: space-around !important; // fix edge    
+    }
+  }
+}
+
+// align self
+.is-align-self-start {
+  align-self: flex-start !important;
+}
+
+.is-align-self-end {
+  align-self: flex-end !important;
+}
+
+.is-align-self-center {
+  align-self: center !important;
+}
+
+// flex item
+.is-flex-1 {
+  // Beware: IE not support when use with flex-direction: column
+  flex: 1 !important; 
+}
+
+.is-flex-auto {
+  flex: auto !important;
+}
+
+.is-flex-none {
+  flex: none !important;
+}
+
+@for $i from 0 through 5 {
+  .is-flex-grow-#{$i} {
+    flex-grow: $i !important;
+  }
+}
+
+@for $i from 0 through 5 {
+  .is-flex-shrink-#{$i} {
+    flex-shrink: $i !important;
+  }
+}
+
+// percent
+@for $i from 1 through 100 {
+  .is-percent-#{$i} {
+    flex: none !important;
+    width: round(percentage($i/100)) !important;
+  }
+}
+
+@include mobile {
+  @for $i from 1 through 100 {
+    .is-percent-#{$i}-mobile {
+      flex: none !important;
+      width: round(percentage($i/100)) !important;
+    }
+  }
+}
+
+@include tablet {
+  @for $i from 1 through 100 {
+    .is-percent-#{$i}-tablet {
+      flex: none !important;
+      width: round(percentage($i/100)) !important;
+    }
+  }
+}
+
+@include touch {
+  @for $i from 1 through 100 {
+    .is-percent-#{$i}-touch {
+      flex: none !important;
+      width: round(percentage($i/100)) !important;
+    }
+  }
+}
+
+@include desktop {
+  @for $i from 1 through 100 {
+    .is-percent-#{$i}-desktop {
+      flex: none !important;
+      width: round(percentage($i/100)) !important;
+    }
+  }
+}
+
+@include widescreen {
+  @for $i from 1 through 100 {
+    .is-percent-#{$i}-widescreen {
+      flex: none !important;
+      width: round(percentage($i/100)) !important;
+    }
+  }
+}
+
+@include fullhd {
+  @for $i from 1 through 100 {
+    .is-percent-#{$i}-fullhd {
+      flex: none !important;
+      width: round(percentage($i/100)) !important;
+    }
+  }
+}

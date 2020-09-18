@@ -47,6 +47,6 @@ $box-hightlight-color: $primary !default;
   }
 
   &:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: $block-spacing;
   }
 }

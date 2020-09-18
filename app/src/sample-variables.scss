@@ -1,8 +1,10 @@
 @import './utilities/functions';
 // @import '~trunks-ui/utilities/functions';
 
-// Block Spacing (Adobe XD Square Size)
-$block-spacing: 0.8rem;
+// Square Size, Brick & Block Spacing
+$square-size: 0.8rem;
+$brick-spacing: $square-size;
+$block-spacing: $square-size * 2;
 $block-spacing-mobile: $block-spacing;
 
 // Control height
@@ -18,7 +20,7 @@ $size-xlarge: 2.8rem;
 $size-xxlarge: 3.2rem;
 
 $font-sizes: (
-  "size-small": $size-normal,
+  "size-small": $size-small,
   "size-normal": $size-normal,
   "size-medium": $size-medium,
   "size-large": $size-large,
@@ -127,22 +129,33 @@ $custom-colors: (
 );
 $custom-shades: null;
 
-// navbar
-$navbar-breakpoint: $desktop;
-
 // Scrollbar width
 $vertical-scrollbar-width: 17px;
 
 // Responsive Breakpoint
+
+// For 5 screen sizes; mobile, tablet, desktop, widescreen, fullhd
 // mobile up to 767px;
-// $tablet: 768px; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
+
+// breakpoint for screen width 768 (ipad portrait)
+// tablet size by chrome's device toolbar = 768
+$tablet: 768px; 
 // $tablet-use-desktop-layout: false;
-// $desktop: 1024px; // desktop size by chrome's device toolbar, 768 + 256 = 1024 // for 1024 (ipad landscape) (ipad pro portrait)
-// $widescreen: 1280px;  // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
-// $widescreen-enabled: true;
-// $fullhd: 1536px; // fullhd size by 1280 + 256 = 1536                           // for 1600, 1920, 2560
-// $fullhd-enabled: true;
-$widescreen: 1366px;
+
+// breakpoint for screen width 1024 (ipad landscape) (ipad pro portrait)
+// desktop size by chrome's device toolbar, 768 + 256 = 1024
+$desktop: 1024px; 
+
+// breakpoint for screen width 1280, 1366 (ipad pro landscape), 1440
+// widescreen size by bulma default, 1024 + 256 = 1280
+$widescreen: 1280px;
+$widescreen-enabled: false;
+
+// breakpoint for screen width 1600, 1920, 2560
+// fullhd size by 1280 + 256 = 1536
+$fullhd: 1536px; 
+$fullhd-enabled: false;
+
 
 // For 2 screen sizes; mobile & desktop, Uncomment these vars.
 // $tablet: 768px;
@@ -161,6 +174,7 @@ $widescreen: 1366px;
 //     }
 //   })();
 // </script>
+
 
 // For 2 screen sizes; tablet & desktop, Uncomment these vars.
 // $mobile-use-tablet-layout: true;
@@ -181,6 +195,7 @@ $widescreen: 1366px;
 //   })();
 // </script>
 
+
 // For Non-Responsive, Uncomment these vars.
 // $mobile-use-desktop-layout: true;
 // $tablet: 768px;
@@ -190,6 +205,10 @@ $widescreen: 1366px;
 // $fullhd-enabled: false;
 // $body-overflow-x: auto;
 // $body-min-width: $desktop - $vertical-scrollbar-width;
+
+
+// navbar
+$navbar-breakpoint: $desktop;
 
 // Others
 $sidebar-width: 0;

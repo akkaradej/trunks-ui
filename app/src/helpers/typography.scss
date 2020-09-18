@@ -1,0 +1,178 @@
+// size
+@each $name, $size in $font-sizes {
+  .text-#{$name} {
+    font-size: $size !important;
+  }
+}
+
+@include mobile {
+  @each $name, $size in $font-sizes {
+    .text-#{$name}-mobile {
+      font-size: $size !important;
+    }
+  }
+}
+
+@include tablet {
+  @each $name, $size in $font-sizes {
+    .text-#{$name}-tablet {
+      font-size: $size !important;
+    }
+  }
+}
+
+@include touch {
+  @each $name, $size in $font-sizes {
+    .text-#{$name}-touch {
+      font-size: $size !important;
+    }
+  }
+}
+
+@include desktop {
+  @each $name, $size in $font-sizes {
+    .text-#{$name}-desktop {
+      font-size: $size !important;
+    }
+  }
+}
+
+// weight
+@each $name, $weight in $font-weights {
+  .text-#{$name} {
+    font-weight: $weight !important;
+  }
+}
+
+@include mobile {
+  @each $name, $weight in $font-weights {
+    .text-#{$name}-mobile {
+      font-weight: $weight !important;
+    }
+  }
+}
+
+@include tablet {
+  @each $name, $weight in $font-weights {
+    .text-#{$name}-tablet {
+      font-weight: $weight !important;
+    }
+  }
+}
+
+@include touch {
+  @each $name, $weight in $font-weights {
+    .text-#{$name}-touch {
+      font-weight: $weight !important;
+    }
+  }
+}
+
+@include desktop {
+  @each $name, $weight in $font-weights {
+    .text-#{$name}-desktop {
+      font-weight: $weight !important;
+    }
+  }
+}
+
+// align
+$alignments: ('center': 'center', 'justify': 'justify', 'left': 'left', 'right': 'right');
+
+@each $alignment, $text-align in $alignments {
+  .text-#{$alignment} {
+    text-align: #{$text-align} !important;
+  }
+}
+
+@each $alignment, $text-align in $alignments {
+  @include mobile {
+    .text-#{$alignment}-mobile {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include tablet {
+    .text-#{$alignment}-tablet {
+      text-align: #{$text-align} !important;
+    }
+  }
+  
+  @include tablet-only {
+    .text-#{$alignment}-tablet-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include touch {
+    .text-#{$alignment}-touch {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include desktop {
+    .text-#{$alignment}-desktop {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include desktop-only {
+    .text-#{$alignment}-desktop-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include widescreen {
+    .text-#{$alignment}-widescreen {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include widescreen-only {
+    .text-#{$alignment}-widescreen-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+  
+  @include fullhd {
+    .text-#{$alignment}-fullhd {
+      text-align: #{$text-align} !important;
+    }
+  }
+}
+
+// transform
+.is-capitalized {
+  text-transform: capitalize !important;
+}
+
+.is-lowercase {
+  text-transform: lowercase !important;
+}
+
+.is-uppercase {
+  text-transform: uppercase !important;
+}
+
+.is-italic {
+  font-style: italic !important;
+}
+
+.is-underline {
+  text-decoration: underline !important;
+}
+
+.is-single-line {
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+
+.is-double-line {
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  -webkit-line-clamp: 2 !important;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical !important;
+}

@@ -1,4 +1,37 @@
-// $block-spacing
+// brick
+.brick {
+  @extend %brick;
+}
+
+.is-horizontal {
+  @extend %is-horizontal;
+}
+
+@include mobile {
+  .is-horizontal-mobile {
+    @include is-horizontal;
+  }
+}
+
+@include tablet {
+  .is-horizontal-tablet {
+    @include is-horizontal;
+  }
+}
+
+@include touch {
+  .is-horizontal-touch {
+    @include is-horizontal;
+  }
+}
+
+@include desktop {
+  .is-horizontal-desktop {
+    @include is-horizontal;
+  }
+}
+
+//// apply brick & block spacing to other elements 
 
 // section
 @include mobile {
@@ -96,17 +129,18 @@
 .level-left {
   @include mobile {
     & + .level-right {
-      margin-top: $block-spacing;
+      margin-top: $block-spacing-mobile;
     }
   }
 }
 
+// hero
 .hero-buttons {
   margin-top: $block-spacing;
   @include mobile {
     .button {
       &:not(:last-child) {
-        margin-bottom: $block-spacing / 2;
+        margin-bottom: $block-spacing-mobile / 2;
       }
     }
   }
@@ -121,6 +155,9 @@
 // field
 .field:not(:last-child) {
   margin-bottom: $field-spacing;
+  &.is-horizontal {
+    margin-bottom: $field-horizontal-spacing;
+  }
 }
 
 .field.is-grouped {
@@ -137,7 +174,7 @@
   }
 
   .field-label {
-    margin-bottom: $field-spacing-mobile / 3;
+    margin-bottom: 0;
   }
 }
 
@@ -150,10 +187,15 @@
     flex-basis: auto;
     & > .field {
       &:not(:last-child) {
-        margin-right: $field-spacing / 2;
+        margin-right: $field-horizontal-spacing / 2;
       }
     }
   }
+}
+
+// label
+.label:not(:last-child) {
+  margin-bottom: $label-spacing;
 }
 
 // button
@@ -188,9 +230,7 @@
   }
 }
 
-
 // other
-
 .help {
-  margin-top: $block-spacing / 4;
+  margin-top: $brick-spacing / 2;
 }

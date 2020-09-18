@@ -16,7 +16,8 @@ $checkbox-title-filled-color: $light !default;
     visibility: hidden;
 
     &+span {
-      padding-left: $checkbox-size + 0.5;
+      padding-left: $checkbox-size;
+      margin-left: $brick-spacing;
   
       &::before {
         position: absolute;
@@ -114,7 +115,7 @@ $checkbox-title-filled-color: $light !default;
   .checkbox-title {
     text-align: left;
     vertical-align: middle;
-    margin-bottom: 0.5em;
+    margin-bottom: $brick-spacing;
 
     &.is-filled {
       color: $checkbox-title-filled-color;
@@ -123,21 +124,21 @@ $checkbox-title-filled-color: $light !default;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 0.5em;
+      padding: 0 $brick-spacing;
     }
   }
 
   .checkbox + .checkbox {
-    margin-top: 0.5em;
+    margin-top: $brick-spacing;
   }
 
-  &.is-inline-group {
+  &.is-horizontal {
     flex-direction: row;
     align-items: center;
     
     .checkbox-title {
       text-align: right;
-      margin-right: 1rem;
+      margin-right: $brick-spacing * 2;
       margin-bottom: 0;
 
       &.checkbox-title-filled {
@@ -147,31 +148,31 @@ $checkbox-title-filled-color: $light !default;
 
     .checkbox + .checkbox {
       margin-top: 0;
-      margin-left: 1em;
+      margin-left: $brick-spacing * 2;
     }
   }
 
   &.is-bordered {
     border: 1px solid $checkbox-group-border-color;
 
-    &.is-inline-group .checkbox + .checkbox,
+    &.is-horizontal .checkbox + .checkbox,
     .checkbox {
-      margin: 0.5em 1em;
+      margin: $brick-spacing;
     }
 
-    &.is-inline-group .checkbox-title + .checkbox {
+    &.is-horizontal .checkbox-title + .checkbox {
       margin-left: 0;
     }
 
     .checkbox-title {
-      padding: 0 0.5em;
+      padding: 0 $brick-spacing;
     }
   }
 
   &.has-divide {
-    &.is-bordered.is-inline-group .checkbox + .checkbox,
+    &.is-bordered.is-horizontal .checkbox + .checkbox,
     .checkbox {
-      padding-right: 1em;
+      padding-right: $brick-spacing * 2;
       margin-right: 0;
     }
 

@@ -23,6 +23,138 @@
   display: block;
 }
 
+@mixin space-bottom {
+  @for $i from 1 through 6 {
+    &.space-#{$i} {
+      margin-bottom: $square-size * $i;
+    }
+  }
+
+  @include mobile {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-mobile {
+        margin-bottom: $square-size * $i;
+      }
+    }
+  }
+
+  @include tablet {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-tablet {
+        margin-bottom: $square-size * $i;
+      }
+    }
+  }
+
+  @include touch {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-touch {
+        margin-bottom: $square-size * $i;
+      }
+    }
+  }
+
+  @include desktop {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-desktop {
+        margin-bottom: $square-size * $i;
+      }
+    }
+  }
+}
+
+@mixin space-right {
+  @for $i from 1 through 6 {
+    &.space-#{$i} {
+      margin-right: $square-size * $i;
+      margin-bottom: 0;
+    }
+  }
+
+  @include mobile {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-mobile {
+        margin-right: $square-size * $i;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include tablet {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-tablet {
+        margin-right: $square-size * $i;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include touch {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-touch {
+        margin-right: $square-size * $i;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include desktop {
+    @for $i from 1 through 6 {
+      &.space-#{$i}-desktop {
+        margin-right: $square-size * $i;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@mixin block($spacing: $block-spacing) {
+  &:not(:last-child) {
+    margin-bottom: $spacing;
+  }
+
+  @include space-bottom;
+}
+
+%block {
+ @include block; 
+}
+
+@mixin brick($spacing: $brick-spacing) {
+  &:not(:last-child) {
+    margin-bottom: $spacing;
+  }
+
+  @include space-bottom;
+}
+
+%brick {
+ @include brick;
+}
+
+@mixin is-horizontal {
+  display: flex !important;
+  > :not(:last-child) {
+    &.block, &.breadcrumb, &.level, &.message, &.pagination, &.tabs, &.box, &.content, &.notification, &.progress, &.table {
+      margin-right: $block-spacing;
+      margin-bottom: 0;
+
+      @include space-right;
+    }
+  }
+
+  > .brick:not(:last-child) {
+    margin-right: $brick-spacing;
+    margin-bottom: 0;
+
+    @include space-right;
+  }
+}
+
+%is-horizontal {
+  @include is-horizontal;
+}
+
 /* IE10+ CSS styles go here */
 @mixin ie {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

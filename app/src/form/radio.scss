@@ -16,8 +16,9 @@ $radio-bg-size: $radio-size + 0.5 !default;
       &+span {
         padding-left: $radio-bg-size + 0.5em;
         padding-right: 0.5em;
-        line-height: $radio-bg-size + 0.5em;
+        line-height: $radio-bg-size;
         border: 1px solid $border;
+        margin-left: 0;
 
         &::before {
           // old circle line will be behind radio-bg when has-bg
@@ -56,7 +57,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
   }
 
   & + .radio {
-    margin-left: 1em;
+    margin-left: $brick-spacing;
   }
 
   input[type=radio] {
@@ -64,7 +65,8 @@ $radio-bg-size: $radio-size + 0.5 !default;
     visibility: hidden;
 
     &+span {
-      padding-left: $radio-size + 0.5em;
+      padding-left: $radio-size;
+      margin-left: $brick-spacing;
       display: inline-block;
   
       &::before {

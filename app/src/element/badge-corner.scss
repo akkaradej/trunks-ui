@@ -1,7 +1,7 @@
 $badge-corner-font-size: $size-normal !default;
 $badge-corner-background-color: $grey !default;
 $badge-corner-box-shadow: 0 0 0 .2rem #fff !default;
-$badge-corner-border-radius: 1rem !default;
+$badge-corner-border-radius: $radius-rounded !default;
 
 .badge-corner {
   position: relative;

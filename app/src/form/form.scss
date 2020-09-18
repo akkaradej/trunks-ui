@@ -8,15 +8,16 @@ $label-size: $size-normal !default;
   .field-label {
     margin-top: ($control-height - $label-size * $control-line-height) / 2;
 
-    &.is-align-top {
-      margin-top: 0;
-    }
-    
     @each $name, $size in $font-sizes {
-      &.is-small {
+      &.is-#{str-slice($name, str-length("size-") + 1)} {
         font-size: $size;
         margin-top: ($control-height - $size * $control-line-height) / 2;
+        padding: 0;
       }
+    }
+
+    &.is-align-top {
+      margin-top: 0;
     }
     
   }

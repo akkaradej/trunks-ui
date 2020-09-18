@@ -13,10 +13,13 @@ $column-gap: $block-spacing / 2;
 $column-gap-mobile: $block-spacing-mobile / 2;
 
 $tile-spacing: $block-spacing / 2;
-$tile-spacing-mobile: $block-spacing / 2;
+$tile-spacing-mobile: $block-spacing-mobile / 2;
 
-$field-spacing: $block-spacing / 2;
-$field-spacing-mobile: $block-spacing-mobile / 2;
+$field-spacing: $block-spacing;
+$field-spacing-mobile: $block-spacing-mobile;
+$field-horizontal-spacing: $brick-spacing;
+
+$label-spacing: $brick-spacing;
 
 // The section horizontal gap for desktop (in pixel)
 $section-gap: 24px;

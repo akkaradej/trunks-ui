@@ -1,0 +1,55 @@
+$link-decoration: underline !default;
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+.text {
+  color: $text !important;
+}
+
+.text-invert {
+  color: $text-invert !important;
+}
+
+.text-strong {
+  color: $text-strong !important;
+}
+
+.text-light {
+  color: $text-light !important;
+}
+
+.text-lighter {
+  color: $text-lighter !important;
+}
+
+.text-disabled {
+  color: $text-disabled !important;
+}
+
+.text-link {
+  cursor: pointer;
+  text-decoration: $link-decoration !important;
+  strong {
+    color: currentColor !important;
+  }
+  &:hover {
+    color: $link-hover !important;
+  }
+}
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+@each $name, $shade in $shades {
+  .bg-#{$name} {
+    background-color: $shade !important;
+  }
+}
