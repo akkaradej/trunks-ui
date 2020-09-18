@@ -18,15 +18,17 @@
       </button>
     </div>
   </div>
-</form></script></div><h2 class="title is-6">Modifier</h2><div class="block">field is-horizontal + field-label + field-body</div><div class="block"><div>To vertical align label:</div><div>field-label is-normal (for input, select)</div><div>field-label is-small (for small input, small select)</div><div>field-label is-large (for large input, large select)</div></div><div class="block"><form novalidate><div class="field is-horizontal"><div class="field-label is-normal"><label class="label">Name</label></div><div class="field-body"><div class="control"><input class="input" type="text"></div></div></div><div class="field is-grouped is-horizontal"><div class="field-label"></div><div class="field-body"><div class="control"><button class="button is-primary">Save</button></div><div class="control"><button class="button is-text" type="button">Cancel</button></div></div></div></form><script type="text/plain" class="language-markup"><form novalidate>
+</form></script></div><h2 class="title is-6">Modifier</h2><div class="block">field is-horizontal + field-label + field-body</div><div class="block"><div>field-label is-[size] (for font-size)</div></div><div class="block"><form novalidate><div class="field is-horizontal"><div class="field-label is-normal"><label class="label">Name</label></div><div class="field-body"><div class="field"><div class="control"><input class="input" type="text"></div></div></div></div><div class="field is-grouped is-horizontal"><div class="field-label"></div><div class="field-body"><div class="field is-grouped"><div class="control"><button class="button is-primary">Save</button></div><div class="control"><button class="button is-text" type="button">Cancel</button></div></div></div></div></form><script type="text/plain" class="language-markup"><form novalidate>
   <div class="field is-horizontal">
     <div class="field-label is-normal">
       <label class="label">Name</label>
     </div>
     <div class="field-body">
-      <div class="control">
-        <input class="input"
-                type="text">
+      <div class="field">
+        <div class="control">
+          <input class="input"
+                  type="text">
+        </div>
       </div>
     </div>
   </div>
@@ -35,16 +37,18 @@
       <!-- Left empty for spacing -->
     </div>
     <div class="field-body">
-      <div class="control">
-        <button class="button is-primary">
-          Save
-        </button>
-      </div>
-      <div class="control">
-        <button class="button is-text"
-                type="button">
-          Cancel
-        </button>
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary">
+            Save
+          </button>
+        </div>
+        <div class="control">
+          <button class="button is-text"
+                  type="button">
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   </div>
