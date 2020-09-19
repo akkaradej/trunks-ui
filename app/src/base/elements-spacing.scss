@@ -163,35 +163,49 @@
 }
 
 // button
-.buttons {
+@mixin buttons-spacing($space: $brick-spacing) {
   .button {
-    margin-bottom: $block-spacing / 2;
-    &:not(:last-child):not(.is-fullwidth) {
-      margin-right: $block-spacing;
-    }
+    margin-bottom: $space;
   }
+
   &:last-child {
-    margin-bottom: (-$block-spacing / 2);
+    margin-bottom: (-$space);
   }
+
   &:not(:last-child) {
-    margin-bottom: $block-spacing;
+    margin-bottom: $block-spacing - $space;
   }
-  &.is-centered {
-    &:not(.has-addons) {
+
+  &:not(.has-addons) {
+    .button {
+      &:not(:last-child):not(.is-fullwidth) {
+        margin-right: $space;
+      }
+    }
+
+    // fix Bulma unnecessary margin-left, margin-right for is-centered and is-right
+    &.is-centered, &.is-right {
       .button:not(.is-fullwidth) {
-        margin-left: $block-spacing / 2;
-        margin-right: $block-spacing / 2;
-      }
-    }
-  }
-  &.is-right {
-    &:not(.has-addons) {
-      .button:not(:last-child):not(.is-fullwidth) {
         margin-left: 0;
-        margin-right: $block-spacing;
+        margin-right: $space;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
+}
+
+.buttons {
+  @include buttons-spacing;
+}
+
+.buttons.is-spacing-2 {
+  @include buttons-spacing($brick-spacing * 2);
+}
+
+.buttons.is-spacing-3 {
+  @include buttons-spacing($brick-spacing * 3);
 }
 
 // other
