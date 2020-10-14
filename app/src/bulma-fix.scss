@@ -75,13 +75,18 @@
 // Fix IE, Edge
 // https://github.com/jgthms/bulma/issues/2503
 // workaround: copy code below from source and remove one line
+// 
 @include from($navbar-breakpoint) {
   .navbar-item {
     &.is-active,
     &.is-hoverable:focus,
     // &.is-hoverable:focus-within, <-- remove this to fix IE
     &.is-hoverable:hover {
+      // fix: display only first child
       .navbar-dropdown {
+        display: none;
+      }
+      > .navbar-dropdown {
         display: block;
         .navbar.is-spaced &,
         &.is-boxed {

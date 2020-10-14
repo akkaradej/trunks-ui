@@ -35,6 +35,14 @@ $weight-medium: 500;
 $weight-semibold: 600;
 $weight-bold: 700;
 
+$font-weights: (
+  "weight-light": $weight-light,
+  "weight-normal": $weight-normal,
+  "weight-medium": $weight-medium,
+  "weight-semibold": $weight-semibold,
+  "weight-bold": $weight-bold
+);
+
 // Miscellaneous
 $easing: ease-out;
 $radius-small: 2px;
@@ -43,54 +51,53 @@ $radius-large: 6px;
 $radius-rounded: 290486px;
 $speed: 86ms;
 
-// Black and White
-$black:         #0a0a0a;
-$black-bis:     #121212;
-$black-ter:     #242424;
-$grey-darker:   #363636;
-$grey-dark:     #4a4a4a;
-$grey:          #7a7a7a;
-$grey-light:    #b5b5b5;
-$grey-lighter:  #dbdbdb;
-$grey-lightest: #ededed;
-$white-ter:     #f5f5f5;
-$white-bis:     #fafafa;
-$white:         #ffffff;
+// Color schemes for light/dark mode switching
+$darkMode: false;
 
-// Colors
-$orange:        #ff470f;
-$yellow:        #ffdd57;
-$green:         #23d160;
-$turquoise:     #00d1b2;
-$cyan:          #209cee;
-$blue:          #3273dc;
-$purple:        #b86bff;
-$red:           #ff3860;
+$scheme-main:         #ffffff;
+$scheme-main-bis:     #fafafa;
+$scheme-main-ter:     #f5f5f5;
+$scheme-invert:       #000000;
+$scheme-invert-bis:   #121212;
+$scheme-invert-ter:   #242424;
 
-// Meaning Colors
+@if $darkMode {
+  $scheme-main:       #000000;
+  $scheme-main-bis:   #121212;
+  $scheme-main-ter:   #242424;
+  $scheme-invert:     #ffffff;
+  $scheme-invert-bis: #fafafa;
+  $scheme-invert-ter: #f5f5f5;
+}
 
-// General colors
-$scheme-main: $white;
-$scheme-main-bis: $white-bis;
-$scheme-main-ter: $white-ter;
-$scheme-invert: $black;
-$scheme-invert-bis: $black-bis;
-$scheme-invert-ter: $black-ter;
-
-$background: $white-ter; // almost white background, most use for hover background, divider, default background, disabled background
-$border: $grey-lighter;
-$border-hover: $grey-lighter;
-$border-light: $grey-lightest;
-$border-light-hover: $grey-light;
+// Shades of grey between color schemes above
+$grey-darker:         #363636;
+$grey-dark:           #4a4a4a;
+$grey:                #7a7a7a;
+$grey-light:          #b5b5b5;
+$grey-lighter:        #dbdbdb;
+$grey-lightest:       #ededed;
 
 // Text colors
-$text: $grey-dark;
-$text-invert: $white;
-$text-light: $grey;
-$text-lighter: $grey-light;
-$text-strong: $grey-darker;
-$text-disabled: $white-bis;
-$text-placeholder: $grey-light;
+$text-strong:         #363636;
+$text:                #4a4a4a;
+$text-light:          #7a7a7a;
+$text-lighter:        #b5b5b5;
+$text-disabled:       #b5b5b5;
+$text-placeholder:    #c6c6c6; // ~ rgba($text, 0.3)
+$text-disabled-placeholder: #d2d2d2; // ~ rgba($text-light, 0.3)
+
+// Border colors
+$border-hover:        #b5b5b5;
+$border-light-hover:  #b5b5b5;
+$border:              #dbdbdb;
+$border-light:        #ededed;
+
+// A general background color. Mostly used for divider, hovered menu, disabled input
+$background:          #f5f5f5;
+
+// Text invert color
+$text-invert:         #ffffff;
 
 @function findColorInvert($color) {
   @if (colorLuminance($color) > 0.55) {
@@ -101,33 +108,29 @@ $text-placeholder: $grey-light;
   }
 }
 
-// Default colors
-$primary: $turquoise;
-$secondary: $blue;
-$info: $cyan;
-$success: $green;
-$warning: $yellow;
-$danger: $red;
-$light: $white-ter;
-$dark: $grey-darker;
+// Theme colors
+$primary:   #00d1b2;
+$secondary: #3273dc;
+$info:      #209cee;
+$success:   #23d160;
+$warning:   #ffdd57;
+$danger:    #ff3860;
 
 // Link colors
 $link: $primary;
 $link-invert: findColorInvert($link);
 
-// Custom color
-$header-background: $blue;
+// Custom colors
+$header-background: #3273dc;
 
-// Custom color with class
-$edit: $orange;
-$delete: $red;
+// Custom colors with class
+$edit:   #ff470f;
+$delete: #ff3860;
 
-// Custom color class
 $custom-colors: (
-  "edit": ($edit),
+  "edit":   ($edit),
   "delete": ($delete),
 );
-$custom-shades: null;
 
 // Scrollbar width
 $vertical-scrollbar-width: 17px;
