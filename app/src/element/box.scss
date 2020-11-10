@@ -1,16 +1,6 @@
 $box-hightlight-color: $primary !default;
 
 .box {
-  &.light-box {
-    background-color: $light;
-    color: $text;
-  }
-
-  &.dark-box {
-    background-color: $dark;
-    color: $text-invert;
-  }
-
   &.is-highlighted {
     border-top: 2px solid $box-hightlight-color;
   }
