@@ -5,8 +5,8 @@ $checkbox-checked-border-color: $primary !default;
 $checkbox-checked-filled-background-color: $primary !default;
 $checkbox-group-border-color: $border !default;
 $checkbox-group-divide-color: $border !default;
-$checkbox-title-filled-background-color: $dark !default;
-$checkbox-title-filled-color: $light !default;
+$checkbox-title-filled-background-color: $primary !default;
+$checkbox-title-filled-color: $primary-invert !default;
 
 .checkbox {
   line-height: $checkbox-size;

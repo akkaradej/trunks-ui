@@ -42,12 +42,6 @@ $gap: $section-gap;
 
 
 
-
-
-
-// Create this file and import next to "variables" before "~trunks-ui/trunks".
-// The non-comment code below often changes frequently (suggested value is defined).
-
 // =================================================================================
 // ===== Bulma Variables v0.9.0 =====
 
@@ -379,7 +373,7 @@ $pagination-disabled-color: $text-disabled;
 
 
 // =================================================================================
-// ===== Trunks Variables =====
+// ===== Trunks Variables v0.4.0 =====
 
 // = base > helpers
 // $box-shadow-for-has-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
@@ -429,6 +423,7 @@ $navbar-dropdown-item-color: $text;
 
 // $tabs-has-box-shadow-box: -2px 0px 0px -1px rgba(10, 10, 10, 0.1);
 
+// $tabs-sheet-link-background-color: $scheme-main-bis;
 // $tabs-sheet-link-border-color: $border;
 // $tabs-sheet-link-border-style: solid;
 // $tabs-sheet-link-border-width: 1px;
@@ -452,8 +447,8 @@ $checkbox-inner-size: $checkbox-size * 0.8;
 // $checkbox-checked-filled-background-color: $primary;
 // $checkbox-group-border-color: $border;
 // $checkbox-group-divide-color: $border;
-// $checkbox-title-filled-background-color: $dark;
-// $checkbox-title-filled-color: $light;
+// $checkbox-title-filled-background-color: $primary;
+// $checkbox-title-filled-color: $primary-invert;
 
 // $radio-border-color: $primary;
 // $radio-background-color: $primary;
@@ -513,8 +508,10 @@ $ngx-datatable-selection-checkbox-checked-filled-style: false;
 
 // $tooltip-font-size: $size-normal;
 // $tooltip-font-weight: $weight-normal;
-// $tooltip-color: $scheme-main;
-// $tooltip-background-color: $scheme-invert;
+// $tooltip-background-color: $scheme-main-ter;
+// $tooltip-background-color-invert: $scheme-invert-ter;
+// $tooltip-color: $text;
+// $tooltip-color-invert: $text-invert;
 // $tooltip-border-color: rgba(0, 8, 16, 0.15);
 // $tooltip-box-shadow: 0 4px 14px -2px rgba(0, 8 , 16, .08);
 // $tooltip-border-radius: 4px;

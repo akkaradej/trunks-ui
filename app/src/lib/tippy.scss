@@ -1,7 +1,9 @@
 $tooltip-font-size: $size-normal !default;
 $tooltip-font-weight: $weight-normal !default;
-$tooltip-color: $scheme-main !default;
-$tooltip-background-color: $scheme-invert !default;
+$tooltip-background-color: $scheme-main-ter !default;
+$tooltip-background-color-invert: $scheme-invert-ter !default;
+$tooltip-color: $text !default;
+$tooltip-color-invert: $text-invert !default;
 $tooltip-border-color: rgba(0, 8, 16, 0.15) !default;
 $tooltip-box-shadow: 0 4px 14px -2px rgba(0, 8 , 16, .08) !default;
 $tooltip-border-radius: 4px !default;
@@ -11,8 +13,8 @@ $tooltip-arrow-size: 16px !default;
   position: relative;
   font-size: $tooltip-font-size;
   font-weight: $tooltip-font-weight;
-  color: $tooltip-color;
   background-color: $tooltip-background-color;
+  color: $tooltip-color;
   background-clip: padding-box;
   border: 1px solid $tooltip-border-color;
   border-style: none;
@@ -96,6 +98,11 @@ $tooltip-arrow-size: 16px !default;
   .tippy-content {
     padding: 0;
   }
+}
+
+.tippy-box[data-theme~='invert'] {
+  background-color: $tooltip-background-color-invert;
+  color: $tooltip-color-invert;
 }
 
 @each $name, $pair in $colors {
