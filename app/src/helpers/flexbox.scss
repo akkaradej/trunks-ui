@@ -69,7 +69,7 @@
 }
 
 .is-justify-evenly {
-  justify-content: space-around !important; // fix ie
+  justify-content: space-around !important; // fix ie does not have space-evenly
   justify-content: space-evenly !important;
 }
 @include edge {

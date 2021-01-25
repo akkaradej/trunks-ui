@@ -258,7 +258,9 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
 
 // fix loading position
 .ngx-datatable.material .datatable-body .progress-linear {
-  position: relative;
+  position: relative; // fix ie does not have sticky
+  position: sticky;
+  left: 0;
 }
 
 // allow selection

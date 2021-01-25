@@ -14,6 +14,13 @@
   }
 }
 
+// iOS Safari
+@mixin iOS {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
+}
+
 @mixin bg-color {
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
