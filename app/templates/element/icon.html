@@ -40,11 +40,7 @@
   <section class="section">
     <div class="container is-fluid">
 
-      <h1 class="title is-4">Icon EM</h1>
-
-      <div class="block">
-        <span class="subtitle">It's large as element size</span>
-      </div>
+      <h1 class="title is-4">Icon</h1>
 
       <div class="block">
         Font Awesome 4.7: <a href="https://fontawesome.com/v4.7.0/icons"
@@ -53,41 +49,48 @@
         </a>
       </div>
 
-
       <h2 class="title is-6">Basic Usage</h2>
 
       <div class="block">
-        <span class="icon icon-em">
+        <span class="icon">
           <i class="fa fa-home"></i>
         </span>
         <script type="text/plain"
                 class="language-markup">
-<span class="icon icon-em">
+<span class="icon">
   <i class="fa fa-home"></i>
 </span>
         </script>
       </div>
 
       <div class="block">
-        <span>Front Text</span><span class="icon icon-em"><i class="fa fa-home"></i></span><span>Back Text</span>
+        icon-text wrapper
+      </div>
+
+      <div class="block">
+        <span class="icon-text">
+          <span>Front Text</span><span class="icon"><i class="fa fa-home"></i></span><span>Back Text</span>
+        </span>
         <script type="text/plain"
                 class="language-markup">
-<span>Front Text</span>
-<span class="icon icon-em">
-  <i class="fa fa-home"></i>
+<span class="icon-text">
+  <span>Front Text</span>
+  <span class="icon">
+    <i class="fa fa-home"></i>
+  </span>
+  <span>Back Text</span>
 </span>
-<span>Back Text</span>
         </script>
       </div>
 
       <div class="block">
-        <div class="text-size-large">
-          <span class="icon icon-em"><i class="fa fa-home"></i></span><span>Large Font Size Text</span>
+        <div class="icon-text text-size-large">
+          <span class="icon"><i class="fa fa-home"></i></span><span>Large Font Size Text</span>
         </div>
         <script type="text/plain"
                 class="language-markup">
-<div class="text-size-large">
-  <span class="icon icon-em">
+<div class="icon-text text-size-large">
+  <span class="icon">
     <i class="fa fa-home"></i>
   </span>
   <span>Large Font Size Text</span>
@@ -97,12 +100,12 @@
 
       <div class="block">
         <button class="button">
-          <span class="icon icon-em"><i class="fa fa-home"></i></span><span>Icon in Button</span>
+          <span class="icon"><i class="fa fa-home"></i></span><span>Icon in Button</span>
         </button>
         <script type="text/plain"
                 class="language-markup">
 <button class="button">
-  <span class="icon icon-em">
+  <span class="icon">
     <i class="fa fa-home"></i>
   </span>
   <span>Icon in Button</span>
@@ -114,11 +117,11 @@
         <nav class="navbar">
           <div class="navbar-brand">
             <a class="navbar-item">
-              <span class="icon icon-em"><i class="fa fa-home"></i></span><span>Menu</span>
+              <span class="icon-text"><span class="icon"><i class="fa fa-home"></i></span><span>Menu</span></span>
             </a>
             <div class="navbar-item has-dropdown">
               <a class="navbar-link">
-                <span class="icon icon-em"><i class="fa fa-home"></i></span><span>Dropdown Menu</span>
+                <span class="icon-text"><span class="icon"><i class="fa fa-home"></i></span><span>Dropdown Menu</span></span>
               </a>
             </div>
           </div>
@@ -128,17 +131,21 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item">
-      <span class="icon icon-em">
-        <i class="fa fa-home"></i>
+      <span class="icon-text">
+        <span class="icon">
+          <i class="fa fa-home"></i>
+        </span>
+        <span>Menu</span>
       </span>
-      <span>Menu</span>
     </a>
     <div class="navbar-item has-dropdown">
       <a class="navbar-link">
-        <span class="icon icon-em">
-          <i class="fa fa-home"></i>
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fa fa-home"></i>
+          </span>
+          <span>Dropdown Menu</span>
         </span>
-        <span>Dropdown Menu</span>
       </a>
     </div>
   </div>
@@ -155,19 +162,19 @@
         </div>
         <div class="block">
           <div class="text-size-large">
-            <span class="icon icon-em is-small"><i class="fa fa-home"></i></span>
-            <span class="icon icon-em is-medium"><i class="fa fa-home"></i></span>
-            <span class="icon icon-em is-large"><i class="fa fa-home"></i></span>
+            <span class="icon is-small"><i class="fa fa-home"></i></span>
+            <span class="icon is-medium"><i class="fa fa-home"></i></span>
+            <span class="icon is-large"><i class="fa fa-home"></i></span>
           </div>
           <script type="text/plain"
                   class="language-markup">
-<span class="icon icon-em is-small">
+<span class="icon is-small">
   <i class="fa fa-home"></i>
 </span>
-<span class="icon icon-em is-medium">
+<span class="icon is-medium">
   <i class="fa fa-home"></i>
 </span>
-<span class="icon icon-em is-large">
+<span class="icon is-large">
   <i class="fa fa-home"></i>
 </span>
             </script>
@@ -180,15 +187,15 @@
         </div>
         <div class="block">
           <div class="text-size-large">
-            <span class="icon icon-em text-primary"><i class="fa fa-home"></i></span>
-            <span class="icon icon-em text-secondary"><i class="fa fa-home"></i></span>
+            <span class="icon text-primary"><i class="fa fa-home"></i></span>
+            <span class="icon text-secondary"><i class="fa fa-home"></i></span>
           </div>
           <script type="text/plain"
                   class="language-markup">
-<span class="icon icon-em text-primary">
+<span class="icon text-primary">
   <i class="fa fa-home"></i>
 </span>
-<span class="icon icon-em text-secondary">
+<span class="icon text-secondary">
   <i class="fa fa-home"></i>
 </span>
             </script>
@@ -200,13 +207,13 @@
           icon-img
         </div>
         <div class="block">
-          <div class="text-size-medium">
-            <span class="icon icon-em icon-img"><img src="../../assets/images/coin.png"></span><span>Image Icon</span>
+          <div class="icon-text text-size-medium is-align-center">
+            <span class="icon icon-img"><img src="../../assets/images/coin.png"></span><span>Image Icon</span>
           </div>
           <script type="text/plain"
                   class="language-markup">
-<div class="text-size-medium">
-  <span class="icon icon-em icon-img">
+<div class="icon-text text-size-medium is-align-center">
+  <span class="icon icon-img">
     <img src="../../assets/images/coin.png">
   </span>
   <span>Image Icon</span>

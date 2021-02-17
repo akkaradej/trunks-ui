@@ -1,14 +1,19 @@
-// icon-em: make icon size belongs to its element.
+// make icon size belongs to its element (em).
 
-.icon.icon-em {
+.icon-text {
+  line-height: 1.5;
+  align-items: baseline;
+}
+
+.icon {
   font-size: 1em;
 
   &,
   &.is-small,
   &.is-medium,
   &.is-large {
-    width: 1em;
-    height: 1em;  
+    width: auto !important;
+    height: auto !important;
   }
   &.is-small {
     font-size: 0.75em;
@@ -27,15 +32,17 @@
   }
 }
 
-.icon.icon-em.icon-img {
-  vertical-align: text-top;
+.icon.icon-img {
+  width: 1em !important;
+  height: 1em !important;
   img {
     width: 100%;
   }
 }
 
-.navbar-item, .navbar-link {
-  .icon.icon-em {
+.navbar-item,
+.navbar-link {
+  .icon {
     &:only-child {
       margin-left: 0;
       margin-right: 0;
@@ -44,8 +51,7 @@
 }
 
 .button {
-  .icon,
-  .icon.icon-em {
+  .icon {
     &:first-child:not(:last-child) {
       margin-left: 0;
       margin-right: $brick-spacing;
