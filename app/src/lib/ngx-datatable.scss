@@ -125,9 +125,12 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
     .datatable-header-cell {
       font-weight: bold;
       height: 100%;
-      border-right: $ngx-datatable-table-cell-border;
       padding: 0;
       overflow-x: visible;
+      border-right: $ngx-datatable-table-cell-border;
+      color: $ngx-datatable-table-head-cell-color;
+      font-size: $ngx-datatable-table-head-cell-font-size;
+      font-weight: $ngx-datatable-table-head-cell-font-weight;
 
       &:last-child {
         border-right: 0;
@@ -141,9 +144,6 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
         .datatable-header-cell-label {
           display: block;
           white-space: pre-wrap;
-          color: $ngx-datatable-table-head-cell-color;
-          font-size: $ngx-datatable-table-head-cell-font-size;
-          font-weight: $ngx-datatable-table-head-cell-font-weight;
         }
       }
 
@@ -367,5 +367,24 @@ datatable-selection {
   // header filter
   > .control {
     padding: $ngx-datatable-header-filter-wrapper-padding;
+  }
+}
+
+// 
+.ngx-datatable.material {
+  .datatable-header {
+    .datatable-header-cell {
+      color: $ngx-datatable-table-head-cell-color;
+      font-size: $ngx-datatable-table-head-cell-font-size;
+      font-weight: $ngx-datatable-table-head-cell-font-weight;
+
+      .datatable-header-cell-wrapper {
+        .datatable-header-cell-label {
+          color: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+        }
+      }
+    }
   }
 }

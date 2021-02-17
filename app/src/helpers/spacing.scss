@@ -17,7 +17,7 @@
 }
 
 // horizontal
-.is-horizontal {
+.is-horizontal:not(.field) {
   @extend %is-horizontal;
 }
 

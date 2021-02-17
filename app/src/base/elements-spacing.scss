@@ -134,7 +134,7 @@
 
 @include mobile {
   .field:not(:last-child) {
-    margin-bottom: $field-spacing-mobile;
+    margin-bottom: $field-horizontal-spacing-mobile;
   }
 
   .field-label {

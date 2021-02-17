@@ -1,6 +1,11 @@
 @import "../../src/sample-variables";
 @import "../../src/sample-variables-config";
 @import "../../src/trunks";
+
+$desktop: 1366px; 
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
 // @import "~ngx-bootstrap/datepicker/bs-datepicker.css";
 
 body {

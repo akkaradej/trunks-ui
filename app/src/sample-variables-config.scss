@@ -18,6 +18,7 @@ $tile-spacing-mobile: $block-spacing-mobile / 2;
 $field-spacing: $block-spacing;
 $field-spacing-mobile: $block-spacing-mobile;
 $field-horizontal-spacing: $brick-spacing;
+$field-horizontal-spacing-mobile: $brick-spacing;
 
 $label-spacing: $brick-spacing;
 
@@ -40,7 +41,7 @@ $section-padding-large: ($block-spacing * 6) $section-gap; // desktop only
 $gap: $section-gap;
 // Remark: The container has no horizontal gap for mobile by design
 
-
+$control-icon-width: 3rem;
 
 // =================================================================================
 // ===== Bulma Variables v0.9.0 =====
@@ -162,7 +163,7 @@ $box-padding: 1.2rem;
 // $table-foot-cell-border-width: 2px 0 0;
 // $table-foot-cell-color: $text-strong;
 
-$table-head-background-color: $grey;
+// $table-head-background-color: transparent;
 // $table-body-background-color: transparent;
 // $table-foot-background-color: transparent;
 

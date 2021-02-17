@@ -36,6 +36,7 @@ $loader-size: 1em;
   height: $input-arrow-size;
   top: 50%;
   right: $input-arrow-right;
+  border-radius: 0;
   border-width: $input-arrow-border-width;
   margin-top: $input-arrow-size * -0.75;
 }
