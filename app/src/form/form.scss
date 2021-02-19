@@ -1,4 +1,5 @@
 $label-size: $size-normal !default;
+$control-icon-width: 3rem !default;
 
 .label { 
   font-size: $label-size;
@@ -29,5 +30,6 @@ $label-size: $size-normal !default;
 }
 .control.has-icons-left .icon,
 .control.has-icons-right .icon {
-  padding-right: $control-icon-width;
+  width: $control-icon-width;
+  height: $control-height;
 }

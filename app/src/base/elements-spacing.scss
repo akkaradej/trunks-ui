@@ -1,15 +1,12 @@
 // section
 @include mobile {
   .section {
-    padding-left: $section-gap-mobile;
-    padding-right: $section-gap-mobile;
-
-    @include desktop {
-      &.is-medium,
-      &.is-large {
-        padding-left: $section-gap-mobile;
-        padding-right: $section-gap-mobile;
-      }
+    &,
+    &.is-small,
+    &.is-medium,
+    &.is-large {
+      padding-left: $section-gap-mobile;
+      padding-right: $section-gap-mobile;
     }
   }
 }

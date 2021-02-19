@@ -2,7 +2,7 @@
 
 .icon-text {
   line-height: 1.5;
-  align-items: baseline;
+  align-items: center;
 }
 
 .icon {
@@ -12,8 +12,8 @@
   &.is-small,
   &.is-medium,
   &.is-large {
-    width: auto !important;
-    height: auto !important;
+    width: 1em;
+    height: 1em;
   }
   &.is-small {
     font-size: 0.75em;
@@ -24,17 +24,9 @@
   &.is-large {
     font-size: 1.5em;
   }
-  &:not(:last-child) {
-    margin-right: $brick-spacing;
-  }
-  &:not(:first-child) {
-    margin-left: $brick-spacing;
-  }
 }
 
 .icon.icon-img {
-  width: 1em !important;
-  height: 1em !important;
   img {
     width: 100%;
   }
