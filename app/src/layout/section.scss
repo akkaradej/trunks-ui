@@ -6,4 +6,16 @@
   &.is-small {
     padding: $section-padding-small;
   }
+
+  @include mobile {
+    &,
+    &.is-small,
+    &.is-medium,
+    &.is-large {
+      padding-left: $section-gap-mobile;
+      padding-right: $section-gap-mobile;
+    }
+  }
 }
+
+

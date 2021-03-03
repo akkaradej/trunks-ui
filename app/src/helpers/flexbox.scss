@@ -3,8 +3,16 @@
   flex-direction: row !important;
 }
 
+.is-flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
 .is-flex-column {
   flex-direction: column !important;
+}
+
+.is-flex-column-reverse {
+  flex-direction: column-reverse !important;
 }
 
 // wrap

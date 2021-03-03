@@ -1,16 +1,3 @@
-// section
-@include mobile {
-  .section {
-    &,
-    &.is-small,
-    &.is-medium,
-    &.is-large {
-      padding-left: $section-gap-mobile;
-      padding-right: $section-gap-mobile;
-    }
-  }
-}
-
 // column
 .columns {
   &:not(:last-child) {

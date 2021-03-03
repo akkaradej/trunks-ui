@@ -3,6 +3,7 @@
 .icon-text {
   line-height: 1.5;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .icon {
@@ -52,5 +53,14 @@
       margin-left: $brick-spacing;
       margin-right: 0;
     }
+  }
+}
+
+@for $i from 1 through 6 {
+  .ic-up-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ic-down-#{$i} {
+    margin-top: #{$i}px !important;
   }
 }
