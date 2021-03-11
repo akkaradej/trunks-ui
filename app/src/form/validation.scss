@@ -46,6 +46,19 @@ form .ng-touched.ng-invalid {
         border: $validation-error-border;
       }
     }
+    .file {
+      .button,
+      .file-name,
+      .file-cta {
+        border: $validation-error-border;
+      }
+      &.is-right .file-name {
+        border-right-width: 0px;
+      }
+      &.is-left .file-name {
+        border-left-width: 0px;
+      }
+    }
   }
 }
 

@@ -30,6 +30,11 @@
   flex-shrink: 0; 
 }
 
+// Fix: file input is-fullwidth expand through container
+.file.is-fullwidth .file-name {
+  white-space: normal;
+}
+
 // Fix: long title
 .modal-card-title {
   flex: 1;
