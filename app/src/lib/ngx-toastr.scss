@@ -1,0 +1,18 @@
+$toast-box-shadow: 0 0 7px #999999 !default;
+
+.toast-container .ngx-toastr {
+  padding: 15px;
+  &:hover {
+    box-shadow: $toast-box-shadow;
+  }
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-#{$name} {
+      color: $color-invert;
+      background-color: $color;
+    }
+  }
+}
