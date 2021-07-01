@@ -6,6 +6,11 @@ $toast-box-shadow: 0 0 7px #999999 !default;
     box-shadow: $toast-box-shadow;
   }
 
+  .toast-close-button {
+    position: static;
+    text-shadow: none;
+  }
+
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
@@ -13,6 +18,9 @@ $toast-box-shadow: 0 0 7px #999999 !default;
     &.is-#{$name} {
       color: $color-invert;
       background-color: $color;
+      .toast-close-button {
+        color: $color-invert;
+      }
     }
   }
 }

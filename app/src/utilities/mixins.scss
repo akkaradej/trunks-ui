@@ -1,4 +1,4 @@
-@import '~bulma/sass/utilities/mixins';
+@import '../bulma-mixins-without-import'; /* to avoid override var when import this file before */
 
 /* IE10+ CSS styles go here */
 @mixin ie {
@@ -150,26 +150,10 @@
   }
 }
 
-%brick {
- @include brick;
-}
-
 @mixin is-spacing($spacing: $brick-spacing) {
   > * {
     @include brick($spacing);
   }
-}
-
-%is-spacing {
- @include is-spacing;
-}
-
-%is-spacing-2 {
- @include is-spacing($brick-spacing * 2);
-}
-
-%is-spacing-3 {
- @include is-spacing($brick-spacing * 3);
 }
 
 @mixin is-horizontal {
@@ -247,8 +231,4 @@
       justify-content: space-around !important; // fix edge    
     }
   }
-}
-
-%is-horizontal {
-  @include is-horizontal;
 }

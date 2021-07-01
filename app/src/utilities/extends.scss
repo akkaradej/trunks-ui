@@ -1,0 +1,19 @@
+%brick {
+  @include brick;
+}
+
+%is-spacing {
+  @include is-spacing;
+}
+ 
+%is-spacing-2 {
+  @include is-spacing($brick-spacing * 2);
+}
+ 
+%is-spacing-3 {
+  @include is-spacing($brick-spacing * 3);
+}
+
+%is-horizontal {
+  @include is-horizontal;
+}
