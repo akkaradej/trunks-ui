@@ -205,10 +205,12 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
   .datatable-body {
     .datatable-body-row {
       border-top: $ngx-datatable-table-row-border;
+      color: $ngx-datatable-color;
+      font-size: $ngx-datatable-font-size;
 
       .datatable-body-cell {
-        color: $ngx-datatable-color;
-        font-size: $ngx-datatable-font-size;
+        color: inherit;
+        font-size: inherit;
         font-weight: inherit;
         padding: .25em 1em;
         border-right: $ngx-datatable-table-cell-border;
@@ -332,8 +334,7 @@ datatable-selection {
 
     &:checked::before {
       border: 1px solid $checkbox-checked-border-color !important;
-      transform: none !important;;
-      height: inherit !important;;
+      transform: none !important;
     }
     &:checked::after {
       position: absolute;
