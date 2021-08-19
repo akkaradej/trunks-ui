@@ -1,6 +1,10 @@
 html {
   font-size: $body-size;
   height: 100%;
+  
+  &.is-overflow-hidden {
+    padding-right: 17px;
+  }
 }
 
 @if $mobile-use-tablet-layout {
