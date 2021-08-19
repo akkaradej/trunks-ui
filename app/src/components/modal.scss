@@ -5,6 +5,8 @@ $modal-medium-width: 780px !default;
 $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
+$modal-close-background-color: bulmaRgba($scheme-invert, 0.2) !default;;
+$modal-close-color: $scheme-main !default;;
 
 .modal {
   &.has-no-footer {
@@ -38,6 +40,7 @@ $modal-full-height: 100% !default;
     $color-invert: nth($pair, 2);
     &.is-#{$name} {
       .modal-card-head {
+        color: $color;
         background-color: $color;
         .modal-card-title {
           color: $color-invert;
@@ -159,6 +162,14 @@ $modal-full-height: 100% !default;
       }
     }
   }
+
+  &.modal-scroll {
+    > .modal-card {
+      .modal-card-body {
+        overflow-y: scroll;
+      }
+    }
+  }
 }
 
 .modal-card-head {
@@ -171,5 +182,10 @@ $modal-full-height: 100% !default;
     height: $modal-close-dimensions;
     max-height: $modal-close-dimensions;
     max-width: $modal-close-dimensions;
+    color: inherit;
+    background-color: $modal-close-background-color;
+    &::before, &::after {
+      background-color: $modal-close-color;
+    }
   }
 }
