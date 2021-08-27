@@ -5,8 +5,10 @@ $modal-medium-width: 780px !default;
 $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
-$modal-close-background-color: bulmaRgba($scheme-invert, 0.2) !default;;
-$modal-close-color: $scheme-main !default;;
+
+$modal-card-body-font-weight: $weight-normal !default;
+$modal-close-background-color: bulmaRgba($scheme-invert, 0.2) !default;
+$modal-close-color: $scheme-main !default;
 
 .modal {
   &.has-no-footer {
@@ -33,6 +35,7 @@ $modal-close-color: $scheme-main !default;;
 
   .modal-card-body {
     max-height: calc(100vh - 80px);
+    font-weight: $modal-card-body-font-weight;
   }
 
   @each $name, $pair in $colors {

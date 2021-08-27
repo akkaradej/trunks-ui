@@ -1,6 +1,6 @@
 {
   "name": "trunks-ui",
-  "version": "0.5.13-beta",
+  "version": "0.5.16-beta",
   "private": true,
   "main": "./dist-lib/trunks.scss",
   "scripts": {

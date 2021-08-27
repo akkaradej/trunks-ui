@@ -2,8 +2,8 @@ html {
   font-size: $body-size;
   height: 100%;
   
-  &.is-overflow-hidden {
-    padding-right: 17px;
+  &[data-os="Windows"].is-overflow-hidden {
+    padding-right: $vertical-scrollbar-width;
   }
 }
 
