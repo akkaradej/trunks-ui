@@ -42,7 +42,7 @@
     "gulp-useref": "^4.0.0",
     "main-bower-files": "^2.13.3",
     "node-sass-tilde-importer": "^1.0.2",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.25.0",
     "run-sequence": "^2.2.1",
     "wiredep": "^4.0.0"
   },
