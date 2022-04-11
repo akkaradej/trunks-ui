@@ -1,0 +1,35 @@
+%non-responsive-tablet {
+  @include tablet {
+    overflow-x: auto;
+    min-width: $desktop - $vertical-scrollbar-width;
+  }
+
+  .tabs {
+    overflow: visible;
+    white-space: normal;
+    display: block;
+
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+@if $non-responsive-tablet {
+  html {
+    @extend %non-responsive-tablet;
+  }
+}
+
+html {
+  &.non-responsive,
+  &.non-responsive-tablet {
+    .container {
+      @include tablet {
+        max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+      }
+    }
+
+    @extend %non-responsive-tablet;
+  }
+}

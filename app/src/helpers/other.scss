@@ -101,28 +101,31 @@ $box-shadow-for-has-shadow-hovered: 1px 3px 10px 2px rgba($black, 0.1), 0 0 0 1p
 
 .has-arrow-up::after {
   @include has-arrow;
-  border-left: 0;
-  border-bottom: 0;
+  margin-top: #{$input-arrow-size / 2};
+  margin-left: 0.2em;
+  transform: rotate(135deg);
   display: block; // fix IE
 }
 
 .has-arrow-down::after {
   @include has-arrow;
-  border-right: 0;
-  border-top: 0;
+  margin-bottom: #{$input-arrow-size / 2};
+  margin-left: 0.2em;
+  transform: rotate(315deg);
   display: block; // fix IE
 }
 
 .has-arrow-right::after {
   @include has-arrow;
-  border-left: 0;
-  border-top: 0;
+  margin-left: 0;
+  margin-left: #{(-$input-arrow-size / 2) + 0.2em};
+  transform: rotate(225deg);
   display: block; // fix IE
 }
 
 .has-arrow-left::after {
   @include has-arrow;
-  border-right: 0;
-  border-bottom: 0;
+  margin-left: 0.2em;
+  transform: rotate(45deg);
   display: block; // fix IE
 }

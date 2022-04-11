@@ -1,50 +1,6 @@
 html {
   font-size: $body-size;
   height: 100%;
-  
-  &[data-os="Windows"].is-overflow-hidden {
-    padding-right: $vertical-scrollbar-width;
-  }
-}
-
-@if $mobile-use-tablet-layout {
-  @include mobile {
-    html {
-      overflow-x: auto;
-      min-width: $tablet - $vertical-scrollbar-width;
-    }
-  }
-}
-
-@if $mobile-use-desktop-layout {
-  .tabs {
-    overflow: visible;
-    white-space: normal;
-    display: block;
-
-    li {
-      display: inline-block;
-    }
-  }
-}
-
-@if $tablet-use-desktop-layout {
-  @include tablet {
-    html {
-      overflow-x: auto;
-      min-width: $desktop - $vertical-scrollbar-width;
-    }
-
-    .tabs {
-      overflow: visible;
-      white-space: normal;
-      display: block;
-
-      li {
-        display: inline-block;
-      }
-    }
-  }
 }
 
 @include mobile {
@@ -74,15 +30,15 @@ a {
 }
 
 // Hidden directive
-[hidden] { 
+[hidden] {
   display: none !important;
 }
 
 // Reorder Handle
-.reorder-handle { 
+.reorder-handle {
   display: block;
   width: 20px;
-  cursor: ns-resize; 
+  cursor: ns-resize;
 
   span {
     background-color: currentColor;

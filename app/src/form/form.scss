@@ -1,7 +1,7 @@
 $label-size: $size-normal !default;
 $control-icon-width: 3rem !default;
 
-.label { 
+.label {
   font-size: $label-size;
 }
 
@@ -20,11 +20,11 @@ $control-icon-width: 3rem !default;
     &.is-align-top {
       margin-top: 0;
     }
-    
+
   }
 }
 
-.control.has-icons-right .input, 
+.control.has-icons-right .input,
 .control.has-icons-right .select select {
   padding-right: $control-icon-width;
 }

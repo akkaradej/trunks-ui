@@ -5,7 +5,7 @@ $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Ox
 // $variable-columns
 $variable-columns: false !default;
 
-// Root element size to calculate rem (in pixel) 
+// Root element size to calculate rem (in pixel)
 $body-size: 10px !default;
 $body-size-mobile: $body-size !default;
 
@@ -50,4 +50,7 @@ $gap: $section-gap !default;
 
 // Scrollbar width
 $vertical-scrollbar-width: 17px;
+
+// input select arrow, @mixin has-arrow
+$input-arrow-size: 0.625em;
 

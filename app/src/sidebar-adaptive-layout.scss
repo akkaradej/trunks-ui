@@ -15,3 +15,31 @@
 #content {
   flex: 1;
 }
+
+
+// non-responsive
+
+html {
+  &.non-responsive,
+  &.non-responsive-mobile {
+    #mainContainer {
+      max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+    }
+  }
+
+  &.non-responsive,
+  &.non-responsive-mobile.non-responsive-tablet {
+    #mainContainer {
+      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+    }
+  }
+
+  &.non-responsive,
+  &.non-responsive-tablet {
+    #mainContainer {
+      @include tablet {
+        max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+      }
+    }
+  }
+}

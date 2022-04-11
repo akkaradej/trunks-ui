@@ -19,7 +19,7 @@ $modal-close-color: $scheme-main !default;
       }
     }
   }
-  
+
   // Depreciated
   .modal-card.modal-card-no-footer {
     .modal-card-body {
@@ -52,120 +52,6 @@ $modal-close-color: $scheme-main !default;
     }
   }
 
-  
-  &.modal-auto {
-    > .modal-content,
-    > .modal-card {
-
-      @if $mobile-use-desktop-layout {
-        @include mobile {
-          width: auto;
-        }
-      }
-
-      @if $tablet-use-desktop-layout {
-        @include tablet {
-          width: auto;
-        }
-      }
-
-      @include desktop {
-        width: auto;
-      }
-    }
-  }
-
-  &.modal-small {
-    > .modal-content,
-    > .modal-card {
-
-      @if $mobile-use-desktop-layout {
-        @include mobile {
-          width: $modal-small-width;
-        }
-      }
-
-      @if $tablet-use-desktop-layout {
-        @include tablet {
-          width: $modal-small-width;
-        }
-      }
-
-      @include desktop {
-        width: $modal-small-width;
-      }
-    }
-  }
-
-  &.modal-medium {
-    > .modal-content,
-    > .modal-card {
-
-      @if $mobile-use-desktop-layout {
-        @include mobile {
-          width: $modal-medium-width;
-        }
-      }
-
-      @if $tablet-use-desktop-layout {
-        @include tablet {
-          width: $modal-medium-width;
-        }
-      }
-
-      @include desktop {
-        width: $modal-medium-width;
-      }
-    }
-  }
-
-  &.modal-large {
-    > .modal-content,
-    > .modal-card {
-
-      @if $mobile-use-desktop-layout {
-        @include mobile {
-          width: $modal-large-width;
-        }
-      }
-
-      @if $tablet-use-desktop-layout {
-        @include tablet {
-          width: $modal-large-width;
-        }
-      }
-
-      @include desktop {
-        width: $modal-large-width;
-      }
-    }
-  }
-
-  &.modal-full {
-    > .modal-content,
-    > .modal-card {
-
-      @if $mobile-use-desktop-layout {
-        @include mobile {
-          width: $modal-full-width;
-          height: $modal-full-height;
-        }
-      }
-
-      @if $tablet-use-desktop-layout {
-        @include tablet {
-          width: $modal-full-width;
-          height: $modal-full-height;
-        }
-      }
-
-      @include desktop {
-        width: $modal-full-width;
-        height: $modal-full-height;
-      }
-    }
-  }
-
   &.modal-scroll {
     > .modal-card {
       .modal-card-body {
@@ -189,6 +75,82 @@ $modal-close-color: $scheme-main !default;
     background-color: $modal-close-background-color;
     &::before, &::after {
       background-color: $modal-close-color;
+    }
+  }
+}
+
+// modal size modifier
+@mixin modal-size {
+  >.modal-content,
+  >.modal-card {
+    width: $modal-content-width;
+  }
+
+  &.modal-auto {
+
+    >.modal-content,
+    >.modal-card {
+      width: auto;
+    }
+  }
+
+  &.modal-small {
+
+    >.modal-content,
+    >.modal-card {
+      width: $modal-small-width;
+    }
+  }
+
+  &.modal-medium {
+
+    >.modal-content,
+    >.modal-card {
+      width: $modal-medium-width;
+    }
+  }
+
+  &.modal-large {
+
+    >.modal-content,
+    >.modal-card {
+      width: $modal-large-width;
+    }
+  }
+
+  &.modal-full {
+
+    >.modal-content,
+    >.modal-card {
+      width: $modal-full-width;
+      height: $modal-full-height;
+    }
+  }
+}
+
+.modal {
+  @include desktop {
+    @include modal-size;
+  }
+}
+
+// non-responsive
+@if $non-responsive-mobile and $non-responsive-tablet {
+  @include touch {
+    .modal {
+      @include modal-size;
+    }
+  }
+}
+
+// non-responsive
+html {
+  &.non-responsive,
+  &.non-responsive-mobile.non-responsive-tablet {
+    @include touch {
+      .modal {
+        @include modal-size;
+      }
     }
   }
 }

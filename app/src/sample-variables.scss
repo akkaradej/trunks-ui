@@ -136,18 +136,19 @@ $custom-colors: (
 $vertical-scrollbar-width: 17px;
 
 // Responsive Breakpoint
+// $non-responsive-mobile: false;
+// $non-responsive-tablet: false;
 
 // For 5 screen sizes; mobile, tablet, desktop, widescreen, fullhd
 // mobile up to 767px;
 
 // breakpoint for screen width 768 (ipad portrait)
 // tablet size by chrome's device toolbar = 768
-$tablet: 768px; 
-// $tablet-use-desktop-layout: false;
+$tablet: 768px;
 
 // breakpoint for screen width 1024 (ipad landscape) (ipad pro portrait)
 // desktop size by chrome's device toolbar, 768 + 256 = 1024
-$desktop: 1024px; 
+$desktop: 1024px;
 
 // breakpoint for screen width 1280, 1366 (ipad pro landscape), 1440
 // widescreen size by bulma default, 1024 + 256 = 1280
@@ -156,19 +157,19 @@ $widescreen-enabled: true;
 
 // breakpoint for screen width 1600, 1920, 2560
 // fullhd size by 1280 + 256 = 1536
-$fullhd: 1536px; 
+$fullhd: 1536px;
 $fullhd-enabled: true;
 
 
 // For 2 screen sizes; mobile & desktop, Uncomment these vars.
+// $non-responsive-tablet: true;
 // $tablet: 768px;
-// $tablet-use-desktop-layout: true;
 // $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
-// 
+//
 // $navbar-breakpoint: $tablet;
-// 
+//
 // add script to index.html
 // <script type="text/javascript">
 //   (function setViewPort() {
@@ -181,13 +182,12 @@ $fullhd-enabled: true;
 
 
 // For 2 screen sizes; tablet & desktop, Uncomment these vars.
-// $mobile-use-tablet-layout: true;
+// $non-responsive-mobile: true;
 // $tablet: 768px;
-// $tablet-use-desktop-layout: false;
 // $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
-// 
+//
 // $navbar-breakpoint: $tablet; or $desktop;
 //
 // add script to index.html
@@ -202,9 +202,9 @@ $fullhd-enabled: true;
 
 
 // For Non-Responsive, Uncomment these vars.
-// $mobile-use-desktop-layout: true;
+// $non-responsive-mobile: true;
+// $non-responsive-tablet: true;
 // $tablet: 1px;
-// $tablet-use-desktop-layout: true;
 // $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;

@@ -4,15 +4,17 @@
   margin: 0 auto;
   width: auto;
 
-  @if $mobile-use-tablet-layout {
-    max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+  // non-responsive
+  @if $non-responsive-mobile {
+    @if $non-responsive-tablet {
+      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+    } @else {
+      max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+    }
   }
 
-  @if $mobile-use-desktop-layout {
-    max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
-  }
-
-  @if $tablet-use-desktop-layout {
+  // non-responsive
+  @if $non-responsive-tablet {
     @include tablet {
       max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
     }

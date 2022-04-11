@@ -4,7 +4,7 @@
 @mixin ie {
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     @content;
-  }  
+  }
 }
 
 /* Edge 12+ or 18+ (Before Chromium Version) */
@@ -33,13 +33,16 @@
 }
 
 @mixin has-arrow {
-  border: 3px solid currentColor;
+  border-right: 0;
+  border-top: 0;
+  border-left: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
   border-radius: 2px;
   content: " ";
   transform: rotate(-45deg);
   transform-origin: center;
-  width: .625em;
-  height: .625em;
+  width: $input-arrow-size;
+  height: $input-arrow-size;
   margin-left: .2em;
   display: block;
 }
@@ -135,11 +138,11 @@
 
     @include space-bottom;
   }
-  
+
 }
 
 %block {
- @include block; 
+ @include block;
 }
 
 @mixin brick($spacing: $brick-spacing) {
@@ -209,7 +212,7 @@
   &.is-left {
     justify-content: flex-start !important;
   }
-  
+
   &.is-right {
     justify-content: flex-end !important;
   }
@@ -228,7 +231,7 @@
   }
   @include edge {
     &.is-evenly {
-      justify-content: space-around !important; // fix edge    
+      justify-content: space-around !important; // fix edge
     }
   }
 }
