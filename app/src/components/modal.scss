@@ -1,4 +1,4 @@
-$modal-card-title-font-weight: $weight-bold !default;
+$modal-card-title-font-weight: $weight-bold  !default;
 // $modal-content-width: 640px !default;
 $modal-small-width: 320px !default;
 $modal-medium-width: 780px !default;
@@ -6,9 +6,9 @@ $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
 
-$modal-card-body-font-weight: $weight-normal !default;
+$modal-card-body-font-weight: $weight-normal  !default;
 $modal-close-background-color: bulmaRgba($scheme-invert, 0.2) !default;
-$modal-close-color: $scheme-main !default;
+$modal-close-color: $scheme-main  !default;
 
 .modal {
   &.has-no-footer {
@@ -41,10 +41,12 @@ $modal-close-color: $scheme-main !default;
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
+
     &.is-#{$name} {
       .modal-card-head {
         color: $color;
         background-color: $color;
+
         .modal-card-title {
           color: $color-invert;
         }
@@ -53,7 +55,7 @@ $modal-close-color: $scheme-main !default;
   }
 
   &.modal-scroll {
-    > .modal-card {
+    >.modal-card {
       .modal-card-body {
         overflow-y: scroll;
       }
@@ -66,6 +68,7 @@ $modal-close-color: $scheme-main !default;
     margin-left: ($modal-close-dimensions * 1.25);
     margin-right: ($modal-close-dimensions * 0.25);
   }
+
   .delete {
     width: $modal-close-dimensions;
     height: $modal-close-dimensions;
@@ -73,7 +76,9 @@ $modal-close-color: $scheme-main !default;
     max-width: $modal-close-dimensions;
     color: inherit;
     background-color: $modal-close-background-color;
-    &::before, &::after {
+
+    &::before,
+    &::after {
       background-color: $modal-close-color;
     }
   }
@@ -87,7 +92,6 @@ $modal-close-color: $scheme-main !default;
   }
 
   &.modal-auto {
-
     >.modal-content,
     >.modal-card {
       width: auto;
@@ -95,7 +99,6 @@ $modal-close-color: $scheme-main !default;
   }
 
   &.modal-small {
-
     >.modal-content,
     >.modal-card {
       width: $modal-small-width;
@@ -103,7 +106,6 @@ $modal-close-color: $scheme-main !default;
   }
 
   &.modal-medium {
-
     >.modal-content,
     >.modal-card {
       width: $modal-medium-width;
@@ -111,7 +113,6 @@ $modal-close-color: $scheme-main !default;
   }
 
   &.modal-large {
-
     >.modal-content,
     >.modal-card {
       width: $modal-large-width;
@@ -119,7 +120,6 @@ $modal-close-color: $scheme-main !default;
   }
 
   &.modal-full {
-
     >.modal-content,
     >.modal-card {
       width: $modal-full-width;
@@ -129,14 +129,14 @@ $modal-close-color: $scheme-main !default;
 }
 
 .modal {
-  @include desktop {
+  @include from($modal-breakpoint) {
     @include modal-size;
   }
 }
 
 // non-responsive
-@if $non-responsive-mobile and $non-responsive-tablet {
-  @include touch {
+@if $non-responsive-mobile {
+  @include mobile {
     .modal {
       @include modal-size;
     }
@@ -148,6 +148,20 @@ html {
   &.non-responsive,
   &.non-responsive-mobile.non-responsive-tablet {
     @include touch {
+      .modal {
+        @include modal-size;
+      }
+    }
+  }
+  &.non-responsive-mobile:not(.non-responsive-mobile) {
+    @include mobile {
+      .modal {
+        @include modal-size;
+      }
+    }
+  }
+  &.non-responsive-tablet:not(.non-responsive-tablet) {
+    @include tablet-only {
       .modal {
         @include modal-size;
       }

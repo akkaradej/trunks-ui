@@ -1,8 +1,8 @@
 // Square Size, Brick & Block Spacing
 $square-size: 1rem !default;
-$brick-spacing: $square-size !default;
+$brick-spacing: $square-size  !default;
 $block-spacing: $square-size * 2 !default;
-$block-spacing-mobile: $block-spacing !default;
+$block-spacing-mobile: $block-spacing  !default;
 
 // Control height
 $control-height: 4rem !default; // unit must same as Font size
@@ -49,69 +49,73 @@ $radius-rounded: 290486px !default;
 $speed: 86ms !default;
 
 // Black and White
-$black:        #0a0a0a !default;
-$black-bis:    #121212 !default;
-$black-ter:    #242424 !default;
-$grey-darker:  #363636 !default;
-$grey-dark:    #4a4a4a !default;
-$grey:         #7a7a7a !default;
-$grey-light:   #b5b5b5 !default;
+$black: #0a0a0a !default;
+$black-bis: #121212 !default;
+$black-ter: #242424 !default;
+$grey-darker: #363636 !default;
+$grey-dark: #4a4a4a !default;
+$grey: #7a7a7a !default;
+$grey-light: #b5b5b5 !default;
 $grey-lighter: #dbdbdb !default;
-$white-ter:    #f5f5f5 !default;
-$white-bis:    #fafafa !default;
-$white:        #ffffff !default;
+$white-ter: #f5f5f5 !default;
+$white-bis: #fafafa !default;
+$white: #ffffff !default;
 
 // Color
-$orange:       #ff470f !default;
-$yellow:       #ffdd57 !default;
-$green:        #23d160 !default;
-$turquoise:    #00d1b2 !default;
-$cyan:         #209cee !default;
-$blue:         #3273dc !default;
-$purple:       #b86bff !default;
-$red:          #ff3860 !default;
+$orange: #ff470f !default;
+$yellow: #ffdd57 !default;
+$green: #23d160 !default;
+$turquoise: #00d1b2 !default;
+$cyan: #209cee !default;
+$blue: #3273dc !default;
+$purple: #b86bff !default;
+$red: #ff3860 !default;
 
 // Meaning Colors
 
 // General colors
-$scheme-main: $white !default;
-$scheme-main-bis: $white-bis !default;
-$scheme-main-ter: $white-ter !default;
-$scheme-invert: $black !default;
-$scheme-invert-bis: $black-bis !default;
-$scheme-invert-ter: $black-ter !default;
+$scheme-main: $white  !default;
+$scheme-main-bis: $white-bis  !default;
+$scheme-main-ter: $white-ter  !default;
+$scheme-invert: $black  !default;
+$scheme-invert-bis: $black-bis  !default;
+$scheme-invert-ter: $black-ter  !default;
 
-$body-background-color: $scheme-main !default;
-$background: $white-ter !default;
-$border: $grey-lighter !default;
-$border-hover: $grey-lighter !default;
+$body-background-color: $scheme-main  !default;
+$background: $white-ter  !default;
+$border: $grey-lighter  !default;
+$border-hover: $grey-lighter  !default;
 
 // Text colors
-$text: $grey-dark !default;
-$text-invert: $white !default;
-$text-light: $grey !default;
-$text-lighter: $grey-light !default;
-$text-strong: $grey-darker !default;
-$text-disabled: $grey-light !default;
+$text: $grey-dark  !default;
+$text-invert: $white  !default;
+$text-light: $grey  !default;
+$text-lighter: $grey-light  !default;
+$text-strong: $grey-darker  !default;
+$text-disabled: $grey-light  !default;
 
-@function findColorInvert($color) {
-  @if (colorLuminance($color) > 0.55) {
+@function findColorInvert($color)
+{
+  @if (colorLuminance($color) > 0.55)
+  {
     @return $text;
   }
-  @else {
+
+  @else
+  {
     @return $text-invert;
   }
 }
 
 // Default colors
-$primary: $turquoise !default;
-$secondary: $blue !default;
-$info: $cyan !default;
-$success: $green !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $white-ter !default;
-$dark: $grey-darker !default;
+$primary: $turquoise  !default;
+$secondary: $blue  !default;
+$info: $cyan  !default;
+$success: $green  !default;
+$warning: $yellow  !default;
+$danger: $red  !default;
+$light: $white-ter  !default;
+$dark: $grey-darker  !default;
 
 // Default Invert colors
 $primary-invert: findColorInvert($primary) !default;
@@ -124,9 +128,9 @@ $light-invert: findColorInvert($light) !default;
 $dark-invert: findColorInvert($dark) !default;
 
 // Link colors
-$link: $primary !default;
+$link: $primary  !default;
 $link-invert: findColorInvert($link) !default;
-$link-visited: $link !default;
+$link-visited: $link  !default;
 
 $link-hover: invalid-color !default;
 $link-hover-border: invalid-color !default;
@@ -168,16 +172,21 @@ $shades: mergeColorMaps((
   "white-bis": $white-bis
 ), $custom-shades);
 
+// Scrollbar width
+$vertical-scrollbar-width: 17px !default;
+
 // Responsive Breakpoint
 // mobile up to 767px;
 $non-responsive-mobile: false !default;
 $non-responsive-tablet: false !default;
 $tablet: 768px !default; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
 $desktop: 1024px !default; // desktop size by chrome's device toolbar, 768 + 256 = 1024 // for 1024 (ipad landscape) (ipad pro portrait)
-$widescreen: 1280px !default;  // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
+$widescreen: 1280px !default; // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
 $widescreen-enabled: true !default;
 $fullhd: 1536px !default; // fullhd size by 1280 + 256 = 1536                           // for 1600, 1920, 2560
 $fullhd-enabled: true !default;
+$navbar-breakpoint: $desktop !default;
+$modal-breakpoint: $desktop !default;
 
 // Others
 $sidebar-width: 0 !default;

@@ -47,10 +47,3 @@ $section-padding-large: ($block-spacing * 6) $section-gap !default; // desktop o
 // Should be >= section gap (in pixel)
 $gap: $section-gap !default;
 // Remark: The container has no horizontal gap for mobile by design
-
-// Scrollbar width
-$vertical-scrollbar-width: 17px;
-
-// input select arrow, @mixin has-arrow
-$input-arrow-size: 0.625em;
-

@@ -54,50 +54,50 @@ $speed: 86ms;
 // Color schemes for light/dark mode switching
 $darkMode: false;
 
-$scheme-main:         #ffffff;
-$scheme-main-bis:     #fafafa;
-$scheme-main-ter:     #f5f5f5;
-$scheme-invert:       #000000;
-$scheme-invert-bis:   #121212;
-$scheme-invert-ter:   #242424;
+$scheme-main: #ffffff;
+$scheme-main-bis: #fafafa;
+$scheme-main-ter: #f5f5f5;
+$scheme-invert: #000000;
+$scheme-invert-bis: #121212;
+$scheme-invert-ter: #242424;
 
 @if $darkMode {
-  $scheme-main:       #000000;
-  $scheme-main-bis:   #121212;
-  $scheme-main-ter:   #242424;
-  $scheme-invert:     #ffffff;
+  $scheme-main: #000000;
+  $scheme-main-bis: #121212;
+  $scheme-main-ter: #242424;
+  $scheme-invert: #ffffff;
   $scheme-invert-bis: #fafafa;
   $scheme-invert-ter: #f5f5f5;
 }
 
 // Shades of grey between color schemes above
-$grey-darker:         #363636;
-$grey-dark:           #4a4a4a;
-$grey:                #7a7a7a;
-$grey-light:          #b5b5b5;
-$grey-lighter:        #dbdbdb;
-$grey-lightest:       #ededed;
+$grey-darker: #363636;
+$grey-dark: #4a4a4a;
+$grey: #7a7a7a;
+$grey-light: #b5b5b5;
+$grey-lighter: #dbdbdb;
+$grey-lightest: #ededed;
 
 // Text colors
-$text-strong:         #363636;
-$text:                #4a4a4a;
-$text-light:          #7a7a7a;
-$text-lighter:        #b5b5b5;
-$text-disabled:       #b5b5b5;
-$text-placeholder:    #c6c6c6; // ~ rgba($text, 0.3)
+$text-strong: #363636;
+$text: #4a4a4a;
+$text-light: #7a7a7a;
+$text-lighter: #b5b5b5;
+$text-disabled: #b5b5b5;
+$text-placeholder: #c6c6c6; // ~ rgba($text, 0.3)
 $text-disabled-placeholder: #d2d2d2; // ~ rgba($text-light, 0.3)
 
 // Border colors
-$border-hover:        #b5b5b5;
-$border-light-hover:  #b5b5b5;
-$border:              #dbdbdb;
-$border-light:        #ededed;
+$border-hover: #b5b5b5;
+$border-light-hover: #b5b5b5;
+$border: #dbdbdb;
+$border-light: #ededed;
 
 // A general background color. Mostly used for divider, hovered menu, disabled input
-$background:          #f5f5f5;
+$background: #f5f5f5;
 
 // Text invert color
-$text-invert:         #ffffff;
+$text-invert: #ffffff;
 
 @function findColorInvert($color) {
   @if (colorLuminance($color) > 0.55) {
@@ -109,12 +109,12 @@ $text-invert:         #ffffff;
 }
 
 // Theme colors
-$primary:   #00d1b2;
+$primary: #00d1b2;
 $secondary: #3273dc;
-$info:      #209cee;
-$success:   #23d160;
-$warning:   #ffdd57;
-$danger:    #ff3860;
+$info: #209cee;
+$success: #23d160;
+$warning: #ffdd57;
+$danger: #ff3860;
 
 // Link colors
 $link: $primary;
@@ -124,11 +124,11 @@ $link-invert: findColorInvert($link);
 $header-background: #3273dc;
 
 // Custom colors with class
-$edit:   #ff470f;
+$edit: #ff470f;
 $delete: #ff3860;
 
 $custom-colors: (
-  "edit":   ($edit),
+  "edit": ($edit),
   "delete": ($delete),
 );
 
@@ -160,6 +160,9 @@ $widescreen-enabled: true;
 $fullhd: 1536px;
 $fullhd-enabled: true;
 
+// breakpoint
+// $navbar-breakpoint: $desktop;
+// $modal-breakpoint: $desktop;
 
 // For 2 screen sizes; mobile & desktop, Uncomment these vars.
 // $non-responsive-tablet: true;
@@ -169,6 +172,7 @@ $fullhd-enabled: true;
 // $fullhd-enabled: false;
 //
 // $navbar-breakpoint: $tablet;
+// $modal-breakpoint: $tablet;
 //
 // add script to index.html
 // <script type="text/javascript">
@@ -189,6 +193,7 @@ $fullhd-enabled: true;
 // $fullhd-enabled: false;
 //
 // $navbar-breakpoint: $tablet; or $desktop;
+// $modal-breakpoint: $tablet; or $desktop;
 //
 // add script to index.html
 // <script type="text/javascript">
@@ -211,9 +216,7 @@ $fullhd-enabled: true;
 // $body-overflow-x: auto;
 // $body-min-width: $desktop - $vertical-scrollbar-width;
 // $navbar-breakpoint: 0;
-
-// navbar
-$navbar-breakpoint: $desktop;
+// $modal-breakpoint: 0;
 
 // Others
 $sidebar-width: 0;
