@@ -72,12 +72,12 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
       color: $ngx-datatable-table-head-cell-color;
       &:after {
         font-family: data-table;
-        content: 'c';
+        content: "\63";
       }
 
       &.datatable-icon-down:after,
       &.datatable-icon-up:after {
-        content: '';
+        content: "";
       }
     }
   }
@@ -266,13 +266,13 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
 }
 
 // allow selection
-.ngx-datatable .datatable-body-cell, 
+.ngx-datatable .datatable-body-cell,
 .ngx-datatable .datatable-header-cell {
   -webkit-user-select: initial !important;
   -moz-user-select: initial !important;
   -ms-user-select: initial !important;
   -o-user-select: initial !important;
-  user-select:initial !important; 
+  user-select:initial !important;
 }
 
 // datatable-selection
@@ -281,9 +281,9 @@ datatable-selection {
 }
 
 // row/cell selection
-.ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active, 
-.ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active:hover, 
-.ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active .datatable-row-group, 
+.ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active,
+.ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active:hover,
+.ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active .datatable-row-group,
 .ngx-datatable.material.selectable:not(.cell-selection) .datatable-body-row.active:hover .datatable-row-group,
 .ngx-datatable.material.cell-selection .datatable-body-cell.active,
 .ngx-datatable.material.cell-selection .datatable-body-cell.active:hover,
@@ -304,7 +304,7 @@ datatable-selection {
     left: 0;
     right: 0;
     top: 0.5em;
-  }  
+  }
 }
 .datatable-checkbox {
   display: flex;
@@ -317,7 +317,7 @@ datatable-selection {
 
     &::before {
       position: absolute;
-      content: '';
+      content: "";
       border: 1px solid $border !important;
       background-color: #fff;
       height: $checkbox-size !important;
@@ -338,7 +338,7 @@ datatable-selection {
     }
     &:checked::after {
       position: absolute;
-      content: '✓';
+      content: "\2713";
       text-align: center;
       font-weight: bold;
       color: $checkbox-checked-color;
@@ -371,7 +371,7 @@ datatable-selection {
   }
 }
 
-// 
+//
 .ngx-datatable.material {
   .datatable-header {
     .datatable-header-cell {

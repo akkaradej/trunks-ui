@@ -18,10 +18,10 @@ $checkbox-title-filled-color: $primary-invert !default;
     &+span {
       padding-left: $checkbox-size;
       margin-left: $brick-spacing;
-  
+
       &::before {
         position: absolute;
-        content: '';
+        content: "";
         border: 1px solid $border;
         background-color: #fff;
         height: $checkbox-size;
@@ -34,10 +34,10 @@ $checkbox-title-filled-color: $primary-invert !default;
     &:checked+span::before {
       border-color: $checkbox-checked-border-color;
     }
-  
+
     &:checked+span::after {
       position: absolute;
-      content: '✓';
+      content: "\2713";
       text-align: center;
       font-weight: bold;
       color: $checkbox-checked-color;
@@ -78,7 +78,7 @@ $checkbox-title-filled-color: $primary-invert !default;
         &:checked+span::before {
           border-color: $color;
         }
-  
+
         &:checked+span::after {
           color: $color;
         }
@@ -97,7 +97,7 @@ $checkbox-title-filled-color: $primary-invert !default;
           &:checked+span::before {
             background-color: $color;
           }
-    
+
           &:checked+span::after {
             color: $color-invert;
           }
@@ -135,7 +135,7 @@ $checkbox-title-filled-color: $primary-invert !default;
   &.is-horizontal {
     flex-direction: row;
     align-items: center;
-    
+
     .checkbox-title {
       text-align: right;
       margin-right: $brick-spacing * 2;
@@ -191,7 +191,7 @@ $checkbox-title-filled-color: $primary-invert !default;
       &.is-bordered {
         border-color: $color;
       }
-      
+
       &.has-divide {
         .checkbox {
           border-color: $color;
@@ -206,6 +206,6 @@ $checkbox-title-filled-color: $primary-invert !default;
       }
     }
   }
-    
+
 }
 

@@ -5,7 +5,7 @@ $error-message-tooltip-background-color: $danger !default;
 
 .is-required .label:after {
   color: $required-color;
-  content: ' *';
+  content: " *";
   display: inline;
 }
 

@@ -29,6 +29,6 @@ tag-input.readonly {
 
 // fix bug when build with prod, html is removed whitespace cause this tag__text overflow to ecllipse
 .tag__text::after {
-  content: ' ';
+  content: " ";
   white-space: pre-line;
 }

@@ -41,10 +41,10 @@ $radio-bg-size: $radio-size + 0.5 !default;
 
       &::after { // new circle line is here when has-bg
         position: absolute;
-        content: '';
+        content: "";
         border: 1px solid $border;
         border-radius: 100%;
-        height: $radio-size; 
+        height: $radio-size;
         width: $radio-size;
         top: ($radio-bg-size / 2) - ($radio-size / 2);
         left: ($radio-bg-size / 2) - ($radio-size / 2);
@@ -68,10 +68,10 @@ $radio-bg-size: $radio-size + 0.5 !default;
       padding-left: $radio-size;
       margin-left: $brick-spacing;
       display: inline-block;
-  
+
       &::before {
         position: absolute;
-        content: '';
+        content: "";
         border: 1px solid $border;
         border-radius: 100%;
         height: $radio-size;
@@ -79,10 +79,10 @@ $radio-bg-size: $radio-size + 0.5 !default;
         top: 0;
         left: 0;
       }
-  
+
       &::after {
         position: absolute;
-        content: '';
+        content: "";
         border-radius: 100%;
         height: $radio-inner-size;
         width: $radio-inner-size;
@@ -94,7 +94,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
     &:checked+span::before {
       border-color: $radio-border-color;
     }
-  
+
     &:checked+span::after {
       background: $radio-background-color;
     }
@@ -132,7 +132,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
             background: $color;
             border-color: $color;
             &::after { // new circle line is here when has-bg
-              border-color: $white; 
+              border-color: $white;
             }
           }
         }
