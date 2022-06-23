@@ -72,6 +72,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
     width: $radio-size;
     border: 1px solid $border;
     border-radius: 50%;
+    background-color: $scheme-main;
     appearance: none;
 
     &+span {
