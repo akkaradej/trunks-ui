@@ -31,6 +31,11 @@ $box-hightlight-color: $primary !default;
   border-bottom-left-radius: $box-radius;
   border-bottom-right-radius: $box-radius;
 
+  &.is-bordered {
+    border: 1px solid $border;
+    border-top: 0;
+  }
+
   &+.box-detail {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;

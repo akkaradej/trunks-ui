@@ -5,7 +5,7 @@ $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Ox
 // $variable-columns
 $variable-columns: false;
 
-// Root element size to calculate rem (in pixel) 
+// Root element size to calculate rem (in pixel)
 $body-size: 10px;
 $body-size-mobile: $body-size;
 
@@ -457,7 +457,7 @@ $checkbox-inner-size: $checkbox-size * 0.8;
 // $radio-border-color: $primary;
 // $radio-background-color: $primary;
 $radio-size: 1em;
-// $radio-inner-size: $radio-size - 0.5em;
+// $radio-inner-size: $radio-size / 5;
 // $radio-bg-size: $radio-size + 0.5;
 // --
 

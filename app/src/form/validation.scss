@@ -38,7 +38,8 @@ form .ng-touched.ng-invalid {
   &.base-control {
     .input,
     .select select,
-    .textarea {
+    .textarea,
+    .ng-select-container {
       border: $validation-error-border;
     }
     input[type="radio"] {
