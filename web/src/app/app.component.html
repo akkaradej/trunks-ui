@@ -1,14 +1,207 @@
-<button class="button is-primary">Primary Button</button>
-<button class="button is-secondary">Secondary Button</button>
-<section class="section">
-  <div class="test">test</div>
-  <div class="_test">component</div>
-</section>
+<nav
+  class="navbar is-secondary"
+  role="navigation"
+  aria-label="main navigation"
+>
+  <div class="container">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        Trunks UI
+      </div>
 
-<table class="table">
-  <tr class="is-secondary">
-    <td>test</td>
-  </tr>
-</table>
+      <a
+        role="button"
+        (click)="isOpenMenu = !isOpenMenu"
+        [class.is-active]="isOpenMenu"
+        class="navbar-burger burger"
+        aria-label="menu"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <!-- Navbar Menu -->
+    <div
+      class="navbar-menu"
+      [class.is-active]="isOpenMenu"
+    >
+      <div class="navbar-start">
+        <!-- General -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            General
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              routerLink="/general/variables"
+              class="navbar-item"
+            >
+              Variables
+            </a>
+            <a
+              routerLink="/general/spacing"
+              class="navbar-item"
+            >
+              Spacing
+            </a>
+            <a
+              routerLink="/general/brick-block"
+              class="navbar-item"
+            >
+              Brick & Block
+            </a>
+          </div>
+        </div>
+
+        <!-- Layout -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Layout
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              routerLink="/layout/section"
+              class="navbar-item"
+            >
+              Section
+            </a>
+          </div>
+        </div>
+
+        <!-- Element -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Element
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              routerLink="/element/badge"
+              class="navbar-item"
+            >
+              Badge
+            </a>
+            <a
+              routerLink="/element/badge-corner"
+              class="navbar-item"
+            >
+              Badge Corner
+            </a>
+            <a
+              routerLink="/element/box"
+              class="navbar-item"
+            >
+              Box
+            </a>
+            <a
+              routerLink="/element/button"
+              class="navbar-item"
+            >
+              Button
+            </a>
+            <a
+              routerLink="/element/icon"
+              class="navbar-item"
+            >
+              Icon
+            </a>
+            <a
+              routerLink="/element/table"
+              class="navbar-item"
+            >
+              Table
+            </a>
+          </div>
+        </div>
+
+        <!-- Component -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Component
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              routerLink="/component/modal"
+              class="navbar-item"
+            >
+              Modal
+            </a>
+            <a
+              routerLink="/component/navbar"
+              class="navbar-item"
+            >
+              Navbar
+            </a>
+            <a
+              routerLink="/component/tab"
+              class="navbar-item"
+            >
+              Tab
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Form
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              routerLink="/form/form"
+              class="navbar-item"
+            >
+              Form
+            </a>
+            <a
+              routerLink="/form/checkbox"
+              class="navbar-item"
+            >
+              Checkbox
+            </a>
+            <a
+              routerLink="/form/radio"
+              class="navbar-item"
+            >
+              Radio
+            </a>
+            <a
+              routerLink="/form/select"
+              class="navbar-item"
+            >
+              Select
+            </a>
+          </div>
+        </div>
+
+        <!-- Shape -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Shape
+          </a>
+          <div class="navbar-dropdown">
+            <a
+              routerLink="/shape/circle"
+              class="navbar-item"
+            >
+              Circle
+            </a>
+            <a
+              routerLink="/shape/triangle"
+              class="navbar-item"
+            >
+              Triangle
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- End Navbar Menu -->
+  </div>
+</nav>
 
 <router-outlet />

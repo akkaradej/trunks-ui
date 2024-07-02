@@ -1,0 +1,116 @@
+<section class="section">
+  <div class="container is-fluid">
+
+    <h1 class="title is-1">Navbar</h1>
+
+    <div class="block">
+      See More: <a
+        href="https://bulma.io/documentation/components/navbar"
+        target="_blank"
+      >
+        https://bulma.io/documentation/components/navbar
+      </a>
+    </div>
+
+    <div class="block">
+      toggle mobile screen menu with <b>is-active</b> at <b>navbar-menu</b> and <b>navbar-burger</b>
+    </div>
+
+    <div class="block">
+      <nav
+        class="navbar"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand">
+          <div class="navbar-item">
+            Logo
+          </div>
+
+          <a
+            role="button"
+            (click)="isOpenMenu = !isOpenMenu"
+            [class.is-active]="isOpenMenu"
+            class="navbar-burger burger"
+            aria-label="menu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div
+          class="navbar-menu"
+          [class.is-active]="isOpenMenu"
+        >
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a>
+
+            <div class="navbar-item">
+              Non-Link
+            </div>
+
+            <a class="navbar-item has-badge">
+              <div class="navbar-item-content">
+                <span>Has Badge</span>
+                <span class="badge">1</span>
+              </div>
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Dropdown
+              </a>
+
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  Sub Menu 1
+                </a>
+                <a class="navbar-item">
+                  Sub Menu 2
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Sub Menu 3
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <h2 class="title is-3">Variables</h2>
+
+    <div class="block">
+      <p>$navbar-dropdown-item-color: $text;</p>
+    </div>
+
+    <h2 class="title is-3">Bulma Variable</h2>
+
+    <div class="block">
+      <p>$navbar-item-hover-color: $link;</p>
+      <p>$navbar-item-hover-background-color: $white-bis;
+      </p>
+      <p>$navbar-dropdown-item-hover-color: $black;</p>
+      <p>$navbar-dropdown-item-hover-background-color: $background;</p>
+    </div>
+  </div>
+</section>

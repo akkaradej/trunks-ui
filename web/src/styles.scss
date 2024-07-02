@@ -4,8 +4,7 @@
 @use "./variables";
 
 $section-gap: 24px;
-@use "../../app/src/trunks" with (
-    // Font Family
+@use "../../lib/src/trunks" with ( // Font Family
     $family-sans-serif: 'BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
 );
 

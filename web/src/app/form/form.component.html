@@ -1,0 +1,118 @@
+<section class="section">
+  <div class="container is-fluid">
+
+    <h1 class="title is-1">Form</h1>
+
+    <div class="block">
+      See More: <a
+        href="https://bulma.io/documentation/form/general"
+        target="_blank"
+      >
+        https://bulma.io/documentation/form/general
+      </a>
+    </div>
+
+    <h2 class="title is-3">Basic Usage</h2>
+
+    <div class="block">
+      <form novalidate>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+            >
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-primary">
+              Save
+            </button>
+          </div>
+          <div class="control">
+            <button
+              class="button is-text"
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <h2 class="title is-3">Modifier</h2>
+
+    <div class="block">
+      field is-horizontal + field-label + field-body
+    </div>
+    <div class="block">
+      <div>
+        field-label is-[size] (for font-size)
+      </div>
+    </div>
+    <div class="block">
+      <form novalidate>
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Name</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="block">
+      <div class="block">
+        form submitted + input ng-invalid
+      </div>
+      <div class="block">
+        <form
+          novalidate
+          class="submitted"
+        >
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input
+                class="input ng-invalid"
+                type="text"
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block">
+        is-required
+      </div>
+      <div class="block">
+        <form novalidate>
+          <div class="field is-required">
+            <label class="label">Name</label>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
