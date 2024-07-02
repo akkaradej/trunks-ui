@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
 // direction
 .is-flex-row {
   flex-direction: row !important;
@@ -77,13 +80,7 @@
 }
 
 .is-justify-evenly {
-  justify-content: space-around !important; // fix ie does not have space-evenly
   justify-content: space-evenly !important;
-}
-@include edge {
-  .is-justify-evenly {
-    justify-content: space-around !important; // fix edge    
-  }
 }
 
 // align
@@ -150,60 +147,60 @@
 @for $i from 1 through 100 {
   .is-percent-#{$i} {
     flex: none !important;
-    width: round(percentage($i/100)) !important;
+    width: round(percentage(math.div($i, 100))) !important;
   }
 }
 
-@include mobile {
+@include bulma-mx.mobile {
   @for $i from 1 through 100 {
     .is-percent-#{$i}-mobile {
       flex: none !important;
-      width: round(percentage($i/100)) !important;
+      width: round(percentage(math.div($i, 100))) !important;
     }
   }
 }
 
-@include tablet {
+@include bulma-mx.tablet {
   @for $i from 1 through 100 {
     .is-percent-#{$i}-tablet {
       flex: none !important;
-      width: round(percentage($i/100)) !important;
+      width: round(percentage(math.div($i, 100))) !important;
     }
   }
 }
 
-@include touch {
+@include bulma-mx.touch {
   @for $i from 1 through 100 {
     .is-percent-#{$i}-touch {
       flex: none !important;
-      width: round(percentage($i/100)) !important;
+      width: round(percentage(math.div($i, 100))) !important;
     }
   }
 }
 
-@include desktop {
+@include bulma-mx.desktop {
   @for $i from 1 through 100 {
     .is-percent-#{$i}-desktop {
       flex: none !important;
-      width: round(percentage($i/100)) !important;
+      width: round(percentage(math.div($i, 100))) !important;
     }
   }
 }
 
-@include widescreen {
+@include bulma-mx.widescreen {
   @for $i from 1 through 100 {
     .is-percent-#{$i}-widescreen {
       flex: none !important;
-      width: round(percentage($i/100)) !important;
+      width: round(percentage(math.div($i, 100))) !important;
     }
   }
 }
 
-@include fullhd {
+@include bulma-mx.fullhd {
   @for $i from 1 through 100 {
     .is-percent-#{$i}-fullhd {
       flex: none !important;
-      width: round(percentage($i/100)) !important;
+      width: round(percentage(math.div($i, 100))) !important;
     }
   }
 }

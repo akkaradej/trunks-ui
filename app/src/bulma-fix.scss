@@ -1,12 +1,16 @@
+@use "./utilities/variables";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "bulma/sass/elements/button" as bulma-button;
+
 // Bulma Fix
 
 // Fix: default bg color has no hover effect
-.button {
-  &:hover,
-  &.is-hovered {
-    background-color: darken($button-background-color, 2.5%);
-  }
-}
+// .button {
+//   &:hover,
+//   &.is-hovered {
+//     background-color: darken(bulma-button.$button-background-l, 2.5%);
+//   }
+// }
 
 // Fix: 1:5 width of label:input in horizontal form is too bad
 // define its width in case by case should be better
@@ -22,7 +26,7 @@
 
 // Fix: Search input type has different style from text input type
 .input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
-  border-radius: $radius;
+  border-radius: variables.$radius;
 }
 
 // Fix: file input add-on button is shrinked
@@ -46,7 +50,7 @@
 
 // Fix: navbar-menu height does not equal navbar
 .navbar-menu {
-  min-height: $navbar-height;
+  min-height: variables.$navbar-height;
 }
 
 // Fix: select arrow has z-index
@@ -67,55 +71,18 @@
   cursor: pointer;
 }
 
-// Fix IE: textarea not expand to defined rows number
-.textarea[rows] {
-  height: auto;
-}
-
-// Fix IE 11: tile
-.is-vertical > .tile {
-  -ms-flex-preferred-size: auto; 
-}
-
-// Fix IE, Edge
-// https://github.com/jgthms/bulma/issues/2503
-// workaround: copy code below from source and remove one line
-// 
-@include from($navbar-breakpoint) {
-  .navbar-item {
-    &.is-active,
-    &.is-hoverable:focus,
-    // &.is-hoverable:focus-within, <-- remove this to fix IE
-    &.is-hoverable:hover {
-      // fix: display only first child
-      .navbar-dropdown {
-        display: none;
-      }
-      > .navbar-dropdown {
-        display: block;
-        .navbar.is-spaced &,
-        &.is-boxed {
-          opacity: 1;
-          pointer-events: auto;
-          transform: translateY(0);
-        }
-      }
-    }
-  }
-}
-
 // Fix too small font-size 0.875rem change to $size-normal
 .dropdown-item {
-  font-size: $size-normal;
+  font-size: variables.$size-normal;
   padding: 0.5rem 1.5rem;
 }
 
 .navbar-dropdown {
-  font-size: $size-normal;
+  font-size: variables.$size-normal;
 }
 
-@include from($navbar-breakpoint) {
+@include bulma-mx.from(variables.$navbar-breakpoint) {
   .navbar-dropdown {
-    font-size: $size-normal;
+    font-size: variables.$size-normal;
   }
 }

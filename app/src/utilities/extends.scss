@@ -1,19 +1,22 @@
+@use "variables";
+@use "mixins" as mx;
+
 %brick {
-  @include brick;
+  @include mx.brick;
 }
 
 %is-spacing {
-  @include is-spacing;
+  @include mx.is-spacing;
 }
  
 %is-spacing-2 {
-  @include is-spacing($brick-spacing * 2);
+  @include mx.is-spacing(variables.$brick-spacing * 2);
 }
  
 %is-spacing-3 {
-  @include is-spacing($brick-spacing * 3);
+  @include mx.is-spacing(variables.$brick-spacing * 3);
 }
 
 %is-horizontal {
-  @include is-horizontal;
+  @include mx.is-horizontal;
 }

@@ -1,20 +1,22 @@
-$badge-font-size: $size-normal !default;
+@use "../utilities/variables";
+
+$badge-font-size: variables.$size-normal !default;
 
 .badge {
   display: inline-block;
   min-width: 1.4em;
   padding: 0.2em 0.4em;
-  font-weight: $weight-bold;
+  font-weight: variables.$weight-bold;
   font-size: $badge-font-size;
-  color: $text;
+  color: variables.$text;
   line-height: 1;
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background: $background;
+  background: variables.$background;
   border-radius: 1em;
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {

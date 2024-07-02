@@ -1,6 +1,5 @@
-$input-arrow-size: 0.625em !default;
-$input-arrow-right: 0.5em !default;
-$input-arrow-border-width: 1px !default;
+@use "../utilities/variables";
+@use "./shared";
 
 $loader-size: 1em;
 
@@ -15,15 +14,15 @@ $loader-size: 1em;
 
   // select placeholder, use with logic <select [class.show-placeholder]="!value">
   .show-placeholder {
-    color: $text-placeholder;
+    color: variables.$text-placeholder;
     option {
-      color: $text;
+      color: variables.$text;
     }
   }
 }
 
 .select:not(.is-multiple) select {
-  padding-right: $input-arrow-size + ($input-arrow-right * 2)
+  padding-right: shared.$input-arrow-size + (shared.$input-arrow-right * 2)
 }
 
 .select.is-loading::after {
@@ -32,13 +31,13 @@ $loader-size: 1em;
 }
 
 .select:not(.is-multiple):not(.is-loading)::after {
-  width: $input-arrow-size;
-  height: $input-arrow-size;
+  width: shared.$input-arrow-size;
+  height: shared.$input-arrow-size;
   top: 50%;
-  right: $input-arrow-right;
+  right: shared.$input-arrow-right;
   border-radius: 0;
-  border-width: $input-arrow-border-width;
-  margin-top: $input-arrow-size * -0.75;
+  border-width: shared.$input-arrow-border-width;
+  margin-top: shared.$input-arrow-size * -0.75;
 }
 
 // Fix: select arrow color

@@ -1,13 +1,15 @@
-$badge-corner-font-size: $size-normal !default;
-$badge-corner-background-color: $grey !default;
+@use "../utilities/variables";
+
+$badge-corner-font-size: variables.$size-normal !default;
+$badge-corner-background-color: variables.$grey !default;
 $badge-corner-box-shadow: 0 0 0 .2rem #fff !default;
-$badge-corner-border-radius: $radius-rounded !default;
+$badge-corner-border-radius: variables.$radius-rounded !default;
 
 .badge-corner {
   position: relative;
   white-space: nowrap;
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-badge-#{$name} {

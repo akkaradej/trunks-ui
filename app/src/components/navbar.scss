@@ -1,4 +1,14 @@
-$navbar-dropdown-item-color: $text !default;
+@use "../utilities/variables";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "bulma/sass/components/navbar" as bulma-navbar;
+
+$navbar-dropdown-item-color: variables.$text !default;
+$navbar-dropdown-item-active-color: variables.$primary !default;
+$navbar-dropdown-item-active-background-color: variables.$primary-invert !default;
+$navbar-dropdown-item-hover-background-color: variables.$background !default;
+$navbar-dropdown-item-hover-color: variables.$text !default;
+$navbar-item-hover-background-color: variables.$background !default;
+$navbar-item-hover-color: variables.$text !default;
 
 // .navbar-dropdown behavior for more detailed style
 .navbar-item {
@@ -23,7 +33,7 @@ $navbar-dropdown-item-color: $text !default;
     }
   }
 } 
-@include from($navbar-breakpoint) {
+@include bulma-mx.from(bulma-navbar.$navbar-breakpoint) {
   .navbar-dropdown {
     .navbar-item.has-dropdown {
       &:hover {
@@ -125,12 +135,12 @@ $navbar-dropdown-item-color: $text !default;
   }
 }
 .navbar-dropdown {
-  font-size: $size-normal;
+  font-size: variables.$size-normal;
 }
 
-@include from($navbar-breakpoint) {
+@include bulma-mx.from(variables.$navbar-breakpoint) {
   .navbar-dropdown {
-    font-size: $size-normal;
+    font-size: variables.$size-normal;
   }
 
   .navbar > .container.is-fullhd,

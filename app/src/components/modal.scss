@@ -1,4 +1,8 @@
-$modal-card-title-font-weight: $weight-bold  !default;
+@use "../utilities/variables";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "bulma/sass/components/modal" as bulma-modal;
+
+$modal-card-title-font-weight: variables.$weight-bold  !default;
 // $modal-content-width: 640px !default;
 $modal-small-width: 320px !default;
 $modal-medium-width: 780px !default;
@@ -6,16 +10,16 @@ $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
 
-$modal-card-body-font-weight: $weight-normal  !default;
-$modal-close-background-color: bulmaRgba($scheme-invert, 0.2) !default;
-$modal-close-color: $scheme-main  !default;
+$modal-card-body-font-weight: variables.$weight-normal  !default;
+$modal-close-background-color: bulmaRgba(variables.$scheme-invert, 0.2) !default;
+$modal-close-color: variables.$scheme-main  !default;
 
 .modal {
   &.has-no-footer {
     .modal-card {
       .modal-card-body {
-        border-bottom-left-radius: $modal-card-foot-radius;
-        border-bottom-right-radius: $modal-card-foot-radius;
+        border-bottom-left-radius: bulma-modal.$modal-card-foot-radius;
+        border-bottom-right-radius: bulma-modal.$modal-card-foot-radius;
       }
     }
   }
@@ -23,8 +27,8 @@ $modal-close-color: $scheme-main  !default;
   // Depreciated
   .modal-card.modal-card-no-footer {
     .modal-card-body {
-      border-bottom-left-radius: $modal-card-foot-radius;
-      border-bottom-right-radius: $modal-card-foot-radius;
+      border-bottom-left-radius: bulma-modal.$modal-card-foot-radius;
+      border-bottom-right-radius: bulma-modal.$modal-card-foot-radius;
     }
   }
 
@@ -38,7 +42,7 @@ $modal-close-color: $scheme-main  !default;
     font-weight: $modal-card-body-font-weight;
   }
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
 
@@ -65,15 +69,15 @@ $modal-close-color: $scheme-main  !default;
 
 .modal-card-head {
   .modal-card-title {
-    margin-left: ($modal-close-dimensions * 1.25);
-    margin-right: ($modal-close-dimensions * 0.25);
+    margin-left: (bulma-modal.$modal-close-dimensions * 1.25);
+    margin-right: (bulma-modal.$modal-close-dimensions * 0.25);
   }
 
   .delete {
-    width: $modal-close-dimensions;
-    height: $modal-close-dimensions;
-    max-height: $modal-close-dimensions;
-    max-width: $modal-close-dimensions;
+    width: bulma-modal.$modal-close-dimensions;
+    height: bulma-modal.$modal-close-dimensions;
+    max-height: bulma-modal.$modal-close-dimensions;
+    max-width: bulma-modal.$modal-close-dimensions;
     color: inherit;
     background-color: $modal-close-background-color;
 
@@ -88,7 +92,7 @@ $modal-close-color: $scheme-main  !default;
 @mixin modal-size {
   >.modal-content,
   >.modal-card {
-    width: $modal-content-width;
+    width: bulma-modal.$modal-content-width;
   }
 
   &.modal-auto {
@@ -129,14 +133,14 @@ $modal-close-color: $scheme-main  !default;
 }
 
 .modal {
-  @include from($modal-breakpoint) {
+  @include bulma-mx.from(bulma-modal.$modal-breakpoint) {
     @include modal-size;
   }
 }
 
 // non-responsive
-@if $non-responsive-mobile {
-  @include mobile {
+@if variables.$non-responsive-mobile {
+  @include bulma-mx.mobile {
     .modal {
       @include modal-size;
     }
@@ -147,21 +151,21 @@ $modal-close-color: $scheme-main  !default;
 html {
   &.non-responsive,
   &.non-responsive-mobile.non-responsive-tablet {
-    @include touch {
+    @include bulma-mx.touch {
       .modal {
         @include modal-size;
       }
     }
   }
   &.non-responsive-mobile:not(.non-responsive-mobile) {
-    @include mobile {
+    @include bulma-mx.mobile {
       .modal {
         @include modal-size;
       }
     }
   }
   &.non-responsive-tablet:not(.non-responsive-tablet) {
-    @include tablet-only {
+    @include bulma-mx.tablet-only {
       .modal {
         @include modal-size;
       }

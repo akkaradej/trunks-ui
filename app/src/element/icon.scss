@@ -1,4 +1,5 @@
 // make icon size belongs to its element (em).
+@use "../utilities/variables";
 
 .icon-text {
   line-height: 1.5;
@@ -47,10 +48,10 @@
   .icon {
     &:first-child:not(:last-child) {
       margin-left: 0;
-      margin-right: $brick-spacing;
+      margin-right: variables.$brick-spacing;
     }
     &:last-child:not(:first-child) {
-      margin-left: $brick-spacing;
+      margin-left: variables.$brick-spacing;
       margin-right: 0;
     }
   }

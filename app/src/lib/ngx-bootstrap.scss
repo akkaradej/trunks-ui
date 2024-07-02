@@ -1,10 +1,13 @@
+@use "../utilities/variables";
+@use "bulma/sass/components/modal" as bulma-modal;
+
 bs-datepicker-container, bs-daterangepicker-container {
-  z-index: $modal-z;
+  z-index: bulma-modal.$modal-z;
 }
 
 .bs-datepicker-body {
   .today-class {
-    color: $primary;
+    color: variables.$primary;
   }
   table {
     td {
@@ -13,5 +16,5 @@ bs-datepicker-container, bs-daterangepicker-container {
   }
 }
 .theme-default .bs-datepicker-head {
-  background-color: $primary;
+  background-color: variables.$primary;
 }

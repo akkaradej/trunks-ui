@@ -1,3 +1,11 @@
+@use "sass:math";
+@use "../utilities/variables.scss";
+@use "bulma/sass/utilities/extends";
+@use "bulma/sass/utilities/initial-variables" as bulma-iv;
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "bulma/sass/layout/level" as bulma-level;
+@use "bulma/sass/layout/hero" as bulma-hero;
+
 /**
  * implement 3 things
  * 1. @include tablet
@@ -6,7 +14,7 @@
  */
 
 %non-responsive-mobile {
-  @include mobile {
+  @include bulma-mx.mobile {
     overflow-x: auto;
   }
 
@@ -19,18 +27,18 @@
   }
 
   .field-label {
-    @include mobile {
+    @include bulma-mx.mobile {
       margin-bottom: 0;
     }
 
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
-    @include ltr-property("margin", 1.5rem);
+    @include bulma-mx.ltr-property("margin", 1.5rem);
     text-align: right;
 
     &.is-small {
-      font-size: $size-small;
+      font-size: variables.$size-small;
       padding-top: 0.375em;
     }
 
@@ -39,12 +47,12 @@
     }
 
     &.is-medium {
-      font-size: $size-medium;
+      font-size: variables.$size-medium;
       padding-top: 0.375em;
     }
 
     &.is-large {
-      font-size: $size-large;
+      font-size: variables.$size-large;
       padding-top: 0.375em;
     }
   }
@@ -67,7 +75,7 @@
       }
 
       &:not(:last-child) {
-        @include ltr-property("margin", 0.75rem);
+        @include bulma-mx.ltr-property("margin", 0.75rem);
       }
     }
   }
@@ -85,7 +93,7 @@
   }
 
   .level-item {
-    @include mobile {
+    @include bulma-mx.mobile {
       &:not(:last-child) {
         margin-bottom: 0;
       }
@@ -95,12 +103,12 @@
   .level-left,
   .level-right {
     &:not(:last-child) {
-      @include ltr-property("margin", $level-item-spacing);
+      @include bulma-mx.ltr-property("margin", bulma-level.$level-item-spacing);
     }
   }
 
   .level-left {
-    @include mobile {
+    @include bulma-mx.mobile {
       &+.level-right {
         margin-top: 0;
       }
@@ -115,7 +123,7 @@
 
   // pagination
 
-  @include mobile {
+  @include bulma-mx.mobile {
     .pagination {
       flex-wrap: nowrap;
     }
@@ -246,49 +254,49 @@
     }
 
     .columns>&.is-offset-three-quarters {
-      @include ltr-property("margin", 75%, false);
+      @include bulma-mx.ltr-property("margin", 75%, false);
     }
 
     .columns>&.is-offset-two-thirds {
-      @include ltr-property("margin", 66.6666%, false);
+      @include bulma-mx.ltr-property("margin", 66.6666%, false);
     }
 
     .columns>&.is-offset-half {
-      @include ltr-property("margin", 50%, false);
+      @include bulma-mx.ltr-property("margin", 50%, false);
     }
 
     .columns>&.is-offset-one-third {
-      @include ltr-property("margin", 33.3333%, false);
+      @include bulma-mx.ltr-property("margin", 33.3333%, false);
     }
 
     .columns>&.is-offset-one-quarter {
-      @include ltr-property("margin", 25%, false);
+      @include bulma-mx.ltr-property("margin", 25%, false);
     }
 
     .columns>&.is-offset-one-fifth {
-      @include ltr-property("margin", 20%, false);
+      @include bulma-mx.ltr-property("margin", 20%, false);
     }
 
     .columns>&.is-offset-two-fifths {
-      @include ltr-property("margin", 40%, false);
+      @include bulma-mx.ltr-property("margin", 40%, false);
     }
 
     .columns>&.is-offset-three-fifths {
-      @include ltr-property("margin", 60%, false);
+      @include bulma-mx.ltr-property("margin", 60%, false);
     }
 
     .columns>&.is-offset-four-fifths {
-      @include ltr-property("margin", 80%, false);
+      @include bulma-mx.ltr-property("margin", 80%, false);
     }
 
     @for $i from 0 through 12 {
       .columns>&.is-#{$i} {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(math.div($i, 12));
       }
 
       .columns>&.is-offset-#{$i} {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include bulma-mx.ltr-property("margin", percentage(math.div($i, 12)), false);
       }
     }
 
@@ -360,47 +368,47 @@
 
     &.is-offset-three-quarters,
     &.is-offset-three-quarters-tablet {
-      @include ltr-property("margin", 75%, false);
+      @include bulma-mx.ltr-property("margin", 75%, false);
     }
 
     &.is-offset-two-thirds,
     &.is-offset-two-thirds-tablet {
-      @include ltr-property("margin", 66.6666%, false);
+      @include bulma-mx.ltr-property("margin", 66.6666%, false);
     }
 
     &.is-offset-half,
     &.is-offset-half-tablet {
-      @include ltr-property("margin", 50%, false);
+      @include bulma-mx.ltr-property("margin", 50%, false);
     }
 
     &.is-offset-one-third,
     &.is-offset-one-third-tablet {
-      @include ltr-property("margin", 33.3333%, false);
+      @include bulma-mx.ltr-property("margin", 33.3333%, false);
     }
 
     &.is-offset-one-quarter,
     &.is-offset-one-quarter-tablet {
-      @include ltr-property("margin", 25%, false);
+      @include bulma-mx.ltr-property("margin", 25%, false);
     }
 
     &.is-offset-one-fifth,
     &.is-offset-one-fifth-tablet {
-      @include ltr-property("margin", 20%, false);
+      @include bulma-mx.ltr-property("margin", 20%, false);
     }
 
     &.is-offset-two-fifths,
     &.is-offset-two-fifths-tablet {
-      @include ltr-property("margin", 40%, false);
+      @include bulma-mx.ltr-property("margin", 40%, false);
     }
 
     &.is-offset-three-fifths,
     &.is-offset-three-fifths-tablet {
-      @include ltr-property("margin", 60%, false);
+      @include bulma-mx.ltr-property("margin", 60%, false);
     }
 
     &.is-offset-four-fifths,
     &.is-offset-four-fifths-tablet {
-      @include ltr-property("margin", 80%, false);
+      @include bulma-mx.ltr-property("margin", 80%, false);
     }
 
     @for $i from 0 through 12 {
@@ -408,12 +416,12 @@
       &.is-#{$i},
       &.is-#{$i}-tablet {
         flex: none;
-        width: percentage($i / 12);
+        width: percentage(math.div($i, 12));
       }
 
       &.is-offset-#{$i},
       &.is-offset-#{$i}-tablet {
-        @include ltr-property("margin", percentage($i / 12), false);
+        @include bulma-mx.ltr-property("margin", percentage(math.div($i, 12)), false);
       }
     }
   }
@@ -428,7 +436,7 @@
     @for $i from 1 through 12 {
       &.is-#{$i} {
         flex: none;
-        width: ($i / 12) * 100%;
+        width: math.div($i, 12) * 100%;
       }
     }
   }
@@ -438,25 +446,25 @@
   .hero {
     &.is-medium {
       .hero-body {
-        padding: $hero-body-padding-medium;
+        padding: bulma-hero.$hero-body-padding-medium;
       }
     }
 
     &.is-large {
       .hero-body {
-        padding: $hero-body-padding-large;
+        padding: bulma-hero.$hero-body-padding-large;
       }
     }
   }
 
   .hero-video {
-    @include mobile {
+    @include bulma-mx.mobile {
       display: block;
     }
   }
 
   .hero-buttons {
-    @include mobile {
+    @include bulma-mx.mobile {
       .button {
         &:not(:last-child) {
           margin-bottom: 0;
@@ -468,18 +476,18 @@
     justify-content: center;
 
     .button:not(:last-child) {
-      @include ltr-property("margin", 1.5rem);
+      @include bulma-mx.ltr-property("margin", 1.5rem);
     }
   }
 }
 
-@if $non-responsive-mobile {
+@if variables.$non-responsive-mobile {
   html {
-    @include mobile {
-      @if $non-responsive-tablet {
-        min-width: $desktop - $vertical-scrollbar-width;
+    @include bulma-mx.mobile {
+      @if variables.$non-responsive-tablet {
+        min-width: variables.$desktop - variables.$vertical-scrollbar-width;
       } @else {
-        min-width: $tablet - $vertical-scrollbar-width;
+        min-width: variables.$tablet - variables.$vertical-scrollbar-width;
       }
     }
 
@@ -490,12 +498,12 @@
 html {
   &.non-responsive,
   &.non-responsive-mobile {
-    @include mobile {
-      min-width: $tablet - $vertical-scrollbar-width;
+    @include bulma-mx.mobile {
+      min-width: variables.$tablet - variables.$vertical-scrollbar-width;
     }
 
     .container {
-      max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$tablet - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
 
     @extend %non-responsive-mobile;
@@ -503,12 +511,12 @@ html {
 
   &.non-responsive,
   &.non-responsive-mobile.non-responsive-tablet {
-    @include mobile {
-      min-width: $desktop - $vertical-scrollbar-width;
+    @include bulma-mx.mobile {
+      min-width: variables.$desktop - variables.$vertical-scrollbar-width;
     }
 
     .container {
-      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 }

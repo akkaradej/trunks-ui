@@ -1,9 +1,15 @@
+@use "../utilities/variables.scss";
+@use "bulma/sass/base" as bulma-base;
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
+$body-size-mobile: bulma-base.$body-size !default;
+
 html {
-  font-size: $body-size;
+  font-size: bulma-base.$body-size;
   height: 100%;
 }
 
-@include mobile {
+@include bulma-mx.mobile {
   // mobile root element size (rem)
   html {
     font-size: $body-size-mobile;
@@ -11,21 +17,21 @@ html {
 }
 
 body {
-  font-size: $size-normal;
+  font-size: variables.$size-normal;
   min-height: 100%;
   position: relative;
   word-break: break-word;
 }
 
 a {
-  color: $text;
+  color: variables.$text;
   cursor: pointer;
   text-decoration: none;
   strong {
     color: currentColor;
   }
   &:hover {
-    color: $text;
+    color: variables.$text;
   }
 }
 
@@ -81,7 +87,7 @@ body {
 
 // loading with specific color
 .is-loading {
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     &.is-#{$name}::after {
       border-left-color: $color !important;

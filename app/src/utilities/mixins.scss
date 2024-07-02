@@ -1,19 +1,7 @@
-@import '../bulma-mixins-without-import'; /* to avoid override var when import this file before */
+@use "./variables";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
 $input-arrow-size: 0.625em !default;
-
-/* IE10+ CSS styles go here */
-@mixin ie {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @content;
-  }
-}
-
-/* Edge 12+ or 18+ (Before Chromium Version) */
-@mixin edge {
-  @supports (-ms-accelerator: true) or (-ms-ime-align: auto) {
-    @content;
-  }
-}
 
 // iOS Safari
 @mixin iOS {
@@ -23,7 +11,7 @@ $input-arrow-size: 0.625em !default;
 }
 
 @mixin bg-color {
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {
@@ -51,38 +39,38 @@ $input-arrow-size: 0.625em !default;
 @mixin space-bottom {
   @for $i from 0 through 6 {
     &.space-#{$i} {
-      margin-bottom: $square-size * $i;
+      margin-bottom: variables.$square-size * $i;
     }
   }
 
-  @include mobile {
+  @include bulma-mx.mobile {
     @for $i from 0 through 6 {
       &.space-#{$i}-mobile {
-        margin-bottom: $square-size * $i;
+        margin-bottom: variables.$square-size * $i;
       }
     }
   }
 
-  @include tablet {
+  @include bulma-mx.tablet {
     @for $i from 0 through 6 {
       &.space-#{$i}-tablet {
-        margin-bottom: $square-size * $i;
+        margin-bottom: variables.$square-size * $i;
       }
     }
   }
 
-  @include touch {
+  @include bulma-mx.touch {
     @for $i from 0 through 6 {
       &.space-#{$i}-touch {
-        margin-bottom: $square-size * $i;
+        margin-bottom: variables.$square-size * $i;
       }
     }
   }
 
-  @include desktop {
+  @include bulma-mx.desktop {
     @for $i from 0 through 6 {
       &.space-#{$i}-desktop {
-        margin-bottom: $square-size * $i;
+        margin-bottom: variables.$square-size * $i;
       }
     }
   }
@@ -91,49 +79,49 @@ $input-arrow-size: 0.625em !default;
 @mixin space-right {
   @for $i from 0 through 6 {
     &.space-#{$i} {
-      margin-right: $square-size * $i;
+      margin-right: variables.$square-size * $i;
       margin-bottom: 0;
     }
   }
 
-  @include mobile {
+  @include bulma-mx.mobile {
     @for $i from 0 through 6 {
       &.space-#{$i}-mobile {
-        margin-right: $square-size * $i;
+        margin-right: variables.$square-size * $i;
         margin-bottom: 0;
       }
     }
   }
 
-  @include tablet {
+  @include bulma-mx.tablet {
     @for $i from 0 through 6 {
       &.space-#{$i}-tablet {
-        margin-right: $square-size * $i;
+        margin-right: variables.$square-size * $i;
         margin-bottom: 0;
       }
     }
   }
 
-  @include touch {
+  @include bulma-mx.touch {
     @for $i from 0 through 6 {
       &.space-#{$i}-touch {
-        margin-right: $square-size * $i;
+        margin-right: variables.$square-size * $i;
         margin-bottom: 0;
       }
     }
   }
 
-  @include desktop {
+  @include bulma-mx.desktop {
     @for $i from 0 through 6 {
       &.space-#{$i}-desktop {
-        margin-right: $square-size * $i;
+        margin-right: variables.$square-size * $i;
         margin-bottom: 0;
       }
     }
   }
 }
 
-@mixin block($spacing: $block-spacing) {
+@mixin block($spacing: variables.$block-spacing) {
   &:not(:last-child) {
     margin-bottom: $spacing;
 
@@ -146,7 +134,7 @@ $input-arrow-size: 0.625em !default;
  @include block;
 }
 
-@mixin brick($spacing: $brick-spacing) {
+@mixin brick($spacing: variables.$brick-spacing) {
   &:not(:last-child) {
     margin-bottom: $spacing;
 
@@ -154,7 +142,7 @@ $input-arrow-size: 0.625em !default;
   }
 }
 
-@mixin is-spacing($spacing: $brick-spacing) {
+@mixin is-spacing($spacing: variables.$brick-spacing) {
   > * {
     @include brick($spacing);
   }
@@ -165,7 +153,7 @@ $input-arrow-size: 0.625em !default;
   align-items: center !important;
   > :not(:last-child) {
     &.block, &.breadcrumb, &.level, &.message, &.pagination, &.tabs, &.box, &.content, &.notification, &.progress, &.table {
-      margin-right: $block-spacing;
+      margin-right: variables.$block-spacing;
       margin-bottom: 0;
 
       @include space-right;
@@ -173,7 +161,7 @@ $input-arrow-size: 0.625em !default;
   }
 
   > .brick:not(:last-child) {
-    margin-right: $brick-spacing;
+    margin-right: variables.$brick-spacing;
     margin-bottom: 0;
 
     @include space-right;
@@ -181,7 +169,7 @@ $input-arrow-size: 0.625em !default;
 
   &.is-spacing {
     > *:not(:last-child) {
-      margin-right: $brick-spacing;
+      margin-right: variables.$brick-spacing;
       margin-bottom: 0;
 
       @include space-right;
@@ -190,7 +178,7 @@ $input-arrow-size: 0.625em !default;
 
   &.is-spacing-2 {
     > *:not(:last-child) {
-      margin-right: $brick-spacing * 2;
+      margin-right: variables.$brick-spacing * 2;
       margin-bottom: 0;
 
       @include space-right;
@@ -199,7 +187,7 @@ $input-arrow-size: 0.625em !default;
 
   &.is-spacing-3 {
     > *:not(:last-child) {
-      margin-right: $brick-spacing * 3;
+      margin-right: variables.$brick-spacing * 3;
       margin-bottom: 0;
 
       @include space-right;
@@ -227,12 +215,6 @@ $input-arrow-size: 0.625em !default;
   }
 
   &.is-evenly {
-    justify-content: space-around !important; // fix ie
     justify-content: space-evenly !important;
-  }
-  @include edge {
-    &.is-evenly {
-      justify-content: space-around !important; // fix edge
-    }
   }
 }

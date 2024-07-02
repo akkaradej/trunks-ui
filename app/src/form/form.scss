@@ -1,4 +1,7 @@
-$label-size: $size-normal !default;
+@use "sass:math";
+@use "../utilities/variables";
+
+$label-size: variables.$size-normal !default;
 $control-icon-width: 3rem !default;
 
 .label {
@@ -7,12 +10,12 @@ $control-icon-width: 3rem !default;
 
 .field.is-horizontal {
   .field-label {
-    margin-top: ($control-height - $label-size * $control-line-height) / 2;
+    margin-top: math.div((variables.$control-height - $label-size * variables.$control-line-height), 2);
 
-    @each $name, $size in $font-sizes {
+    @each $name, $size in variables.$font-sizes {
       &.is-#{str-slice($name, str-length("size-") + 1)} {
         font-size: $size;
-        margin-top: ($control-height - $size * $control-line-height) / 2;
+        margin-top: math.div((variables.$control-height - $size * variables.$control-line-height), 2);
         padding: 0;
       }
     }
@@ -31,5 +34,5 @@ $control-icon-width: 3rem !default;
 .control.has-icons-left .icon,
 .control.has-icons-right .icon {
   width: $control-icon-width;
-  height: $control-height;
+  height: variables.$control-height;
 }

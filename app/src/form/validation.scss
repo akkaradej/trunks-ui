@@ -1,7 +1,10 @@
-$required-color: $danger !default;
-$validation-error-border: 1px solid $danger !default;
-$error-message-tooltip-color: $text-invert !default;
-$error-message-tooltip-background-color: $danger !default;
+@use "../utilities/variables";
+@use "bulma/sass/form/shared" as bulma-form-shared;
+
+$required-color: variables.$danger !default;
+$validation-error-border: 1px solid variables.$danger !default;
+$error-message-tooltip-color: variables.$text-invert !default;
+$error-message-tooltip-background-color: variables.$danger !default;
 
 .is-required .label:after {
   color: $required-color;
@@ -70,11 +73,11 @@ form .ng-touched.ng-invalid {
 .error-message-tooltip {
   display: none;
   position: absolute;
-  top: -$input-height;
+  top: -#{bulma-form-shared.$input-height};
   left: 0;
   padding: 0.5rem 1rem;
-  border-radius: $radius;
-  background-color:$error-message-tooltip-background-color;
+  border-radius: variables.$radius;
+  background-color: $error-message-tooltip-background-color;
   color: $error-message-tooltip-color;
   text-align: left;
   white-space: nowrap;

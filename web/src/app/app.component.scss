@@ -1,0 +1,13 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+._test {
+    color: bulmaFindColorInvert($secondary);
+    background-color: $secondary;
+}
+
+@include mobile {
+    ._test {
+        background-color: $primary;
+    }
+}

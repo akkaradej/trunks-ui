@@ -1,5 +1,7 @@
-$completer-selected-row-background-color: $primary !default;
-$completer-selected-row-color: $primary-invert !default;
+@use "../utilities/variables";
+
+$completer-selected-row-background-color: variables.$primary !default;
+$completer-selected-row-color: variables.$primary-invert !default;
 
 .completer-selected-row {
   background-color: $completer-selected-row-background-color !important;

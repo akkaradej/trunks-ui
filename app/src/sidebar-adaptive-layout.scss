@@ -1,5 +1,9 @@
+@use "./utilities/variables";
+@use "./layout/container" as c;
+@use "bulma/sass/utilities/initial-variables" as bulma-iv;
+
 #mainContainer {
-  @include container;
+  @include c.container;
   display: flex;
 
   .container {
@@ -23,14 +27,14 @@ html {
   &.non-responsive,
   &.non-responsive-mobile {
     #mainContainer {
-      max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$tablet - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 
   &.non-responsive,
   &.non-responsive-mobile.non-responsive-tablet {
     #mainContainer {
-      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 
@@ -38,7 +42,7 @@ html {
   &.non-responsive-tablet {
     #mainContainer {
       @include tablet {
-        max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+        max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
       }
     }
   }

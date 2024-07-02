@@ -1,5 +1,7 @@
-$button-font-weight: $weight-normal !default;
-$button-font-size: $size-normal !default;
+@use "../utilities/variables";
+
+$button-font-weight: variables.$weight-normal !default;
+$button-font-size: variables.$size-normal !default;
 $button-small-height: 3.2rem !default;
 $button-small-padding-horizontal: 1.5rem !default;
 $button-large-height: 7.2rem !default;
@@ -25,7 +27,7 @@ $button-large-padding-horizontal: 4.8rem !default;
     padding-right: $button-large-padding-horizontal;
   }
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {

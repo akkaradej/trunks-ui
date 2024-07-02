@@ -1,7 +1,12 @@
+@use "../utilities/variables.scss";
+@use "bulma/sass/utilities/extends";
+@use "bulma/sass/utilities/initial-variables" as bulma-iv;
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
 %non-responsive-tablet {
-  @include tablet {
+  @include bulma-mx.tablet {
     overflow-x: auto;
-    min-width: $desktop - $vertical-scrollbar-width;
+    min-width: variables.$desktop - variables.$vertical-scrollbar-width;
   }
 
   .tabs {
@@ -15,7 +20,7 @@
   }
 }
 
-@if $non-responsive-tablet {
+@if variables.$non-responsive-tablet {
   html {
     @extend %non-responsive-tablet;
   }
@@ -25,8 +30,8 @@ html {
   &.non-responsive,
   &.non-responsive-tablet {
     .container {
-      @include tablet {
-        max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+      @include bulma-mx.tablet {
+        max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
       }
     }
 

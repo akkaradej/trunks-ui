@@ -1,47 +1,51 @@
 
+@use "../utilities/variables";
+@use "bulma/sass/utilities/initial-variables" as bulma-iv;
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
 @mixin container {
   flex-grow: 1;
   margin: 0 auto;
   width: auto;
 
   // non-responsive
-  @if $non-responsive-mobile {
-    @if $non-responsive-tablet {
-      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+  @if variables.$non-responsive-mobile {
+    @if variables.$non-responsive-tablet {
+      max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     } @else {
-      max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$tablet - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 
   // non-responsive
-  @if $non-responsive-tablet {
-    @include tablet {
-      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+  @if variables.$non-responsive-tablet {
+    @include bulma-mx.tablet {
+      max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 
-  @include desktop {
-    max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+  @include bulma-mx.desktop {
+    max-width: variables.$desktop - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
   }
 
-  @include until-widescreen {
+  @include bulma-mx.until-widescreen {
     &.is-widescreen {
-      max-width: $widescreen - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$widescreen - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 
-  @include until-fullhd {
+  @include bulma-mx.until-fullhd {
     &.is-fullhd {
-      max-width: $fullhd - (2 * $gap) - $vertical-scrollbar-width;
+      max-width: variables.$fullhd - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
     }
   }
 
-  @include widescreen {
-    max-width: $widescreen - (2 * $gap) - $vertical-scrollbar-width;
+  @include bulma-mx.widescreen {
+    max-width: variables.$widescreen - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
   }
 
-  @include fullhd {
-    max-width: $fullhd - (2 * $gap) - $vertical-scrollbar-width;
+  @include bulma-mx.fullhd {
+    max-width: variables.$fullhd - (2 * bulma-iv.$gap) - variables.$vertical-scrollbar-width;
   }
 }
 

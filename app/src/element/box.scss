@@ -1,4 +1,7 @@
-$box-hightlight-color: $primary !default;
+@use "../utilities/variables";
+@use "bulma/sass/elements/box";
+
+$box-hightlight-color: variables.$primary !default;
 
 .box {
   &.is-highlighted {
@@ -6,10 +9,10 @@ $box-hightlight-color: $primary !default;
   }
 
   &.is-bordered {
-    border: 1px solid $border;
+    border: 1px solid variables.$border;
   }
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {
@@ -27,12 +30,12 @@ $box-hightlight-color: $primary !default;
 
 .box-detail {
   padding: 1.25rem;
-  box-shadow: $box-shadow;
-  border-bottom-left-radius: $box-radius;
-  border-bottom-right-radius: $box-radius;
+  box-shadow: box.$box-shadow;
+  border-bottom-left-radius: box.$box-radius;
+  border-bottom-right-radius: box.$box-radius;
 
   &.is-bordered {
-    border: 1px solid $border;
+    border: 1px solid variables.$border;
     border-top: 0;
   }
 
@@ -42,6 +45,6 @@ $box-hightlight-color: $primary !default;
   }
 
   &:not(:last-child) {
-    margin-bottom: $block-spacing;
+    margin-bottom: variables.$block-spacing;
   }
 }

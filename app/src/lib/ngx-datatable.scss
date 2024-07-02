@@ -1,40 +1,45 @@
+@use "sass:math";
+@use "../utilities/variables";
+@use "../utilities/mixins" as mx;
+@use "../form/checkbox";
+
 $ngx-datatable-table-shadow: none !default;
-$ngx-datatable-table-border: 1px solid $border !default;
+$ngx-datatable-table-border: 1px solid variables.$border !default;
 $ngx-datatable-table-row-border: none !default;
-$ngx-datatable-table-cell-border: 1px solid $border !default;
+$ngx-datatable-table-cell-border: 1px solid variables.$border !default;
 
-$ngx-datatable-color: $text !default;
-$ngx-datatable-font-size: $size-normal !default;
+$ngx-datatable-color: variables.$text !default;
+$ngx-datatable-font-size: variables.$size-normal !default;
 
-$ngx-datatable-row-background-color: $scheme-main !default;
-$ngx-datatable-row-hover-background-color: $scheme-main-ter !default;
-$ngx-datatable-striped-row-even-background-color: $scheme-main-bis !default;
-$ngx-datatable-striped-row-even-hover-background-color: $scheme-main-ter !default;
-$ngx-datatable-row-detail-background-color: $background !default;
+$ngx-datatable-row-background-color: variables.$scheme-main !default;
+$ngx-datatable-row-hover-background-color: variables.$scheme-main-ter !default;
+$ngx-datatable-striped-row-even-background-color: variables.$scheme-main-bis !default;
+$ngx-datatable-striped-row-even-hover-background-color: variables.$scheme-main-ter !default;
+$ngx-datatable-row-detail-background-color: variables.$background !default;
 
 $ngx-datatable-table-head-cell-align: center !default;
-$ngx-datatable-table-head-cell-color: $text-invert !default;
-$ngx-datatable-table-head-cell-background-color: $grey !default;
-$ngx-datatable-table-head-cell-font-size: $size-normal !default;
-$ngx-datatable-table-head-cell-font-weight: $weight-bold !default;
+$ngx-datatable-table-head-cell-color: variables.$text-invert !default;
+$ngx-datatable-table-head-cell-background-color: variables.$grey !default;
+$ngx-datatable-table-head-cell-font-size: variables.$size-normal !default;
+$ngx-datatable-table-head-cell-font-weight: variables.$weight-bold !default;
 
-$ngx-datatable-header-filter-wrapper-height: $control-height * 1.5 !default;
-$ngx-datatable-header-filter-wrapper-background-color: $scheme-main-bis !default;
-$ngx-datatable-header-filter-height: $control-height !default;
+$ngx-datatable-header-filter-wrapper-height: variables.$control-height * 1.5 !default;
+$ngx-datatable-header-filter-wrapper-background-color: variables.$scheme-main-bis !default;
+$ngx-datatable-header-filter-height: variables.$control-height !default;
 $ngx-datatable-header-filter-radius: 0 !default;
-$ngx-datatable-header-filter-border-color: $scheme-main-ter !default;
-$ngx-datatable-header-filter-wrapper-padding: $block-spacing !default;;
+$ngx-datatable-header-filter-border-color: variables.$scheme-main-ter !default;
+$ngx-datatable-header-filter-wrapper-padding: variables.$block-spacing !default;;
 
-$ngx-datatable-foot-background-color: $scheme-main-bis !default;
-$ngx-datatable-pager-color: $primary-invert !default;
-$ngx-datatable-pager-background-color: $primary !default;
+$ngx-datatable-foot-background-color: variables.$scheme-main-bis !default;
+$ngx-datatable-pager-color: variables.$primary-invert !default;
+$ngx-datatable-pager-background-color: variables.$primary !default;
 
-$ngx-datatable-selection-background-color: $grey !default;
-$ngx-datatable-selection-color: $text-invert !default;
+$ngx-datatable-selection-background-color: variables.$grey !default;
+$ngx-datatable-selection-color: variables.$text-invert !default;
 $ngx-datatable-selection-checkbox-checked-filled-style: false !default;
 
-$ngx-datatable-summary-row-color: $grey !default;
-$ngx-datatable-summary-row-background-color: $text-invert !default;
+$ngx-datatable-summary-row-color: variables.$grey !default;
+$ngx-datatable-summary-row-background-color: variables.$text-invert !default;
 
 .ngx-datatable.material {
   box-shadow: $ngx-datatable-table-shadow;
@@ -147,7 +152,7 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
         }
       }
 
-      @each $name, $pair in $colors {
+      @each $name, $pair in variables.$colors {
         $color: nth($pair, 1);
         $color-invert: nth($pair, 2);
         &.is-#{$name} {
@@ -167,7 +172,7 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
       // header filter
       > .control {
         height: $ngx-datatable-header-filter-wrapper-height;
-        padding: $block-spacing / 2;
+        padding:  math.div(variables.$block-spacing, 2);
         background-color: $ngx-datatable-header-filter-wrapper-background-color;
 
         .input,
@@ -234,7 +239,7 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
         }
       }
 
-      @include bg-color;
+      @include mx.bg-color;
     }
 
     .datatable-row-detail {
@@ -260,7 +265,6 @@ $ngx-datatable-summary-row-background-color: $text-invert !default;
 
 // fix loading position
 .ngx-datatable.material .datatable-body .progress-linear {
-  position: relative; // fix ie does not have sticky
   position: sticky;
   left: 0;
 }
@@ -318,10 +322,10 @@ datatable-selection {
     &::before {
       position: absolute;
       content: "";
-      border: 1px solid $border !important;
+      border: 1px solid variables.$border !important;
       background-color: #fff;
-      height: $checkbox-size !important;
-      width: $checkbox-size !important;
+      height: checkbox.$checkbox-size !important;
+      width: checkbox.$checkbox-size !important;
       top: 0;
       left: 0;
       z-index: initial;
@@ -333,7 +337,7 @@ datatable-selection {
     }
 
     &:checked::before {
-      border: 1px solid $checkbox-checked-border-color !important;
+      border: 1px solid checkbox.$checkbox-checked-border-color !important;
       transform: none !important;
     }
     &:checked::after {
@@ -341,11 +345,11 @@ datatable-selection {
       content: "\2713";
       text-align: center;
       font-weight: bold;
-      color: $checkbox-checked-color;
-      font-size: $checkbox-inner-size;
-      line-height: $checkbox-size / $checkbox-inner-size;
-      height: ($checkbox-size / $checkbox-inner-size) * 1em;
-      width: ($checkbox-size / $checkbox-inner-size) * 1em;
+      color: checkbox.$checkbox-checked-color;
+      font-size: checkbox.$checkbox-inner-size;
+      line-height: math.div(checkbox.$checkbox-size, checkbox.$checkbox-inner-size);
+      height:  math.div(checkbox.$checkbox-size, checkbox.$checkbox-inner-size) * 1em;
+      width:  math.div(checkbox.$checkbox-size, checkbox.$checkbox-inner-size) * 1em;
       top: 0;
       left: 0;
     }
@@ -354,11 +358,11 @@ datatable-selection {
   @if $ngx-datatable-selection-checkbox-checked-filled-style {
     input[type="checkbox"] {
       &:checked::before {
-        background-color: $checkbox-checked-filled-background-color;
+        background-color: checkbox.$checkbox-checked-filled-background-color;
       }
 
       &:checked::after {
-        color: findColorInvert($checkbox-checked-filled-background-color);
+        color: findColorInvert(checkbox.$checkbox-checked-filled-background-color);
       }
     }
   }

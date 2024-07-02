@@ -1,7 +1,10 @@
-$radio-border-color: $primary !default;
-$radio-background-color: $primary !default;
+@use "sass:math";
+@use "../utilities/variables";
+
+$radio-border-color: variables.$primary !default;
+$radio-background-color: variables.$primary !default;
 $radio-size: 1em !default;
-$radio-inner-size: $radio-size / 5 !default;
+$radio-inner-size: math.div($radio-size, 5) !default;
 $radio-bg-size: $radio-size + 0.5 !default;
 
 .radio {
@@ -20,29 +23,29 @@ $radio-bg-size: $radio-size + 0.5 !default;
         padding-left: $radio-bg-size + 0.5em;
         padding-right: 0.5em;
         line-height: $radio-bg-size;
-        border: 1px solid $border;
+        border: 1px solid variables.$border;
         margin-left: 0;
       }
     }
 
     .radio-bg {
-      background: $white;
+      background: variables.$white;
       height: $radio-bg-size;
       width: $radio-bg-size;
       position: absolute;
       left: 1px;
       top: 1px;
-      border-right: 1px solid $border;
+      border-right: 1px solid variables.$border;
 
       &::after { // new circle line is here when has-bg
         position: absolute;
         content: "";
-        border: 1px solid $border;
+        border: 1px solid variables.$border;
         border-radius: 50%;
         height: $radio-size;
         width: $radio-size;
-        top: ($radio-bg-size / 2) - ($radio-size / 2);
-        left: ($radio-bg-size / 2) - ($radio-size / 2);
+        top: math.div($radio-bg-size, 2) - math.div($radio-size, 2);
+        left: math.div($radio-bg-size, 2) - math.div($radio-size, 2);
       }
     }
 
@@ -50,7 +53,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
       &+span {
         .radio-bg {
           &::after {
-            border-color: $scheme-main;
+            border-color: variables.$scheme-main;
             border-width: $radio-inner-size;
           }
         }
@@ -63,31 +66,31 @@ $radio-bg-size: $radio-size + 0.5 !default;
   }
 
   & + .radio {
-    margin-left: $brick-spacing;
+    margin-left: variables.$brick-spacing;
   }
 
   input[type=radio] {
     font-size: 1em;
     height: $radio-size;
     width: $radio-size;
-    border: 1px solid $border;
+    border: 1px solid variables.$border;
     border-radius: 50%;
-    background-color: $scheme-main;
+    background-color: variables.$scheme-main;
     appearance: none;
 
     &+span {
-      margin-left: $brick-spacing;
+      margin-left: variables.$brick-spacing;
       display: inline-block;
     }
 
     &:checked {
       border-color: $radio-border-color;
       background: $radio-background-color;
-      box-shadow: inset 0 0 0 $radio-inner-size $scheme-main;
+      box-shadow: inset 0 0 0 $radio-inner-size variables.$scheme-main;
     }
   }
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {
@@ -109,7 +112,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
           // old circle line will be behind radio-bg when has-bg
         }
         input[type=radio]:checked+span::after {
-          background: $white;
+          background: variables.$white;
         }
         input[type=radio]:checked+span {
           border-color: $color;
@@ -117,7 +120,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
             background: $color;
             border-color: $color;
             &::after { // new circle line is here when has-bg
-              border-color: $white;
+              border-color: variables.$white;
             }
           }
         }

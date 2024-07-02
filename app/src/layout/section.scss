@@ -1,3 +1,15 @@
+@use "../utilities/variables";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
+$section-gap: 24px !default;
+
+// The section horizontal gap for mobile (in pixel)
+$section-gap-mobile: $section-gap !default;
+
+// Override Bulma's section-padding
+$section-padding-fit: 0 $section-gap !default;
+$section-padding-small: variables.$block-spacing $section-gap !default;
+
 .section {
   &.is-fit {
     padding: $section-padding-fit;
@@ -7,7 +19,7 @@
     padding: $section-padding-small;
   }
 
-  @include mobile {
+  @include bulma-mx.mobile {
     &,
     &.is-fit,
     &.is-small,

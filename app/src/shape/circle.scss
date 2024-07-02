@@ -1,10 +1,12 @@
+@use "../utilities/variables";
+
 .circle {
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  background: $grey;
+  background: variables.$grey;
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {

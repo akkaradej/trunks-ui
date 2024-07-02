@@ -1,12 +1,15 @@
+@use "sass:math";
+@use "../utilities/variables";
+
 $checkbox-size: 1em !default;
 $checkbox-inner-size: $checkbox-size * 0.8 !default;
-$checkbox-checked-color: $primary !default;
-$checkbox-checked-border-color: $primary !default;
-$checkbox-checked-filled-background-color: $primary !default;
-$checkbox-group-border-color: $border !default;
-$checkbox-group-divide-color: $border !default;
-$checkbox-title-filled-background-color: $primary !default;
-$checkbox-title-filled-color: $primary-invert !default;
+$checkbox-checked-color: variables.$primary !default;
+$checkbox-checked-border-color: variables.$primary !default;
+$checkbox-checked-filled-background-color: variables.$primary !default;
+$checkbox-group-border-color: variables.$border !default;
+$checkbox-group-divide-color: variables.$border !default;
+$checkbox-title-filled-background-color: variables.$primary !default;
+$checkbox-title-filled-color: variables.$primary-invert !default;
 
 .checkbox {
   line-height: $checkbox-size;
@@ -17,12 +20,12 @@ $checkbox-title-filled-color: $primary-invert !default;
 
     &+span {
       padding-left: $checkbox-size;
-      margin-left: $brick-spacing;
+      margin-left: variables.$brick-spacing;
 
       &::before {
         position: absolute;
         content: "";
-        border: 1px solid $border;
+        border: 1px solid variables.$border;
         background-color: #fff;
         height: $checkbox-size;
         width: $checkbox-size;
@@ -42,9 +45,9 @@ $checkbox-title-filled-color: $primary-invert !default;
       font-weight: bold;
       color: $checkbox-checked-color;
       font-size: $checkbox-inner-size;
-      line-height: $checkbox-size / $checkbox-inner-size;
-      height: $checkbox-size / $checkbox-inner-size * 1em;
-      width: $checkbox-size / $checkbox-inner-size * 1em;
+      line-height: math.div($checkbox-size, $checkbox-inner-size);
+      height: math.div($checkbox-size, $checkbox-inner-size) * 1em;
+      width: math.div($checkbox-size, $checkbox-inner-size) * 1em;
       top: 0;
       left: 0;
     }
@@ -70,7 +73,7 @@ $checkbox-title-filled-color: $primary-invert !default;
     }
   }
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {
@@ -115,7 +118,7 @@ $checkbox-title-filled-color: $primary-invert !default;
   .checkbox-title {
     text-align: left;
     vertical-align: middle;
-    margin-bottom: $brick-spacing;
+    margin-bottom: variables.$brick-spacing;
 
     &.is-filled {
       color: $checkbox-title-filled-color;
@@ -124,12 +127,12 @@ $checkbox-title-filled-color: $primary-invert !default;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 0 $brick-spacing;
+      padding: 0 variables.$brick-spacing;
     }
   }
 
   .checkbox + .checkbox {
-    margin-top: $brick-spacing;
+    margin-top: variables.$brick-spacing;
   }
 
   &.is-horizontal {
@@ -138,7 +141,7 @@ $checkbox-title-filled-color: $primary-invert !default;
 
     .checkbox-title {
       text-align: right;
-      margin-right: $brick-spacing * 2;
+      margin-right: variables.$brick-spacing * 2;
       margin-bottom: 0;
 
       &.checkbox-title-filled {
@@ -148,7 +151,7 @@ $checkbox-title-filled-color: $primary-invert !default;
 
     .checkbox + .checkbox {
       margin-top: 0;
-      margin-left: $brick-spacing * 2;
+      margin-left: variables.$brick-spacing * 2;
     }
   }
 
@@ -157,7 +160,7 @@ $checkbox-title-filled-color: $primary-invert !default;
 
     &.is-horizontal .checkbox + .checkbox,
     .checkbox {
-      margin: $brick-spacing;
+      margin: variables.$brick-spacing;
     }
 
     &.is-horizontal .checkbox-title + .checkbox {
@@ -165,14 +168,14 @@ $checkbox-title-filled-color: $primary-invert !default;
     }
 
     .checkbox-title {
-      padding: 0 $brick-spacing;
+      padding: 0 variables.$brick-spacing;
     }
   }
 
   &.has-divide {
     &.is-bordered.is-horizontal .checkbox + .checkbox,
     .checkbox {
-      padding-right: $brick-spacing * 2;
+      padding-right: variables.$brick-spacing * 2;
       margin-right: 0;
     }
 
@@ -184,7 +187,7 @@ $checkbox-title-filled-color: $primary-invert !default;
     }
   }
 
-  @each $name, $pair in $colors {
+  @each $name, $pair in variables.$colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
     &.is-#{$name} {
