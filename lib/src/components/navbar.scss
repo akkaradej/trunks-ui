@@ -1,127 +1,13 @@
 @use "../utilities/variables";
 @use "bulma/sass/utilities/mixins" as bulma-mx;
-@use "bulma/sass/components/navbar" as bulma-navbar;
 
-$navbar-dropdown-item-color: variables.$text !default;
-$navbar-dropdown-item-active-color: variables.$primary !default;
-$navbar-dropdown-item-active-background-color: variables.$primary-invert !default;
-$navbar-dropdown-item-hover-background-color: variables.$background !default;
-$navbar-dropdown-item-hover-color: variables.$text !default;
-$navbar-item-hover-background-color: variables.$background !default;
-$navbar-item-hover-color: variables.$text !default;
-
-// .navbar-dropdown behavior for more detailed style
-.navbar-item {
-  .navbar-dropdown {
-    a.navbar-item,
-    .navbar-link {
-      color: $navbar-dropdown-item-color; // custom var
-  
-      &.active {
-        color: $navbar-dropdown-item-active-color;
-      }
-
-      &:hover {
-        background-color: $navbar-dropdown-item-hover-background-color;
-        color: $navbar-dropdown-item-hover-color;
-      }
-    }
-    .navbar-link {
-      &.active::after {
-        border-color: $navbar-dropdown-item-active-color;
-      }
-    }
-  }
-} 
-@include bulma-mx.from(bulma-navbar.$navbar-breakpoint) {
-  .navbar-dropdown {
-    .navbar-item.has-dropdown {
-      &:hover {
-        > a.navbar-item,
-        > .navbar-link {
-          background-color: $navbar-dropdown-item-hover-background-color;
-          color: $navbar-dropdown-item-hover-color;
-        }
-        .navbar-link {
-          &::after {
-            border-color: $navbar-dropdown-item-hover-color;
-          }
-        }
-      }
-    }
-  }
-}
-
-// should has hover background at parent level
-.navbar-item {
-  &:hover {
-    background-color: $navbar-item-hover-background-color;
-    > .navbar-link {
-      color: $navbar-item-hover-color;
-      &::after {
-        border-color: $navbar-item-hover-color;
-      }
-    }
-  }
-  &.has-dropdown {
-    &:focus,
-    &:hover,
-    &.is-active {
-      .navbar-link {
-        background-color: transparent;
-      }
-    }
-  }
-}
-
-/* 
- * By default, Bulma's .navbar-item.has-dropdown has no padding because of .navbar-link padding inside.
- * This modification will make .navbar-item.has-dropdown has padding same as any .navbar-item,
- * then remove .navbar-link's padding except its right side, 
- */ 
-// .navbar-item.has-dropdown {
-//   .navbar-link {
-//     &.is-arrowless {
-//       padding-right: 0;
-//     }
-//   }
-// }
-.navbar-item,
-.navbar-link {
-  padding: 0.5rem 1rem;
-}
-.navbar-item {
-  &.has-dropdown {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    
-    .navbar-link {
-      padding: 0;
-    }
-
-    .navbar-link:not(.is-arrowless) {
-      padding-right: 1.5em;
-    }
-  }
-
-  .navbar-link {
-    &::after {
-      right: 0.25em;
-    }
-
-    &:not(.is-arrowless)::after {
-      margin-top: -0.5em;
-    }
-  }
-}
-
- /*
-  * Create .navbar-item-content to use as content container same as .navbar-link 
-  * but for non-link content
-  */
+/**
+ * Create .navbar-item-content to use as content container same as .navbar-link but for non-link content
+ */
 .navbar-item {
   &.has-badge {
-    .navbar-item-content { // custom class
+    .navbar-item-content {
+      // custom class
       position: relative;
       padding-right: 2.5em;
     }
@@ -134,34 +20,19 @@ $navbar-item-hover-color: variables.$text !default;
     }
   }
 }
+
+/**
+ * Change too small dropdown font-size from 0.875rem to $size-normal
+ */
+.dropdown-item {
+  font-size: variables.$size-normal;
+  padding: 0.5rem 1.5rem;
+}
 .navbar-dropdown {
   font-size: variables.$size-normal;
 }
-
 @include bulma-mx.from(variables.$navbar-breakpoint) {
   .navbar-dropdown {
     font-size: variables.$size-normal;
-  }
-
-  .navbar > .container.is-fullhd,
-  .navbar > .container.is-widescreen,
-  .container.is-fullhd > .navbar,
-  .container.is-widescreen > .navbar {
-    .navbar-brand {
-      margin-left: 0;
-    }
-    .navbar-menu {
-      margin-right: 0;
-    }
-  }
-
-  .navbar-dropdown {
-    a.navbar-item {
-      padding-right: 1rem;
-
-      .is-active:not(:focus):not(:hover) {
-        background-color: $navbar-dropdown-item-active-background-color;
-      }
-    }
   }
 }

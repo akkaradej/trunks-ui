@@ -1,5 +1,5 @@
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
 
     <h1 class="title is-1">Icon</h1>
 
@@ -15,43 +15,64 @@
     <h2 class="title is-3">Basic Usage</h2>
 
     <div class="block">
+      <div>.icon</div>
       <span class="icon">
         <i class="fa fa-home"></i>
       </span>
     </div>
 
     <div class="block">
-      icon-text wrapper
-    </div>
-
-    <div class="block">
+      <p>.icon-text</p>
+      <p class="push-left-1">...</p>
+      <p class="push-left-1">.icon</p>
+      <p class="push-left-1">...</p>
       <span class="icon-text">
-        <span>Front Text</span><span class="icon"><i class="fa fa-home"></i></span><span>Back Text</span>
+        <span>Front</span>
+        <span class="icon">
+          <i class="fa fa-home"></i>
+        </span>
+        <span>Back</span>
       </span>
     </div>
 
     <div class="block">
       <div class="icon-text text-size-large">
-        <span class="icon"><i class="fa fa-home"></i></span><span>Large Font Size Text</span>
+        <span class="icon">
+          <i class="fa fa-home"></i>
+        </span>
+        <span>.text-size-large</span>
       </div>
     </div>
 
     <div class="block">
       <button class="button">
-        <span class="icon"><i class="fa fa-home"></i></span><span>Icon in Button</span>
+        <span class="icon">
+          <i class="fa fa-home"></i>
+        </span>
+        <span>.button > .icon</span>
       </button>
     </div>
 
     <div class="block">
+      <p>.navbar .navbar-item > .icon-text > .icon</p>
       <nav class="navbar">
         <div class="navbar-brand">
           <a class="navbar-item">
-            <span class="icon-text"><span class="icon"><i class="fa fa-home"></i></span><span>Menu</span></span>
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fa fa-home"></i>
+              </span>
+              <span>Menu</span>
+            </span>
           </a>
           <div class="navbar-item has-dropdown">
             <a class="navbar-link">
-              <span class="icon-text"><span class="icon"><i class="fa fa-home"></i></span><span>Dropdown
-                  Menu</span></span>
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa fa-home"></i>
+                </span>
+                <span>Dropdown Menu</span>
+              </span>
             </a>
           </div>
         </div>
@@ -63,7 +84,7 @@
 
     <div class="block">
       <div class="block">
-        Size: is-small, is-medium, is-large
+        Size: .is-small, .is-medium, .is-large
       </div>
       <div class="block">
         <div class="text-size-large">
@@ -76,7 +97,7 @@
 
     <div class="block">
       <div class="block">
-        Color: text-[color]
+        Color: .text-[color]
       </div>
       <div class="block">
         <div class="text-size-large">
@@ -88,13 +109,23 @@
 
     <div class="block">
       <div class="block">
-        icon-img
+        .icon-img
       </div>
       <div class="block">
         <div class="icon-text text-size-medium is-align-center">
           <span class="icon icon-img"><img src="images/coin.png"></span><span>Image Icon</span>
         </div>
       </div>
+    </div>
+
+    <h2 class="title is-3">Changes</h2>
+    <div class="block">
+      <p>Set icon width, height to 1em for all modifier</p>
+      <p>Set icon font-size to 1em, small: 0.75em, medium: 1.25em, large: 1.5em</p>
+      <p>Two settings above make icon has same height as text</p>
+      <p>Add icon-text wrapper to make spacing between any element and icon</p>
+      <p>Add icon-img for icon image</p>
+      <p>Custom icon margin inside button, navbar</p>
     </div>
 
   </div>

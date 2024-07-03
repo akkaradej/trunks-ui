@@ -1,15 +1,26 @@
 @use "../utilities/variables";
+@use "bulma/sass/elements/button" as bulma-button;
 
-$button-font-weight: variables.$weight-normal !default;
 $button-font-size: variables.$size-normal !default;
-$button-small-height: 3.2rem !default;
-$button-small-padding-horizontal: 1.5rem !default;
-$button-large-height: 7.2rem !default;
-$button-large-padding-horizontal: 4.8rem !default;
+$button-small-height: variables.$control-height - variables.$brick-spacing !default;
+$button-small-padding-horizontal: 1rem !default;
+$button-height: variables.$control-height !default;
+// $button-padding-horizontal: 1.5rem !default; // override bulma variable by with
+$button-medium-height: variables.$control-height + variables.$brick-spacing !default;
+$button-medium-padding-horizontal: 2rem !default;
+$button-large-height: variables.$control-height + variables.$brick-spacing * 2 !default;
+$button-large-padding-horizontal: 3rem !default;
 
 .button {
   font-size: $button-font-size;
-  font-weight: $button-font-weight;
+  height: $button-height;
+  padding-left: bulma-button.$button-padding-horizontal;
+  padding-right: bulma-button.$button-padding-horizontal;
+
+  &.is-auto {
+    height: auto;
+    padding: 0.5em 1em;
+  }
 
   &.is-fat {
     min-width: 100px;
@@ -19,6 +30,12 @@ $button-large-padding-horizontal: 4.8rem !default;
     height: $button-small-height;
     padding-left: $button-small-padding-horizontal;
     padding-right: $button-small-padding-horizontal;
+  }
+
+  &.is-medium {
+    height: $button-medium-height;
+    padding-left: $button-medium-padding-horizontal;
+    padding-right: $button-medium-padding-horizontal;
   }
 
   &.is-large {
@@ -37,11 +54,6 @@ $button-large-padding-horizontal: 4.8rem !default;
             border-color: transparent transparent $color $color !important;
           }
         }
-      }
-      
-      .badge {
-        color: $color;
-        background: $color-invert;
       }
     }
   }

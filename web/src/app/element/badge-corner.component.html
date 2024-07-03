@@ -1,5 +1,5 @@
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
 
     <h1 class="title is-1">Badge Corner</h1>
 
@@ -7,7 +7,7 @@
 
     <div class="block">
       <button class="button badge-corner">
-        badge-corner
+        .button.badge-corner
       </button>
     </div>
 
@@ -16,13 +16,13 @@
         class="button badge-corner"
         data-badge="1"
       >
-        Button
+        .button.badge-corner [data-badge="1"]
       </button>
       <span
         class="badge-corner push-left-2"
-        data-badge="2 "
+        data-badge="2"
       >
-        Text
+        span.badge-corner [data-badge="2"]
       </span>
     </div>
 
@@ -30,14 +30,14 @@
 
     <div class="block">
       <div class="block">
-        Color: is-badge-[color]
+        .is-badge-[color]
       </div>
       <div class="block">
         <button
           class="button badge-corner is-badge-danger"
           data-badge="123"
         >
-          color badge-corner
+          .button.badge-corner.is-badge-danger [data-badge="123"]
         </button>
       </div>
     </div>

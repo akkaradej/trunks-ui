@@ -1,6 +1,6 @@
 // Font Family
 $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
- "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 // $variable-columns
 $variable-columns: false;
@@ -111,7 +111,7 @@ $input-icon-color: $text;
 // $button-border-width: $control-border-width;
 
 $button-padding-vertical: 0;
-$button-padding-horizontal: 1.5em;
+$button-padding-horizontal: 1.5rem;
 
 $button-hover-color: invalid;
 $button-hover-border-color: invalid;

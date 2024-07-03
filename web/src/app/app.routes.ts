@@ -6,7 +6,6 @@ import { BadgeCornerComponent } from './element/badge-corner.component';
 import { BadgeComponent } from './element/badge.component';
 import { BoxComponent } from './element/box.component';
 import { IconComponent } from './element/icon.component';
-import { TableComponent } from './element/table.component';
 import { ButtonComponent } from './element/button.component';
 import { CheckboxComponent } from './form/checkbox.component';
 import { FormComponent } from './form/form.component';
@@ -61,10 +60,6 @@ export const routes: Routes = [
         path: 'icon',
         component: IconComponent,
       },
-      {
-        path: 'table',
-        component: TableComponent,
-      }
     ]
   },
   {

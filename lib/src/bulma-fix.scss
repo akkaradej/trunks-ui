@@ -31,7 +31,7 @@
 
 // Fix: file input add-on button is shrinked
 .file-cta {
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 // Fix: file input is-fullwidth expand through container
@@ -69,20 +69,4 @@
 // Fix: checkbox disabled="false" style
 .checkbox[disabled="false"], .radio[disabled="false"] {
   cursor: pointer;
-}
-
-// Fix too small font-size 0.875rem change to $size-normal
-.dropdown-item {
-  font-size: variables.$size-normal;
-  padding: 0.5rem 1.5rem;
-}
-
-.navbar-dropdown {
-  font-size: variables.$size-normal;
-}
-
-@include bulma-mx.from(variables.$navbar-breakpoint) {
-  .navbar-dropdown {
-    font-size: variables.$size-normal;
-  }
 }

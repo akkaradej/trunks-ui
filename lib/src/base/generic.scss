@@ -24,15 +24,7 @@ body {
 }
 
 a {
-  color: variables.$text;
-  cursor: pointer;
-  text-decoration: none;
-  strong {
-    color: currentColor;
-  }
-  &:hover {
-    color: variables.$text;
-  }
+  color: currentColor;
 }
 
 // Hidden directive

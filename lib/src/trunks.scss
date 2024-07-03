@@ -7,7 +7,7 @@
 $section-gap: 24px !default;
 
 // bulma utilities
-@forward "bulma/sass/utilities/initial-variables" with (
+@forward "bulma/sass/utilities/initial-variables" with ( 
   // Spacing
   $block-spacing: variables.$block-spacing,
 
@@ -67,7 +67,7 @@ $section-gap: 24px !default;
 
 // @forward "bulma/sass/utilities/functions";
 
-@forward "bulma/sass/utilities/derived-variables" with (
+@forward "bulma/sass/utilities/derived-variables" with ( 
   // Font size
   $size-small: variables.$size-small,
   $size-normal: variables.$size-normal,
@@ -128,9 +128,15 @@ $section-gap: 24px !default;
   // Root element size to calculate rem (in pixel)
   $body-size: 10px !default,
 );
-@forward "bulma/sass/elements";
+@forward "bulma/sass/elements" with (
+  $button-weight: variables.$weight-normal,
+  $button-padding-vertical: 0 !default,
+  $button-padding-horizontal: 1.5rem !default,
+);
 @forward "bulma/sass/form";
-@forward "bulma/sass/components";
+@forward "bulma/sass/components" with (
+  $navbar-dropdown-border-style: none !default,
+);
 @forward "bulma/sass/grid" with (
   $column-gap: math.div(variables.$block-spacing, 2) !default,
 );
@@ -151,8 +157,7 @@ $section-gap: 24px !default;
 @forward "bulma/sass/helpers/gap";
 // @forward "bulma/sass/helpers/overflow"; // rewrite
 @forward "bulma/sass/helpers/position";
-@forward "bulma/sass/helpers/spacing" with (
-  // Spacing
+@forward "bulma/sass/helpers/spacing" with ( // Spacing
   $spacing-shortcuts: ("margin": "push", "padding": "pad") !default,
   $spacing-directions: ("top": "-top", "right": "-right", "bottom": "-bottom", "left": "-left") !default,
   $spacing-horizontal: "-x" !default,

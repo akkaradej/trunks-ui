@@ -1,5 +1,5 @@
 <section class="section">
-  <div class="container is-fluid">
+  <div class="container">
 
     <h1 class="title is-1">Button</h1>
 
@@ -16,28 +16,73 @@
 
     <div class="block">
       <button class="button">
-        button
+        .button
       </button>
     </div>
 
     <h2 class="title is-3">Modifier</h2>
 
     <div class="block">
-      <div class="block">
-        is-fat
-      </div>
-      <div class="block">
-        <button class="button is-fat">
-          is-fat
-        </button>
-      </div>
+      <button class="button is-fat">
+        .is-fat
+      </button>
+    </div>
+
+    <div class="block">
+      <button class="button is-small">
+        .is-small
+      </button>
+    </div>
+
+    <div class="block">
+      <button class="button is-medium">
+        .is-medium
+      </button>
+    </div>
+
+    <div class="block">
+      <button class="button is-large">
+        .is-large
+      </button>
+    </div>
+
+    <div class="block">
+      <button class="button is-auto">
+        .is-auto
+      </button>
+    </div>
+    <div class="block">
+      <button class="button is-auto text-size-large">
+        .is-auto.text-size-large
+      </button>
+    </div>
+
+    <h2 class="title is-3">Changes</h2>
+    <div class="block">
+      <p>Set button font-size to $size-normal</p>
+      <p>Set button vertical padding to 0</p>
+      <p>Custom button horizontal padding</p>
+      <p>Custom button height</p>
+      <p>Add is-fat to has min width 100px</p>
+      <p>Add is-auto to has default padding and auto height</p>
     </div>
 
     <h2 class="title is-3">Variables</h2>
-
     <div class="block">
-      <p>$button-font-weight: $weight-normal;</p>
+      <p>$button-font-size: variables.$size-normal;</p>
+      <p>$button-height: variables.$control-height;</p>
+      <p>$button-small-height: variables.$control-height - variables.$brick-spacing;</p>
+      <p>$button-small-padding-horizontal: 1rem;</p>
+      <p>$button-medium-height: variables.$control-height + variables.$brick-spacing;</p>
+      <p>$button-medium-padding-horizontal: 2rem;</p>
+      <p>$button-large-height: variables.$control-height + variables.$brick-spacing * 2;</p>
+      <p>$button-large-padding-horizontal: 3rem;</p>
     </div>
 
+    <h2 class="title is-3">Bulma Variables</h2>
+    <div class="block">
+      <p>$button-weight: variables.$weight-normal;</p>
+      <p>$button-padding-horizontal: 1.5rem !default;</p>
+    </div>
   </div>
 </section>

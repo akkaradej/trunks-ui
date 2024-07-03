@@ -5,7 +5,7 @@
   },
   "editor.defaultFormatter": null,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.showUnused": true,
   "editor.tabSize": 2,
   "html.format.indentHandlebars": true,
@@ -29,5 +29,5 @@
   "css.format.spaceAroundSelectorSeparator": true,
   "scss.format.newlineBetweenRules": false,
   "scss.format.newlineBetweenSelectors": false,
-  "scss.format.spaceAroundSelectorSeparator": true
+  "scss.format.spaceAroundSelectorSeparator": true,
 }

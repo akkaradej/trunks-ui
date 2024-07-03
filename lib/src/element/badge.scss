@@ -23,5 +23,12 @@ $badge-font-size: variables.$size-normal !default;
       background: $color;
       color: $color-invert;
     }
+
+    &.button {
+      .badge {
+        color: $color;
+        background: $color-invert;
+      }
+    }
   }
 }

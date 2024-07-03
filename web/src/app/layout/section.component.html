@@ -1,5 +1,5 @@
 <div class="section">
-  <div class="container is-fluid">
+  <div class="container">
 
     <h1 class="title is-1">Section</h1>
 
@@ -15,9 +15,9 @@
     <h2 class="title is-3">Basic Usage</h2>
 
     <div class="block">
-      <section class="section _section">
+      <section class="section bg-primary">
         <div class="container">
-          Section
+          .section
         </div>
       </section>
     </div>
@@ -25,19 +25,60 @@
     <h2 class="title is-3">Modifier</h2>
 
     <div class="block">
-      <section class="section _section is-fit">
+      <section class="section bg-primary is-fit">
         <div class="container">
-          is-fit
+          .is-fit
         </div>
       </section>
     </div>
 
     <div class="block">
-      <section class="section _section is-small">
+      <section class="section bg-primary is-small">
         <div class="container">
-          is-small
+          .is-small
         </div>
       </section>
+    </div>
+
+    <div class="block">
+      <section class="section bg-primary is-medium">
+        <div class="container">
+          .is-medium
+        </div>
+      </section>
+    </div>
+
+    <div class="block">
+      <section class="section bg-primary is-large">
+        <div class="container">
+          .is-large
+        </div>
+      </section>
+    </div>
+
+    <h2 class="title is-3">Changes</h2>
+
+    <div class="block">
+      <p>Add is-fit, is-small</p>
+      <p>Custom section padding for mobile</p>
+      <p>Change section padding to have same left and right padding size for all modifier</p>
+    </div>
+
+    <h2 class="title is-3">Variables</h2>
+
+    <div class="block">
+      <p>$section-gap: 24px;</p>
+      <p>$section-gap-mobile: $section-gap;</p>
+      <p>$section-padding-fit: 0 $section-gap;</p>
+      <p>$section-padding-small: variables.$block-spacing $section-gap;</p>
+    </div>
+
+    <h2 class="title is-3">Bulma Variables</h2>
+
+    <div class="block">
+      <p>$section-padding-desktop: (variables.$block-spacing * 2) $section-gap;</p>
+      <p>$section-padding-medium: (variables.$block-spacing * 3) $section-gap;</p>
+      <p>$section-padding-large: (variables.$block-spacing * 6) $section-gap;</p>
     </div>
 
   </div>
