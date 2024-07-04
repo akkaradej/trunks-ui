@@ -3,22 +3,47 @@
 
     <h1 class="title is-1">Getting Start</h1>
 
+    <h2 class="title is-3">1. Create _variables.scss</h2>
     <div class="block">
-      See More: <a
-        href="https://bulma.io/documentation"
+      <div class="block">
+        <p>// Own variables</p>
+        <p>$special-background-color: #3273dc;</p>
+      </div>
+      <div class="block">
+        <p>// Trunks UI variables</p>
+        <p>&#64;forward "trunks-ui/utilities/variables" with (</p>
+        <p class="push-left-2">// override Trunks UI variables</p>
+        <p>);</p>
+      </div>
+    </div>
+    <div class="block">
+      <a
+        class="text-link"
         target="_blank"
-      >
-        https://bulma.io/documentation
-      </a>
+        href="https://github.com/akkaradej/trunks-ui/blob/master/web/src/styles/_variables.scss"
+      >Example of most override variables</a>
     </div>
 
-    <h2 class="title is-3">Create Variables File</h2>
-
+    <h2 class="title is-3">2. Create global styles, import _variables.scss and trunks-ui</h2>
     <div class="block">
-      copy lib/src/sample-variables.scss rename to variables.scss
+      // styles.scss
+      <p>&#64;use "variables";</p>
+      <p>&#64;use "trunks-ui" with (</p>
+      <p class="push-left-2">// custom config</p>
+      <p>);</p>
     </div>
     <div class="block">
-      copy lib/src/sample-variables-config.scss rename to variables-config.scss
+      <a
+        class="text-link"
+        target="_blank"
+        href="https://github.com/akkaradej/trunks-ui/blob/master/web/src/styles.scss"
+      >Example of most custom config</a>
+    </div>
+
+    <h2 class="title is-3">3. Import _variables.scss at any component</h2>
+    <div class="block">
+      // app.component.scss
+      <p>&#64;use "variables";</p>
     </div>
 
   </div>

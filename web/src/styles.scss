@@ -1,15 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
-
-@use "sass:math";
 @use "./variables";
 
-$section-gap: 24px;
-@use "../../lib/src/trunks" with ( // Font Family
+@use "../../lib/src/trunks" with ( 
+    // Font Family
     $family-sans-serif: 'BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+
+    // label
+    $label-color: variables.$text-strong,
+    $label-weight: variables.$weight-bold,
+
+    // table
     $table-head-cell-color: white, // thead > th
     $table-cell-text-align: left, // th
-);
 
-.test {
-    color: variables.$secondary;
-}
+    // modal
+    $modal-card-head-background-color: variables.$primary,
+    $modal-card-title-color: variables.$primary-invert,
+    $modal-card-title-size: variables.$size-large,
+
+    // navbar
+    $navbar-dropdown-arrow: variables.$text,
+
+    // trunks ui
+    $section-gap: 24px,
+    $control-icon-width: 3rem,
+    $label-size: variables.$size-normal,
+
+    $button-font-size: variables.$size-normal,
+    $button-weight: variables.$weight-normal, // old name is $button-font-weight
+    $button-small-height: variables.$control-height - variables.$brick-spacing,
+    $button-small-padding-horizontal: 1rem,
+    $button-height: variables.$control-height,
+    $button-medium-height: variables.$control-height + variables.$brick-spacing,
+    $button-medium-padding-horizontal: 2rem,
+    $button-large-height: variables.$control-height + variables.$brick-spacing * 2,
+    $button-large-padding-horizontal: 3rem,
+
+    $checkbox-size: 1em,
+    $radio-size: 1em,
+
+    $ngx-datatable-color: variables.$text,
+    $ngx-datatable-font-size: variables.$size-normal,
+
+    $ngx-datatable-table-head-cell-align: center,
+    $ngx-datatable-table-head-cell-color: variables.$text-invert,
+    $ngx-datatable-table-head-cell-background-color: variables.$grey,
+    $ngx-datatable-table-head-cell-font-size: variables.$size-normal,
+    $ngx-datatable-table-head-cell-font-weight: variables.$weight-bold,
+
+    $ngx-datatable-header-filter-wrapper-height: variables.$control-height * 1.5,
+    $ngx-datatable-header-filter-height: variables.$control-height,
+    $ngx-datatable-header-filter-radius: 0,
+    $ngx-datatable-header-filter-wrapper-padding: variables.$block-spacing,
+    $ngx-datatable-selection-checkbox-checked-filled-style: false,
+);

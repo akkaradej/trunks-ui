@@ -1,13 +1,13 @@
 @import "bulma/sass/utilities/functions";
 
-// Square Size, Brick & Block Spacing
+// Square size, Brick & Block spacing
 $square-size: 1rem !default;
 $brick-spacing: $square-size !default;
 $block-spacing: $square-size * 2 !default;
 $block-spacing-mobile: $block-spacing !default;
 
 // Control height
-$control-height: 4rem !default; // unit must same as Font size
+$control-height: $square-size * 4 !default;
 $control-line-height: 1.5 !default;
 
 // Font size

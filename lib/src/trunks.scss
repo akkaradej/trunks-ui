@@ -121,36 +121,59 @@ $section-gap: 24px !default;
 );
 
 // bulma others: order by https://github.com/jgthms/bulma/blob/main/sass/_index.scss
+
 @forward "bulma/sass/themes";
+
 @forward "bulma/sass/base" with (
   $body-background-color: variables.$body-background-color,
 
   // Root element size to calculate rem (in pixel)
   $body-size: 10px !default,
 );
+
 @forward "bulma/sass/elements" with (
-  $button-weight: variables.$weight-normal,
+  $button-weight: variables.$weight-normal !default,
   $button-padding-vertical: 0 !default,
   $button-padding-horizontal: 1.5rem !default,
+
+  $box-radius: variables.$radius-large !default,
+  $box-padding: 1.2rem !default,
+
+  $table-striped-row-even-background-color: variables.$scheme-main-bis !default,
+  $table-striped-row-even-hover-background-color: variables.$scheme-main-ter !default,
 );
-@forward "bulma/sass/form";
+
+@forward "bulma/sass/form" with (
+  $label-color: variables.$text-strong !default,
+  $label-weight: variables.$weight-bold !default,
+  $input-placeholder-color: variables.$text-placeholder !default,
+  $input-disabled-color: variables.$text-disabled !default,
+  $input-disabled-placeholder-color: invalid !default,
+  $input-arrow: variables.$text !default,
+  $input-icon-color: variables.$text !default,
+);
+
 @forward "bulma/sass/components" with (
   $navbar-dropdown-border-style: none !default,
-  $modal-card-head-background-color: variables.$primary,  
-  $modal-card-title-color: variables.$primary-invert,
-  $modal-card-title-size: variables.$size-large,
+  $modal-card-head-background-color: variables.$primary !default,  
+  $modal-card-title-color: variables.$primary-invert !default,
+  $modal-card-title-size: variables.$size-large !default,
   $modal-content-width: 640px !default,
-  $modal-z: 1020,
+  $modal-z: 1020 !default,
+  $pagination-disabled-color: variables.$text-disabled !default,
 );
+
 @forward "bulma/sass/grid" with (
   $column-gap: math.div(variables.$block-spacing, 2) !default,
 );
+
 @forward "bulma/sass/layout" with (
   $section-padding: (variables.$block-spacing * 2) $section-gap !default,
   $section-padding-desktop: (variables.$block-spacing * 2) $section-gap !default, // desktop only
   $section-padding-medium: (variables.$block-spacing * 3) $section-gap !default, // desktop only
   $section-padding-large: (variables.$block-spacing * 6) $section-gap !default, // desktop only
 );
+
 @forward "bulma/sass/base/skeleton";
 
 // bulma helpers
