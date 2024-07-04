@@ -36,3 +36,8 @@
     font-size: variables.$size-normal;
   }
 }
+
+// Fix: navbar-menu height does not equal navbar
+.navbar-menu {
+  min-height: variables.$navbar-height;
+}

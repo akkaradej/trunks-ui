@@ -36,6 +36,12 @@ $modal-close-color: variables.$scheme-main  !default;
   .modal-card-title {
     text-align: center;
     font-weight: $modal-card-title-font-weight;
+
+    // Fix: long title
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .modal-card-body {
@@ -175,3 +181,4 @@ html {
     }
   }
 }
+

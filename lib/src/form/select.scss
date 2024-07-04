@@ -40,9 +40,15 @@ $loader-size: 1em;
   margin-top: shared.$input-arrow-size * -0.75;
 }
 
-// Fix: select arrow color
-.select:not(:hover).is-loading::after {
-  border-top-color: transparent;
-  border-right-color: transparent;
+// Fix: select arrow has z-index
+.select:not(.is-multiple)::after {
+  z-index: 0;
 }
 
+// Fix: select arrow color
+.select {
+  &:not(:hover).is-loading::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+}

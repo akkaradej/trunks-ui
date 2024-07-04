@@ -213,3 +213,7 @@ $checkbox-title-filled-color: variables.$primary-invert !default;
 
 }
 
+// Fix: checkbox disabled="false" style
+.checkbox[disabled="false"], .radio[disabled="false"] {
+  cursor: pointer;
+}

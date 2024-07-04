@@ -55,3 +55,13 @@ $control-icon-width: 3rem !default;
   width: $control-icon-width;
   height: variables.$control-height;
 }
+
+// Fix: file input add-on button is shrinked
+.file-cta {
+  flex-shrink: 0;
+}
+
+// Fix: file input is-fullwidth expand through container
+.file.is-fullwidth .file-name {
+  white-space: normal;
+}
