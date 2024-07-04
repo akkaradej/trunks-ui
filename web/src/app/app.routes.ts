@@ -18,8 +18,13 @@ import { VariablesComponent } from './general/variables.component';
 import { SectionComponent } from './layout/section.component';
 import { CircleComponent } from './shape/circle.component';
 import { TriangleComponent } from './shape/triangle.component';
+import { HomeComponent } from './home.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
   {
     path: 'component',
     children: [

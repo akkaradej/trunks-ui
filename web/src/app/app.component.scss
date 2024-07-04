@@ -1,13 +1,15 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-._test {
-    color: bulmaFindColorInvert($secondary);
-    background-color: $secondary;
+._logo-text {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: white;
+  line-height: 1;
+  margin-left: -12px;
+  margin-bottom: 5px;
+  letter-spacing: 4px;
 }
 
-@include mobile {
-    ._test {
-        background-color: $primary;
-    }
+.container {
+  padding: 0 10px;
 }

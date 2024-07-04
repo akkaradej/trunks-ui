@@ -68,6 +68,11 @@ $section-gap: 24px !default;
 // @forward "bulma/sass/utilities/functions";
 
 @forward "bulma/sass/utilities/derived-variables" with ( 
+  // Font family
+  $family-primary: variables.$font-family !default,
+  $family-secondary: variables.$font-family !default,
+  $family-code: variables.$font-family !default,
+
   // Font size
   $size-small: variables.$size-small,
   $size-normal: variables.$size-normal,

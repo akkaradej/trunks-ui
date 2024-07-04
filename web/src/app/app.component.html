@@ -5,9 +5,18 @@
 >
   <div class="container">
     <div class="navbar-brand">
-      <div class="navbar-item">
-        Trunks UI
-      </div>
+      <a
+        class="navbar-item"
+        href="/"
+      >
+        <div class="block is-flex is-align-end">
+          <img
+            src="images/trunks-ui.png"
+            alt="Trunks UI"
+          >
+          <b class="text-size-xlarge _logo-text">runks UI</b>
+        </div>
+      </a>
 
       <a
         role="button"
@@ -28,7 +37,7 @@
       class="navbar-menu"
       [class.is-active]="isOpenMenu"
     >
-      <div class="navbar-start">
+      <div class="navbar-end">
         @for (menu of menus; track menu) {
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">{{ menu.name }}</a>

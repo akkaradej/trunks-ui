@@ -19,7 +19,6 @@ export class AppComponent {
     {
       name: 'General',
       subMenus: [
-        { name: 'Variables', link: '/general/variables' },
         { name: 'Spacing', link: '/general/spacing' },
         { name: 'Brick & Block', link: '/general/brick-block' }
       ]
