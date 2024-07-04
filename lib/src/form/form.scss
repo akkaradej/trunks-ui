@@ -8,6 +8,7 @@ $control-icon-width: 3rem !default;
   font-size: $label-size;
 }
 
+// Auto align label for horizontal field, even is-[size] is specified
 .field.is-horizontal {
   .field-label {
     margin-top: math.div((variables.$control-height - $label-size * variables.$control-line-height), 2);
@@ -16,7 +17,7 @@ $control-icon-width: 3rem !default;
       &.is-#{str-slice($name, str-length("size-") + 1)} {
         font-size: $size;
         margin-top: math.div((variables.$control-height - $size * variables.$control-line-height), 2);
-        padding: 0;
+        padding: 0; // clear bulma padding
       }
     }
 
@@ -27,6 +28,24 @@ $control-icon-width: 3rem !default;
   }
 }
 
+// Remove flex-grow 1:5 of field-label:field-body in bulma horizontal field
+// define its width in case by case should be better
+.field.is-horizontal {
+  .field-label {
+    flex-grow: 0;
+    flex-basis: auto; // default auto, define this value in case by case
+  }
+  .field-body {
+    flex-grow: 1;
+  }
+}
+
+// Fix: Search input type has different style from text input type
+.input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
+  border-radius: variables.$radius;
+}
+
+// Adjust space of icon, arrow
 .control.has-icons-right .input,
 .control.has-icons-right .select select {
   padding-right: $control-icon-width;

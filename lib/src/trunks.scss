@@ -136,6 +136,11 @@ $section-gap: 24px !default;
 @forward "bulma/sass/form";
 @forward "bulma/sass/components" with (
   $navbar-dropdown-border-style: none !default,
+  $modal-card-head-background-color: variables.$primary,  
+  $modal-card-title-color: variables.$primary-invert,
+  $modal-card-title-size: variables.$size-large,
+  $modal-content-width: 640px !default,
+  $modal-z: 1020,
 );
 @forward "bulma/sass/grid" with (
   $column-gap: math.div(variables.$block-spacing, 2) !default,

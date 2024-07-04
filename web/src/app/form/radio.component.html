@@ -6,6 +6,13 @@
     <h2 class="title is-3">Basic Usage</h2>
 
     <div class="block">
+      <p>label.radio</p>
+      <p class="push-left-1">input[type="radio"]</p>
+      <p class="push-left-1">span</p>
+      <p class="push-left-2">TEXT</p>
+    </div>
+
+    <div class="block">
       <label class="radio">
         <input
           type="radio"
@@ -25,75 +32,75 @@
     <h2 class="title is-3">Modifier</h2>
 
     <div class="block">
-      is-[color]
+      <p>.radio<b>.is-[color]</b></p>
     </div>
     <div class="block">
-      <div class="block">
-        <label class="radio is-secondary">
-          <input
-            type="radio"
-            name="radio1"
-          >
-          <span>Yes</span>
-        </label>
-        <label class="radio is-secondary">
-          <input
-            type="radio"
-            name="radio1"
-          >
-          <span>No</span>
-        </label>
-      </div>
+      <label class="radio is-secondary">
+        <input
+          type="radio"
+          name="radio1"
+        >
+        <span>Yes</span>
+      </label>
+      <label class="radio is-secondary">
+        <input
+          type="radio"
+          name="radio1"
+        >
+        <span>No</span>
+      </label>
     </div>
 
     <div class="block">
-      has-bg
+      <p>.radio<b>.has-bg</b></p>
+      <p class="push-left-1">input[type="radio"]</p>
+      <p class="push-left-1">span</p>
+      <p class="push-left-2"><b>.radio-bg</b></p>
+      <p class="push-left-2">TEXT</p>
     </div>
     <div class="block">
-      <div class="block">
-        <label class="radio has-bg is-primary">
-          <input
-            type="radio"
-            name="radio1"
-          >
-          <span>
-            <b class="radio-bg"></b>
-            Yes
-          </span>
-        </label><label class="radio has-bg is-primary">
-          <input
-            type="radio"
-            name="radio1"
-          >
-          <span>
-            <b class="radio-bg"></b>
-            No
-          </span>
-        </label>
-      </div>
+      <label class="radio has-bg is-primary">
+        <input
+          type="radio"
+          name="radio1"
+        >
+        <span>
+          <b class="radio-bg"></b>
+          Yes
+        </span>
+      </label><label class="radio has-bg is-primary">
+        <input
+          type="radio"
+          name="radio1"
+        >
+        <span>
+          <b class="radio-bg"></b>
+          No
+        </span>
+      </label>
     </div>
 
     <div class="block">
-      has-no-text
+      .radio.has-no-text
     </div>
     <div class="block">
-      <div class="block">
-        <label class="radio has-no-text">
-          <input
-            type="radio"
-            name="radio2"
-          >
-          <span></span>
-        </label>
-      </div>
+      <label class="radio has-no-text">
+        <input
+          type="radio"
+          name="radio2"
+        >
+        <span></span>
+      </label>
     </div>
 
 
     <h2 class="title is-3">Variables</h2>
-
     <div class="block">
-      <p>$radio-border-color: $primary;</p>
-      <p>$radio-background-color: $primary;</p>
+      <p>$radio-border-color: variables.$primary;</p>
+      <p>$radio-background-color: variables.$primary;</p>
+      <p>$radio-size: 1em;</p>
+      <p>$radio-inner-size: math.div($radio-size, 5);</p>
+      <p>$radio-bg-size: $radio-size + 0.5;</p>
     </div>
 
   </div>

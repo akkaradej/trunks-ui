@@ -1,6 +1,7 @@
 @use "../utilities/variables";
 @use "bulma/sass/utilities/mixins" as bulma-mx;
 @use "bulma/sass/components/modal" as bulma-modal;
+@use "bulma/sass/elements/box" as bulma-box;
 
 $modal-card-title-font-weight: variables.$weight-bold  !default;
 // $modal-content-width: 640px !default;
@@ -9,7 +10,7 @@ $modal-medium-width: 780px !default;
 $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
-
+$modal-card-head-box-shadow: none !default;
 $modal-card-body-font-weight: variables.$weight-normal  !default;
 $modal-close-background-color: bulmaRgba(variables.$scheme-invert, 0.2) !default;
 $modal-close-color: variables.$scheme-main  !default;
@@ -68,6 +69,8 @@ $modal-close-color: variables.$scheme-main  !default;
 }
 
 .modal-card-head {
+  box-shadow: $modal-card-head-box-shadow;
+
   .modal-card-title {
     margin-left: (bulma-modal.$modal-close-dimensions * 1.25);
     margin-right: (bulma-modal.$modal-close-dimensions * 0.25);

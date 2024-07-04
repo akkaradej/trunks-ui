@@ -12,34 +12,59 @@
       </a>
     </div>
 
+    <h2 class="title is-3">Basic Usage</h2>
+
     <div class="block">
-      toggle modal with is-active
+      It is custom bulma modal card.
+    </div>
+
+    <div class="block">
+      toggle modal with .is-active
+    </div>
+
+    <div class="block">
+      <p>.modal.is-active</p>
+      <p class="push-left-1">.modal-background</p>
+      <p class="push-left-1">.modal-card</p>
+      <p class="push-left-2">.modal-card-head</p>
+      <p class="push-left-2">.modal-card-body</p>
+      <p class="push-left-2">.modal-card-foot</p>
     </div>
 
     <h2 class="title is-3">Modifier</h2>
 
-    <div class="block">
-      <label>
+    <div class="block checkbox-group is-horizontal">
+      <label class="checkbox">
         <input
           type="checkbox"
           [checked]="hasNoFooter"
           (change)="hasNoFooter = !hasNoFooter"
-        > has-no-footer
+        ><span>.has-no-footer</span>
       </label>
-      <label>
-        <input
-          type="checkbox"
-          [checked]="modalLarge"
-          (change)="modalLarge =!modalLarge"
-        > modal-large
-      </label>
-      <label>
+      <label class="checkbox">
         <input
           type="checkbox"
           [checked]="isDanger"
           (change)="isDanger =!isDanger"
-        > is-[color]
+        ><span>.is-[color]</span>
       </label>
+    </div>
+    <div class="block is-horizontal is-spacing">
+      <span>.modal-[size]:</span>
+      <div class="select">
+        <select
+          #mySelect
+          [value]="modalSize"
+          (change)="modalSize = mySelect.value"
+        >
+          <option value="">default</option>
+          <option value="modal-small">.modal-small</option>
+          <option value="modal-medium">.modal-medium</option>
+          <option value="modal-large">.modal-large</option>
+          <option value="modal-auto">.modal-auto</option>
+          <option value="modal-full">.modal-full</option>
+        </select>
+      </div>
     </div>
     <div class="block">
       <button
@@ -51,10 +76,9 @@
     </div>
 
     <div
-      class="modal"
+      class="modal {{ modalSize }}"
       [class.is-active]="isOpen"
       [class.has-no-footer]="hasNoFooter"
-      [class.modal-large]="modalLarge"
       [class.is-danger]="isDanger"
     >
       <div
@@ -85,8 +109,43 @@
             >Cancel</button>
           </div>
         </section>
+        @if (!hasNoFooter) {
+        <footer class="modal-card-foot">
+          footer ...
+        </footer>
+        }
       </div>
     </div>
 
+    <h2 class="title is-3">Changes</h2>
+    <div class="block">
+      <p>Add has-no-footer to make border bottom radius</p>
+      <p>Add is-[color] to custom modal header color</p>
+      <p>Add modal-[size] to custom modal width; size = small, medium, large, auto, full</p>
+      <p>Center modal card title</p>
+    </div>
+
+    <h2 class="title is-3">Variables</h2>
+    <div class="block">
+      <p>$modal-card-title-font-weight: variables.$weight-bold;</p>
+      <p>$modal-small-width: 320px;</p>
+      <p>$modal-medium-width: 780px;</p>
+      <p>$modal-large-width: 960px;</p>
+      <p>$modal-full-width: 100%;</p>
+      <p>$modal-full-height: 100%;</p>
+      <p>$modal-card-head-box-shadow: none;</p>
+      <p>$modal-card-body-font-weight: variables.$weight-normal;</p>
+      <p>$modal-close-background-color: bulmaRgba(variables.$scheme-invert, 0.2);</p>
+      <p>$modal-close-color: variables.$scheme-main;</p>
+    </div>
+
+    <h2 class="title is-3">Bulma Variables</h2>
+    <div class="block">
+      <p>$modal-card-head-background-color: variables.$primary;</p>
+      <p>$modal-card-title-color: variables.$primary-invert;</p>
+      <p>$modal-card-title-size: variables.$size-large;</p>
+      <p>$modal-content-width: 640px;</p>
+      <p>$modal-z: 1020;</p>
+    </div>
   </div>
 </section>

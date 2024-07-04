@@ -46,17 +46,19 @@
     <h2 class="title is-3">Modifier</h2>
 
     <div class="block">
-      field is-horizontal + field-label + field-body
+      <p>.field.is-horizontal</p>
+      <p class="push-left-1">.field-label</p>
+      <p class="push-left-1">.field-body</p>
     </div>
     <div class="block">
       <div>
-        field-label is-[size] (for font-size)
+        .field-label.is-[size] (for label font-size)
       </div>
     </div>
     <div class="block">
       <form novalidate>
         <div class="field is-horizontal">
-          <div class="field-label">
+          <div class="field-label is-large">
             <label class="label">Name</label>
           </div>
           <div class="field-body">
@@ -75,7 +77,7 @@
 
     <div class="block">
       <div class="block">
-        form submitted + input ng-invalid
+        form.submitted .input.ng-invalid
       </div>
       <div class="block">
         <form
@@ -97,7 +99,7 @@
 
     <div class="block">
       <div class="block">
-        is-required
+        .field.is-required
       </div>
       <div class="block">
         <form novalidate>
@@ -112,6 +114,22 @@
           </div>
         </form>
       </div>
+    </div>
+
+    <h2 class="title is-3">Changes</h2>
+    <div class="block">
+      <p>Auto align label for horizontal field, even is-[size] is specified</p>
+      <p>Add is-align-top at field-label to align lable to top</p>
+      <p>Remove flex-grow 1:5 of field-label:field-body in horizontal field, define its width in case by case</p>
+      <p>Change input[type="search"] style to same as .input</p>
+      <p>Support Angular .ng-invalid input style</p>
+      <p>Add is-required to display red * on label</p>
+    </div>
+
+    <h2 class="title is-3">Variables</h2>
+    <div class="block">
+      <p>$label-size: variables.$size-normal;</p>
+      <p>$control-icon-width: 3rem;</p>
     </div>
 
   </div>

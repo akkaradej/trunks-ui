@@ -30,4 +30,7 @@
   "scss.format.newlineBetweenRules": false,
   "scss.format.newlineBetweenSelectors": false,
   "scss.format.spaceAroundSelectorSeparator": true,
+  "[scss]": {
+    "editor.formatOnSave": false
+  }
 }

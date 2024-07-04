@@ -12,23 +12,6 @@
 //   }
 // }
 
-// Fix: 1:5 width of label:input in horizontal form is too bad
-// define its width in case by case should be better
-.field.is-horizontal {
-  .field-label {
-    flex-grow: 0;
-    flex-basis: auto; // default auto, define this value in case by case
-  }
-  .field-body {
-    flex-grow: 1;
-  }
-}
-
-// Fix: Search input type has different style from text input type
-.input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
-  border-radius: variables.$radius;
-}
-
 // Fix: file input add-on button is shrinked
 .file-cta {
   flex-shrink: 0;

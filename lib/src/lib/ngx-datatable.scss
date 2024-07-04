@@ -2,6 +2,7 @@
 @use "../utilities/variables";
 @use "../utilities/mixins" as mx;
 @use "../form/checkbox";
+@use "bulma/sass/utilities/functions" as fn;
 
 $ngx-datatable-table-shadow: none !default;
 $ngx-datatable-table-border: 1px solid variables.$border !default;
@@ -362,7 +363,7 @@ datatable-selection {
       }
 
       &:checked::after {
-        color: findColorInvert(checkbox.$checkbox-checked-filled-background-color);
+        color: fn.bulmaFindColorInvert(checkbox.$checkbox-checked-filled-background-color);
       }
     }
   }

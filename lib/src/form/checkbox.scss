@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "bulma/sass/utilities/functions" as fn;
 @use "../utilities/variables";
 
 $checkbox-size: 1em !default;
@@ -68,7 +69,7 @@ $checkbox-title-filled-color: variables.$primary-invert !default;
       }
 
       &:checked+span::after {
-        color: findColorInvert($checkbox-checked-filled-background-color);
+        color: fn.bulmaFindColorInvert($checkbox-checked-filled-background-color);
       }
     }
   }

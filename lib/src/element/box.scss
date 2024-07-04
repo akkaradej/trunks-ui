@@ -1,5 +1,5 @@
 @use "../utilities/variables";
-@use "bulma/sass/elements/box";
+@use "bulma/sass/elements/box" as bulma-box;
 
 $box-hightlight-color: variables.$primary !default;
 
@@ -30,9 +30,9 @@ $box-hightlight-color: variables.$primary !default;
 
 .box-detail {
   padding: 1.25rem;
-  box-shadow: box.$box-shadow;
-  border-bottom-left-radius: box.$box-radius;
-  border-bottom-right-radius: box.$box-radius;
+  box-shadow: bulma-box.$box-shadow;
+  border-bottom-left-radius: bulma-box.$box-radius;
+  border-bottom-right-radius: bulma-box.$box-radius;
 
   &.is-bordered {
     border: 1px solid variables.$border;

@@ -29,7 +29,7 @@
 
     <div class="block">
       <div class="block">
-        <b>is-sheet</b>
+        <b>.is-sheet</b>
       </div>
       <div class="block">
         <div class="tabs is-sheet">
@@ -45,7 +45,7 @@
 
     <div class="block">
       <div class="block">
-        <b>is-sheet is-below</b>
+        <b>.is-sheet.is-below</b>
       </div>
       <div class="block">
         <div class="tabs is-sheet is-below">
@@ -62,10 +62,10 @@
     <div class="block">
       <div class="block">
         <div>
-          <b>is-sheet is-highlighted</b>
+          <b>.is-sheet.is-highlighted</b>
         </div>
         <div>
-          <b>is-[color]</b> at specific &lt;li&gt; to highlight tab color
+          <b>.is-[color]</b> at specific &lt;li&gt; to highlight tab color
         </div>
       </div>
       <div class="block">
@@ -88,7 +88,8 @@
 
     <div class="block">
       <div class="block">
-        is-sheet has-box
+        <p>.is-sheet.has-box</p>
+        <p>.box.is-radiusless</p>
       </div>
       <div class="block">
         <div class="tabs is-sheet has-box">
@@ -103,10 +104,31 @@
       </div>
     </div>
 
-    <h2 class="title is-3">Variables</h2>
-
+    <h2 class="title is-3">Changes</h2>
     <div class="block">
-      <p>$tab-highlight-color: $primary;</p>
+      <p>Add is-sheet to make tab sheet style</p>
+      <p>Add is-below to make tab sheet below</p>
+      <p>Add is-highlighted to highlight tab</p>
+      <p>Add is-[color] to change specific tab highlight color</p>
+      <p>Add has-box to make tab sheet co-working with box</p>
+    </div>
+
+    <h2 class="title is-3">Variables</h2>
+    <div class="block">
+      <p>$tabs-has-box-shadow-box: -2px 0px 0px -1px rgba(10, 10, 10, 0.1);</p>
+      <p>$tabs-sheet-link-background-color: variables.$scheme-main-bis;</p>
+      <p>$tabs-sheet-link-border-color: variables.$border;</p>
+      <p>$tabs-sheet-link-border-style: solid;</p>
+      <p>$tabs-sheet-link-border-width: 1px;</p>
+      <p>$tabs-sheet-link-hover-background-color: variables.$background;</p>
+      <p>$tabs-sheet-link-hover-border-color: variables.$border-hover;</p>
+      <p>$tabs-sheet-link-active-color: variables.$primary;</p>
+      <p>$tabs-sheet-link-active-background-color: variables.$scheme-main;</p>
+      <p>$tabs-sheet-link-active-border-color: variables.$border;</p>
+      <p>$tabs-sheet-link-active-border-bottom-color: transparent;</p>
+      <p>$tab-highlight-border-color: variables.$primary;</p>
+      <p>$tab-highlight-border-style: solid;</p>
+      <p>$tab-highlight-border-width: 3px;</p>
     </div>
 
   </div>
