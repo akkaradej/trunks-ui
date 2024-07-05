@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "bulma/sass/utilities/functions";
 
 // Square size, Brick & Block spacing
@@ -10,24 +11,28 @@ $block-spacing-mobile: $block-spacing !default;
 $control-height: $square-size * 4 !default;
 $control-line-height: 1.5 !default;
 
+// Font family
+$font-family: '"Inter", "SF Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif' !default;
+$custom-font-family: null !default;
+
+@if $custom-font-family {
+  $font-family: $custom-font-family + ', ' + $font-family;
+}
+
 // Font size
 $size-small: 1.2rem !default;
 $size-normal: 1.6rem !default;
 $size-medium: 2rem !default;
 $size-large: 2.4rem !default;
-$size-xlarge: 2.8rem !default;
-$size-xxlarge: 3.2rem !default;
 
-$font-family: '"Inter", "SF Pro", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif' !default;
+$custom-font-sizes: null !default;
 
-$font-sizes: (
+$font-sizes: map.merge((
   "size-small": $size-small,
   "size-normal": $size-normal,
   "size-medium": $size-medium,
   "size-large": $size-large,
-  "size-xlarge": $size-xlarge,
-  "size-xxlarge": $size-xxlarge
-) !default;
+), $custom-font-sizes) !default;
 
 // Weight
 $weight-light: 300 !default;
@@ -35,13 +40,15 @@ $weight-normal: 400 !default;
 $weight-medium: 500 !default;
 $weight-semibold: 600 !default;
 $weight-bold: 700 !default;
+$weight-extrabold: 800 !default;
 
 $font-weights: (
   "weight-light": $weight-light,
   "weight-normal": $weight-normal,
   "weight-medium": $weight-medium,
   "weight-semibold": $weight-semibold,
-  "weight-bold": $weight-bold
+  "weight-bold": $weight-bold,
+  "weight-extrabold": $weight-extrabold
 ) !default;
 
 // Miscellaneous
@@ -190,3 +197,4 @@ $modal-breakpoint: $desktop !default;
 // Others
 $sidebar-width: 0 !default;
 $navbar-height: 0 !default;
+$modal-z: 1020 !default;

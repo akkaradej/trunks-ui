@@ -1,11 +1,6 @@
 @use "./variables";
 
-@use "../../lib/src/trunks" with ( 
-    // Font Family
-    $family-primary: '#{variables.$font-family}',
-    $family-secondary: '#{variables.$font-family}',
-    $family-code: '#{variables.$font-family}',
-
+@use "../../lib/src" with ( 
     // label
     $label-color: variables.$text-strong,
     $label-weight: variables.$weight-bold,
@@ -13,11 +8,6 @@
     // table
     $table-head-cell-color: white, // thead > th
     $table-cell-text-align: left, // th
-
-    // modal
-    $modal-card-head-background-color: variables.$primary,
-    $modal-card-title-color: variables.$primary-invert,
-    $modal-card-title-size: variables.$size-large,
 
     // navbar
     $navbar-item-img-max-height: 54px,

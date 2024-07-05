@@ -5,6 +5,7 @@
 @use "./utilities/variables";
 
 $section-gap: 24px !default;
+$input-color: variables.$text !default;
 
 // bulma utilities
 @forward "bulma/sass/utilities/initial-variables" with ( 
@@ -144,6 +145,8 @@ $section-gap: 24px !default;
   $box-radius: variables.$radius-large !default,
   $box-padding: 1.2rem !default,
 
+  $icon-text-spacing: variables.$brick-spacing,
+
   $table-striped-row-even-background-color: variables.$scheme-main-bis !default,
   $table-striped-row-even-hover-background-color: variables.$scheme-main-ter !default,
 );
@@ -154,17 +157,32 @@ $section-gap: 24px !default;
   $input-placeholder-color: variables.$text-placeholder !default,
   $input-disabled-color: variables.$text-disabled !default,
   $input-disabled-placeholder-color: invalid !default,
+  $input-h: hue($input-color) !default,
+  $input-s: saturation($input-color) !default,
+  $input-l: lightness($input-color) !default,
   $input-arrow: variables.$text !default,
   $input-icon-color: variables.$text !default,
 );
 
 @forward "bulma/sass/components" with (
-  $navbar-dropdown-border-style: none !default,
-  $modal-card-head-background-color: variables.$primary !default,  
-  $modal-card-title-color: variables.$primary-invert !default,
-  $modal-card-title-size: variables.$size-large !default,
   $modal-content-width: 640px !default,
-  $modal-z: 1020 !default,
+  $modal-content-margin-mobile: 20px !default,
+  $modal-content-spacing-mobile: 160px !default,
+  $modal-content-spacing-tablet: 40px !default,
+  $modal-close-dimensions: 40px !default,
+  $modal-close-right: 20px !default,
+  $modal-close-top: 20px !default,
+  $modal-card-spacing: 40px !default,
+  $modal-card-head-background-color: variables.$primary !default,
+  $modal-card-head-padding: 1.6rem,
+  $modal-card-title-color: variables.$primary-invert,
+  $modal-card-title-size: variables.$size-large,
+
+  $modal-z: variables.$modal-z !default,
+
+  $navbar-dropdown-border-style: none !default,
+  $navbar-dropdown-arrow: variables.$text !default,
+
   $pagination-disabled-color: variables.$text-disabled !default,
 );
 

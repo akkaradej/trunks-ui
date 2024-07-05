@@ -1,4 +1,6 @@
-$square-size: 0.8rem;
+// Custom font-sizes
+$size-xlarge: 2.8rem;
+$size-xxlarge: 3.2rem;
 
 // Custom colors
 $header-background: #3273dc;
@@ -7,21 +9,29 @@ $header-background: #3273dc;
 $edit: #ff470f;
 $delete: #ff3860;
 
+$square-size: 0.8rem;
+
 @forward "../../../lib/src/utilities/variables" with (
   // Square size
-  $square-size: $square-size,
+  $square-size: 0.8rem,
 
   // Control height
-  $control-height: $square-size * 4,
+  $control-height: 3.2rem,
   $control-line-height: 1.5,
 
-   // Font size
+  // Font family
+  // $custom-font-family: "Kanit",
+
+  // Font size
   $size-small: 1.2rem,
   $size-normal: 1.6rem,
   $size-medium: 2rem,
   $size-large: 2.4rem,
-  $size-xlarge: 2.8rem,
-  $size-xxlarge: 3.2rem,
+
+  $custom-font-sizes: (
+    "size-xlarge": $size-xlarge,
+    "size-xxlarge": $size-xxlarge,
+  ),
 
   // Weight
   $weight-light: 300,
@@ -29,12 +39,15 @@ $delete: #ff3860;
   $weight-medium: 500,
   $weight-semibold: 600,
   $weight-bold: 700,
+  $weight-extrabold: 800,
 
   // Miscellaneous
   $radius-small: 4px,
   $radius: 6px,
   $radius-medium: 8px,
   $radius-large: 12px,
+
+  // General colors
 
   $scheme-main: #ffffff,
   $scheme-main-bis: #fafafa,
@@ -52,8 +65,8 @@ $delete: #ff3860;
   $grey-lightest: #ededed,
 
   // Text colors
-  $text-strong: #363636,
   $text: #4a4a4a,
+  $text-strong: #363636,
   $text-light: #7a7a7a,
   $text-lighter: #b5b5b5,
   $text-disabled: #b5b5b5,
@@ -61,9 +74,9 @@ $delete: #ff3860;
   $text-disabled-placeholder: #d2d2d2, // ~ rgba($text-light, 0.3)
 
   // Border colors
-  $border-hover: #b5b5b5,
   $border: #dbdbdb,
   $border-light: #ededed,
+  $border-hover: #b5b5b5,
 
   // Body background color
   $body-background-color: #ffffff,
@@ -72,7 +85,7 @@ $delete: #ff3860;
   $background: #f5f5f5,
 
   // Text invert color
-  $text-invert: #ffffff,
+  $text-invert: #0f0707,
 
   // Theme colors
   $primary: #00d1b2,
@@ -169,10 +182,12 @@ $delete: #ff3860;
   // $desktop: 1366px, // change to fit your requirement of desktop minimum screen width
   // $widescreen-enabled: false,
   // $fullhd-enabled: false,
-  // $body-overflow-x: auto,
-  // $body-min-width: $desktop - $vertical-scrollbar-width,
   // $navbar-breakpoint: 0,
   // $modal-breakpoint: 0,
+  //
+  // And set these configs to trunks-ui
+  // $body-overflow-x: auto,
+  // $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,
 
   // Others
   $sidebar-width: 0,
