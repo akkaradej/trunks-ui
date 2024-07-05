@@ -25,7 +25,7 @@ $size-normal: 1.6rem !default;
 $size-medium: 2rem !default;
 $size-large: 2.4rem !default;
 
-$custom-font-sizes: null !default;
+$custom-font-sizes: () !default;
 
 $font-sizes: map.merge((
   "size-small": $size-small,
