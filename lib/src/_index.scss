@@ -145,7 +145,7 @@ $input-color: variables.$text !default;
   $box-radius: variables.$radius-large !default,
   $box-padding: 1.2rem !default,
 
-  $icon-text-spacing: variables.$brick-spacing,
+  $icon-text-spacing: variables.$brick-spacing !default,
 
   $table-striped-row-even-background-color: variables.$scheme-main-bis !default,
   $table-striped-row-even-hover-background-color: variables.$scheme-main-ter !default,
@@ -174,9 +174,9 @@ $input-color: variables.$text !default;
   $modal-close-top: 20px !default,
   $modal-card-spacing: 40px !default,
   $modal-card-head-background-color: variables.$primary !default,
-  $modal-card-head-padding: 1.6rem,
-  $modal-card-title-color: variables.$primary-invert,
-  $modal-card-title-size: variables.$size-large,
+  $modal-card-head-padding: 1.6rem !default,
+  $modal-card-title-color: variables.$primary-invert !default,
+  $modal-card-title-size: variables.$size-large !default,
 
   $modal-z: variables.$modal-z !default,
 
@@ -221,10 +221,10 @@ $input-color: variables.$text !default;
 
 // custom others
 @forward "./base";
-@forward "./helpers";
 @forward "./layout";
 @forward "./element";
 @forward "./components";
 @forward "./form";
 @forward "./shape";
+@forward "./helpers";
 @forward "./lib";
