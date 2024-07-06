@@ -156,6 +156,7 @@ $colors: mergeColorMaps((
   "black": ($black, bulmaFindColorInvert($black)),
   "light": ($light, $light-invert),
   "dark": ($dark, $dark-invert),
+  "text": ($text, $text-invert),
   "primary": ($primary, $primary-invert),
   "secondary": ($secondary, $secondary-invert),
   "link": ($link, $link-invert),
@@ -181,6 +182,10 @@ $shades: mergeColorMaps((
 // Scrollbar width
 $vertical-scrollbar-width: 17px !default;
 
+// Others
+$navbar-height: 0 !default;
+$modal-z: 1020 !default;
+
 // Responsive Breakpoint
 // mobile up to 767px;
 $non-responsive-mobile: false !default;
@@ -193,8 +198,3 @@ $fullhd: 1536px !default; // fullhd size by 1280 + 256 = 1536                   
 $fullhd-enabled: true !default;
 $navbar-breakpoint: $desktop !default;
 $modal-breakpoint: $desktop !default;
-
-// Others
-$sidebar-width: 0 !default;
-$navbar-height: 0 !default;
-$modal-z: 1020 !default;

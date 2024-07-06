@@ -1,5 +1,4 @@
 @use "./variables";
-
 @use "../../lib/src" with ( 
     // label
     $label-color: variables.$text-strong,
@@ -30,6 +29,12 @@
 
     $checkbox-size: 1em,
     $radio-size: 1em,
+
+    // $modal-card-custom-head: true,
+    // $modal-card-head-background-color: variables.$primary,
+    // $modal-card-head-padding: 1.2rem,
+    // $modal-card-title-color: variables.$primary-invert,
+    // $modal-card-title-size: variables.$size-medium,
 
     $ngx-datatable-color: variables.$text,
     $ngx-datatable-font-size: variables.$size-normal,

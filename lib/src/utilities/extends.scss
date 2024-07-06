@@ -5,6 +5,10 @@
   @include mx.brick;
 }
 
+%block {
+  @include mx.block;
+}
+
 %is-spacing {
   @include mx.is-spacing;
 }

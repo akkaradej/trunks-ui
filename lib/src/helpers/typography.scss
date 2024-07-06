@@ -79,16 +79,13 @@
   }
 }
 
-// align
-$alignments: ('center': 'center', 'justify': 'justify', 'left': 'left', 'right': 'right');
-
-@each $alignment, $text-align in $alignments {
+@each $alignment, $text-align in ('center': 'center', 'justify': 'justify', 'left': 'left', 'right': 'right') {
   .text-#{$alignment} {
     text-align: #{$text-align} !important;
   }
 }
 
-@each $alignment, $text-align in $alignments {
+@each $alignment, $text-align in ('center': 'center', 'justify': 'justify', 'left': 'left', 'right': 'right') {
   @include bulma-mx.mobile {
     .text-#{$alignment}-mobile {
       text-align: #{$text-align} !important;

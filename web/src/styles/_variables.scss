@@ -104,6 +104,9 @@ $square-size: 0.8rem;
     "delete": ($delete),
   ),
 
+  // Others
+  $navbar-height: 70px,
+
   // Responsive Breakpoint
   // $non-responsive-mobile: false,
   // $non-responsive-tablet: false,
@@ -188,8 +191,4 @@ $square-size: 0.8rem;
   // And set these configs to trunks-ui
   // $body-overflow-x: auto,
   // $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,
-
-  // Others
-  $sidebar-width: 0,
-  $navbar-height: 70px,
 );

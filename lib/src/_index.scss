@@ -115,15 +115,14 @@ $input-color: variables.$text !default;
   // Colors & Shades
   $custom-colors: variables.$custom-colors,
   $custom-shades: variables.$custom-shades,
-
   $colors: variables.$colors,
-
   $shades: variables.$shades,
 );
 
 @forward "bulma/sass/utilities/controls" with (
   $control-height: variables.$control-height,
   $control-line-height: variables.$control-line-height,
+  $control-padding-vertical: calc(0.25em - 1px) !default,
 );
 
 // bulma others: order by https://github.com/jgthms/bulma/blob/main/sass/_index.scss
@@ -147,6 +146,7 @@ $input-color: variables.$text !default;
 
   $icon-text-spacing: variables.$brick-spacing !default,
 
+  $table-color: variables.$text !default,
   $table-striped-row-even-background-color: variables.$scheme-main-bis !default,
   $table-striped-row-even-hover-background-color: variables.$scheme-main-ter !default,
 );
@@ -157,6 +157,8 @@ $input-color: variables.$text !default;
   $input-placeholder-color: variables.$text-placeholder !default,
   $input-disabled-color: variables.$text-disabled !default,
   $input-disabled-placeholder-color: invalid !default,
+  $input-disabled-background-color: variables.$background !default,
+  $input-disabled-border-color: variables.$border !default,
   $input-h: hue($input-color) !default,
   $input-s: saturation($input-color) !default,
   $input-l: lightness($input-color) !default,
@@ -173,17 +175,20 @@ $input-color: variables.$text !default;
   $modal-close-right: 20px !default,
   $modal-close-top: 20px !default,
   $modal-card-spacing: 40px !default,
-  $modal-card-head-background-color: variables.$primary !default,
   $modal-card-head-padding: 1.6rem !default,
-  $modal-card-title-color: variables.$primary-invert !default,
   $modal-card-title-size: variables.$size-large !default,
 
-  $modal-z: variables.$modal-z !default,
 
   $navbar-dropdown-border-style: none !default,
   $navbar-dropdown-arrow: variables.$text !default,
 
   $pagination-disabled-color: variables.$text-disabled !default,
+
+  // config at variables.scss
+  $modal-breakpoint: variables.$modal-breakpoint,
+  $modal-z: variables.$modal-z,
+  $navbar-breakpoint: variables.$navbar-breakpoint,
+  $navbar-height: variables.$navbar-height,
 );
 
 @forward "bulma/sass/grid" with (
@@ -215,7 +220,7 @@ $input-color: variables.$text !default;
   $spacing-vertical: "-y" !default,
   $spacing-values: ("0": 0, "1": variables.$square-size, "2": variables.$square-size * 2, "3": variables.$square-size * 3, "4": variables.$square-size * 4, "5": variables.$square-size * 5, "6": variables.$square-size * 6) !default,
 );
-// @import "bulma/sass/helpers/typography"; // rewrite
+// @forward "bulma/sass/helpers/typography"; // rewrite
 @forward "bulma/sass/helpers/visibility";
 @forward "bulma/sass/helpers/other";
 

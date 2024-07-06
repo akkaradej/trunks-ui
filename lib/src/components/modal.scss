@@ -10,10 +10,11 @@ $modal-medium-width: 780px !default;
 $modal-large-width: 960px !default;
 $modal-full-width: 100% !default;
 $modal-full-height: 100% !default;
+$modal-card-custom-head: false !default;
 $modal-card-head-box-shadow: none !default;
 $modal-card-body-font-weight: variables.$weight-normal  !default;
-$modal-close-background-color: bulmaRgba(variables.$scheme-invert, 0.2) !default;
-$modal-close-color: variables.$scheme-main  !default;
+$modal-close-background-color: inherit !default;
+$modal-close-color: currentColor !default;
 
 .modal {
   &.has-no-footer {
@@ -55,11 +56,14 @@ $modal-close-color: variables.$scheme-main  !default;
 
     &.is-#{$name} {
       .modal-card-head {
-        color: $color;
-        background-color: $color;
-
-        .modal-card-title {
+        @if $modal-card-custom-head {
+          color: $color;
+        } @else {
           color: $color-invert;
+          background-color: $color;
+          .modal-card-title {
+            color: $color-invert;
+          }
         }
       }
     }
@@ -75,25 +79,29 @@ $modal-close-color: variables.$scheme-main  !default;
 }
 
 .modal-card-head {
+  color: bulma-modal.$modal-card-title-color;
+  background-color: bulma-modal.$modal-card-head-background-color;
   box-shadow: $modal-card-head-box-shadow;
-
+  
   .modal-card-title {
+    color: bulma-modal.$modal-card-title-color;
     margin-left: (bulma-modal.$modal-close-dimensions * 1.25);
     margin-right: (bulma-modal.$modal-close-dimensions * 0.25);
   }
+}
 
-  .delete {
-    width: bulma-modal.$modal-close-dimensions;
-    height: bulma-modal.$modal-close-dimensions;
-    max-height: bulma-modal.$modal-close-dimensions;
-    max-width: bulma-modal.$modal-close-dimensions;
-    color: inherit;
-    background-color: $modal-close-background-color;
+.modal-card-head .delete,
+.modal-close {
+  width: bulma-modal.$modal-close-dimensions;
+  height: bulma-modal.$modal-close-dimensions;
+  max-height: bulma-modal.$modal-close-dimensions;
+  max-width: bulma-modal.$modal-close-dimensions;
+  color: inherit;
+  background-color: $modal-close-background-color;
 
-    &::before,
-    &::after {
-      background-color: $modal-close-color;
-    }
+  &::before,
+  &::after {
+    background-color: $modal-close-color;
   }
 }
 

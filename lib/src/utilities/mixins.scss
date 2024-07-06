@@ -127,11 +127,6 @@ $input-arrow-size: 0.625em !default;
 
     @include space-bottom;
   }
-
-}
-
-%block {
- @include block;
 }
 
 @mixin brick($spacing: variables.$brick-spacing) {

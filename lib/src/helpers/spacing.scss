@@ -8,6 +8,11 @@
   @extend %brick;
 }
 
+// block
+.block, .box, .buttons, .card, .skeleton-block {
+  @extend %block;
+}
+
 // spacing
 .is-spacing {
   @extend %is-spacing;
