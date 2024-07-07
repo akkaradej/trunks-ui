@@ -5,10 +5,10 @@
   "main": "./dist-lib/_index.scss",
   "scripts": {
     "dev": "cd ./web && bun start",
-    "build_web": "cd ./web && bun run build",
+    "build:gh-pages": "cd ./web && bun run build:gh-pages",
     "build_lib": "gulp",
     "pack_lib": "npm pack ./dist-lib",
-    "package": "npm run build && npm run pack_lib",
+    "package": "npm run build_lib && npm run pack_lib",
     "publish": "npm publish ./dist-lib"
   },
   "dependencies": {
