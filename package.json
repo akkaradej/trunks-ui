@@ -5,7 +5,8 @@
   "main": "./dist-lib/_index.scss",
   "scripts": {
     "dev": "cd ./web && bun start",
-    "build": "gulp",
+    "build_web": "cd ./web && bun run build",
+    "build_lib": "gulp",
     "pack_lib": "npm pack ./dist-lib",
     "package": "npm run build && npm run pack_lib",
     "publish": "npm publish ./dist-lib"
