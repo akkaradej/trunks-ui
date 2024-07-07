@@ -74,18 +74,6 @@ $white-ter: #f5f5f5 !default;
 $white-bis: #fafafa !default;
 $white: #ffffff !default;
 
-// Color
-$orange: #ff470f !default;
-$yellow: #ffdd57 !default;
-$green: #23d160 !default;
-$turquoise: #00d1b2 !default;
-$cyan: #209cee !default;
-$blue: #3273dc !default;
-$purple: #b86bff !default;
-$red: #ff3860 !default;
-
-// Meaning Colors
-
 // General colors
 $scheme-main: $white !default;
 $scheme-main-bis: $white-bis !default;
@@ -114,12 +102,13 @@ $text-placeholder: $grey-lighter !default; // ~ rgba($text, 0.3)
 $text-disabled-placeholder: $grey-lightest !default;
 
 // Default colors
-$primary: $turquoise !default;
-$secondary: $blue !default;
-$info: $cyan !default;
-$success: $green !default;
-$warning: $yellow !default;
-$danger: $red !default;
+$primary: #3273dc !default;
+$secondary: #e62aa5 !default;
+$info: #209cee !default;
+$success: #23d160 !default;
+$warning: #ffdd57 !default;
+$danger: #ff3860 !default;
+
 $light: $white-ter !default;
 $dark: $grey-darker !default;
 
@@ -134,7 +123,7 @@ $light-invert: bulmaFindColorInvert($light) !default;
 $dark-invert: bulmaFindColorInvert($dark) !default;
 
 // Link colors
-$link: $primary !default;
+$link: #0087FF !default;
 $link-invert: bulmaFindColorInvert($link) !default;
 $link-visited: $link !default;
 

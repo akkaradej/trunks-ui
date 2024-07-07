@@ -1,21 +1,58 @@
 @use "./variables";
+@use "../../lib/src";
+
+/*
 @use "../../lib/src" with ( 
+    // Non-Responsive
+    $body-overflow-x: auto,
+    $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,
+
+    // field
+    $field-spacing: variables.$block-spacing,
+
     // label
     $label-color: variables.$text-strong,
     $label-weight: variables.$weight-bold,
 
+    // button
+    $button-padding-horizontal: 2em,
+
+    // box
+    $box-radius: variables.$radius-large,
+    $box-shadow: none,
+    $box-padding: 2rem,
+
     // table
-    $table-head-cell-color: white, // thead > th
+    $table-head-cell-color: variables.$text-strong, // thead > th
+    $table-head-background-color: transparent,
     $table-cell-text-align: left, // th
 
     // navbar
-    $navbar-item-img-max-height: 54px,
-    $navbar-dropdown-arrow: variables.$text,
+    $navbar-item-img-max-height: max(30px, variables.$navbar-height - 10px),
+
+    // modal
+    $modal-close-dimensions: 40px,
+    $modal-card-head-background-color: variables.$scheme-main,
+    $modal-card-head-radius: variables.$radius-large,
+    $modal-card-head-padding: 1.2rem,
+    $modal-card-title-color: variables.$text-strong,
+    $modal-card-title-size: variables.$size-medium,
+    $modal-full-width: 100%,
+    $modal-close-background-color: inherit,
+    $modal-close-color: currentColor,
+    $modal-card-custom-head: false,
+
+    // pagination
+    $pagination-current-color: variables.$link-invert,
+    $pagination-current-background-color: variables.$link,
+    $pagination-current-border-color: variables.$link,
 
     // trunks ui
     $section-gap: 24px,
     $control-icon-width: 3rem,
     $label-size: variables.$size-normal,
+    $input-color: variables.$text,
+    $arrow-color: variables.$grey,
 
     $button-font-size: variables.$size-normal,
     $button-weight: variables.$weight-normal, // old name is $button-font-weight
@@ -30,24 +67,19 @@
     $checkbox-size: 1em,
     $radio-size: 1em,
 
-    // $modal-card-custom-head: true,
-    // $modal-card-head-background-color: variables.$primary,
-    // $modal-card-head-padding: 1.2rem,
-    // $modal-card-title-color: variables.$primary-invert,
-    // $modal-card-title-size: variables.$size-medium,
-
     $ngx-datatable-color: variables.$text,
     $ngx-datatable-font-size: variables.$size-normal,
-
     $ngx-datatable-table-head-cell-align: center,
-    $ngx-datatable-table-head-cell-color: variables.$text-invert,
-    $ngx-datatable-table-head-cell-background-color: variables.$grey,
+    $ngx-datatable-table-head-cell-color: variables.$text,
+    $ngx-datatable-table-head-cell-background-color: variables.$white,
     $ngx-datatable-table-head-cell-font-size: variables.$size-normal,
     $ngx-datatable-table-head-cell-font-weight: variables.$weight-bold,
-
     $ngx-datatable-header-filter-wrapper-height: variables.$control-height * 1.5,
     $ngx-datatable-header-filter-height: variables.$control-height,
     $ngx-datatable-header-filter-radius: 0,
     $ngx-datatable-header-filter-wrapper-padding: variables.$block-spacing,
+    $ngx-datatable-selection-background-color: inherit,
+    $ngx-datatable-selection-color: inherit,
     $ngx-datatable-selection-checkbox-checked-filled-style: false,
 );
+*/

@@ -17,6 +17,15 @@ $button-large-padding-horizontal: 3rem !default;
   padding-left: bulma-button.$button-padding-horizontal;
   padding-right: bulma-button.$button-padding-horizontal;
 
+  // no effect for disabled button
+  &.is-outlined[disabled] {
+    background: none;
+
+    &:hover {
+      border-width: max(1px, 0.0625em);
+    }
+  }
+
   &.is-auto {
     height: auto;
     padding: 0.5em 1em;

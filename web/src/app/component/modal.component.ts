@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 export class ModalComponent {
   isOpen = false;
   hasNoFooter = false;
-  isDanger = false;
+  isColor = false;
   modalSize = '';
 }

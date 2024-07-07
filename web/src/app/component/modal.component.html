@@ -44,8 +44,8 @@
       <label class="checkbox">
         <input
           type="checkbox"
-          [checked]="isDanger"
-          (change)="isDanger =!isDanger"
+          [checked]="isColor"
+          (change)="isColor =!isColor"
         ><span>.is-[color]</span>
       </label>
     </div>
@@ -79,7 +79,7 @@
       class="modal {{ modalSize }}"
       [class.is-active]="isOpen"
       [class.has-no-footer]="hasNoFooter"
-      [class.is-danger]="isDanger"
+      [class.is-secondary]="isColor"
     >
       <div
         class="modal-background"

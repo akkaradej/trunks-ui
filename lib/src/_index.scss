@@ -6,6 +6,7 @@
 
 $section-gap: 24px !default;
 $input-color: variables.$text !default;
+$arrow-color: variables.$grey !default;
 
 // bulma utilities
 @forward "bulma/sass/utilities/initial-variables" with ( 
@@ -40,16 +41,6 @@ $input-color: variables.$text !default;
   $white-ter: variables.$white-ter,
   $white-bis: variables.$white-bis,
   $white: variables.$white,
-
-  // Color
-  $orange: variables.$orange,
-  $yellow: variables.$yellow,
-  $green: variables.$green,
-  $turquoise: variables.$turquoise,
-  $cyan: variables.$cyan,
-  $blue: variables.$blue,
-  $purple: variables.$purple,
-  $red: variables.$red,
 
   // The container horizontal gap, which acts as the offset for breakpoints
   $gap: $section-gap !default,
@@ -139,10 +130,11 @@ $input-color: variables.$text !default;
 @forward "bulma/sass/elements" with (
   $button-weight: variables.$weight-normal !default,
   $button-padding-vertical: 0 !default,
-  $button-padding-horizontal: 1.5rem !default,
+  $button-padding-horizontal: 2em !default,
 
   $box-radius: variables.$radius-large !default,
-  $box-padding: 1.2rem !default,
+  $box-shadow: none !default,
+  $box-padding: 2rem !default,
 
   $icon-text-spacing: variables.$brick-spacing !default,
 
@@ -162,7 +154,7 @@ $input-color: variables.$text !default;
   $input-h: hue($input-color) !default,
   $input-s: saturation($input-color) !default,
   $input-l: lightness($input-color) !default,
-  $input-arrow: variables.$text !default,
+  $input-arrow: $arrow-color !default,
   $input-icon-color: variables.$text !default,
 );
 
@@ -175,12 +167,12 @@ $input-color: variables.$text !default;
   $modal-close-right: 20px !default,
   $modal-close-top: 20px !default,
   $modal-card-spacing: 40px !default,
-  $modal-card-head-padding: 1.6rem !default,
-  $modal-card-title-size: variables.$size-large !default,
+  $modal-card-head-padding: 1.2rem !default,
+  $modal-card-title-size: variables.$size-medium !default,
 
-
+  $navbar-item-img-max-height: max(30px, variables.$navbar-height - 10px) !default,
   $navbar-dropdown-border-style: none !default,
-  $navbar-dropdown-arrow: variables.$text !default,
+  $navbar-dropdown-arrow: $arrow-color !default,
 
   $pagination-disabled-color: variables.$text-disabled !default,
 
@@ -233,3 +225,9 @@ $input-color: variables.$text !default;
 @forward "./shape";
 @forward "./helpers";
 @forward "./lib";
+
+:root {
+  --bulma-arrow-color: #{$arrow-color};
+  --bulma-link-text: #{variables.$link};
+  --bulma-focus-shadow-size: 0 0 0 0;
+}

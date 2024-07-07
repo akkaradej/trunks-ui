@@ -41,3 +41,15 @@
 .navbar-menu {
   min-height: variables.$navbar-height;
 }
+
+// Remove focus
+a.navbar-item:focus, a.navbar-item:focus-within, 
+.navbar-link:focus, .navbar-link:focus-within {
+  --bulma-navbar-item-background-l-delta: 0%;
+}
+
+// Change padding
+.navbar-item,
+.navbar-link {
+  padding: 0.5rem 1rem;
+}

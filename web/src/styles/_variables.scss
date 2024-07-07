@@ -9,8 +9,6 @@ $header-background: #3273dc;
 $edit: #ff470f;
 $delete: #ff3860;
 
-$square-size: 0.8rem;
-
 @forward "../../../lib/src/utilities/variables" with (
   // Square size
   $square-size: 0.8rem,
@@ -88,15 +86,15 @@ $square-size: 0.8rem;
   $text-invert: #0f0707,
 
   // Theme colors
-  $primary: #00d1b2,
-  $secondary: #3273dc,
+  $primary: #3273dc,
+  $secondary: #e62aa5,
   $info: #209cee,
   $success: #23d160,
   $warning: #ffdd57,
   $danger: #ff3860,
 
   // Link colors
-  $link: #00d1b2,
+  $link: #0087FF,
 
   // Custom colors map
   $custom-colors: (
