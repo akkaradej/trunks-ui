@@ -76,14 +76,3 @@ body {
   word-wrap: break-word;
   word-break: break-word;
 }
-
-// loading with specific color
-.is-loading {
-  @each $name, $pair in variables.$colors {
-    $color: nth($pair, 1);
-    &.is-#{$name}::after {
-      border-left-color: $color !important;
-      border-bottom-color: $color !important;
-    }
-  }
-}

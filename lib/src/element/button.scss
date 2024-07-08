@@ -17,12 +17,24 @@ $button-large-padding-horizontal: 3rem !default;
   padding-left: bulma-button.$button-padding-horizontal;
   padding-right: bulma-button.$button-padding-horizontal;
 
-  // no effect for disabled button
-  &.is-outlined[disabled] {
-    background: none;
+  // Fix: is-outlined
+  &.is-outlined {
+    &[disabled] {
+      background: none;
+  
+      &:hover {
+        border-width: max(1px, 0.0625em);
+      }
+    }
 
-    &:hover {
-      border-width: max(1px, 0.0625em);
+    &.is-loading {
+      @each $name, $pair in variables.$colors {
+        $color: nth($pair, 1);
+        &.is-#{$name}::after {
+          border-left-color: $color;
+          border-bottom-color: $color;
+        }
+      }
     }
   }
 
