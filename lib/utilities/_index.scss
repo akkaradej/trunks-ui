@@ -48,6 +48,12 @@
 
   // Flags
   $variable-columns: false !default,
+
+  // Prefixes
+  $class-prefix: "" !default,
+  $cssvars-prefix: "" !default,
+  $helpers-prefix: "is-" !default,
+  $helpers-has-prefix: "" !default,
 );
 
 @forward "bulma/sass/utilities/derived-variables" with ( 

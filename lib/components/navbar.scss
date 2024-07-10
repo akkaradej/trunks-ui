@@ -57,7 +57,7 @@
 // Remove focus
 a.navbar-item:focus, a.navbar-item:focus-within, 
 .navbar-link:focus, .navbar-link:focus-within {
-  --bulma-navbar-item-background-l-delta: 0%;
+  --navbar-item-background-l-delta: 0%;
 }
 
 // Change padding

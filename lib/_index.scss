@@ -15,7 +15,7 @@
 @forward "./helpers";
 
 :root {
-  --bulma-arrow-color: #{variables.$arrow-color};
-  --bulma-link-text: #{variables.$link};
-  --bulma-focus-shadow-size: 0 0 0 0;
+  --arrow-color: #{variables.$arrow-color};
+  --link-text: #{variables.$link};
+  --focus-shadow-size: 0 0 0 0;
 }
