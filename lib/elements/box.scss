@@ -1,6 +1,13 @@
 @use "../utilities/variables";
-@use "bulma/sass/elements/box" as bulma-box;
 
+@forward "bulma/sass/elements/box" with (
+  $box-radius: variables.$radius-large !default,
+  $box-shadow: none !default,
+  $box-padding: 2rem !default,
+);
+  
+@use "bulma/sass/elements/box" as bulma-box;
+  
 $box-hightlight-color: variables.$primary !default;
 
 .box {

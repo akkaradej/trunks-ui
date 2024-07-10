@@ -1,4 +1,7 @@
 @use "./variables";
+
+@forward "bulma/sass/utilities/functions";
+
 @use "bulma/sass/utilities/mixins" as bulma-mx;
 
 $input-arrow-size: 0.625em !default;

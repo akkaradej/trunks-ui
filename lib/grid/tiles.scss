@@ -1,0 +1,64 @@
+@use "sass:math";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "../base/elements-spacing" as es;
+
+// from bulma 0.9.4
+
+.tile {
+  align-items: stretch;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: min-content;
+  // Modifiers
+  &.is-ancestor {
+    margin-left: es.$tile-spacing * -1;
+    margin-right: es.$tile-spacing * -1;
+    margin-top: es.$tile-spacing * -1;
+    &:last-child {
+      margin-bottom: es.$tile-spacing * -1;
+    }
+    &:not(:last-child) {
+      margin-bottom: es.$tile-spacing;
+    }
+  }
+  &.is-child {
+    margin: 0 !important;
+  }
+  &.is-parent {
+    padding: es.$tile-spacing;
+  }
+  &.is-vertical {
+    flex-direction: column;
+    & > .tile.is-child:not(:last-child) {
+      margin-bottom: 1.5rem !important;
+    }
+    // Responsiveness
+  }
+  @include bulma-mx.tablet {
+    &:not(.is-child) {
+      display: flex;
+    }
+    @for $i from 1 through 12 {
+      &.is-#{$i} {
+        flex: none;
+        width: (math.div($i, 12)) * 100%;
+      }
+    }
+  }
+}
+
+// add is-mobile
+.tile.is-mobile,
+.tile.is-mobile .tile {
+  &:not(.is-child) {
+    display: flex;
+    @for $i from 1 through 12 {
+      &.is-#{$i} {
+        flex: none;
+        width: math.div($i, 12) * 100%;
+      }
+    }
+  }
+}

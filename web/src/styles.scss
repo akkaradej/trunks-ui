@@ -1,8 +1,8 @@
 @use "./variables";
-@use "../../lib/src";
+@use "../../lib";
 
 /*
-@use "../../lib/src" with ( 
+@use "../../lib" with ( 
     // Non-Responsive
     $body-overflow-x: auto,
     $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,

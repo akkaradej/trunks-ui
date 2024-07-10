@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+@use "./variables";
+
+@forward "bulma/sass/utilities/initial-variables" with ( 
+  // Spacing
+  $block-spacing: variables.$block-spacing,
+
+  // Weight
+  $weight-light: variables.$weight-light,
+  $weight-normal: variables.$weight-normal,
+  $weight-medium: variables.$weight-medium,
+  $weight-semibold: variables.$weight-semibold,
+  $weight-bold: variables.$weight-bold,
+
+  // Miscellaneous
+  $easing: variables.$easing,
+  $radius-small: variables.$radius-small,
+  $radius: variables.$radius,
+  $radius-large: variables.$radius-large,
+  $radius-rounded: variables.$radius-rounded,
+  $speed: variables.$speed,
+
+  // Black and White
+  $black: variables.$black,
+  $black-bis: variables.$black-bis,
+  $black-ter: variables.$black-ter,
+  $grey-darker: variables.$grey-darker,
+  $grey-dark: variables.$grey-dark,
+  $grey: variables.$grey,
+  $grey-light: variables.$grey-light,
+  $grey-lighter: variables.$grey-lighter,
+  $grey-lightest: variables.$grey-lightest,
+  $white-ter: variables.$white-ter,
+  $white-bis: variables.$white-bis,
+  $white: variables.$white,
+
+  // The container horizontal gap, which acts as the offset for breakpoints
+  $gap: variables.$section-gap !default,
+
+  // Responsiveness
+  $tablet: variables.$tablet,
+  $desktop: variables.$desktop,
+  $widescreen: variables.$widescreen,
+  $widescreen-enabled: variables.$widescreen-enabled,
+  $fullhd: variables.$fullhd,
+  $fullhd-enabled: variables.$fullhd-enabled,
+
+  // Flags
+  $variable-columns: false !default,
+);
+
+@forward "bulma/sass/utilities/derived-variables" with ( 
+  // Font family
+  $family-primary: variables.$font-family !default,
+  $family-secondary: variables.$font-family !default,
+  $family-code: variables.$font-family !default,
+
+  // Font size
+  $size-small: variables.$size-small,
+  $size-normal: variables.$size-normal,
+  $size-medium: variables.$size-medium,
+  $size-large: variables.$size-large,
+
+  // Meaning Colors
+
+  // General colors
+  $scheme-main: variables.$scheme-main,
+  $scheme-main-bis: variables.$scheme-main-bis,
+  $scheme-main-ter: variables.$scheme-main-ter,
+  $scheme-invert: variables.$scheme-invert,
+  $scheme-invert-bis: variables.$scheme-invert-bis,
+  $scheme-invert-ter: variables.$scheme-invert-ter,
+
+  $background: variables.$background,
+  $border: variables.$border,
+  $border-weak: variables.$border-weak,
+
+  // Text colors
+  $text: variables.$text,
+  $text-invert: variables.$text-invert,
+  $text-weak: variables.$text-weak,
+  $text-strong: variables.$text-strong,
+
+  // Default colors
+  $primary: variables.$primary,
+  $info: variables.$info,
+  $success: variables.$success,
+  $warning: variables.$warning,
+  $danger: variables.$danger,
+  $light: variables.$light,
+  $dark: variables.$dark,
+
+  // Link colors
+  $link: variables.$link,
+
+  // Colors & Shades
+  $custom-colors: variables.$custom-colors,
+  $custom-shades: variables.$custom-shades,
+  $colors: variables.$colors,
+  $shades: variables.$shades,
+);
+
+@forward "bulma/sass/utilities/controls" with (
+  $control-height: variables.$control-height,
+  $control-line-height: variables.$control-line-height,
+  $control-padding-vertical: calc(0.25em - 1px) !default,
+);

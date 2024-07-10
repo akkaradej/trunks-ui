@@ -1,4 +1,11 @@
 @use "../utilities/variables";
+
+@forward "bulma/sass/elements/button" with (
+  $button-weight: variables.$weight-normal !default,
+  $button-padding-vertical: 0 !default,
+  $button-padding-horizontal: 2em !default,
+);
+
 @use "bulma/sass/elements/button" as bulma-button;
 
 $button-font-size: variables.$size-normal !default;

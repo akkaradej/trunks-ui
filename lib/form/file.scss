@@ -1,0 +1,11 @@
+@forward "bulma/sass/form/file";
+
+// Fix: file input add-on button is shrinked
+.file-cta {
+  flex-shrink: 0;
+}
+
+// Fix: file input is-fullwidth expand through container
+.file.is-fullwidth .file-name {
+  white-space: normal;
+}

@@ -1,3 +1,18 @@
+@use "../utilities/variables";
+
+@forward "bulma/sass/form/shared" with (
+  $input-placeholder-color: variables.$text-placeholder !default,
+  $input-disabled-color: variables.$text-disabled !default,
+  $input-disabled-placeholder-color: invalid !default,
+  $input-disabled-background-color: variables.$background !default,
+  $input-disabled-border-color: variables.$border !default,
+  $input-h: hue(variables.$input-color) !default,
+  $input-s: saturation(variables.$input-color) !default,
+  $input-l: lightness(variables.$input-color) !default,
+  $input-arrow: variables.$arrow-color !default,
+  $input-icon-color: variables.$text !default,
+);
+
 $input-arrow-size: 0.625em !default;
 $input-arrow-right: 0.625em !default;
 $input-arrow-border-width: 1px !default;

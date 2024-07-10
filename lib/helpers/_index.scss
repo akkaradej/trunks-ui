@@ -1,7 +1,19 @@
 @charset "utf-8";
 
-@forward "./color";
-@forward "./flexbox";
-@forward "./other";
+// extended
+@forward "./aspect-ratio";
+@forward "./border";
+@forward "./gap";
+@forward "./overflow";
+@forward "./position";
 @forward "./spacing";
 @forward "./typography";
+@forward "./visibility";
+@forward "./other";
+
+// rewrite
+@forward "./color";
+@forward "./flexbox";
+
+// remove
+// @forward "./float";

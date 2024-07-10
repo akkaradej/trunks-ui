@@ -3,6 +3,8 @@
 @use "bulma/sass/utilities/initial-variables" as bulma-iv;
 @use "bulma/sass/utilities/mixins" as bulma-mx;
 
+@forward "bulma/sass/layout/container";
+
 @mixin container {
   flex-grow: 1;
   margin: 0 auto;

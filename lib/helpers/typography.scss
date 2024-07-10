@@ -1,6 +1,8 @@
 @use "../utilities/variables";
 @use "bulma/sass/utilities/mixins" as bulma-mx;
 
+@forward "bulma/sass/helpers/typography";
+
 // size
 @each $name, $size in variables.$font-sizes {
   .text-#{$name} {

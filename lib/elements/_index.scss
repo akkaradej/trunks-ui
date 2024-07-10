@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+// extended
+@forward "./block";
+@forward "./box";
+@forward "./button";
+@forward "./content";
+@forward "./delete";
+@forward "./icon";
+@forward "./image";
+@forward "./loader";
+@forward "./notification";
+@forward "./progress";
+@forward "./table";
+@forward "./tag";
+@forward "./title";
+
+// new
+@forward "./badge";
+@forward "./badge-corner";

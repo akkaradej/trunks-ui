@@ -1,6 +1,8 @@
 @use "../utilities/variables";
 @use "./shared";
 
+@forward "bulma/sass/form/select";
+
 $loader-size: 1em;
 
 .select {

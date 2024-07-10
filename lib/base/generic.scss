@@ -1,11 +1,19 @@
 @use "../utilities/variables.scss";
-@use "bulma/sass/base" as bulma-base;
 @use "bulma/sass/utilities/mixins" as bulma-mx;
 
-$body-size-mobile: bulma-base.$body-size !default;
+@forward "bulma/sass/base/generic" with (
+  $body-background-color: variables.$body-background-color,
+  
+  // Root element size to calculate rem (in pixel)
+  $body-size: 10px !default,
+);
+
+@use "bulma/sass/base/generic" as bulma-generic;
+
+$body-size-mobile: bulma-generic.$body-size !default;
 
 html {
-  font-size: bulma-base.$body-size;
+  font-size: bulma-generic.$body-size;
   height: 100%;
 }
 

@@ -1,0 +1,7 @@
+@use "../utilities/variables";
+
+@forward "bulma/sass/elements/table" with (
+  $table-color: variables.$text !default,
+  $table-striped-row-even-background-color: variables.$scheme-main-bis !default,
+  $table-striped-row-even-hover-background-color: variables.$scheme-main-ter !default,
+);

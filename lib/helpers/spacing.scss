@@ -1,7 +1,16 @@
+@use "../utilities/variables";
 @use "../utilities/extends";
 @use "../utilities/mixins" as mx;
 @use "bulma/sass/utilities/extends" as bulma-extends;
 @use "bulma/sass/utilities/mixins" as bulma-mx;
+
+@forward "bulma/sass/helpers/spacing" with ( 
+  $spacing-shortcuts: ("margin": "push", "padding": "pad") !default,
+  $spacing-directions: ("top": "-top", "right": "-right", "bottom": "-bottom", "left": "-left") !default,
+  $spacing-horizontal: "-x" !default,
+  $spacing-vertical: "-y" !default,
+  $spacing-values: ("0": 0, "1": variables.$square-size, "2": variables.$square-size * 2, "3": variables.$square-size * 3, "4": variables.$square-size * 4, "5": variables.$square-size * 5, "6": variables.$square-size * 6) !default,
+);
 
 // brick
 .brick {

@@ -1,8 +1,12 @@
 @charset "utf-8";
 
+// extended
 @forward "./shared";
-@forward "./form";
-@forward "./checkbox";
-@forward "./radio";
+@forward "./input-textarea";
+@forward "./checkbox-radio";
 @forward "./select";
+@forward "./file";
+@forward "./tools";
+
+// new
 @forward "./validation";

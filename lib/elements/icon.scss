@@ -1,6 +1,10 @@
 // make icon size belongs to its element (em).
 @use "../utilities/variables";
 
+@forward "bulma/sass/elements/icon" with (
+  $icon-text-spacing: variables.$brick-spacing !default,
+);
+
 .icon-text {
   line-height: 1.5;
   align-items: center;

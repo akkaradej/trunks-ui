@@ -13,7 +13,7 @@ function handleError(err) {
 function stylesLib() {
   return gulp.src([
     'package.json',
-    'lib/src/**/*',
+    'lib/**/*',
   ]).on('error', handleError)
     .pipe(gulp.dest('dist-lib'));
 }

@@ -31,6 +31,7 @@
   "scss.format.newlineBetweenSelectors": false,
   "scss.format.spaceAroundSelectorSeparator": true,
   "[scss]": {
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": false
   }
 }

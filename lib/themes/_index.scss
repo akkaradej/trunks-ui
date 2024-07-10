@@ -1,0 +1,10 @@
+/* Bulma Light Theme */
+@charset "utf-8";
+
+@use "./light";
+@use "./setup";
+
+:root {
+  @include light.light-theme;
+  @include setup.setup-theme;
+}

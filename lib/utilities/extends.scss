@@ -1,5 +1,5 @@
-@use "variables";
-@use "mixins" as mx;
+@use "./variables";
+@use "./mixins" as mx;
 
 %brick {
   @include mx.brick;

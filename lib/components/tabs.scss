@@ -1,4 +1,7 @@
 @use "../utilities/variables";
+
+@forward "bulma/sass/components/tabs";
+
 @use "bulma/sass/components/tabs" as bulma-tabs;
 
 $tabs-has-box-shadow-box: -2px 0px 0px -1px rgba(10, 10, 10, 0.1) !default;

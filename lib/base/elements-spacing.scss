@@ -1,7 +1,6 @@
 @use "sass:math";
 @use "../utilities/variables.scss";
 @use "bulma/sass/utilities/mixins" as bulma-mx;
-@use "bulma/sass/grid" as bulma-grid;
 
 $column-gap-mobile: math.div(variables.$block-spacing-mobile, 2) !default;
 
@@ -14,18 +13,6 @@ $field-horizontal-spacing: variables.$brick-spacing !default;
 $field-horizontal-spacing-mobile: variables.$brick-spacing !default;
 
 $label-spacing: variables.$brick-spacing !default;
-
-// column
-.columns {
-  &:not(:last-child) {
-    margin-bottom: variables.$block-spacing - bulma-grid.$column-gap;
-  }
-  &.is-gapless {
-    &:not(:last-child) {
-      margin-bottom: variables.$block-spacing;
-    }
-  }
-}
 
 @include bulma-mx.mobile {
   .column {

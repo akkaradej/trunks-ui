@@ -1,6 +1,11 @@
 @charset "utf-8";
 
+// extended
+@forward "./minireset";
 @forward "./generic";
+@forward "./animations";
+
+// new
 @forward "./elements-spacing";
 @forward "./non-responsive-mobile";
 @forward "./non-responsive-tablet";

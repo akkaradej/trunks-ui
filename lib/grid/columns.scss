@@ -1,0 +1,20 @@
+@use "sass:math";
+@use "../utilities/variables";
+
+@forward "bulma/sass/grid/columns" with (
+  $column-gap: math.div(variables.$block-spacing, 2) !default,
+);
+
+@use "bulma/sass/grid/columns" as bulma-columns;
+
+// column
+.columns {
+  &:not(:last-child) {
+    margin-bottom: variables.$block-spacing - bulma-columns.$column-gap;
+  }
+  &.is-gapless {
+    &:not(:last-child) {
+      margin-bottom: variables.$block-spacing;
+    }
+  }
+}

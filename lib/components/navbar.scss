@@ -1,6 +1,18 @@
 @use "../utilities/variables";
 @use "bulma/sass/utilities/mixins" as bulma-mx;
 
+
+
+@forward "bulma/sass/components/navbar" with (
+  $navbar-item-img-max-height: max(30px, variables.$navbar-height - 10px) !default,
+  $navbar-dropdown-border-style: none !default,
+  $navbar-dropdown-arrow: variables.$arrow-color !default,
+  
+  // config directly at variables.scss
+  $navbar-breakpoint: variables.$navbar-breakpoint,
+  $navbar-height: variables.$navbar-height,
+);
+
 /**
  * Create .navbar-item-content to use as content container same as .navbar-link but for non-link content
  */

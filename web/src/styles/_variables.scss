@@ -9,7 +9,7 @@ $header-background: #3273dc;
 $edit: #ff470f;
 $delete: #ff3860;
 
-@forward "../../../lib/src/utilities/variables" with (
+@forward "../../../lib/utilities/variables" with (
   // Square size
   $square-size: 0.8rem,
 
@@ -103,6 +103,7 @@ $delete: #ff3860;
   ),
 
   // Others
+  $section-gap: 24px,
   $navbar-height: 70px,
 
   // Responsive Breakpoint

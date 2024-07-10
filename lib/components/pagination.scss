@@ -1,0 +1,6 @@
+@use "../utilities/variables";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+
+@forward "bulma/sass/components/pagination" with (
+  $pagination-disabled-color: variables.$text-disabled !default,
+);

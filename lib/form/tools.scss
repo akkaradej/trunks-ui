@@ -1,6 +1,11 @@
 @use "sass:math";
 @use "../utilities/variables";
 
+@forward "bulma/sass/form/tools" with (
+  $label-color: variables.$text-strong !default,
+  $label-weight: variables.$weight-bold !default,
+);
+
 $label-size: variables.$size-normal !default;
 $control-icon-width: 3rem !default;
 
@@ -40,11 +45,6 @@ $control-icon-width: 3rem !default;
   }
 }
 
-// Fix: Search input type has different style from text input type
-.input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
-  border-radius: variables.$radius;
-}
-
 // Adjust space of icon, arrow
 .control.has-icons-right .input,
 .control.has-icons-right .select select {
@@ -54,14 +54,4 @@ $control-icon-width: 3rem !default;
 .control.has-icons-right .icon {
   width: $control-icon-width;
   height: variables.$control-height;
-}
-
-// Fix: file input add-on button is shrinked
-.file-cta {
-  flex-shrink: 0;
-}
-
-// Fix: file input is-fullwidth expand through container
-.file.is-fullwidth .file-name {
-  white-space: normal;
 }

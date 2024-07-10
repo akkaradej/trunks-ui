@@ -1,0 +1,8 @@
+@use "../utilities/variables";
+
+@forward "bulma/sass/form/input-textarea";
+
+// Fix: Search input type has different style from text input type
+.input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
+  border-radius: variables.$radius;
+}
