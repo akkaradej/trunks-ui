@@ -61,10 +61,6 @@ $radio-bg-size: $radio-size + 0.5 !default;
     }
   }
 
-  &.has-no-text input[type=radio] + span {
-    padding-left: $radio-size;
-  }
-
   & + .radio {
     margin-left: variables.$brick-spacing;
   }
