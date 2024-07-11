@@ -1,6 +1,10 @@
 @use "sass:math";
 @use "bulma/sass/utilities/mixins" as bulma-mx;
-@use "../base/elements-spacing" as es;
+@use "../utilities/variables";
+
+// Spacing
+$tile-spacing: math.div(variables.$block-spacing, 2) !default;
+$tile-spacing-mobile: math.div(variables.$block-spacing-mobile, 2) !default;
 
 // from bulma 0.9.4
 
@@ -13,21 +17,21 @@
   min-height: min-content;
   // Modifiers
   &.is-ancestor {
-    margin-left: es.$tile-spacing * -1;
-    margin-right: es.$tile-spacing * -1;
-    margin-top: es.$tile-spacing * -1;
+    margin-left: $tile-spacing * -1;
+    margin-right: $tile-spacing * -1;
+    margin-top: $tile-spacing * -1;
     &:last-child {
-      margin-bottom: es.$tile-spacing * -1;
+      margin-bottom: $tile-spacing * -1;
     }
     &:not(:last-child) {
-      margin-bottom: es.$tile-spacing;
+      margin-bottom: $tile-spacing;
     }
   }
   &.is-child {
     margin: 0 !important;
   }
   &.is-parent {
-    padding: es.$tile-spacing;
+    padding: $tile-spacing;
   }
   &.is-vertical {
     flex-direction: column;
@@ -58,6 +62,44 @@
       &.is-#{$i} {
         flex: none;
         width: math.div($i, 12) * 100%;
+      }
+    }
+  }
+}
+
+// Spacing
+.tile {
+  &.is-ancestor {
+    &:not(:last-child) {
+      margin-bottom: $tile-spacing;
+    }
+  }
+  &.is-vertical {
+    & > .tile.is-child:not(:last-child) {
+      margin-bottom: $tile-spacing * 2 !important;
+    }
+  }
+}
+
+@include bulma-mx.mobile {
+  .tile {
+    &.is-ancestor {
+      margin-left: $tile-spacing-mobile * -1;
+      margin-right: $tile-spacing-mobile * -1;
+      margin-top: $tile-spacing-mobile * -1;
+      &:last-child {
+        margin-bottom: $tile-spacing-mobile * -1;
+      }
+      &:not(:last-child) {
+        margin-bottom: variables.$block-spacing-mobile;
+      }
+    }
+    &.is-parent {
+      padding: $tile-spacing-mobile;
+    }
+    &.is-vertical {
+      & > .tile.is-child:not(:last-child) {
+        margin-bottom: $tile-spacing-mobile * 2 !important;
       }
     }
   }

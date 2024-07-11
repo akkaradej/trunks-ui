@@ -1,85 +1,201 @@
 @use "./variables";
-@use "../../lib";
+// @use "../../lib";
 
 /*
 @use "../../lib" with ( 
-    // Non-Responsive
-    $body-overflow-x: auto,
-    $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,
+  // base/generic
+  // Non-Responsive
+  $body-overflow-x: auto,
+  $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,
 
-    // field
-    $field-spacing: variables.$block-spacing,
+  // elements/box
+  $box-radius: variables.$radius-large,
+  $box-shadow: none,
+  $box-padding: 2rem,
 
-    // label
-    $label-color: variables.$text-strong,
-    $label-weight: variables.$weight-bold,
+  // elements/button
+  $button-padding-horizontal: 2em,
+  // trunks-ui
+  $button-font-size: variables.$size-normal,
+  $button-weight: variables.$weight-normal, // old name is $button-font-weight
+  $button-small-height: variables.$control-height - variables.$brick-spacing,
+  $button-small-padding-horizontal: 1rem,
+  $button-height: variables.$control-height,
+  $button-medium-height: variables.$control-height + variables.$brick-spacing,
+  $button-medium-padding-horizontal: 2rem,
+  $button-large-height: variables.$control-height + variables.$brick-spacing * 2,
+  $button-large-padding-horizontal: 3rem,
 
-    // button
-    $button-padding-horizontal: 2em,
+  // elements/table
+  $table-head-cell-color: variables.$text-strong, // thead > th
+  $table-head-background-color: transparent,
+  $table-cell-text-align: left, // th
 
-    // box
-    $box-radius: variables.$radius-large,
-    $box-shadow: none,
-    $box-padding: 2rem,
+  // form/tools
+  $label-color: variables.$text-strong,
+  $label-weight: variables.$weight-bold,
+  // trunks-ui
+  $control-icon-width: 3rem,
+  $label-size: variables.$size-normal,
 
-    // table
-    $table-head-cell-color: variables.$text-strong, // thead > th
-    $table-head-background-color: transparent,
-    $table-cell-text-align: left, // th
+  // components/modal
+  $modal-close-dimensions: 40px,
+  $modal-card-head-background-color: variables.$scheme-main,
+  $modal-card-head-radius: variables.$radius-large,
+  $modal-card-head-padding: 1.2rem,
+  $modal-card-title-color: variables.$text-strong,
+  $modal-card-title-size: variables.$size-medium,
+  $modal-full-width: 100%,
+  $modal-close-background-color: inherit,
+  $modal-close-color: currentColor,
+  $modal-card-custom-head: false,
 
-    // navbar
-    $navbar-item-img-max-height: max(30px, variables.$navbar-height - 10px),
+  // components/navbar
+  $navbar-item-img-max-height: max(30px, variables.$navbar-height - 10px),
 
-    // modal
-    $modal-close-dimensions: 40px,
-    $modal-card-head-background-color: variables.$scheme-main,
-    $modal-card-head-radius: variables.$radius-large,
-    $modal-card-head-padding: 1.2rem,
-    $modal-card-title-color: variables.$text-strong,
-    $modal-card-title-size: variables.$size-medium,
-    $modal-full-width: 100%,
-    $modal-close-background-color: inherit,
-    $modal-close-color: currentColor,
-    $modal-card-custom-head: false,
+  // components/pagination
+  $pagination-current-color: variables.$link-invert,
+  $pagination-current-background-color: variables.$link,
+  $pagination-current-border-color: variables.$link,
 
-    // pagination
-    $pagination-current-color: variables.$link-invert,
-    $pagination-current-background-color: variables.$link,
-    $pagination-current-border-color: variables.$link,
-
-    // trunks ui
-    $section-gap: 24px,
-    $control-icon-width: 3rem,
-    $label-size: variables.$size-normal,
-    $input-color: variables.$text,
-    $arrow-color: variables.$grey,
-
-    $button-font-size: variables.$size-normal,
-    $button-weight: variables.$weight-normal, // old name is $button-font-weight
-    $button-small-height: variables.$control-height - variables.$brick-spacing,
-    $button-small-padding-horizontal: 1rem,
-    $button-height: variables.$control-height,
-    $button-medium-height: variables.$control-height + variables.$brick-spacing,
-    $button-medium-padding-horizontal: 2rem,
-    $button-large-height: variables.$control-height + variables.$brick-spacing * 2,
-    $button-large-padding-horizontal: 3rem,
-
-    $checkbox-size: 1em,
-    $radio-size: 1em,
-
-    $ngx-datatable-color: variables.$text,
-    $ngx-datatable-font-size: variables.$size-normal,
-    $ngx-datatable-table-head-cell-align: center,
-    $ngx-datatable-table-head-cell-color: variables.$text,
-    $ngx-datatable-table-head-cell-background-color: variables.$white,
-    $ngx-datatable-table-head-cell-font-size: variables.$size-normal,
-    $ngx-datatable-table-head-cell-font-weight: variables.$weight-bold,
-    $ngx-datatable-header-filter-wrapper-height: variables.$control-height * 1.5,
-    $ngx-datatable-header-filter-height: variables.$control-height,
-    $ngx-datatable-header-filter-radius: 0,
-    $ngx-datatable-header-filter-wrapper-padding: variables.$block-spacing,
-    $ngx-datatable-selection-background-color: inherit,
-    $ngx-datatable-selection-color: inherit,
-    $ngx-datatable-selection-checkbox-checked-filled-style: false,
+  // external/ngx-datatable
+  $ngx-datatable-color: variables.$text,
+  $ngx-datatable-font-size: variables.$size-normal,
+  $ngx-datatable-table-head-cell-align: center,
+  $ngx-datatable-table-head-cell-color: variables.$text,
+  $ngx-datatable-table-head-cell-background-color: variables.$white,
+  $ngx-datatable-table-head-cell-font-size: variables.$size-normal,
+  $ngx-datatable-table-head-cell-font-weight: variables.$weight-bold,
+  $ngx-datatable-header-filter-wrapper-height: variables.$control-height * 1.5,
+  $ngx-datatable-header-filter-height: variables.$control-height,
+  $ngx-datatable-header-filter-radius: 0,
+  $ngx-datatable-header-filter-wrapper-padding: variables.$block-spacing,
+  $ngx-datatable-selection-background-color: inherit,
+  $ngx-datatable-selection-color: inherit,
+  $ngx-datatable-selection-checkbox-checked-filled-style: false,
 );
 */
+
+@use "../../lib/utilities";
+@use "../../lib/themes";
+
+@use "../../lib/base/minireset";
+@use "../../lib/base/generic" with (
+  // Non-Responsive
+  $body-overflow-x: auto,
+  $body-min-width: variables.$desktop - variables.$vertical-scrollbar-width,
+);
+@use "../../lib/base/animations";
+
+@use "../../lib/elements/block";
+@use "../../lib/elements/box" with (
+  $box-radius: variables.$radius-large,
+  $box-shadow: none,
+  $box-padding: 2rem,
+);
+@use "../../lib/elements/button" with (
+  $button-padding-horizontal: 2em,
+  // trunks-ui
+  $button-font-size: variables.$size-normal,
+  $button-weight: variables.$weight-normal, // old name is $button-font-weight
+  $button-small-height: variables.$control-height - variables.$brick-spacing,
+  $button-small-padding-horizontal: 1rem,
+  $button-height: variables.$control-height,
+  $button-medium-height: variables.$control-height + variables.$brick-spacing,
+  $button-medium-padding-horizontal: 2rem,
+  $button-large-height: variables.$control-height + variables.$brick-spacing * 2,
+  $button-large-padding-horizontal: 3rem,
+);
+@use "../../lib/elements/content";
+@use "../../lib/elements/delete";
+@use "../../lib/elements/icon";
+@use "../../lib/elements/image";
+@use "../../lib/elements/loader";
+@use "../../lib/elements/notification";
+@use "../../lib/elements/progress";
+@use "../../lib/elements/table" with (
+  $table-head-cell-color: variables.$text-strong, // thead > th
+  $table-head-background-color: transparent,
+  $table-cell-text-align: left, // th
+);
+@use "../../lib/elements/tag";
+@use "../../lib/elements/title";
+@use "../../lib/elements/badge";
+@use "../../lib/elements/badge-corner";
+
+@use "../../lib/shape/circle";
+@use "../../lib/shape/triangle";
+
+@use "../../lib/form/shared";
+@use "../../lib/form/input-textarea";
+@use "../../lib/form/checkbox-radio" with (
+  // trunks-ui
+  $checkbox-size: 1em,
+  $radio-size: 1em,
+);
+@use "../../lib/form/select";
+@use "../../lib/form/file";
+@use "../../lib/form/tools" with (
+  $label-color: variables.$text-strong,
+  $label-weight: variables.$weight-bold,
+  // trunks-ui
+  $field-spacing: variables.$block-spacing,
+  $label-size: variables.$size-normal,
+  $control-icon-width: 3rem,
+);
+@use "../../lib/form/validation";
+
+@use "../../lib/components/breadcrumb";
+@use "../../lib/components/card";
+@use "../../lib/components/dropdown";
+@use "../../lib/components/menu";
+@use "../../lib/components/message";
+@use "../../lib/components/modal" with (
+  $modal-close-dimensions: 40px,
+  $modal-card-head-background-color: variables.$scheme-main,
+  $modal-card-head-radius: variables.$radius-large,
+  $modal-card-head-padding: 1.2rem,
+  $modal-card-title-color: variables.$text-strong,
+  $modal-card-title-size: variables.$size-medium,
+  $modal-full-width: 100%,
+  $modal-close-background-color: inherit,
+  $modal-close-color: currentColor,
+  $modal-card-custom-head: false,
+);
+@use "../../lib/components/navbar" with (
+  $navbar-item-img-max-height: max(30px, variables.$navbar-height - 10px),
+);
+@use "../../lib/components/pagination" with (
+  $pagination-current-color: variables.$link-invert,
+  $pagination-current-background-color: variables.$link,
+  $pagination-current-border-color: variables.$link,
+);
+@use "../../lib/components/panel";
+@use "../../lib/components/tabs";
+
+@use "../../lib/grid/columns";
+@use "../../lib/grid/grid";
+@use "../../lib/grid/tiles";
+
+@use "../../lib/layout/container";
+@use "../../lib/layout/footer";
+@use "../../lib/layout/hero";
+@use "../../lib/layout/level";
+@use "../../lib/layout/media";
+@use "../../lib/layout/section";
+
+@use "../../lib/base/skeleton";
+@use "../../lib/base/non-responsive-mobile";
+@use "../../lib/base/non-responsive-tablet";
+
+@use "../../lib/helpers/aspect-ratio";
+@use "../../lib/helpers/border";
+@use "../../lib/helpers/gap";
+@use "../../lib/helpers/overflow";
+@use "../../lib/helpers/position";
+@use "../../lib/helpers/spacing";
+@use "../../lib/helpers/typography";
+@use "../../lib/helpers/visibility";
+@use "../../lib/helpers/other";
+@use "../../lib/helpers/color";
+@use "../../lib/helpers/flexbox";

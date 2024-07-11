@@ -1,1 +1,13 @@
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "../utilities/variables";
+
 @forward "bulma/sass/layout/level";
+
+// Spacing
+.level-left {
+  @include bulma-mx.mobile {
+    & + .level-right {
+      margin-top: variables.$block-spacing-mobile;
+    }
+  }
+}

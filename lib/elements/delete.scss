@@ -1,1 +1,18 @@
 @forward "bulma/sass/elements/delete";
+
+.delete {
+  --delete-background-alpha: 0.25;
+  --delete-dimensions: 1.5rem;
+}
+
+.delete.is-small {
+  --delete-dimensions: 1.25rem;
+}
+
+.delete.is-medium {
+  --delete-dimensions: 1.75rem;
+}
+
+.delete.is-medium {
+  --delete-dimensions: 2rem;
+}

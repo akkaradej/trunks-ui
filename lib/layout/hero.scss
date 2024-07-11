@@ -1,1 +1,22 @@
+@use "sass:math";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
+@use "../utilities/variables";
+
 @forward "bulma/sass/layout/hero";
+
+// Spacing
+.hero-buttons {
+  margin-top: variables.$block-spacing;
+  @include bulma-mx.mobile {
+    .button {
+      &:not(:last-child) {
+        margin-bottom: math.div(variables.$block-spacing-mobile, 2);
+      }
+    }
+  }
+  @include bulma-mx.tablet {
+    .button:not(:last-child) {
+      margin-right: variables.$block-spacing;
+    }
+  }
+}

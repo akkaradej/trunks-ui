@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "bulma/sass/utilities/mixins" as bulma-mx;
 @use "../utilities/variables";
 
 @forward "bulma/sass/form/tools" with (
@@ -8,6 +9,13 @@
 
 $label-size: variables.$size-normal !default;
 $control-icon-width: 3rem !default;
+
+// Spacing
+$field-spacing: variables.$block-spacing !default;
+$field-spacing-mobile: variables.$block-spacing-mobile !default;
+$field-horizontal-spacing: variables.$brick-spacing !default;
+$field-horizontal-spacing-mobile: variables.$brick-spacing !default;
+$label-spacing: variables.$brick-spacing !default;
 
 .label {
   font-size: $label-size;
@@ -54,4 +62,53 @@ $control-icon-width: 3rem !default;
 .control.has-icons-right .icon {
   width: $control-icon-width;
   height: variables.$control-height;
+}
+
+// Spacing
+.field:not(:last-child) {
+  margin-bottom: $field-spacing;
+  &.is-horizontal {
+    margin-bottom: $field-horizontal-spacing;
+  }
+}
+
+.field.is-grouped {
+  & > .control {
+    &:not(:last-child) {
+      margin-right: variables.$block-spacing;
+    }
+  }
+}
+
+.label:not(:last-child) {
+  margin-bottom: $label-spacing;
+}
+
+.help {
+  margin-top: math.div(variables.$brick-spacing, 2);
+}
+
+@include bulma-mx.mobile {
+  .field:not(:last-child) {
+    margin-bottom: $field-horizontal-spacing-mobile;
+  }
+
+  .field-label {
+    margin-bottom: 0;
+  }
+}
+
+@include bulma-mx.tablet {
+  .field-label {
+    margin-right: variables.$block-spacing;
+  }
+
+  .field-body {
+    flex-basis: auto;
+    & > .field {
+      &:not(:last-child) {
+        margin-right: math.div($field-horizontal-spacing, 2);
+      }
+    }
+  }
 }

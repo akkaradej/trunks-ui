@@ -86,3 +86,49 @@ $button-large-padding-horizontal: 3rem !default;
     }
   }
 }
+
+// Spacing
+@mixin buttons-spacing($space: variables.$brick-spacing) {
+  .button {
+    margin-bottom: $space;
+  }
+
+  &:last-child {
+    margin-bottom: (-$space);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: variables.$block-spacing - $space;
+  }
+
+  &:not(.has-addons) {
+    .button {
+      &:not(:last-child):not(.is-fullwidth) {
+        margin-right: $space;
+      }
+    }
+
+    // fix Bulma unnecessary margin-left, margin-right for is-centered and is-right
+    &.is-centered, &.is-right {
+      .button:not(.is-fullwidth) {
+        margin-left: 0;
+        margin-right: $space;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.buttons {
+  @include buttons-spacing;
+}
+
+.buttons.is-spacing-2 {
+  @include buttons-spacing(variables.$brick-spacing * 2);
+}
+
+.buttons.is-spacing-3 {
+  @include buttons-spacing(variables.$brick-spacing * 3);
+}
