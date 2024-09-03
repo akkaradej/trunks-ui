@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "./shared";
 @use "../utilities/variables";
 
 $radio-border-color: variables.$primary !default;
@@ -83,6 +84,20 @@ $radio-bg-size: $radio-size + 0.5 !default;
       border-color: $radio-border-color;
       background: $radio-background-color;
       box-shadow: inset 0 0 0 $radio-inner-size variables.$scheme-main;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: shared.$input-disabled-background-color;
+      border-color: shared.$input-disabled-border-color;
+
+      &:checked {
+        background-color: shared.$input-disabled-color;
+      }
+      
+      +span {
+        cursor: not-allowed;
+      }
     }
   }
 

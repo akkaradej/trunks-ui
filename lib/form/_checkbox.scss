@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "bulma/sass/utilities/functions" as fn;
+@use "./shared";
 @use "../utilities/variables";
 
 $checkbox-size: 1em !default;
@@ -51,6 +52,28 @@ $checkbox-title-filled-color: variables.$primary-invert !default;
       width: math.div($checkbox-size, $checkbox-inner-size) * 1em;
       top: 0;
       left: 0;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      &:not(:checked)+span {
+        &::before {
+          background-color: shared.$input-disabled-background-color;
+        }
+      }
+
+      &:checked+span::before {
+        border-color: shared.$input-disabled-border-color;
+      }
+  
+      &:checked+span::after {
+        color: shared.$input-disabled-color;
+      }
+
+      +span {
+        cursor: not-allowed;
+      }
     }
   }
 
