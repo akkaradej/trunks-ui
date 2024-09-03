@@ -1,5 +1,6 @@
 @use "./variables";
-@use "trunks-ui";
+// @use "trunks-ui"; // package path
+@use "../../lib"; // local path
 
 // Common configurations
 
