@@ -57,7 +57,7 @@ $checkbox-title-filled-color: variables.$primary-invert !default;
     &:disabled {
       cursor: not-allowed;
 
-      &:not(:checked)+span {
+      &:not(:checked) + span {
         &::before {
           background-color: shared.$input-disabled-background-color;
         }
@@ -68,7 +68,7 @@ $checkbox-title-filled-color: variables.$primary-invert !default;
       }
   
       &:checked+span::after {
-        color: shared.$input-disabled-color;
+        color: shared.$input-disabled-checked-color;
       }
 
       +span {
@@ -93,6 +93,13 @@ $checkbox-title-filled-color: variables.$primary-invert !default;
 
       &:checked+span::after {
         color: fn.bulmaFindColorInvert($checkbox-checked-filled-background-color);
+      }
+
+      &:disabled {
+        &:checked+span::before {
+          border-color: shared.$input-disabled-checked-color;
+          background-color: shared.$input-disabled-checked-color;
+        }
       }
     }
   }

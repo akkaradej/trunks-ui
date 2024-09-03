@@ -92,7 +92,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
       border-color: shared.$input-disabled-border-color;
 
       &:checked {
-        background-color: shared.$input-disabled-color;
+        background-color: shared.$input-disabled-checked-color;
       }
       
       +span {
