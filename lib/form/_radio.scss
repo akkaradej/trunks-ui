@@ -74,6 +74,7 @@ $radio-bg-size: $radio-size + 0.5 !default;
     border-radius: 50%;
     background-color: variables.$scheme-main;
     appearance: none;
+    flex-shrink: 0;
 
     &+span {
       margin-left: variables.$brick-spacing;
