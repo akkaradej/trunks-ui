@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cd ./web && bun start",
     "build:gh-pages": "cd ./web && bun run build:gh-pages",
-    "build_lib": "gulp",
+    "build_lib": "bun ./build.ts",
     "pack_lib": "npm pack ./dist-lib",
     "package": "npm run build_lib && npm run pack_lib",
     "publish": "npm publish ./dist-lib"
@@ -15,6 +15,7 @@
     "bulma": "1.0.2"
   },
   "devDependencies": {
+    "@types/bun": "^1.1.14",
     "del": "^5.1.0",
     "gulp": "^4.0.2"
   }
