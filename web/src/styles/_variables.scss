@@ -146,13 +146,14 @@ $delete: #ff3860;
   // $modal-breakpoint: $tablet,
   //
   // add script to index.html
+  // <!-- tablet use desktop viewport -->
   // <script type="text/javascript">
-  //   (function setViewPort() {
-  //     // tablet use desktop viewport
-  //     if (window.matchMedia('screen and (min-width: 768px) and (max-width: 1365px)').matches) {
-  //       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1366'),
+  //   function setViewPort() {
+  //     if (window.matchMedia('screen and (min-width: 768px) and (max-width: 1439px)').matches) {
+  //       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1440');
   //     }
-  //   })(),
+  //   };
+  //   setViewPort();
   // </script>
 
 
@@ -168,12 +169,12 @@ $delete: #ff3860;
   //
   // add script to index.html
   // <script type="text/javascript">
-  //   (function setViewPort() {
-  //     // mobile use tablet viewport
+  //   function setViewPort() {
   //     if (window.matchMedia('screen and (max-width: 767px)').matches) {
-  //       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=768'),
+  //       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=768');
   //     }
-  //   })(),
+  //   };
+  //   setViewPort();
   // </script>
 
 

@@ -127,3 +127,10 @@
 // @use "trunks-ui/helpers/other";
 // @use "trunks-ui/helpers/color";
 // @use "trunks-ui/helpers/flexbox";
+
+:root {
+  // base
+  --arrow-color: #{variables.$arrow-color};
+  --link-text: #{variables.$link};
+  --focus-shadow-size: 0 0 0 0;
+}

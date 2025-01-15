@@ -56,7 +56,7 @@ async function stylesLib() {
   console.log("Copying files and directories...");
   await createDirectory("dist-lib");
   await copyFile("package.json", "dist-lib/package.json");
-  await copyDirectory("lib", "dist-lib/lib");
+  await copyDirectory("lib", "dist-lib");
 }
 
 async function main() {
