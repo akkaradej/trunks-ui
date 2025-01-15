@@ -73,11 +73,7 @@ $label-spacing: variables.$brick-spacing !default;
 }
 
 .field.is-grouped {
-  & > .control {
-    &:not(:last-child) {
-      margin-right: variables.$block-spacing;
-    }
-  }
+  gap: variables.$block-spacing;
 }
 
 .label:not(:last-child) {
