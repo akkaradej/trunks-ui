@@ -6,9 +6,11 @@ $toast-box-shadow: 0 0 7px #999999 !default;
   padding: 15px;
   &:hover {
     box-shadow: $toast-box-shadow;
+    cursor: auto;
   }
 
   .toast-close-button {
+    font-family: sans-serif;
     position: static;
     text-shadow: none;
   }
