@@ -12,7 +12,6 @@ $button-font-size: variables.$size-normal !default;
 $button-small-height: variables.$control-height - variables.$brick-spacing !default;
 $button-small-padding-horizontal: 1rem !default;
 $button-height: variables.$control-height !default;
-// $button-padding-horizontal: 1.5rem !default; // override bulma variable by with
 $button-medium-height: variables.$control-height + variables.$brick-spacing !default;
 $button-medium-padding-horizontal: 2rem !default;
 $button-large-height: variables.$control-height + variables.$brick-spacing * 2 !default;
@@ -21,8 +20,6 @@ $button-large-padding-horizontal: 3rem !default;
 .button {
   font-size: $button-font-size;
   height: $button-height;
-  padding-left: bulma-button.$button-padding-horizontal;
-  padding-right: bulma-button.$button-padding-horizontal;
 
   // Fix: is-outlined
   &.is-outlined {
@@ -89,35 +86,9 @@ $button-large-padding-horizontal: 3rem !default;
 
 // Spacing
 @mixin buttons-spacing($space: variables.$brick-spacing) {
-  .button {
-    margin-bottom: $space;
-  }
-
-  &:last-child {
-    margin-bottom: (-$space);
-  }
-
-  &:not(:last-child) {
-    margin-bottom: variables.$block-spacing - $space;
-  }
-
-  &:not(.has-addons) {
-    .button {
-      &:not(:last-child):not(.is-fullwidth) {
-        margin-right: $space;
-      }
-    }
-
-    // fix Bulma unnecessary margin-left, margin-right for is-centered and is-right
-    &.is-centered, &.is-right {
-      .button:not(.is-fullwidth) {
-        margin-left: 0;
-        margin-right: $space;
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
+  gap: $space;
+  &> *:not(:last-child) {
+    margin-bottom: 0;
   }
 }
 
