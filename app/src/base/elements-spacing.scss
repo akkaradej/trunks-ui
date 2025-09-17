@@ -1,22 +1,3 @@
-// $block-spacing
-
-// section
-@include mobile {
-  .section {
-    padding-left: $section-gap-mobile;
-    padding-right: $section-gap-mobile;
-
-    @include desktop {
-      &.is-medium,
-      &.is-large {
-        padding-left: $section-gap-mobile;
-        padding-right: $section-gap-mobile;
-      }
-    }
-  }
-}
-
-
 // column
 .columns {
   &:not(:last-child) {
@@ -96,17 +77,18 @@
 .level-left {
   @include mobile {
     & + .level-right {
-      margin-top: $block-spacing;
+      margin-top: $block-spacing-mobile;
     }
   }
 }
 
+// hero
 .hero-buttons {
   margin-top: $block-spacing;
   @include mobile {
     .button {
       &:not(:last-child) {
-        margin-bottom: $block-spacing / 2;
+        margin-bottom: $block-spacing-mobile / 2;
       }
     }
   }
@@ -121,6 +103,9 @@
 // field
 .field:not(:last-child) {
   margin-bottom: $field-spacing;
+  &.is-horizontal {
+    margin-bottom: $field-horizontal-spacing;
+  }
 }
 
 .field.is-grouped {
@@ -133,11 +118,11 @@
 
 @include mobile {
   .field:not(:last-child) {
-    margin-bottom: $field-spacing-mobile;
+    margin-bottom: $field-horizontal-spacing-mobile;
   }
 
   .field-label {
-    margin-bottom: $field-spacing-mobile / 3;
+    margin-bottom: 0;
   }
 }
 
@@ -147,49 +132,67 @@
   }
 
   .field-body {
+    flex-basis: auto;
     & > .field {
       &:not(:last-child) {
-        margin-right: $field-spacing / 2;
+        margin-right: $field-horizontal-spacing / 2;
       }
     }
   }
+}
+
+// label
+.label:not(:last-child) {
+  margin-bottom: $label-spacing;
 }
 
 // button
-.buttons {
+@mixin buttons-spacing($space: $brick-spacing) {
   .button {
-    margin-bottom: $block-spacing / 2;
-    &:not(:last-child):not(.is-fullwidth) {
-      margin-right: $block-spacing;
-    }
+    margin-bottom: $space;
   }
+
   &:last-child {
-    margin-bottom: (-$block-spacing / 2);
+    margin-bottom: (-$space);
   }
+
   &:not(:last-child) {
-    margin-bottom: $block-spacing;
+    margin-bottom: $block-spacing - $space;
   }
-  &.is-centered {
-    &:not(.has-addons) {
-      .button:not(.is-fullwidth) {
-        margin-left: $block-spacing / 2;
-        margin-right: $block-spacing / 2;
+
+  &:not(.has-addons) {
+    .button {
+      &:not(:last-child):not(.is-fullwidth) {
+        margin-right: $space;
       }
     }
-  }
-  &.is-right {
-    &:not(.has-addons) {
-      .button:not(:last-child):not(.is-fullwidth) {
+
+    // fix Bulma unnecessary margin-left, margin-right for is-centered and is-right
+    &.is-centered, &.is-right {
+      .button:not(.is-fullwidth) {
         margin-left: 0;
-        margin-right: $block-spacing;
+        margin-right: $space;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
 }
 
+.buttons {
+  @include buttons-spacing;
+}
+
+.buttons.is-spacing-2 {
+  @include buttons-spacing($brick-spacing * 2);
+}
+
+.buttons.is-spacing-3 {
+  @include buttons-spacing($brick-spacing * 3);
+}
 
 // other
-
 .help {
-  margin-top: $block-spacing / 4;
+  margin-top: $brick-spacing / 2;
 }

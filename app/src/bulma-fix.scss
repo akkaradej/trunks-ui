@@ -13,7 +13,7 @@
 .field.is-horizontal {
   .field-label {
     flex-grow: 0;
-    flex-basis: 100px; // default 100px, define this value in case by case
+    flex-basis: auto; // default auto, define this value in case by case
   }
   .field-body {
     flex-grow: 1;
@@ -21,13 +21,18 @@
 }
 
 // Fix: Search input type has different style from text input type
-.input[type="search"], .textarea[type="search"] {
+.input[type="search"]:not(.is-rounded), .textarea[type="search"]:not(.is-rounded) {
   border-radius: $radius;
 }
 
 // Fix: file input add-on button is shrinked
 .file-cta {
   flex-shrink: 0; 
+}
+
+// Fix: file input is-fullwidth expand through container
+.file.is-fullwidth .file-name {
+  white-space: normal;
 }
 
 // Fix: long title
@@ -49,6 +54,14 @@
   z-index: 0;
 }
 
+// Fix: select arrow color
+.select {
+  &:not(:hover).is-loading::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+}
+
 // Fix: checkbox disabled="false" style
 .checkbox[disabled="false"], .radio[disabled="false"] {
   cursor: pointer;
@@ -67,13 +80,18 @@
 // Fix IE, Edge
 // https://github.com/jgthms/bulma/issues/2503
 // workaround: copy code below from source and remove one line
+// 
 @include from($navbar-breakpoint) {
   .navbar-item {
     &.is-active,
     &.is-hoverable:focus,
     // &.is-hoverable:focus-within, <-- remove this to fix IE
     &.is-hoverable:hover {
+      // fix: display only first child
       .navbar-dropdown {
+        display: none;
+      }
+      > .navbar-dropdown {
         display: block;
         .navbar.is-spaced &,
         &.is-boxed {
@@ -83,5 +101,21 @@
         }
       }
     }
+  }
+}
+
+// Fix too small font-size 0.875rem change to $size-normal
+.dropdown-item {
+  font-size: $size-normal;
+  padding: 0.5rem 1.5rem;
+}
+
+.navbar-dropdown {
+  font-size: $size-normal;
+}
+
+@include from($navbar-breakpoint) {
+  .navbar-dropdown {
+    font-size: $size-normal;
   }
 }

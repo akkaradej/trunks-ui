@@ -5,7 +5,7 @@ $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Ox
 // $variable-columns
 $variable-columns: false;
 
-// Root element size to calculate rem (in pixel) 
+// Root element size to calculate rem (in pixel)
 $body-size: 10px;
 $body-size-mobile: $body-size;
 
@@ -13,10 +13,14 @@ $column-gap: $block-spacing / 2;
 $column-gap-mobile: $block-spacing-mobile / 2;
 
 $tile-spacing: $block-spacing / 2;
-$tile-spacing-mobile: $block-spacing / 2;
+$tile-spacing-mobile: $block-spacing-mobile / 2;
 
-$field-spacing: $block-spacing / 2;
-$field-spacing-mobile: $block-spacing-mobile / 2;
+$field-spacing: $block-spacing;
+$field-spacing-mobile: $block-spacing-mobile;
+$field-horizontal-spacing: $brick-spacing;
+$field-horizontal-spacing-mobile: $brick-spacing;
+
+$label-spacing: $brick-spacing;
 
 // The section horizontal gap for desktop (in pixel)
 $section-gap: 24px;
@@ -37,18 +41,10 @@ $section-padding-large: ($block-spacing * 6) $section-gap; // desktop only
 $gap: $section-gap;
 // Remark: The container has no horizontal gap for mobile by design
 
-// Scrollbar width
-$vertical-scrollbar-width: 17px;
-
-
-
-
-
-// Create this file and import next to "variables" before "~trunks-ui/trunks".
-// The non-comment code below often changes frequently (suggested value is defined).
+$control-icon-width: 3rem;
 
 // =================================================================================
-// ===== Bulma Variables v0.8.0 =====
+// ===== Bulma Variables v0.9.0 =====
 
 // = generic (base > generic)
 // $body-background-color: $scheme-main;
@@ -63,9 +59,6 @@ $vertical-scrollbar-width: 17px;
 // $control-radius-small: $radius-small;
 
 // $control-border-width: 1px;
-
-$control-height: 2.5em;
-// $control-line-height: 1.5;
 
 // $control-padding-vertical: calc(0.5em - #{$control-border-width});
 // $control-padding-horizontal: calc(0.75em - #{$control-border-width});
@@ -156,6 +149,9 @@ $box-padding: 1.2rem;
 // $box-link-active-shadow: inset 0 1px 2px rgba($scheme-invert, 0.2), 0 0 0 1px $link;
 // --
 
+// = icon
+$icon-text-spacing: $brick-spacing;
+
 // = table
 // $table-color: $text-strong;
 // $table-background-color: $scheme-main;
@@ -170,7 +166,7 @@ $box-padding: 1.2rem;
 // $table-foot-cell-border-width: 2px 0 0;
 // $table-foot-cell-color: $text-strong;
 
-$table-head-background-color: $grey;
+// $table-head-background-color: transparent;
 // $table-body-background-color: transparent;
 // $table-foot-background-color: transparent;
 
@@ -314,7 +310,6 @@ $navbar-dropdown-arrow: $text;
 
 // $navbar-bottom-box-shadow-size: 0 -2px 0 0;
 
-$navbar-breakpoint: $desktop;
 // --
 
 // = pagination
@@ -382,7 +377,7 @@ $pagination-disabled-color: $text-disabled;
 
 
 // =================================================================================
-// ===== Trunks Variables =====
+// ===== Trunks Variables v0.4.0 =====
 
 // = base > helpers
 // $box-shadow-for-has-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
@@ -404,17 +399,17 @@ $pagination-disabled-color: $text-disabled;
 $link-decoration: underline;
 
 $label-size: $size-normal;
-$input-arrow-size: 0.625em;;
-$input-arrow-right: 0.625em;;
+$input-arrow-size: 0.625em;
+$input-arrow-right: 0.625em;
 $input-arrow-border-width: 1px;
 
 $button-font-size: $size-normal;
 $button-font-weight: $weight-normal;
 
 $button-small-height: 3.2rem;
-$button-small-padding-horizontal: 1.5rem;
-$button-large-height: 7.2rem;
-$button-large-padding-horizontal: 4.8rem; 
+$button-small-padding-horizontal: $button-padding-horizontal;
+$button-large-height: 4.8rem;
+$button-large-padding-horizontal: $button-padding-horizontal;
 // --
 
 // = components
@@ -432,6 +427,7 @@ $navbar-dropdown-item-color: $text;
 
 // $tabs-has-box-shadow-box: -2px 0px 0px -1px rgba(10, 10, 10, 0.1);
 
+// $tabs-sheet-link-background-color: $scheme-main-bis;
 // $tabs-sheet-link-border-color: $border;
 // $tabs-sheet-link-border-style: solid;
 // $tabs-sheet-link-border-width: 1px;
@@ -455,13 +451,13 @@ $checkbox-inner-size: $checkbox-size * 0.8;
 // $checkbox-checked-filled-background-color: $primary;
 // $checkbox-group-border-color: $border;
 // $checkbox-group-divide-color: $border;
-// $checkbox-title-filled-background-color: $dark;
-// $checkbox-title-filled-color: $light;
+// $checkbox-title-filled-background-color: $primary;
+// $checkbox-title-filled-color: $primary-invert;
 
 // $radio-border-color: $primary;
 // $radio-background-color: $primary;
 $radio-size: 1em;
-// $radio-inner-size: $radio-size - 0.5em;
+// $radio-inner-size: $radio-size / 5;
 // $radio-bg-size: $radio-size + 0.5;
 // --
 
@@ -501,6 +497,7 @@ $ngx-datatable-header-filter-wrapper-height: $control-height * 1.5;
 $ngx-datatable-header-filter-height: $control-height;
 $ngx-datatable-header-filter-radius: 0;
 // $ngx-datatable-header-filter-border-color: $scheme-main-ter;
+$ngx-datatable-header-filter-wrapper-padding: $block-spacing;
 
 // $ngx-datatable-foot-background-color: $scheme-main-bis;
 // $ngx-datatable-pager-color: $primary-invert;
@@ -508,14 +505,19 @@ $ngx-datatable-header-filter-radius: 0;
 
 // $ngx-datatable-selection-background-color: $grey;
 // $ngx-datatable-selection-color: $text-invert;
+$ngx-datatable-selection-checkbox-checked-filled-style: false;
 
 // $ngx-datatable-summary-row-color: $grey;
 // $ngx-datatable-summary-row-background-color: $text-invert;
 
+// $toast-box-shadow: 0 0 7px #999999;
+
 // $tooltip-font-size: $size-normal;
 // $tooltip-font-weight: $weight-normal;
-// $tooltip-color: $scheme-main;
-// $tooltip-background-color: $scheme-invert;
+// $tooltip-background-color: $scheme-main-ter;
+// $tooltip-background-color-invert: $scheme-invert-ter;
+// $tooltip-color: $text;
+// $tooltip-color-invert: $text-invert;
 // $tooltip-border-color: rgba(0, 8, 16, 0.15);
 // $tooltip-box-shadow: 0 4px 14px -2px rgba(0, 8 , 16, .08);
 // $tooltip-border-radius: 4px;

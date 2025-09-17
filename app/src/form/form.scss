@@ -1,11 +1,35 @@
 $label-size: $size-normal !default;
+$control-icon-width: 3rem !default;
 
-.label { 
+.label {
   font-size: $label-size;
 }
 
 .field.is-horizontal {
   .field-label {
-    margin-top: ($control-height - $label-size * 1.5) / 2;
+    margin-top: ($control-height - $label-size * $control-line-height) / 2;
+
+    @each $name, $size in $font-sizes {
+      &.is-#{str-slice($name, str-length("size-") + 1)} {
+        font-size: $size;
+        margin-top: ($control-height - $size * $control-line-height) / 2;
+        padding: 0;
+      }
+    }
+
+    &.is-align-top {
+      margin-top: 0;
+    }
+
   }
+}
+
+.control.has-icons-right .input,
+.control.has-icons-right .select select {
+  padding-right: $control-icon-width;
+}
+.control.has-icons-left .icon,
+.control.has-icons-right .icon {
+  width: $control-icon-width;
+  height: $control-height;
 }

@@ -1,9 +1,15 @@
 @import './utilities/functions';
 // @import '~trunks-ui/utilities/functions';
 
-// Block Spacing (Adobe XD Square Size)
-$block-spacing: 2rem;
+// Square Size, Brick & Block Spacing
+$square-size: 0.8rem;
+$brick-spacing: $square-size;
+$block-spacing: $square-size * 2;
 $block-spacing-mobile: $block-spacing;
+
+// Control height
+$control-height: 4rem; // unit must same as Font size
+$control-line-height: 1.5;
 
 // Font size
 $size-small: 1.2rem;
@@ -14,7 +20,7 @@ $size-xlarge: 2.8rem;
 $size-xxlarge: 3.2rem;
 
 $font-sizes: (
-  "size-small": $size-normal,
+  "size-small": $size-small,
   "size-normal": $size-normal,
   "size-medium": $size-medium,
   "size-large": $size-large,
@@ -29,6 +35,14 @@ $weight-medium: 500;
 $weight-semibold: 600;
 $weight-bold: 700;
 
+$font-weights: (
+  "weight-light": $weight-light,
+  "weight-normal": $weight-normal,
+  "weight-medium": $weight-medium,
+  "weight-semibold": $weight-semibold,
+  "weight-bold": $weight-bold
+);
+
 // Miscellaneous
 $easing: ease-out;
 $radius-small: 2px;
@@ -37,54 +51,53 @@ $radius-large: 6px;
 $radius-rounded: 290486px;
 $speed: 86ms;
 
-// Black and White
-$black:         #0a0a0a;
-$black-bis:     #121212;
-$black-ter:     #242424;
-$grey-darker:   #363636;
-$grey-dark:     #4a4a4a;
-$grey:          #7a7a7a;
-$grey-light:    #b5b5b5;
-$grey-lighter:  #dbdbdb;
+// Color schemes for light/dark mode switching
+$darkMode: false;
+
+$scheme-main: #ffffff;
+$scheme-main-bis: #fafafa;
+$scheme-main-ter: #f5f5f5;
+$scheme-invert: #000000;
+$scheme-invert-bis: #121212;
+$scheme-invert-ter: #242424;
+
+@if $darkMode {
+  $scheme-main: #000000;
+  $scheme-main-bis: #121212;
+  $scheme-main-ter: #242424;
+  $scheme-invert: #ffffff;
+  $scheme-invert-bis: #fafafa;
+  $scheme-invert-ter: #f5f5f5;
+}
+
+// Shades of grey between color schemes above
+$grey-darker: #363636;
+$grey-dark: #4a4a4a;
+$grey: #7a7a7a;
+$grey-light: #b5b5b5;
+$grey-lighter: #dbdbdb;
 $grey-lightest: #ededed;
-$white-ter:     #f5f5f5;
-$white-bis:     #fafafa;
-$white:         #ffffff;
-
-// Colors
-$orange:        #ff470f;
-$yellow:        #ffdd57;
-$green:         #23d160;
-$turquoise:     #00d1b2;
-$cyan:          #209cee;
-$blue:          #3273dc;
-$purple:        #b86bff;
-$red:           #ff3860;
-
-// Meaning Colors
-
-// General colors
-$scheme-main: $white;
-$scheme-main-bis: $white-bis;
-$scheme-main-ter: $white-ter;
-$scheme-invert: $black;
-$scheme-invert-bis: $black-bis;
-$scheme-invert-ter: $black-ter;
-
-$background: $white-ter; // almost white background, most use for hover background, divider, default background, disabled background
-$border: $grey-lighter;
-$border-hover: $grey-lighter;
-$border-light: $grey-lightest;
-$border-light-hover: $grey-light;
 
 // Text colors
-$text: $grey-dark;
-$text-invert: $white;
-$text-light: $grey;
-$text-lighter: $grey-light;
-$text-strong: $grey-darker;
-$text-disabled: $white-bis;
-$text-placeholder: $grey-light;
+$text-strong: #363636;
+$text: #4a4a4a;
+$text-light: #7a7a7a;
+$text-lighter: #b5b5b5;
+$text-disabled: #b5b5b5;
+$text-placeholder: #c6c6c6; // ~ rgba($text, 0.3)
+$text-disabled-placeholder: #d2d2d2; // ~ rgba($text-light, 0.3)
+
+// Border colors
+$border-hover: #b5b5b5;
+$border-light-hover: #b5b5b5;
+$border: #dbdbdb;
+$border-light: #ededed;
+
+// A general background color. Mostly used for divider, hovered menu, disabled input
+$background: #f5f5f5;
+
+// Text invert color
+$text-invert: #ffffff;
 
 @function findColorInvert($color) {
   @if (colorLuminance($color) > 0.55) {
@@ -95,65 +108,115 @@ $text-placeholder: $grey-light;
   }
 }
 
-// Default colors
-$primary: $turquoise;
-$secondary: $blue;
-$info: $cyan;
-$success: $green;
-$warning: $yellow;
-$danger: $red;
-$light: $white-ter;
-$dark: $grey-darker;
+// Theme colors
+$primary: #00d1b2;
+$secondary: #3273dc;
+$info: #209cee;
+$success: #23d160;
+$warning: #ffdd57;
+$danger: #ff3860;
 
 // Link colors
 $link: $primary;
 $link-invert: findColorInvert($link);
 
-// Custom color
-$header-background: $blue;
+// Custom colors
+$header-background: #3273dc;
 
-// Custom color with class
-$edit: $orange;
-$delete: $red;
+// Custom colors with class
+$edit: #ff470f;
+$delete: #ff3860;
 
-// Custom color class
 $custom-colors: (
   "edit": ($edit),
   "delete": ($delete),
 );
-$custom-shades: null;
+
+// Scrollbar width
+$vertical-scrollbar-width: 17px;
 
 // Responsive Breakpoint
+// $non-responsive-mobile: false;
+// $non-responsive-tablet: false;
+
+// For 5 screen sizes; mobile, tablet, desktop, widescreen, fullhd
 // mobile up to 767px;
-// $tablet: 768px; // tablet size by chrome's device toolbar                      // for 768 (ipad portrait)
-// $tablet-use-desktop-layout: false;
-// $desktop: 1024px; // desktop size by chrome's device toolbar, 768 + 256 = 1024 // for 1024 (ipad landscape) (ipad pro portrait)
-// $widescreen: 1280px;  // widescreen size by bulma default, 1024 + 256 = 1280   // for 1280, 1366 (ipad pro landscape), 1440
-// $widescreen-enabled: true;
-// $fullhd: 1536px; // fullhd size by 1280 + 256 = 1536                           // for 1600, 1920, 2560
-// $fullhd-enabled: true;
-$widescreen: 1366px;
+
+// breakpoint for screen width 768 (ipad portrait)
+// tablet size by chrome's device toolbar = 768
+$tablet: 768px;
+
+// breakpoint for screen width 1024 (ipad landscape) (ipad pro portrait)
+// desktop size by chrome's device toolbar, 768 + 256 = 1024
+$desktop: 1024px;
+
+// breakpoint for screen width 1280, 1366 (ipad pro landscape), 1440
+// widescreen size by bulma default, 1024 + 256 = 1280
+$widescreen: 1280px;
+$widescreen-enabled: true;
+
+// breakpoint for screen width 1600, 1920, 2560
+// fullhd size by 1280 + 256 = 1536
+$fullhd: 1536px;
+$fullhd-enabled: true;
+
+// breakpoint
+// $navbar-breakpoint: $desktop;
+// $modal-breakpoint: $desktop;
 
 // For 2 screen sizes; mobile & desktop, Uncomment these vars.
+// $non-responsive-tablet: true;
 // $tablet: 768px;
-// $tablet-use-desktop-layout: true;
 // $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
-// 
-// And then @import "~trunks-ui/non-responsive-tablet"; next to "~trunks-ui/trunks";
+//
+// $navbar-breakpoint: $tablet;
+// $modal-breakpoint: $tablet;
+//
+// add script to index.html
+// <script type="text/javascript">
+//   (function setViewPort() {
+//     // tablet use desktop viewport
+//     if (window.matchMedia('screen and (min-width: 768px) and (max-width: 1365px)').matches) {
+//       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=1366');
+//     }
+//   })();
+// </script>
+
+
+// For 2 screen sizes; tablet & desktop, Uncomment these vars.
+// $non-responsive-mobile: true;
+// $tablet: 768px;
+// $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
+// $widescreen-enabled: false;
+// $fullhd-enabled: false;
+//
+// $navbar-breakpoint: $tablet; or $desktop;
+// $modal-breakpoint: $tablet; or $desktop;
+//
+// add script to index.html
+// <script type="text/javascript">
+//   (function setViewPort() {
+//     // mobile use tablet viewport
+//     if (window.matchMedia('screen and (max-width: 767px)').matches) {
+//       document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=768');
+//     }
+//   })();
+// </script>
+
 
 // For Non-Responsive, Uncomment these vars.
-// $mobile-use-desktop-layout: true;
-// $tablet: 768px;
-// $tablet-use-desktop-layout: true;
+// $non-responsive-mobile: true;
+// $non-responsive-tablet: true;
+// $tablet: 1px;
 // $desktop: 1366px; // change to fit your requirement of desktop minimum screen width
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
 // $body-overflow-x: auto;
 // $body-min-width: $desktop - $vertical-scrollbar-width;
-//
-// And then @import "~trunks-ui/non-responsive"; next to "~trunks-ui/trunks";
+// $navbar-breakpoint: 0;
+// $modal-breakpoint: 0;
 
 // Others
 $sidebar-width: 0;

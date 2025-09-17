@@ -1,0 +1,514 @@
+/**
+ * implement 3 things
+ * 1. @include tablet
+ * 2. is-mobile
+ * 3. revert @include mobile
+ */
+
+%non-responsive-mobile {
+  @include mobile {
+    overflow-x: auto;
+  }
+
+  // tools
+
+  .field {
+    &.is-horizontal {
+      display: flex;
+    }
+  }
+
+  .field-label {
+    @include mobile {
+      margin-bottom: 0;
+    }
+
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    @include ltr-property("margin", 1.5rem);
+    text-align: right;
+
+    &.is-small {
+      font-size: $size-small;
+      padding-top: 0.375em;
+    }
+
+    &.is-normal {
+      padding-top: 0.375em;
+    }
+
+    &.is-medium {
+      font-size: $size-medium;
+      padding-top: 0.375em;
+    }
+
+    &.is-large {
+      font-size: $size-large;
+      padding-top: 0.375em;
+    }
+  }
+
+  .field-body {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 5;
+    flex-shrink: 1;
+
+    .field {
+      margin-bottom: 0;
+    }
+
+    &>.field {
+      flex-shrink: 1;
+
+      &:not(.is-narrow) {
+        flex-grow: 1;
+      }
+
+      &:not(:last-child) {
+        @include ltr-property("margin", 0.75rem);
+      }
+    }
+  }
+
+  // level
+
+  .level {
+    display: flex;
+
+    &>.level-item {
+      &:not(.is-narrow) {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .level-item {
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .level-left,
+  .level-right {
+    &:not(:last-child) {
+      @include ltr-property("margin", $level-item-spacing);
+    }
+  }
+
+  .level-left {
+    @include mobile {
+      &+.level-right {
+        margin-top: 0;
+      }
+    }
+
+    display: flex;
+  }
+
+  .level-right {
+    display: flex;
+  }
+
+  // pagination
+
+  @include mobile {
+    .pagination {
+      flex-wrap: nowrap;
+    }
+
+    .pagination-previous,
+    .pagination-next {
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
+
+    .pagination-list {
+      li {
+        flex-grow: 0;
+        flex-shrink: 1;
+      }
+    }
+  }
+
+  .pagination-list {
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: flex-start;
+    order: 1;
+  }
+
+  .pagination-previous {
+    order: 2;
+  }
+
+  .pagination-next {
+    order: 3;
+  }
+
+  .pagination {
+    justify-content: space-between;
+
+    &.is-centered {
+      .pagination-previous {
+        order: 1;
+      }
+
+      .pagination-list {
+        justify-content: center;
+        order: 2;
+      }
+
+      .pagination-next {
+        order: 3;
+      }
+    }
+
+    &.is-right {
+      .pagination-previous {
+        order: 1;
+      }
+
+      .pagination-next {
+        order: 2;
+      }
+
+      .pagination-list {
+        justify-content: flex-end;
+        order: 3;
+      }
+    }
+  }
+
+  // columns
+
+  .columns {
+    display: flex;
+  }
+
+  .column {
+    .columns>&.is-narrow {
+      flex: none;
+      width: unset;
+    }
+
+    .columns>&.is-full {
+      flex: none;
+      width: 100%;
+    }
+
+    .columns>&.is-three-quarters {
+      flex: none;
+      width: 75%;
+    }
+
+    .columns>&.is-two-thirds {
+      flex: none;
+      width: 66.6666%;
+    }
+
+    .columns>&.is-half {
+      flex: none;
+      width: 50%;
+    }
+
+    .columns>&.is-one-third {
+      flex: none;
+      width: 33.3333%;
+    }
+
+    .columns>&.is-one-quarter {
+      flex: none;
+      width: 25%;
+    }
+
+    .columns>&.is-one-fifth {
+      flex: none;
+      width: 20%;
+    }
+
+    .columns>&.is-two-fifths {
+      flex: none;
+      width: 40%;
+    }
+
+    .columns>&.is-three-fifths {
+      flex: none;
+      width: 60%;
+    }
+
+    .columns>&.is-four-fifths {
+      flex: none;
+      width: 80%;
+    }
+
+    .columns>&.is-offset-three-quarters {
+      @include ltr-property("margin", 75%, false);
+    }
+
+    .columns>&.is-offset-two-thirds {
+      @include ltr-property("margin", 66.6666%, false);
+    }
+
+    .columns>&.is-offset-half {
+      @include ltr-property("margin", 50%, false);
+    }
+
+    .columns>&.is-offset-one-third {
+      @include ltr-property("margin", 33.3333%, false);
+    }
+
+    .columns>&.is-offset-one-quarter {
+      @include ltr-property("margin", 25%, false);
+    }
+
+    .columns>&.is-offset-one-fifth {
+      @include ltr-property("margin", 20%, false);
+    }
+
+    .columns>&.is-offset-two-fifths {
+      @include ltr-property("margin", 40%, false);
+    }
+
+    .columns>&.is-offset-three-fifths {
+      @include ltr-property("margin", 60%, false);
+    }
+
+    .columns>&.is-offset-four-fifths {
+      @include ltr-property("margin", 80%, false);
+    }
+
+    @for $i from 0 through 12 {
+      .columns>&.is-#{$i} {
+        flex: none;
+        width: percentage($i / 12);
+      }
+
+      .columns>&.is-offset-#{$i} {
+        @include ltr-property("margin", percentage($i / 12), false);
+      }
+    }
+
+    &.is-narrow,
+    &.is-narrow-tablet {
+      flex: none;
+      width: unset;
+    }
+
+    &.is-full,
+    &.is-full-tablet {
+      flex: none;
+      width: 100%;
+    }
+
+    &.is-three-quarters,
+    &.is-three-quarters-tablet {
+      flex: none;
+      width: 75%;
+    }
+
+    &.is-two-thirds,
+    &.is-two-thirds-tablet {
+      flex: none;
+      width: 66.6666%;
+    }
+
+    &.is-half,
+    &.is-half-tablet {
+      flex: none;
+      width: 50%;
+    }
+
+    &.is-one-third,
+    &.is-one-third-tablet {
+      flex: none;
+      width: 33.3333%;
+    }
+
+    &.is-one-quarter,
+    &.is-one-quarter-tablet {
+      flex: none;
+      width: 25%;
+    }
+
+    &.is-one-fifth,
+    &.is-one-fifth-tablet {
+      flex: none;
+      width: 20%;
+    }
+
+    &.is-two-fifths,
+    &.is-two-fifths-tablet {
+      flex: none;
+      width: 40%;
+    }
+
+    &.is-three-fifths,
+    &.is-three-fifths-tablet {
+      flex: none;
+      width: 60%;
+    }
+
+    &.is-four-fifths,
+    &.is-four-fifths-tablet {
+      flex: none;
+      width: 80%;
+    }
+
+    &.is-offset-three-quarters,
+    &.is-offset-three-quarters-tablet {
+      @include ltr-property("margin", 75%, false);
+    }
+
+    &.is-offset-two-thirds,
+    &.is-offset-two-thirds-tablet {
+      @include ltr-property("margin", 66.6666%, false);
+    }
+
+    &.is-offset-half,
+    &.is-offset-half-tablet {
+      @include ltr-property("margin", 50%, false);
+    }
+
+    &.is-offset-one-third,
+    &.is-offset-one-third-tablet {
+      @include ltr-property("margin", 33.3333%, false);
+    }
+
+    &.is-offset-one-quarter,
+    &.is-offset-one-quarter-tablet {
+      @include ltr-property("margin", 25%, false);
+    }
+
+    &.is-offset-one-fifth,
+    &.is-offset-one-fifth-tablet {
+      @include ltr-property("margin", 20%, false);
+    }
+
+    &.is-offset-two-fifths,
+    &.is-offset-two-fifths-tablet {
+      @include ltr-property("margin", 40%, false);
+    }
+
+    &.is-offset-three-fifths,
+    &.is-offset-three-fifths-tablet {
+      @include ltr-property("margin", 60%, false);
+    }
+
+    &.is-offset-four-fifths,
+    &.is-offset-four-fifths-tablet {
+      @include ltr-property("margin", 80%, false);
+    }
+
+    @for $i from 0 through 12 {
+
+      &.is-#{$i},
+      &.is-#{$i}-tablet {
+        flex: none;
+        width: percentage($i / 12);
+      }
+
+      &.is-offset-#{$i},
+      &.is-offset-#{$i}-tablet {
+        @include ltr-property("margin", percentage($i / 12), false);
+      }
+    }
+  }
+
+  // tiles
+
+  .tile {
+    &:not(.is-child) {
+      display: flex;
+    }
+
+    @for $i from 1 through 12 {
+      &.is-#{$i} {
+        flex: none;
+        width: ($i / 12) * 100%;
+      }
+    }
+  }
+
+  // hero
+
+  .hero {
+    &.is-medium {
+      .hero-body {
+        padding: $hero-body-padding-medium;
+      }
+    }
+
+    &.is-large {
+      .hero-body {
+        padding: $hero-body-padding-large;
+      }
+    }
+  }
+
+  .hero-video {
+    @include mobile {
+      display: block;
+    }
+  }
+
+  .hero-buttons {
+    @include mobile {
+      .button {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    display: flex;
+    justify-content: center;
+
+    .button:not(:last-child) {
+      @include ltr-property("margin", 1.5rem);
+    }
+  }
+}
+
+@if $non-responsive-mobile {
+  html {
+    @include mobile {
+      @if $non-responsive-tablet {
+        min-width: $desktop - $vertical-scrollbar-width;
+      } @else {
+        min-width: $tablet - $vertical-scrollbar-width;
+      }
+    }
+
+    @extend %non-responsive-mobile;
+  }
+}
+
+html {
+  &.non-responsive,
+  &.non-responsive-mobile {
+    @include mobile {
+      min-width: $tablet - $vertical-scrollbar-width;
+    }
+
+    .container {
+      max-width: $tablet - (2 * $gap) - $vertical-scrollbar-width;
+    }
+
+    @extend %non-responsive-mobile;
+  }
+
+  &.non-responsive,
+  &.non-responsive-mobile.non-responsive-tablet {
+    @include mobile {
+      min-width: $desktop - $vertical-scrollbar-width;
+    }
+
+    .container {
+      max-width: $desktop - (2 * $gap) - $vertical-scrollbar-width;
+    }
+  }
+}

@@ -5,7 +5,7 @@ $error-message-tooltip-background-color: $danger !default;
 
 .is-required .label:after {
   color: $required-color;
-  content: ' *';
+  content: " *";
   display: inline;
 }
 
@@ -38,12 +38,26 @@ form .ng-touched.ng-invalid {
   &.base-control {
     .input,
     .select select,
-    .textarea {
+    .textarea,
+    .ng-select-container {
       border: $validation-error-border;
     }
     input[type="radio"] {
       + span::before {
         border: $validation-error-border;
+      }
+    }
+    .file {
+      .button,
+      .file-name,
+      .file-cta {
+        border: $validation-error-border;
+      }
+      &.is-right .file-name {
+        border-right-width: 0px;
+      }
+      &.is-left .file-name {
+        border-left-width: 0px;
       }
     }
   }

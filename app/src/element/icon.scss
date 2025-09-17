@@ -1,6 +1,12 @@
-// icon-em: make icon size belongs to its element.
+// make icon size belongs to its element (em).
 
-.icon.icon-em {
+.icon-text {
+  line-height: 1.5;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.icon {
   font-size: 1em;
 
   &,
@@ -8,7 +14,7 @@
   &.is-medium,
   &.is-large {
     width: 1em;
-    height: 1em;  
+    height: 1em;
   }
   &.is-small {
     font-size: 0.75em;
@@ -19,23 +25,17 @@
   &.is-large {
     font-size: 1.5em;
   }
-  &:not(:last-child) {
-    margin-right: 0.5em;
-  }
-  &:not(:first-child) {
-    margin-left: 0.5em;
-  }
 }
 
-.icon.icon-em.icon-img {
-  vertical-align: text-top;
+.icon.icon-img {
   img {
     width: 100%;
   }
 }
 
-.navbar-item, .navbar-link {
-  .icon.icon-em {
+.navbar-item,
+.navbar-link {
+  .icon {
     &:only-child {
       margin-left: 0;
       margin-right: 0;
@@ -44,15 +44,23 @@
 }
 
 .button {
-  .icon,
-  .icon.icon-em {
+  .icon {
     &:first-child:not(:last-child) {
       margin-left: 0;
-      margin-right: 0.5em;
+      margin-right: $brick-spacing;
     }
     &:last-child:not(:first-child) {
-      margin-left: 0.5em;
+      margin-left: $brick-spacing;
       margin-right: 0;
     }
+  }
+}
+
+@for $i from 1 through 6 {
+  .ic-up-#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ic-down-#{$i} {
+    margin-top: #{$i}px !important;
   }
 }
